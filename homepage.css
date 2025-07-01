@@ -1,0 +1,98 @@
+/* Reset margin, padding, and set box-sizing */
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #C77D83;
+    color: black;
+    line-height: 1.6;
+  }
+  
+  /* Navigation bar styling */
+  nav {
+    background-color: whitesmoke;
+    position: fixed;       /* Fix nav at top */
+    top: 0;
+    left: 0;
+    width: 100%;           /* Full width */
+    z-index: 1000;         /* Stay above other content */
+    display: flex;         /* Flex layout for logo and menu */
+    align-items: center;   /* Vertically center items */
+    /* padding: 40px 20px; */
+    box-shadow: 0 2px 5px black; /* Optional shadow- aroung the nav bar*/
+/* adding background image to the nav bar */
+
+background-image: url('herad_images/Herad-vegetables.jpeg'); /* your image path */
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+
+/* Add a semi-transparent dark overlay using background color with alpha */
+background-color: rgba(7, 7, 7, 0.4); /* black with 40% opacity */
+
+/* Blend the background color (overlay) with the image */
+background-blend-mode: darken;
+
+height: 120px; /* adjust navbar height */
+display: flex;
+align-items: center;
+padding: 0 10px;
+color: white; /* make menu text visible */
+}
+
+}
+  
+  /* Logo container */
+  .logo {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 120px;          /* Adjust logo size */
+    width: 300px;
+    object-fit: contain;
+    display: block;
+    padding: 10px 0.5px;
+  }
+  
+  /* Menu list container */
+  nav ul {
+    list-style: none;
+    display: flex;         /* Horizontal menu */
+    margin-left: auto;     /* Push menu to right */
+    align-items: center;
+    /* gap: 20px;             Space between menu items */
+  }
+  
+  /* Menu items */
+  nav ul li a {
+    color: black;
+    background-color: #C77D83;
+    border-right:1px solid #692727;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 20px 10px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect */
+  nav ul li a:hover {
+    background-color: #692727;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  /* Optional: Fix list items alignment */
+  nav ul li {
+    display: block;
+  }
+  
+ 

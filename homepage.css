@@ -1,71 +1,58 @@
-/* Reset margin, padding, and set box-sizing */
+Ensures uniform spacing and sizing across all browsers */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  box-sizing: border-box; /*Padding & border included in width/height */
 }
-
-/* If you use anchor links, add this to avoid content being hidden behind the fixed navbar: */
+/* Adjust scroll offset to ensure fixed headers don't cover content */
 html {
-  scroll-padding-top: 120px; 
+  scroll-padding-top: 120px; /* Creates offset when scrolling to anchors */
 }
 
-/* Body styling */
+/* = GLOBAL STYLES = */
+/* Sets general typography and background for the entire page */
 body {
-  font-family: "Times New Roman", Times, serif;
-  background-color: #c77d83;
-  color: black;
-  line-height: 1.6;
+  font-family: "Times New Roman", Times, serif; /* Serif typeface for classic look */
+  background-color: #c77d83; /* Light muted pink tone for background */
+  color: black; /* Default text color */
+  line-height: 1.2; /* Improves readability between lines */
 }
 
-/* header design */
-.header{
-  background-color: #AB1B23;
-  align-items: center;
+/* =============== TOP HEADER TEXT (Optional if you have banner) =============== */
+.header {
+  background-color: #AB1B23; /* Deep red banner */
   color: white;
   font-weight: 1000;
   font-size: 30px;
   padding-left: 80px;
-  padding-bottom: 40px;
-  height: 40px;
-  
-
+  padding-bottom: 30px;
+  height: 20px;
+  align-items: center;
 }
 
-/* Navigation bar styling */
+/* ====================== NAVIGATION BAR ====================== */
 nav {
-  background-color: whitesmoke;
-  padding-top: 120px;
-  /* position: fixed; Fix nav at top */
-  top: 0;
-  left: 0;
-  width: 100%; /* Full width */
-  z-index: 1000; /* Stay above other content */
-  display: flex; /* Flex layout for logo and menu */
-  align-items: center; /* Vertically center items */
-  /* padding: 40px 20px; */
-  box-shadow: 0 2px 5px black; /* Optional shadow- aroung the nav bar*/
-  /* adding background image to the nav bar */
-
-  background-image: url("herad_images/Herad-vegetables.jpeg"); /* your image path */
+  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background photo */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
-  /* Add a semi-transparent dark overlay using background color with alpha */
-  background-color: rgba(7, 7, 7, 0.4); /* black with 40% opacity */
-
-  /* Blend the background color (overlay) with the image */
   background-blend-mode: darken;
-
-  height: 120px; /* adjust navbar height */
+  background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent overlay */
+  padding-top: 120px;
+  height: 130px;
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 10px;
-  color: white; /* make menu text visible */
+  justify-content: space-between; /* Space between logo and menu */
+  box-shadow: 0 2px 5px black;
+  z-index: 1000;
+  color: white;
+  padding: 0 20px;
+  top: 0;
+  left: 0;
 }
 
-/* Logo container */
+/* =============== LOGO STYLING =============== */
 .logo {
   padding: 10px;
   display: flex;
@@ -73,30 +60,34 @@ nav {
 }
 
 .logo img {
-  height: 120px; /* Adjust logo size */
-  width: 300px;
+  height: 120px;
+  width: 280px;
   object-fit: contain;
   display: block;
   padding: 10px 0.5px;
 }
 
-/* Menu list container */
+/* =============== MENU STYLING =============== */
 nav ul {
   list-style: none;
-  display: flex; /* Horizontal menu */
-  margin-left: auto; /* Push menu to right */
-  align-items: center;
-  /* gap: 20px;             Space between menu items */
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-/* Menu items */
+nav ul li {
+  display: block;
+}
+
+/* Nav Links */
 nav ul li a {
   color: black;
   background-color: #c77d83;
   border-right: 1px solid #692727;
+  border-width: 2px;
   text-decoration: none;
-  font-weight: 800;
-  padding: 20px 10px;
+  font-weight: 900;
+  padding: 15px 10px;
   display: block;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -108,71 +99,348 @@ nav ul li a:hover {
   border-radius: 4px;
 }
 
-/* Optional: Fix list items alignment */
-nav ul li {
-  display: block;
+
+/* = HERO SECTION CONTAINER = */
+/* Flex container with text on left and slider on right */
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px; /* Space between text and slider */
+  padding: 60px 5%; /* Section padding */
+  background-color: #e7e1e1; /* Light background */
+  flex-wrap: wrap; /* Wrap on small screens */
+  align-items: center; /* Vertically center content */
 }
 
-/* Designing the FOOTER */
-.Footer {
-  display: flex; /* Arrange children in a row */
-  justify-content: space-between;
-  background-color: #692727; /* Dark background */
-  height: auto;
-  padding: 10px 15px; 
-  align-items: center; 
-  font-family: Arial, sans-serif;
+/* TEXT COLUMN  */
+.hero-text {
+  flex: 1; /* Take equal available space */
+  min-width: 300px; /* Prevent too narrow */
+  max-width: 600px; /* Limit max width */
+}
+
+.hero-text h2 {
+  font-size: 30px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.6; /* Better readability */
+}
+
+/*  SLIDER COLUMN -IMAGES */
+.hero-slider {
+  position: relative;
+  flex: 1;
+  max-width: 600px;
+  height: 500px;
+  overflow: hidden; /* Hide overflowing images */
   width: 100%;
-  box-sizing: border-box;
-  clear: both;       /* Clear floats */
-  position: relative; /* Ensure normal flow */
-  z-index: 1000;       /* Make sure it’s above background */
-  border: 4px solid #AB1B23; 
+
 }
 
-.Footer .footer-logo {
-  display: block;
-  /* align-items: self-start; */
-  /* padding: 10px 15px; */
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.Footer ul {
-  list-style: none; /* Remove bullets */
-  padding: 0;
-  margin: 0;
-  display: flex; /* Horizontal layout */
-  justify-content: center; /* Center the list */
-  gap: 20px; /* Space between links */
-  flex-wrap: wrap; /* Wrap on smaller screens */
+/*  EACH SLIDE  */
+.fade-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hidden initially */
+  animation: fadeImages 60s infinite; /* Looping fade */
+  transition: opacity 1s ease;
+  pointer-events: none; /* Ignore mouse events */
 }
 
-.Footer ul li a {
-  color: black; /* White text */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease;
- 
-  
+.fade-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover container without distortion */
 }
 
-.Footer ul li a:hover {
-  color: #CB1F2E;
-  /* background-color: #C77D83; */
-  /* border-radius: 8px; */
-  padding: 0px 0px; 
-} 
+/* = ANIMATION DELAYS = */
+/* Show each slide one after another */
+/* 15 slides with 4 seconds per slide, total 60s */
+.fade-slide:nth-child(1)  { animation-delay: 0s; }
+.fade-slide:nth-child(2)  { animation-delay: 4s; }
+.fade-slide:nth-child(3)  { animation-delay: 8s; }
+.fade-slide:nth-child(4)  { animation-delay: 12s; }
+.fade-slide:nth-child(5)  { animation-delay: 16s; }
+.fade-slide:nth-child(6)  { animation-delay: 20s; }
+.fade-slide:nth-child(7)  { animation-delay: 24s; }
+.fade-slide:nth-child(8)  { animation-delay: 28s; }
+.fade-slide:nth-child(9)  { animation-delay: 32s; }
+.fade-slide:nth-child(10) { animation-delay: 36s; }
+.fade-slide:nth-child(11) { animation-delay: 40s; }
+.fade-slide:nth-child(12) { animation-delay: 44s; }
+.fade-slide:nth-child(13) { animation-delay: 48s; }
+.fade-slide:nth-child(14) { animation-delay: 52s; }
+.fade-slide:nth-child(15) { animation-delay: 56s; }
 
-/* Optional: Responsive adjustment */
-@media (max-width: 600px) {
-  .Footer ul {
-    flex-direction: column;
-    gap: 10px;
+/*  KEYFRAMES  */
+/* Fade images in and out smoothly */
+@keyframes fadeImages {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }   /* Fade in */
+  20%  { opacity: 1; }   /* Stay visible */
+  25%  { opacity: 0; }   /* Fade out */
+  100% { opacity: 0; }
+}
+
+/*  SLIDE CAPTION  */
+.slide-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  background-color: #682727; /* Dark reddish background */
+  color: white;
+  font-weight: 400;
+  height: 60px;
+  width: 80px;
+  display: flex;           /* Use flex to align text vertically */
+  align-items: center;     /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  pointer-events: none;    /* Allow clicks to pass through */
+}
+
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column; /* Stack vertically on small screens */
+    align-items: center;
+  }
+
+  .hero-slider {
+    height: 350px; /* Smaller slider height */
+  }
+
+  .hero-text {
+    text-align: center;
   }
 }
 
-body{
-  /* background-color: #AB1B23; */
- 
 
+
+/* == FOOTER STYLES == */
+/* MAIN FOOTER CONTAINER */
+.footer {
+  background-color: #692727; /* Dark red background for contrast */
+  color: #ffffff;            /* White text for readability */
+  padding: 40px 0 20px;      /* Top and bottom spacing */
+  font-family: Arial, sans-serif; /* Clean, readable font */
+  line-height: 1.6;          /* Improves text readability */
 }
+
+/* FLEX WRAPPER FOR LOGO + SECTIONS  */
+.footer-content {
+  max-width: 1200px;         /* Limits content width */
+  margin: 0 auto;            /* Centers the footer content */
+  padding: 0 20px;           /* Horizontal spacing on sides */
+  display: flex;             /* Arrange children side-by-side */
+  flex-wrap: wrap;           /* Allows wrapping on smaller screens */
+  gap: 30px;                 /* Space between logo and section */
+  align-items: flex-start;   /* Aligns items to the top */
+}
+
+/* LOGO SECTION  */
+.footer-logo-container {
+  flex-shrink: 0;            /* Prevents logo from shrinking */
+  min-width: 180px;          /* Ensures enough space for logo */
+}
+
+.footer-logo {
+  padding-top: 50px;
+  max-height: 90px;          /* Maximum height of logo */
+  width: auto;               /* Maintain logo aspect ratio */
+  object-fit: contain;       /* Ensures clean scaling */
+}
+
+/* FOOTER SECTIONS GRID (e.g. HERAD Offices, Assistance, etc.) */
+.footer-sections {
+  flex: 1;                                      /* Take remaining space */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);        /* 4 equally sized columns */
+  gap: 30px;                                    /* Space between sections */
+}
+
+/* TITLES & PARAGRAPH STYLING  */
+.footer-section h3,
+.footer-section h4 {
+  color: #ffffff;             /* White titles */
+  text-transform: uppercase;  /* All caps for titles */
+  margin-bottom: 10px;        /* Space below heading */
+  font-size: 14px;            /* Uniform size */
+}
+
+.footer-section p {
+  margin: 0 0 8px 0;          /* Space between lines of text */
+  color: #cccccc;             /* Lighter text for info */
+  font-size: 14px;            /* Standard text size */
+}
+
+/* CONTACT & EMAIL STYLING  */
+.contact-info strong {
+  color: #ffffff;             /* Bold labels like "Contacts" */
+}
+
+.email-links a {
+  color: #0e5ab1;             /* Blue color for email links */
+  text-decoration: none;      /* Removes underline */
+  font-size: 14px;
+}
+
+.email-links a:hover {
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
+/* SOCIAL MEDIA SECTION  */
+.social-media {
+  margin-top: 20px;           /* Adds space above section */
+}
+
+.social-media h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;              /* Align icons in a row */
+  gap: 10px;                  /* Space between icons */
+  flex-wrap: wrap;            /* Allow wrapping on small screens */
+}
+
+.social-icons a img {
+  height: 30px;               /* Icon size */
+  width: 30px;
+  border-radius: 50%;         /* Circular icons */
+  object-fit: contain;        /* Keep aspect ratio */
+  background-color: #424040;     /* Dark background for contrast */
+  padding: 5px;               /* Padding inside icons */
+  transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.social-icons a img:hover {
+  background-color: #555;     /* Slightly lighter on hover */
+}
+
+/* PAYMENT METHODS SECTION  */
+.payment-methods {
+  margin-top: 20px;           /* Spacing above section */
+}
+
+.payment-methods h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.payment-methods-icons {
+  display: flex;              /* Arrange logos horizontally */
+  gap: 10px;                  /* Space between icons */
+  flex-wrap: nowrap;          /* Prevent wrapping */
+  overflow-x: auto;           /* Enable horizontal scroll if needed */
+  padding-bottom: 5px;
+}
+
+.payment-methods-icons img {
+  height: 30px;               /* Consistent size */
+  width: 30px;
+  object-fit: contain;
+  border-radius: 50%;         /* Round logos */
+  background-color: #424040;  /* Uniform dark background */
+  padding: 5px;
+  opacity: 0.85;              /* Slightly dimmed */
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  flex-shrink: 0;             /* Prevent from shrinking */
+}
+
+/* Airtel logo: force black background */
+.payment-methods-icons .airtel-logo {
+  background-color: #000000 !important;
+}
+
+/* Hover effect on payment icons */
+.payment-methods-icons img:hover {
+  opacity: 1;                  /* Fully visible */
+  background-color: #727070;  /* Light gray on hover */
+}
+
+/* FOOTER BOTTOM STRIP */
+.footer-bottom {
+  border-top: 2px solid #444; /* Thin divider line */
+  margin-top: 30px;           /* Space above divider */
+  padding: 20px;
+  font-size: 12px;
+  color: #999999;             /* Light gray text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;            /* Stack on smaller screens */
+}
+
+.footer-bottom a {
+  color: #cccccc;             /* Footer links */
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;             /* Brighter on hover */
+}
+
+/* RESPONSIVENESS FOR TABLETS  */
+@media (max-width: 768px) {
+  .footer-sections {
+    grid-template-columns: 1fr 1fr; /* Stack into 2 columns */
+  }
+
+  .footer-bottom {
+    flex-direction: column;         /* Stack items vertically */
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-bottom a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
+
+/* RESPONSIVENESS FOR MOBILE  */
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;         /* Stack logo + content vertically */
+    align-items: center;
+  }
+
+  .footer-sections {
+    grid-template-columns: 1fr;     /* Stack sections vertically */
+    width: 100%;
+  }
+
+  .footer-logo-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;       /* Center icons on mobile */
+    flex-wrap: wrap;
+  }
+}
+
+  
+  

@@ -1,0 +1,144 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* navbar */
+nav {
+  background-color: #3b5998;
+  color: white;
+  align-items: center;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  /* align-items:center; */
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+nav > div:first-child {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.menu-items ul {
+  gap: 30px;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* Hero section */
+header {
+  background-color: #666; /* Grey background */
+  color: white;
+  text-align: center;
+  padding: 200px 20px; /* Bigger section */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+header a {
+  background-color: orange;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Section headings */
+section h2 {
+  text-align: center;
+  margin: 60px 0 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Why Join Us & Our Programs container */
+section > div {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+/* Card styles */
+section > div > div {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+section > div > div:hover {
+  transform: translateY(-5px);
+}
+
+section img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Center program titles under images */
+section h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+section p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Add purple background to "Our Programs" section */
+section:nth-of-type(2) {
+  background-color: #f3eefc;
+  padding: 60px 20px;
+}
+
+/* Footer styling */
+footer {
+  background-color: #3b5998;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}

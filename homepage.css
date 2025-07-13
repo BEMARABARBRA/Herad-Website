@@ -161,7 +161,7 @@ nav ul li:hover > .dropdown-content {
 /* Style the horizontal separator inside dropdown */
 .dropdown-content hr {
   border: 0; /* Remove default border */
-  border-top: 1px solid #692727; /* Custom top border line */
+  border-top: 2px solid #692727; /* Custom top border line */
   margin: 8px 12px; /* Space above and below */
 }
 
@@ -220,43 +220,66 @@ nav ul li:hover > .dropdown-content {
 }
 
 /* =================== SLIDER SECTION =================== */
+/* Container for the entire slider */
 .hero-slider {
-  position: relative; /* Position for absolute children */
-  flex: 1; /* Equal flex space */
-  max-width: 600px; /* Max width */
+  position: relative; /* Needed for absolute positioned slides */
+  flex: 1; /* Allow flexible width */
+  max-width: 600px; /* Max width for slider */
   height: 500px; /* Fixed height */
-  overflow: hidden; /* Hide overflow */
-  width: 100%; /* Full width */
+  overflow: hidden; /* Hide images outside bounds */
+  width: 100%;
 }
 
-/* Slider wrapper */
+/* Wrapper for all slides */
 .slider-wrapper {
-  position: relative; /* Relative positioning */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  position: relative; /* Relative to hero-slider */
+  width: 100%;
+  height: 100%;
 }
 
-/* Each fading slide */
+/* Each slide with fade animation */
 .fade-slide {
-  position: absolute; /* Stack all slides */
-  top: 0; /* Align top */
-  left: 0; /* Align left */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  opacity: 0; /* Start transparent */
-  animation: fadeImages 30s infinite; /* Animate fade */
+  position: absolute; /* Stack on top of each other */
+  top: 0;
+  left: 0;
+  width: 100%; /* Fill container */
+  height: 100%;
+  opacity: 0; /* Start hidden */
+  animation: fadeImages 38s infinite; /* Total cycle length increased for 19 slides */
   transition: opacity 1s ease; /* Smooth fade */
-  pointer-events: none; /* Disable interaction */
+  pointer-events: none; /* Avoid blocking clicks */
+  z-index: 0; /* Base stacking order */
 }
 
-/* Images inside slides */
+/* Image inside each slide fills container */
 .fade-slide img {
-  width: 100%; /* Fill slide */
-  height: 100%; /* Fill slide */
-  object-fit: cover; /* Cover with cropping */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover container without distortion */
 }
 
-/* Animation delays for each slide */
+/* Text caption overlay */
+.slide-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  background-color: rgba(104, 39, 39, 0.85); /* Semi-transparent dark red */
+  color: white;
+  font-weight: 400;
+  height: 60px;
+  width: auto;
+  min-width: 120px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Animation delays for each slide to show sequentially */
+/* Each slide shows for about 2 seconds, with fade in/out */
 .fade-slide:nth-child(1) { animation-delay: 0s; }
 .fade-slide:nth-child(2) { animation-delay: 2s; }
 .fade-slide:nth-child(3) { animation-delay: 4s; }
@@ -272,50 +295,27 @@ nav ul li:hover > .dropdown-content {
 .fade-slide:nth-child(13) { animation-delay: 24s; }
 .fade-slide:nth-child(14) { animation-delay: 26s; }
 .fade-slide:nth-child(15) { animation-delay: 28s; }
+.fade-slide:nth-child(16) { animation-delay: 30s; }
+.fade-slide:nth-child(17) { animation-delay: 32s; }
+.fade-slide:nth-child(18) { animation-delay: 34s; }
+.fade-slide:nth-child(19) { animation-delay: 36s; }
 
-/* Fade animation keyframes */
+/* Keyframe animation for fade in and fade out */
 @keyframes fadeImages {
-  0%   { opacity: 0; } /* Invisible */
-  5%   { opacity: 1; } /* Fade in */
-  20%  { opacity: 1; } /* Fully visible */
-  25%  { opacity: 0; } /* Fade out */
-  100% { opacity: 0; } /* Remain invisible */
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  20%  { opacity: 1; }
+  25%  { opacity: 0; }
+  100% { opacity: 0; }
 }
 
-/* Caption box over slides */
-.slide-caption {
-  position: absolute; /* Positioned over slide */
-  bottom: 30px; /* 30px from bottom */
-  left: 40px; /* 40px from left */
-  background-color: #682727; /* Dark red background */
-  color: white; /* White text */
-  font-weight: 400; /* Normal weight */
-  height: 60px; /* Fixed height */
-  width: 120px; /* Fixed width */
-  display: flex; /* Flex for centering */
-  align-items: center; /* Vertical center */
-  justify-content: center; /* Horizontal center */
-  padding: 8px 12px; /* Padding inside */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 20px; /* Text size */
-  pointer-events: none; /* Ignore clicks */
-}
-
-/* =================== RESPONSIVE STYLES =================== */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column; /* Stack vertically */
-    align-items: center; /* Center content */
-  }
-
   .hero-slider {
-    height: 350px; /* Smaller height */
-  }
-
-  .hero-text {
-    text-align: center; /* Center text */
+    height: 350px; /* Smaller height on tablets and phones */
   }
 }
+
 
 /* =================== FOOTER STYLES =================== */
 .footer {

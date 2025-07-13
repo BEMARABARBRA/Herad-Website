@@ -21,26 +21,106 @@
    -->
    <header>
     <nav>
-      <!-- Logo Section -->
+      <!-- Logo Section on the left -->
       <div class="logo">
+        <!-- Company logo image -->
         <img src="/herad_images/herad logo.jpg" alt="herad_logo" height="100px" width="300px" />
       </div>
   
-      <!-- Navigation Menu -->
+      <!-- Navigation Menu container -->
       <div class="menu_list">
         <ul>
-          <li><a href="/about.html">ABOUT US</a></li>
-          <li><a href="/what_we_do.html">WHAT WE DO</a></li>
-          <li><a href="/products.html">PRODUCTS | SERVICES</a></li>
-          <li><a href="/our_impact.html">OUR IMPACT</a></li>
-          <li><a href="/future_projects.html">FUTURE PROJECTS</a></li>
-          <li><a href="/contacts.html">CONTACT US</a></li>
-          <li><a href="/gallary.html">GALLERY</a></li>
+          <!-- Dropdown Menu Item -->
+          <li class="dropdown">
+            <!-- Main link for this menu -->
+            <a href="/about.html">ABOUT US</a>
+            
+            <!-- Dropdown submenu container -->
+            <div class="dropdown-content">
+              <!-- Dropdown submenu links -->
+              <a href="#">Herad Company</a>
+              <a href="#">Leadership</a>
+            </div>
+          </li>
+  
+          <li class="dropdown">
+            <a href="/what_we_do.html">WHAT WE DO</a>
+            <div class="dropdown-content">
+              <a href="#">We Are Growers</a>
+              <a href="#">We Are Processors</a>
+              <a href="#">We Are Exporters</a>
+              <a href="#">We Are Consultants</a>
+            </div>
+          </li>
+  
+          <li class="dropdown">
+            <a href="/products.html">PRODUCTS | SERVICES</a>
+            <div class="dropdown-content">
+              <!-- List of product categories -->
+              <a href="#">Fruits</a>
+              <a href="#">Vegetables</a>
+              <a href="#">Spices</a>
+              <a href="#">Cereals</a>
+              <a href="#">Natural Sugars</a>
+              <a href="#">Fats and Oils</a>
+              <a href="#">Meats | Fish | Poultry</a>
+              <a href="#">Beverages</a>
+              <a href="#">Kombucha Products</a>
+  
+              <!-- Separator line between products and services -->
+              <hr style="margin:8px 0; border-color:#692727;">
+  
+              <!-- Services links -->
+              <a href="#">Export & Imports</a>
+              <a href="#">Contractual Farming</a>
+              <a href="#">Tour & Travel</a>
+              <a href="#">Hospitality Management</a>
+              <a href="#">Consultancy</a>
+            </div>
+          </li>
+  
+          <li class="dropdown">
+            <a href="/our_impact.html">OUR IMPACT</a>
+            <div class="dropdown-content">
+              <a href="#">Local Farmers</a>
+              <a href="#">Local Communities</a>
+              <a href="#">Local Businesses</a>
+              <a href="#">Internal Agro Markets</a>
+            </div>
+          </li>
+  
+          <li class="dropdown">
+            <a href="/future_projects.html">FUTURE PROJECTS</a>
+            <div class="dropdown-content">
+              <a href="#">Northern Uganda - Gulu</a>
+              <a href="#">Western Uganda - Kasese</a>
+              <a href="#">Central Uganda - Rakai</a>
+            </div>
+          </li>
+  
+          <li class="dropdown">
+            <a href="/contacts.html">CONTACT US</a>
+            <div class="dropdown-content">
+              <a href="#">Main Office</a>
+              <a href="#">Administration</a>
+              <a href="#">Marketing</a>
+            </div>
+          </li>
+  
+          <li class="dropdown">
+            <a href="/gallery.html">GALLERY</a>
+            <div class="dropdown-content">
+              <a href="#">Photos</a>
+              <a href="#">Videos</a>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
   </header>
   
+  
+
 
     <!--
       MAIN BODY CONTENT ; Hero section with side-by-side layout:
@@ -69,6 +149,8 @@
           <!-- Closing slogan italicized -->
           <i>We don’t just facilitate trade — we export value, advise with insight, and build lasting bridges.</i>
         </p>
+        <!-- Adding button below the wording on the hero page -->
+          <a href="products.html" class="hero-button">PRODUCTS</a>
       </div>
     
       <!-- RIGHT COLUMN: Image slider -->

@@ -1,416 +1,516 @@
-Ensures uniform spacing and sizing across all browsers */
+/* Reset styles to ensure consistent spacing and box-sizing across browsers */
 * {
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  box-sizing: border-box; /*Padding & border included in width/height */
+  margin: 0; /* Remove all default margins */
+  padding: 0; /* Remove all default padding */
+  box-sizing: border-box; /* Include padding/border in element's total width/height */
 }
-/* Adjust scroll offset to ensure fixed headers don't cover content */
+
+/* Prevent horizontal scroll and account for fixed elements */
 html {
-  scroll-padding-top: 120px; /* Creates offset when scrolling to anchors */
+  scroll-padding-top: 120px; /* Offset for fixed headers on anchor jumps */
+  overflow-x: hidden; /* Prevent horizontal overflow causing scrollbars */
 }
 
-/* = GLOBAL STYLES = */
-/* Sets general typography and background for the entire page */
+/* Basic body styling */
 body {
-  font-family: "Times New Roman", Times, serif; /* Serif typeface for classic look */
-  background-color: #c77d83; /* Light muted pink tone for background */
+  font-family: "Times New Roman", Times, serif; /* Classic serif font */
+  background-color: #c77d83; /* Warm pink background */
   color: black; /* Default text color */
-  line-height: 1.2; /* Improves readability between lines */
+  line-height: 1.2; /* Compact line spacing */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* =============== TOP HEADER TEXT (Optional if you have banner) =============== */
+/* =================== HEADER =================== */
 .header {
-  background-color: #AB1B23; /* Deep red banner */
-  color: white;
-  font-weight: 1000;
-  font-size: 30px;
-  padding-left: 80px;
-  padding-bottom: 30px;
-  height: 20px;
-  align-items: center;
-}
-
-/* ====================== NAVIGATION BAR ====================== */
-nav {
-  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background photo */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: darken;
-  background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent overlay */
-  padding-top: 120px;
-  height: 130px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Space between logo and menu */
-  box-shadow: 0 2px 5px black;
-  z-index: 1000;
-  color: white;
-  padding: 0 20px;
-  top: 0;
-  left: 0;
-}
-
-/* =============== LOGO STYLING =============== */
-.logo {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  height: 120px;
-  width: 280px;
-  object-fit: contain;
-  display: block;
-  padding: 10px 0.5px;
-}
-
-/* =============== MENU STYLING =============== */
-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: block;
-}
-
-/* Nav Links */
-nav ul li a {
-  color: black;
-  background-color: #c77d83;
-  border-right: 1px solid #692727;
-  border-width: 2px;
-  text-decoration: none;
-  font-weight: 900;
-  padding: 15px 10px;
-  display: block;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Hover effect */
-nav ul li a:hover {
-  background-color: #692727;
-  color: white;
-  border-radius: 4px;
-}
-
-
-/* = HERO SECTION CONTAINER = */
-/* Flex container with text on left and slider on right */
-.hero-content {
-  display: flex;
-  flex-direction: row;
-  gap: 40px; /* Space between text and slider */
-  padding: 60px 5%; /* Section padding */
-  background-color: #e7e1e1; /* Light background */
-  flex-wrap: wrap; /* Wrap on small screens */
+  background-color: #AB1B23; /* Dark red background */
+  color: white; /* White text */
+  font-weight: 1000; /* Heavy font weight */
+  font-size: 30px; /* Large font size */
+  padding-left: 40px; /* Space on left */
+  padding-bottom: 30px; /* Space below text */
+  height: 20px; /* Fixed height */
+  display: flex; /* Use flexbox layout */
   align-items: center; /* Vertically center content */
 }
 
-/* TEXT COLUMN  */
+/* =================== NAVIGATION BAR =================== */
+nav {
+  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
+  background-repeat: no-repeat; /* Prevent repeat */
+  background-size: cover; /* Cover entire nav area */
+  background-position: center; /* Center the image */
+  background-blend-mode: darken; /* Blend overlay effect */
+  background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent dark overlay */
+  height: 130px; /* Fixed height */
+  /* width: 100vw; Full viewport width */
+  display: flex; /* Flex container */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Spread children to edges */
+  box-shadow: 0 2px 5px black; /* Subtle shadow */
+  z-index: 1000; /* On top */
+  color: white; /* Text color */
+  padding: 0 20px; /* Horizontal padding */
+  /* position: relative; For stacking context */
+  box-sizing: border-box; /* Include padding/border in size */
+  position: fixed;   /* Fix navbar position-stays seen even through scrolling the entire page */
+  top: 0;            /* Stick to top of viewport */
+  left: 0;           /* Align left edge */
+  width: 100vw;      /* Full viewport width */
+  z-index: 1000;     /* Stay on top of other elements */
+}
+
+/* Logo wrapper */
+.logo {
+  padding: 10px; /* Padding inside logo */
+  display: flex; /* Flex for alignment */
+  align-items: center; /* Vertically center */
+}
+
+/* Logo image */
+.logo img {
+  height: 120px; /* Fixed height */
+  width: 280px; /* Fixed width */
+  max-width: 100%; /* Responsive max width */
+  object-fit: contain; /* Keep aspect ratio */
+  display: block; /* Remove inline spacing */
+}
+
+/* Navigation menu list */
+nav ul {
+  list-style: none; /* Remove bullets */
+  display: flex; /* Horizontal list */
+  flex-wrap: nowrap; /* No wrapping */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+/* Each navigation item */
+nav ul li {
+  display: block; /* Block-level */
+}
+
+/* Navigation links */
+nav ul li a {
+  color: black; /* Text color */
+  background-color: #c77d83; /* Background matching site */
+  border-right: 1px solid #692727; /* Separator */
+  text-decoration: none; /* No underline */
+  font-weight: 900; /* Bold text */
+  padding: 15px 10px; /* Padding inside links */
+  display: block; /* Make entire area clickable */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Hover effect on nav links */
+nav ul li a:hover {
+  background-color: #692727; /* Dark red on hover */
+  color: white; /* White text on hover */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* == STYLING THE DROPDOWN EFFECT IN THE MENU LIST OF NAV BAR== */
+
+/* Position each dropdown menu item relative so its submenu can be positioned absolutely */
+nav ul li.dropdown {
+  position: relative;
+}
+
+/* Hide the dropdown submenu by default */
+.dropdown-content {
+  display: none; /* Hide until hover */
+  
+  position: absolute; /* Position relative to parent li */
+  top: 100%; /* Place it directly below the main link */
+  left: 0; /* Align to the left edge */
+  
+  background-color: #c77d83; /* Light warm pink background */
+  min-width: 220px; /* Ensure dropdown is wide enough */
+  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Soft shadow for depth */
+  border-radius: 4px; /* Rounded corners */
+  
+  z-index: 1001; /* Place dropdown above other elements */
+  
+  padding: 8px 0; /* Vertical padding inside dropdown */
+}
+
+/* Show the dropdown submenu when user hovers over the parent <li> */
+nav ul li:hover > .dropdown-content {
+  display: block; /* Make submenu visible */
+}
+
+/* Style for each link inside the dropdown */
+.dropdown-content a {
+  display: block; /* Each link takes full width */
+  padding: 10px 16px; /* Spacing inside each link */
+  
+  color: black; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Slightly bold text */
+  
+  transition: background-color 0.3s ease; /* Smooth background hover transition */
+}
+
+/* Change background and text color on hover inside dropdown links */
+.dropdown-content a:hover {
+  background-color: #692727; /* Darker red on hover */
+  color: white; /* White text on hover */
+}
+
+/* Style the horizontal separator inside dropdown */
+.dropdown-content hr {
+  border: 0; /* Remove default border */
+  border-top: 1px solid #692727; /* Custom top border line */
+  margin: 8px 12px; /* Space above and below */
+}
+
+
+/* =================== HERO SECTION =================== */
+.hero-content {
+  display: flex; /* Flex container */
+  flex-direction: row; /* Row layout */
+  gap: 40px; /* Space between columns */
+  padding: 60px 5%; /* Padding around */
+  background-color: #C77D83; /* Background color */
+  flex-wrap: wrap; /* Wrap on small screens */
+  align-items: center; /* Vertical alignment */
+  /* this below helps the nav bar not cover content , it has been designed to stay on top even when scrolling through the page */
+  padding-top: 190px; /* 130px nav height + some extra space */
+  /* your other styles */
+}
+
+/* Text column */
 .hero-text {
-  flex: 1; /* Take equal available space */
-  min-width: 300px; /* Prevent too narrow */
-  max-width: 600px; /* Limit max width */
+  flex: 1; /* Equal flex space */
+  min-width: 300px; /* Minimum width */
+  max-width: 600px; /* Maximum width */
 }
 
+/* Heading in hero text */
 .hero-text h2 {
-  font-size: 30px;
-  color: black;
-  margin-bottom: 20px;
+  font-size: 30px; /* Large heading */
+  color: black; /* Black text */
+  margin-bottom: 20px; /* Space below */
 }
 
+/* Paragraph text */
 .hero-text p {
-  font-size: 16px;
-  line-height: 1.6; /* Better readability */
+  font-size: 16px; /* Body text size */
+  line-height: 1.6; /* Line spacing for readability */
 }
 
-/*  SLIDER COLUMN -IMAGES */
+/* Call to action button */
+.hero-button {
+  margin-top: 10px; /* Space above button */
+  display: inline-block; /* Inline block */
+  padding: 12px 24px; /* Button padding */
+  margin-left: 180px; /* Push right */
+  background-color: #692727; /* Button background */
+  color: white; /* Text color */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Bold font */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Hover transition */
+}
+
+/* Button hover state */
+.hero-button:hover {
+  background-color: #9F2329; /* Darker background */
+}
+
+/* =================== SLIDER SECTION =================== */
 .hero-slider {
-  position: relative;
-  flex: 1;
-  max-width: 600px;
-  height: 500px;
-  overflow: hidden; /* Hide overflowing images */
-  width: 100%;
-
+  position: relative; /* Position for absolute children */
+  flex: 1; /* Equal flex space */
+  max-width: 600px; /* Max width */
+  height: 500px; /* Fixed height */
+  overflow: hidden; /* Hide overflow */
+  width: 100%; /* Full width */
 }
 
-
+/* Slider wrapper */
 .slider-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: relative; /* Relative positioning */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
 }
 
-/*  EACH SLIDE  */
+/* Each fading slide */
 .fade-slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0; /* Hidden initially */
-  animation: fadeImages 60s infinite; /* Looping fade */
-  transition: opacity 1s ease;
-  pointer-events: none; /* Ignore mouse events */
+  position: absolute; /* Stack all slides */
+  top: 0; /* Align top */
+  left: 0; /* Align left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  opacity: 0; /* Start transparent */
+  animation: fadeImages 30s infinite; /* Animate fade */
+  transition: opacity 1s ease; /* Smooth fade */
+  pointer-events: none; /* Disable interaction */
 }
 
+/* Images inside slides */
 .fade-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover container without distortion */
+  width: 100%; /* Fill slide */
+  height: 100%; /* Fill slide */
+  object-fit: cover; /* Cover with cropping */
 }
 
-/* = ANIMATION DELAYS = */
-/* Show each slide one after another */
-/* 15 slides with 4 seconds per slide, total 60s */
-.fade-slide:nth-child(1)  { animation-delay: 0s; }
-.fade-slide:nth-child(2)  { animation-delay: 4s; }
-.fade-slide:nth-child(3)  { animation-delay: 8s; }
-.fade-slide:nth-child(4)  { animation-delay: 12s; }
-.fade-slide:nth-child(5)  { animation-delay: 16s; }
-.fade-slide:nth-child(6)  { animation-delay: 20s; }
-.fade-slide:nth-child(7)  { animation-delay: 24s; }
-.fade-slide:nth-child(8)  { animation-delay: 28s; }
-.fade-slide:nth-child(9)  { animation-delay: 32s; }
-.fade-slide:nth-child(10) { animation-delay: 36s; }
-.fade-slide:nth-child(11) { animation-delay: 40s; }
-.fade-slide:nth-child(12) { animation-delay: 44s; }
-.fade-slide:nth-child(13) { animation-delay: 48s; }
-.fade-slide:nth-child(14) { animation-delay: 52s; }
-.fade-slide:nth-child(15) { animation-delay: 56s; }
+/* Animation delays for each slide */
+.fade-slide:nth-child(1) { animation-delay: 0s; }
+.fade-slide:nth-child(2) { animation-delay: 2s; }
+.fade-slide:nth-child(3) { animation-delay: 4s; }
+.fade-slide:nth-child(4) { animation-delay: 6s; }
+.fade-slide:nth-child(5) { animation-delay: 8s; }
+.fade-slide:nth-child(6) { animation-delay: 10s; }
+.fade-slide:nth-child(7) { animation-delay: 12s; }
+.fade-slide:nth-child(8) { animation-delay: 14s; }
+.fade-slide:nth-child(9) { animation-delay: 16s; }
+.fade-slide:nth-child(10) { animation-delay: 18s; }
+.fade-slide:nth-child(11) { animation-delay: 20s; }
+.fade-slide:nth-child(12) { animation-delay: 22s; }
+.fade-slide:nth-child(13) { animation-delay: 24s; }
+.fade-slide:nth-child(14) { animation-delay: 26s; }
+.fade-slide:nth-child(15) { animation-delay: 28s; }
 
-/*  KEYFRAMES  */
-/* Fade images in and out smoothly */
+/* Fade animation keyframes */
 @keyframes fadeImages {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }   /* Fade in */
-  20%  { opacity: 1; }   /* Stay visible */
-  25%  { opacity: 0; }   /* Fade out */
-  100% { opacity: 0; }
+  0%   { opacity: 0; } /* Invisible */
+  5%   { opacity: 1; } /* Fade in */
+  20%  { opacity: 1; } /* Fully visible */
+  25%  { opacity: 0; } /* Fade out */
+  100% { opacity: 0; } /* Remain invisible */
 }
 
-/*  SLIDE CAPTION  */
+/* Caption box over slides */
 .slide-caption {
-  position: absolute;
-  bottom: 30px;
-  left: 40px;
-  background-color: #682727; /* Dark reddish background */
-  color: white;
-  font-weight: 400;
-  height: 60px;
-  width: 80px;
-  display: flex;           /* Use flex to align text vertically */
-  align-items: center;     /* Center text vertically */
-  justify-content: center; /* Center text horizontally */
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-size: 20px;
-  pointer-events: none;    /* Allow clicks to pass through */
+  position: absolute; /* Positioned over slide */
+  bottom: 30px; /* 30px from bottom */
+  left: 40px; /* 40px from left */
+  background-color: #682727; /* Dark red background */
+  color: white; /* White text */
+  font-weight: 400; /* Normal weight */
+  height: 60px; /* Fixed height */
+  width: 120px; /* Fixed width */
+  display: flex; /* Flex for centering */
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  padding: 8px 12px; /* Padding inside */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 20px; /* Text size */
+  pointer-events: none; /* Ignore clicks */
 }
 
-
-/* =================== RESPONSIVE =================== */
+/* =================== RESPONSIVE STYLES =================== */
 @media (max-width: 768px) {
   .hero-content {
-    flex-direction: column; /* Stack vertically on small screens */
-    align-items: center;
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center content */
   }
 
   .hero-slider {
-    height: 350px; /* Smaller slider height */
+    height: 350px; /* Smaller height */
   }
 
   .hero-text {
-    text-align: center;
+    text-align: center; /* Center text */
   }
 }
 
-
-
-/* == FOOTER STYLES == */
-/* MAIN FOOTER CONTAINER */
+/* =================== FOOTER STYLES =================== */
 .footer {
-  background-color: #692727; /* Dark red background for contrast */
-  color: #ffffff;            /* White text for readability */
-  padding: 40px 0 20px;      /* Top and bottom spacing */
-  font-family: Arial, sans-serif; /* Clean, readable font */
-  line-height: 1.6;          /* Improves text readability */
+  background-color: #692727; /* Dark red footer */
+  color: #ffffff; /* White text */
+  padding: 40px 0 20px; /* Padding top and bottom */
+  font-family: Arial, sans-serif; /* Simple readable font */
+  line-height: 1.6; /* Space between lines */
 }
 
-/* FLEX WRAPPER FOR LOGO + SECTIONS  */
+/* Wrapper for footer content */
 .footer-content {
-  max-width: 1200px;         /* Limits content width */
-  margin: 0 auto;            /* Centers the footer content */
-  padding: 0 20px;           /* Horizontal spacing on sides */
-  display: flex;             /* Arrange children side-by-side */
-  flex-wrap: wrap;           /* Allows wrapping on smaller screens */
-  gap: 30px;                 /* Space between logo and section */
-  align-items: flex-start;   /* Aligns items to the top */
+  max-width: 1200px; /* Max width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 0 20px; /* Horizontal padding */
+  display: flex; /* Flex layout */
+  flex-wrap: wrap; /* Wrap on small screens */
+  gap: 30px; /* Space between items */
+  align-items: flex-start; /* Align top */
+  justify-content: space-between; /* Space out */
 }
 
-/* LOGO SECTION  */
+/* Footer logo container */
 .footer-logo-container {
-  flex-shrink: 0;            /* Prevents logo from shrinking */
-  min-width: 180px;          /* Ensures enough space for logo */
+  flex-shrink: 0; /* Prevent shrinking */
+  min-width: 180px; /* Minimum width */
+  text-align: center; /* Center content */
 }
 
+/* Footer logo */
 .footer-logo {
-  padding-top: 50px;
-  max-height: 90px;          /* Maximum height of logo */
-  width: auto;               /* Maintain logo aspect ratio */
-  object-fit: contain;       /* Ensures clean scaling */
+  padding-top: 20px; /* Space on top */
+  max-height: 90px; /* Max height */
+  width: auto; /* Auto width */
+  object-fit: contain; /* Maintain aspect */
 }
 
-/* FOOTER SECTIONS GRID (e.g. HERAD Offices, Assistance, etc.) */
+/* Footer sections grid */
 .footer-sections {
-  flex: 1;                                      /* Take remaining space */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);        /* 4 equally sized columns */
-  gap: 30px;                                    /* Space between sections */
+  flex: 1; /* Take remaining space */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Space between columns */
 }
 
-/* TITLES & PARAGRAPH STYLING  */
+/* Section headings */
 .footer-section h3,
 .footer-section h4 {
-  color: #ffffff;             /* White titles */
-  text-transform: uppercase;  /* All caps for titles */
-  margin-bottom: 10px;        /* Space below heading */
-  font-size: 14px;            /* Uniform size */
+  color: #ffffff; /* White color */
+  text-transform: uppercase; /* Uppercase text */
+  margin-bottom: 10px; /* Margin below */
+  font-size: 14px; /* Font size */
 }
 
+/* Paragraphs in footer */
 .footer-section p {
-  margin: 0 0 8px 0;          /* Space between lines of text */
-  color: #cccccc;             /* Lighter text for info */
-  font-size: 14px;            /* Standard text size */
+  margin: 0 0 8px 0; /* Bottom margin */
+  color: #cccccc; /* Light grey */
+  font-size: 14px; /* Font size */
 }
 
-/* CONTACT & EMAIL STYLING  */
+/* Highlighted contact labels */
 .contact-info strong {
-  color: #ffffff;             /* Bold labels like "Contacts" */
+  color: #ffffff; /* Bright white */
 }
 
+/* Email links */
 .email-links a {
-  color: #0e5ab1;             /* Blue color for email links */
-  text-decoration: none;      /* Removes underline */
-  font-size: 14px;
+  color: #0e5ab1; /* Blue links */
+  text-decoration: none; /* No underline */
+  font-size: 14px; /* Font size */
 }
 
+/* Email hover */
 .email-links a:hover {
-  text-decoration: underline; /* Underline on hover for clarity */
+  text-decoration: underline; /* Underline on hover */
 }
 
-/* SOCIAL MEDIA SECTION  */
+/* Social media container */
 .social-media {
-  margin-top: 20px;           /* Adds space above section */
+  margin-top: 20px; /* Space above */
 }
 
+/* Social media headings */
 .social-media h4 {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #ffffff;
+  font-size: 14px; /* Size */
+  margin-bottom: 10px; /* Space below */
+  color: #ffffff; /* White */
 }
 
+/* Social icons container */
 .social-icons {
-  display: flex;              /* Align icons in a row */
-  gap: 10px;                  /* Space between icons */
-  flex-wrap: wrap;            /* Allow wrapping on small screens */
+  display: flex; /* Horizontal row */
+  gap: 10px; /* Space between icons */
+  flex-wrap: wrap; /* Wrap if needed */
+  justify-content: start; /* Align left */
 }
 
+/* Social icons */
 .social-icons a img {
-  height: 30px;               /* Icon size */
+  height: 30px; /* Size */
   width: 30px;
-  border-radius: 50%;         /* Circular icons */
-  object-fit: contain;        /* Keep aspect ratio */
-  background-color: #424040;     /* Dark background for contrast */
-  padding: 5px;               /* Padding inside icons */
-  transition: background-color 0.3s; /* Smooth hover transition */
+  border-radius: 50%; /* Circular */
+  object-fit: cover; /* Fit image */
+  background-color: #424040; /* Dark background */
+  padding: 5px; /* Padding */
+  transition: background-color 0.3s; /* Hover transition */
 }
 
+/* Social icon hover */
 .social-icons a img:hover {
-  background-color: #555;     /* Slightly lighter on hover */
+  background-color: #555; /* Lighten */
 }
 
-/* PAYMENT METHODS SECTION  */
+/* Payment methods container */
 .payment-methods {
-  margin-top: 20px;           /* Spacing above section */
+  margin-top: 20px; /* Space */
 }
 
+/* Payment heading */
 .payment-methods h4 {
   font-size: 14px;
   margin-bottom: 10px;
   color: #ffffff;
 }
 
+/* Payment icons container */
 .payment-methods-icons {
-  display: flex;              /* Arrange logos horizontally */
-  gap: 10px;                  /* Space between icons */
-  flex-wrap: nowrap;          /* Prevent wrapping */
-  overflow-x: auto;           /* Enable horizontal scroll if needed */
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: start;
   padding-bottom: 5px;
 }
 
+/* Payment icons */
 .payment-methods-icons img {
-  height: 30px;               /* Consistent size */
+  height: 30px;
   width: 30px;
   object-fit: contain;
-  border-radius: 50%;         /* Round logos */
-  background-color: #424040;  /* Uniform dark background */
+  border-radius: 50%;
+  background-color: #424040;
   padding: 5px;
-  opacity: 0.85;              /* Slightly dimmed */
+  opacity: 0.85;
   transition: opacity 0.3s ease, background-color 0.3s ease;
-  flex-shrink: 0;             /* Prevent from shrinking */
 }
 
-/* Airtel logo: force black background */
+/* Hover on payment icons */
+.payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: #727070;
+}
+
+/* Airtel logo override */
 .payment-methods-icons .airtel-logo {
   background-color: #000000 !important;
 }
 
-/* Hover effect on payment icons */
-.payment-methods-icons img:hover {
-  opacity: 1;                  /* Fully visible */
-  background-color: #727070;  /* Light gray on hover */
-}
-
-/* FOOTER BOTTOM STRIP */
+/* Bottom footer strip */
 .footer-bottom {
-  border-top: 2px solid #444; /* Thin divider line */
-  margin-top: 30px;           /* Space above divider */
+  border-top: 2px solid #444;
+  margin-top: 30px;
   padding: 20px;
   font-size: 12px;
-  color: #999999;             /* Light gray text */
+  color: #999999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;            /* Stack on smaller screens */
+  flex-wrap: wrap;
 }
 
+/* Footer bottom links */
 .footer-bottom a {
-  color: #cccccc;             /* Footer links */
+  color: #cccccc;
   text-decoration: none;
   margin-left: 20px;
 }
 
+/* Hover on footer bottom links */
 .footer-bottom a:hover {
-  color: #ffffff;             /* Brighter on hover */
+  color: #ffffff;
 }
 
-/* RESPONSIVENESS FOR TABLETS  */
+/* =================== RESPONSIVENESS =================== */
+
+/* Tablet breakpoint */
 @media (max-width: 768px) {
   .footer-sections {
-    grid-template-columns: 1fr 1fr; /* Stack into 2 columns */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
   }
 
   .footer-bottom {
-    flex-direction: column;         /* Stack items vertically */
-    text-align: center;
-    gap: 10px;
+    flex-direction: column; /* Stack vertically */
+    text-align: center; /* Center text */
+    gap: 10px; /* Space */
   }
 
   .footer-bottom a {
@@ -419,28 +519,28 @@ nav ul li a:hover {
   }
 }
 
-/* RESPONSIVENESS FOR MOBILE  */
+/* Mobile breakpoint */
 @media (max-width: 480px) {
   .footer-content {
-    flex-direction: column;         /* Stack logo + content vertically */
-    align-items: center;
+    flex-direction: column; /* Stack sections */
+    align-items: center; /* Center align */
   }
 
   .footer-sections {
-    grid-template-columns: 1fr;     /* Stack sections vertically */
+    grid-template-columns: 1fr; /* Single column */
     width: 100%;
   }
 
   .footer-logo-container {
-    text-align: center;
     width: 100%;
   }
 
   .social-icons {
-    justify-content: center;       /* Center icons on mobile */
-    flex-wrap: wrap;
+    justify-content: center; /* Center icons */
+  }
+
+  .payment-methods-icons {
+    justify-content: center; /* Center icons */
   }
 }
 
-  
-  

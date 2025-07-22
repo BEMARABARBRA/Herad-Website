@@ -1,383 +1,313 @@
-/* Reset styles to ensure consistent spacing and box-sizing across browsers */
+/* =================== RESET STYLES =================== */
+
+/* Reset margin for all elements */
 * {
-  margin: 0; /* Remove all default margins */
-  padding: 0; /* Remove all default padding */
-  box-sizing: border-box; /* Include padding/border in element's total width/height */
+  margin: 0;                /* Remove default margin */
+  padding: 0;               /* Remove default padding */
+  box-sizing: border-box;   /* Include padding and border in element's total width and height */
 }
 
-/* Prevent horizontal scroll and account for fixed elements */
+/* Set base font size and scrolling offset */
 html {
-  font-size: 80%;
-  scroll-padding-top: 120px; /* Offset for fixed headers on anchor jumps */
-  overflow-x: hidden; /* Prevent horizontal overflow causing scrollbars */
+  font-size: 80%;               /* Set root font size to 80% of browser default */
+  scroll-padding-top: 130px;    /* Offset scroll for fixed nav (130px tall) */
+  overflow-x: hidden;           /* Prevent horizontal scrollbar */
 }
 
 /* Basic body styling */
 body {
-  font-family: "Times New Roman", Times, serif; /* Classic serif font */
-  background-color: #c77d83; /* Warm pink background */
-  color: black; /* Default text color */
-  line-height: 1.0; /* Compact line spacing */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-/* =================== HEADER =================== */
-.header {
-  background-color: #AB1B23; /* Dark red background */
-  color: white; /* White text */
-  font-weight: 1000; /* Heavy font weight */
-  font-size: 30px; /* Large font size */
-  padding-left: 40px; /* Space on left */
-  padding-bottom: 30px; /* Space below text */
-  height: 20px; /* Fixed height */
-  display: flex; /* Use flexbox layout */
-  align-items: center; /* Vertically center content */
+  font-family: "Times New Roman", Times, serif; /* Set font family */
+  background-color: #c77d83;    /* Set background color to soft pink */
+  color: black;                 /* Set text color */
+  line-height: 1.0;             /* Set line height to 1 */
+  overflow-x: hidden;           /* Prevent horizontal overflow */
+  padding-top: 130px;           /* Add top padding equal to fixed nav height */
 }
 
 /* =================== NAVIGATION BAR =================== */
+
+/* Styles for the <nav> element */
 nav {
-  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
-  background-repeat: no-repeat; /* Prevent repeat */
-  background-size: cover; /* Cover entire nav area */
-  background-position: center; /* Center the image */
-  background-blend-mode: darken; /* Blend overlay effect */
+  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Set background image */
+  background-repeat: no-repeat;       /* Prevent background repetition */
+  background-size: cover;             /* Cover entire nav area */
+  background-position: center;        /* Center background image */
+  background-blend-mode: darken;      /* Blend overlay for darker effect */
   background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent dark overlay */
-  height: 130px; /* Fixed height */
-  /* width: 100vw; Full viewport width */
-  display: flex; /* Flex container */
-  align-items: center; /* Vertically center items */
-  justify-content: space-between; /* Spread children to edges */
-  box-shadow: 0 2px 5px black; /* Subtle shadow */
-  z-index: 1000; /* On top */
-  color: white; /* Text color */
-  padding: 0 20px; /* Horizontal padding */
-  /* position: relative; For stacking context */
-  box-sizing: border-box; /* Include padding/border in size */
-  position: fixed;   /* Fix navbar position-stays seen even through scrolling the entire page */
-  top: 0;            /* Stick to top of viewport */
-  left: 0;           /* Align left edge */
-  width: 100vw;      /* Full viewport width */
-  z-index: 1000;     /* Stay on top of other elements */
+  height: 130px;                      /* Fixed height of nav bar */
+  display: flex;                     /* Use flexbox for layout */
+  align-items: center;               /* Vertically center content */
+  justify-content: space-between;    /* Space between items */
+  box-shadow: 0 2px 5px black;       /* Add shadow below nav */
+  color: white;                     /* Set text color */
+  padding: 0 20px;                  /* Horizontal padding */
+  position: fixed;                  /* Fix nav to viewport top */
+  top: 0;                          /* Align to top */
+  left: 0;                         /* Align to left */
+  width: 100vw;                    /* Full viewport width */
+  z-index: 1000;                   /* Ensure nav is on top */
 }
 
-/* Logo wrapper */
+/* Logo container inside nav */
 .logo {
-  padding: 10px; /* Padding inside logo */
-  display: flex; /* Flex for alignment */
-  align-items: center; /* Vertically center */
+  padding: 10px;                   /* Inner padding */
+  display: flex;                  /* Use flexbox */
+  align-items: center;            /* Vertically center */
 }
 
-/* Logo image */
+/* Logo image styling */
 .logo img {
-  height: 120px; /* Fixed height */
-  width: 280px; /* Fixed width */
-  max-width: 100%; /* Responsive max width */
-  object-fit: contain; /* Keep aspect ratio */
-  display: block; /* Remove inline spacing */
+  height: 120px;                  /* Set fixed height */
+  width: 280px;                   /* Set fixed width */
+  max-width: 100%;                /* Responsive max width */
+  object-fit: contain;            /* Maintain image aspect */
+  display: block;                 /* Block element for spacing */
 }
 
-/* Navigation menu list */
+/* Navigation list container */
 nav ul {
-  list-style: none; /* Remove bullets */
-  display: flex; /* Horizontal list */
-  flex-wrap: nowrap; /* No wrapping */
-  margin: 0; /* Reset margin */
-  padding: 0; /* Reset padding */
+  list-style: none;               /* Remove bullet points */
+  display: flex;                  /* Flex row layout */
+  flex-wrap: nowrap;              /* No wrapping */
+  margin: 0;                     /* Remove default margin */
+  padding: 0;                    /* Remove default padding */
 }
 
 /* Each navigation item */
 nav ul li {
-  display: block; /* Block-level */
+  display: block;                /* Block display for each item */
 }
 
 /* Navigation links */
 nav ul li a {
-  color: black; /* Text color */
-  background-color: #c77d83; /* Background matching site */
-  border-right: 1px solid #692727; /* Separator */
-  text-decoration: none; /* No underline */
-  font-weight: 900; /* Bold text */
-  padding: 15px 10px; /* Padding inside links */
-  display: block; /* Make entire area clickable */
-  transition: background-color 0.3s, color 0.3s; /* Smooth hover */
-  white-space: nowrap; /* Prevent line breaks */
+  color: black;                  /* Link text color */
+  background-color: #c77d83;    /* Background color */
+  border-right: 1px solid #692727; /* Right border */
+  text-decoration: none;         /* Remove underline */
+  font-weight: 900;              /* Very bold font */
+  padding: 15px 10px;            /* Padding inside links */
+  display: block;                /* Block display */
+  transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
+  white-space: nowrap;           /* Prevent text wrap */
 }
 
-/* Hover effect on nav links */
+/* Hover state for links */
 nav ul li a:hover {
-  background-color: #692727; /* Dark red on hover */
-  color: white; /* White text on hover */
-  border-radius: 4px; /* Rounded corners */
+  background-color: #692727;     /* Darker background */
+  color: white;                  /* White text */
+  border-radius: 4px;            /* Rounded corners */
 }
 
-/* == STYLING THE DROPDOWN EFFECT IN THE MENU LIST OF NAV BAR== */
-
-/* Position each dropdown menu item relative so its submenu can be positioned absolutely */
+/* Dropdown container position */
 nav ul li.dropdown {
-  position: relative;
+  position: relative;            /* Needed for absolute dropdown */
 }
 
-/* Hide the dropdown submenu by default */
+/* Dropdown menu styling */
 .dropdown-content {
-  display: none; /* Hide until hover */
-  
-  position: absolute; /* Position relative to parent li */
-  top: 100%; /* Place it directly below the main link */
-  left: 0; /* Align to the left edge */
-  
-  background-color: #c77d83; /* Light warm pink background */
-  min-width: 220px; /* Ensure dropdown is wide enough */
-  
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Soft shadow for depth */
-  border-radius: 4px; /* Rounded corners */
-  
-  z-index: 1001; /* Place dropdown above other elements */
-  
-  padding: 8px 0; /* Vertical padding inside dropdown */
+  display: none;                 /* Hide dropdown by default */
+  position: absolute;            /* Absolute positioning */
+  top: 100%;                    /* Place below parent */
+  left: 0;                      /* Align left */
+  background-color: #c77d83;    /* Background color */
+  min-width: 220px;             /* Minimum width */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Drop shadow */
+  border-radius: 4px;           /* Rounded corners */
+  z-index: 1001;                /* Above other content */
+  padding: 8px 0;               /* Vertical padding */
 }
 
-/* Show the dropdown submenu when user hovers over the parent <li> */
+/* Show dropdown on hover */
 nav ul li:hover > .dropdown-content {
-  display: block; /* Make submenu visible */
+  display: block;               /* Show dropdown */
 }
 
-/* Style for each link inside the dropdown */
+/* Dropdown link styling */
 .dropdown-content a {
-  display: block; /* Each link takes full width */
-  padding: 10px 16px; /* Spacing inside each link */
-  
-  color: black; /* Text color */
-  text-decoration: none; /* Remove underline */
-  font-weight: 600; /* Slightly bold text */
-  
-  transition: background-color 0.3s ease; /* Smooth background hover transition */
+  display: block;               /* Block display */
+  padding: 10px 16px;           /* Padding */
+  color: black;                 /* Text color */
+  text-decoration: none;        /* Remove underline */
+  font-weight: 600;             /* Medium font weight */
+  transition: background-color 0.3s ease; /* Smooth hover */
 }
 
-/* Change background and text color on hover inside dropdown links */
+/* Dropdown link hover effect */
 .dropdown-content a:hover {
-  background-color: #692727; /* Darker red on hover */
-  color: white; /* White text on hover */
+  background-color: #692727;    /* Darker background */
+  color: white;                 /* White text */
 }
 
-/* Style the horizontal separator inside dropdown */
+/* Divider inside dropdown */
 .dropdown-content hr {
-  border: 0; /* Remove default border */
-  border-top: 2px solid #692727; /* Custom top border line */
-  margin: 8px 12px; /* Space above and below */
+  border: 0;                   /* Remove default border */
+  border-top: 2px solid #692727; /* Top border line */
+  margin: 8px 12px;            /* Vertical and horizontal margin */
 }
-
 
 /* =================== HERO SECTION =================== */
 
+/* Container for hero, product, and other sections */
 .container, .hero-section, .product-container {
-  max-width: 70vw;
-  margin: 0 auto;
-  padding: 10px;
+  max-width: 140vw;          /* Maximum width */
+  margin: 0 auto;            /* Center horizontally */
+  padding: 10px;             /* Inner padding */
 }
 
-.hero-content {
-  display: flex;
-  flex-wrap: nowrap;
-  /*Keeptextandimagessidebyside*/align-items: center;
-  justify-content: space-between;
-  padding-top: 250px;  /*Keepsspaceforfixednav*/gap: 20px;
-  max-width: 90vw;
-  margin: 0 auto;
-  margin-top: 180px;
-  margin-bottom: 180px;
-  background-color: #410E10;  /*Entire section black background*/
-  border-radius: 40px; /*Rounded corners for whole container*/
-  padding: 30px 20px; /*Padding inside the black container*/
-  color: white;  /*Default text color white*/  
-}
-
-
-/* LEFT text block: black/dark background, white text */
-.hero-text {
-  flex: 0 0 60%; /* fixed 40% width */
-  /* Remove individual background, inherits from parent */
-  color: white; /* Text white */
-  line-height: 1.2;
-  min-width: 280px;
-  max-width: 500px;
-  /* Add some padding so text isn't flush to edges */
-  padding-right: 20px;
-  padding-left: 60px;
-  font-size: 20px;
-}
-
-
-
-.hero-text h2 {
-  color: #fff; /* Ensure heading is white */
-  margin-bottom: 15px;
-  font-weight: 30px;
-}
-
-.hero-text p {
-  color: #f5efef; /* Slightly lighter text */
-  font-size: 14px;
-}
-
-.hero-button {
-  margin-top: 10px;
-  display: inline-block;
-  padding: 10px 20px; /* Slightly smaller padding */
-  margin-left: 0; /* Align with content */
-  background-color: #692727;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.hero-button:hover {
-  background-color: #9F2329;
-  color: #000000;
-}
-
-/* =================== HERO SLIDER FULL WIDTH WITH SIDE PADDING =================== */
-/* Right images container */
-
-.hero-slider {
-  flex: 1 1 100%;     /* Take full width of parent */
-  max-width: 100vw;   /* Max width full viewport */
-  height: 350px;      /* Taller height for bigger images */
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: transparent;
-  position: relative;
-}
-
-
-
-
-.slider-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
-}
-
-
-/* Each slide positioned absolutely to overlap */
-.fade-slide {
-  padding: 20px;
-  text-align: center;
+/* Background image that fills entire hero section */
+.hero-background {
   position: absolute;
   top: 0;
-  left: 0; /* Remove left offset for full width */
-  width: 100%; /* Full container width */
-  max-width: 100%;   /* Prevent it from overflowing */
-  height: 100%;
-  opacity: 0;
-  animation: fadeImages 38s infinite;
-  transition: opacity 1s ease;
-  pointer-events: none;
-  z-index: 0;
-  border-radius: 40px;
-  overflow: visible; /* Allow image overflow */
-}
-
-
-/* Make active slide fully visible */
-.fade-slide.active {
-  opacity: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/herad_images/green-coffee-beans.jpeg');
+  background-size: cover;         /* Fully cover the area */
+  background-position: center;    /* Center the image */
+  background-repeat: no-repeat;   /* Prevent tiling */
+  opacity: 0.5;                   /* Fade for readability */
   z-index: 1;
 }
 
-/* Image inside slide fills slide area */
+/* Ensure your content appears above the background */
+.hero-slider,
+.hero-content > *:not(.hero-background) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Main hero content flex container */
+.hero-content {
+  position: relative;
+  overflow: hidden;
+  display: flex;             /* Flex layout */
+  flex-wrap: nowrap;         /* No wrapping */
+  align-items: center;       /* Vertical centering */
+  justify-content: center;   /* Horizontal centering */
+  border-radius: 40px;       /* Rounded corners */
+  padding: 40px;             /* Inner padding */
+  width: 100%;
+  height: 100vh;
+  color: white;              /* Text color */
+  gap: 30px;                 /* Gap between children */
+}
+
+/* Hero section container */
+.hero-section {
+  display: flex;                  /* Use flexbox for layout */
+  flex-wrap: wrap;               /* Allow wrapping on smaller screens */
+  justify-content: space-between; /* Space between text and slider */
+  align-items: center;           /* Vertically center content */
+  background-color: #800000;     /* Maroon background */
+  padding: 40px 20px;            /* Padding inside hero */
+  border-radius: 30px;           /* Rounded corners */
+  /* margin: 10px auto;            Center horizontally with margin */
+  width: 95%;                   /* Width relative to parent */
+  max-width: 1200px;            /* Limit max width */
+  box-sizing: border-box;       /* Include padding and border in width */
+  overflow: hidden;             /* Hide anything outside boundaries */
+  position: relative;           /* For internal positioning */
+}
+
+/* Hero slider container */
+.hero-slider {
+  flex: 1 1 55%;   /*About55%width*/
+  max-width: 70%; /*Restrictmaxwidth*/
+  height: 450px; /*Fixedheight*/
+  padding: 15px; /*Removeextrapadding*/
+  border-radius: 40px; /*Roundedcorners*/
+  background-color: #800000; /*Maroonbackground*/
+  overflow: hidden; /*Hideimageoverflow*/
+  display: flex; /*Flexcontainer*/
+  align-items: center; /*Verticallycentercontent*/
+  justify-content: center; /*Horizontallycentercontent*/
+  position: relative; /* Position relative for slides */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/* Slider wrapper */
+.slider-wrapper {
+  position: relative;
+  /*Relativeforstackingslides*/width: 100%;
+  max-width: 100%;
+  /*Fullwidth*/height: 100%;
+  /*Fullheight*/border-radius: 40px;
+  /*Roundedcorners*/overflow: hidden;
+               /* Hide overflow */:;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+
+/* Individual slide styling */
+/* Individual fade slides stacked absolutely */
+/* Individual slide */
+.fade-slide {
+  position: absolute;           /* Stack on top of each other */
+  top: 0;
+  left: 0;
+  width: 100%;                 /* Fill container width */
+  height: 100%;                /* Fill container height */
+  opacity: 0;                  /* Start invisible */
+  animation-name: fadeCycle;   /* Animation for fade effect */
+  animation-duration: 45s;     /* Animation duration */
+  animation-timing-function: ease-in-out; /* Smooth in/out */
+  animation-iteration-count: infinite;    /* Loop forever */
+  border-radius: 20px;         /* Rounded corners */
+  pointer-events: none;        /* Disable interaction */
+  transition: opacity 1.5s ease-in-out;   /* Smooth fade */
+}
+
+
+
+/* Images inside each slide */
 .fade-slide img {
-  width: 120%; /* Let the image take full width of its container without overflowing */
-  height: auto; /* Maintain the image’s original aspect ratio */
-  object-fit: contain; /* Ensure the full image fits within the container without cropping */
-  
-  display: block; /* Make the image a block-level element */
-  margin: 0 auto; /* Center the image horizontally */
-  padding: 0; /* Remove any default padding */
-
-  border-radius: 40px; /* Rounded corners for the image */
-  background-color: transparent; /* Ensure background is see-through */
-
-  /* Cross-browser support for border-radius */
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
+  max-width: 100%;
+  /*Limitimagewidthtocontainer*/max-height: 100%;
+  /*Limitimageheighttocontainer*/object-fit: contain;
+  /*Fitimageinsidecontainerwithoutcropping*/border-radius: 40px;
+  /*Roundedcorners*/display: block;
+  /*Blocklevelforlayout*/margin: 0 auto;
+  /*Centerhorizontally*/padding: 0;
+  /*Removepadding*/box-sizing: border-box;
+        /* Include padding/border */:;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
-.slide-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: rgba(104, 39, 39, 0.85);
-  color: white;
-  font-weight: 400;
-  height: auto;
-  width: auto;
-  min-width: 100px;
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 16px; /* Slightly smaller */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+/* Animation keyframes for fade in/out */
+@keyframes fadeCycle {
+  0%    { opacity: 0; }
+  5%    { opacity: 1; }
+  20%   { opacity: 1; }
+  25%   { opacity: 0; }
+  100%  { opacity: 0; }
 }
 
-/* Retain existing animation delays and fade styles */
-.fade-slide:nth-child(1) { animation-delay: 0s; }
-.fade-slide:nth-child(2) { animation-delay: 2s; }
-.fade-slide:nth-child(3) { animation-delay: 4s; }
-.fade-slide:nth-child(4) { animation-delay: 6s; }
-.fade-slide:nth-child(5) { animation-delay: 8s; }
-.fade-slide:nth-child(6) { animation-delay: 10s; }
-.fade-slide:nth-child(7) { animation-delay: 12s; }
-.fade-slide:nth-child(8) { animation-delay: 14s; }
-.fade-slide:nth-child(9) { animation-delay: 16s; }
-.fade-slide:nth-child(10) { animation-delay: 18s; }
-.fade-slide:nth-child(11) { animation-delay: 20s; }
-.fade-slide:nth-child(12) { animation-delay: 22s; }
-.fade-slide:nth-child(13) { animation-delay: 24s; }
-.fade-slide:nth-child(14) { animation-delay: 26s; }
-.fade-slide:nth-child(15) { animation-delay: 28s; }
-.fade-slide:nth-child(16) { animation-delay: 30s; }
-.fade-slide:nth-child(17) { animation-delay: 32s; }
-.fade-slide:nth-child(18) { animation-delay: 34s; }
-.fade-slide:nth-child(19) { animation-delay: 36s; }
+/* Animation delay for each slide to sequence fades */
+.fade-slide:nth-child(1)  { animation-delay: 0s; }
+.fade-slide:nth-child(2)  { animation-delay: 3s; }
+.fade-slide:nth-child(3)  { animation-delay: 6s; }
+.fade-slide:nth-child(4)  { animation-delay: 9s; }
+.fade-slide:nth-child(5)  { animation-delay: 12s; }
+.fade-slide:nth-child(6)  { animation-delay: 15s; }
+.fade-slide:nth-child(7)  { animation-delay: 18s; }
+.fade-slide:nth-child(8)  { animation-delay: 21s; }
+.fade-slide:nth-child(9)  { animation-delay: 24s; }
+.fade-slide:nth-child(10) { animation-delay: 27s; }
+.fade-slide:nth-child(11) { animation-delay: 30s; }
+.fade-slide:nth-child(12) { animation-delay: 33s; }
+.fade-slide:nth-child(13) { animation-delay: 36s; }
+.fade-slide:nth-child(14) { animation-delay: 39s; }
+.fade-slide:nth-child(15) { animation-delay: 42s; }
 
-@keyframes fadeImages {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  20%  { opacity: 1; }
-  25%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-@media (max-width: 768px) {
-  .hero-slider {
-    height: 300px; /* More compact on smaller screens */
-  }
-  .hero-text h2 {
-    font-size: 22px;
-  }
-  .hero-text p {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-slider {
-    height: 250px;
-  }
-}
 
 
 /* =================== FOOTER DESIGNING =================== */
@@ -606,4 +536,3 @@ nav ul li:hover > .dropdown-content {
     justify-content: center; /* Center icons */
   }
 }
- you are missing many sections and comments 

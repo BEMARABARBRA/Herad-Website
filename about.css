@@ -162,9 +162,9 @@ section {
 .slogan-section {
    background: linear-gradient(
     to bottom,
-    #f0bebe 0%,   /* slightly darker pastel */
-    #a16666 25%,  /* medium soft maroon */
-    #4e1111 50%,  /* stronger center */
+    #f0bebe 0%,
+    #a16666 25%,  
+    #4e1111 50%,  
     #a16666 75%,  
     #f0bebe 100%
   );

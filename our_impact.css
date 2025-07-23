@@ -1,62 +1,224 @@
-header {
-  background-color: #692727;   /* Maroon background */
-  background-image: url('images/bg.jpg');
-  color: #ffffff;              /* White text */
-  padding: 10px 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  position: sticky;            /* Stay at top when scrolling */
-  top: 0;
-  z-index: 1000;
+/* GENERAL BODY STYLING */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #111;
+  overflow-x: hidden;
 }
 
-/* == NAV CONTAINER == */
+/* HEADER NAVIGATION */
 header nav {
-  max-width: 2000px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #000, #800000);
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* == LOGO == */
-.logo img {
-  height: 60px;
-  border-radius: 1px;
-  display:flex;
+header nav .logo img {
+  height: 55px;
 }
 
-/* == MENU LIST == */
-.menu_list ul {
+header nav .menu_list ul {
   list-style: none;
   display: flex;
-  gap: 10px;                   /* Space between menu items */
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
 
-/* Menu links */
-.menu_list a {
-  color: #ffffff;
+header nav .menu_list ul li a {
+  color: #fff;
   text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: background 0.3s, color 0.3s;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
 }
 
-/* Hover effect */
-.menu_list a:hover {
-  background-color: rgb(226, 207, 207);   /* maroon hover */
-  color: #692727;              /* Maroon text */
+header nav .menu_list ul li a:hover {
+  color: white;
 }
 
-/* Active page link (optional) */
-.menu_list a.active {
-  background-color: #ffffff;   /* White background */
-  color: #692727;              /* Maroon text */
+/* MAIN CONTAINER */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADINGS */
+h3, h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+h3 { font-size: 2em; }
+h4 { font-size: 1.4em; }
+
+/* ===== SECTION DESIGNS WITH SHAPES & GLOW ===== */
+
+/* INTRO SECTION */
+section.intro {
+  background: linear-gradient(to right, #800000, #000);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+
+}
+section.intro h3 { color: white; }
+section.intro::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  clip-path: ellipse(100% 100% at 50% 0);
+}
+
+/* EMPOWERING FARMERS */
+section.empowering-farmers {
+  background: #fff;
+  position: relative;
+  padding: 90px 20px;
+  border-left: 8px solid #800000;
+  border-radius: 0 80px 80px 0;
+  box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+}
+section.empowering-farmers h3 { color: #800000; }
+
+/* EXPORT EXCELLENCE */
+section.export-excellence {
+  background: #000;
+  color: #fff;
+  padding: 90px 20px;
+  position: relative;
+  border-right: 8px solid #800000;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+section.export-excellence h3, section.export-excellence h4 { color: white; }
+section.export-excellence::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+/* WELLNESS PRODUCTS */
+section.wellness-products {
+  background: linear-gradient(135deg, #800000, #4d0000);
+  color: #fff;
+  padding: 100px 20px;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+section.wellness-products h4 { color: white; }
+
+/* LUXURY LIFESTYLE */
+section.luxury-lifestyle {
+  background: #fff;
+  padding: 90px 20px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+}
+section.luxury-lifestyle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 40%, rgba(128,0,0,0.07), transparent 60%);
+  z-index: 0;
+}
+section.luxury-lifestyle > * { position: relative; z-index: 1; }
+
+/* SME GROWTH */
+section.sme-growth {
+  background: linear-gradient(to right, #000, #4d0000);
+  color: #fff;
+  padding: 100px 20px;
+  border-radius: 50px 50px 0 0;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+section.sme-growth h3, section.sme-growth h4 { color: white; }
+
+/* HOSPITALITY & TOURISM */
+section.hospitality-tourism {
+  background: #fff;
+  padding: 100px 20px;
+  position: relative;
+  border-top: 6px solid #800000;
+  border-bottom: 6px solid #800000;
+  box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+}
+section.hospitality-tourism::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #800000, #4d0000);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+section.hospitality-tourism h3, section.hospitality-tourism h4 { color: #4d0000; }
+
+/* FINANCIAL GOVERNANCE */
+section.financial-governance {
+  background: linear-gradient(135deg, #800000 50%, #000 100%);
+  color: #fff;
+  padding: 100px 20px;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.2);
+}
+section.financial-governance h3, section.financial-governance h4 { color: white; }
+
+/* SUMMARY SECTION */
+section.summary {
+  background: white;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.3em;
   font-weight: bold;
+  position: relative;
+  box-shadow: 0 0 25px maroon;
+  border-right: #800000;
+
+}
+section.summary::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #800000;
+  clip-path: ellipse(100% 100% at 50% 100%);
 }
 
 
-
+/* LISTS */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+ul li::before {
+  content: ""; /* No ticks, just clean text */
+}

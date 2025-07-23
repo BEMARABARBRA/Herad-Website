@@ -1,0 +1,62 @@
+header {
+  background-color: #692727;   /* Maroon background */
+  background-image: url('images/bg.jpg');
+  color: #ffffff;              /* White text */
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;            /* Stay at top when scrolling */
+  top: 0;
+  z-index: 1000;
+}
+
+/* == NAV CONTAINER == */
+header nav {
+  max-width: 2000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* == LOGO == */
+.logo img {
+  height: 60px;
+  border-radius: 1px;
+  display:flex;
+}
+
+/* == MENU LIST == */
+.menu_list ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;                   /* Space between menu items */
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu links */
+.menu_list a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.menu_list a:hover {
+  background-color: rgb(226, 207, 207);   /* maroon hover */
+  color: #692727;              /* Maroon text */
+}
+
+/* Active page link (optional) */
+.menu_list a.active {
+  background-color: #ffffff;   /* White background */
+  color: #692727;              /* Maroon text */
+  font-weight: bold;
+}
+
+
+

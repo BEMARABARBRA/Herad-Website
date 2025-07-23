@@ -1,0 +1,339 @@
+/* ============================================================
+   NAVIGATION BAR STYLES - HERAD ICS
+   ============================================================ */
+
+/* == HEADER == */
+header {
+  background-color: #692727;   /* Maroon background */
+  background-image: url('images/bg.jpg');
+  color: #ffffff;              /* White text */
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;            /* Stay at top when scrolling */
+  top: 0;
+  z-index: 1000;
+}
+
+/* == NAV CONTAINER == */
+header nav {
+  max-width: 2000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* == LOGO == */
+.logo img {
+  height: 60px;
+  border-radius: 1px;
+  display:flex;
+}
+
+/* == MENU LIST == */
+.menu_list ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;                   /* Space between menu items */
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu links */
+.menu_list a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.menu_list a:hover {
+  background-color: rgb(226, 207, 207);   /* maroon hover */
+  color: #692727;              /* Maroon text */
+}
+
+/* Active page link (optional) */
+.menu_list a.active {
+  background-color: #ffffff;   /* White background */
+  color: #692727;              /* Maroon text */
+  font-weight: bold;
+}
+
+
+
+
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.7;
+  background: #ffffff;
+  color: #2b0d0d;
+}
+
+section {
+  padding: 60px 10%;
+}
+
+/* ABOUT SECTION (Medium-Light Maroon) */
+.about-section {
+  background: linear-gradient(
+    to bottom,
+    #f0bebe 0%,   /* slightly darker pastel */
+    #a16666 25%,  /* medium soft maroon */
+    #4e1111 50%,  /* stronger center */
+    #a16666 75%,  
+    #f0bebe 100%
+  );
+  color: #f1ecec;
+  
+}
+.about-section h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ebe3e3;
+}
+
+/* VISION SECTION (Dark Maroon) */
+.vision-section {
+  background: linear-gradient(
+    to bottom,
+    #702525 0%,
+    #4c1414 30%,
+    #2f0d0d 50%,
+    #4c1414 70%,
+    #702525 100%
+  );
+  color: #fff;
+  text-align: left;
+}
+.vision-section h3 {
+  font-size: 2rem;
+  color: #ffdfdf;
+}
+
+/* MISSION SECTION (Medium-Light Maroon) */
+.mission-section {
+  background: linear-gradient(
+    to bottom,
+    #f0bebe 0%,   /* slightly darker pastel */
+    #a16666 25%,  /* medium soft maroon */
+    #4e1111 50%,  /* stronger center */
+    #a16666 75%,  
+    #f0bebe 100%
+  );
+  
+  color: #f1ecec;
+}
+.mission-section h3 {
+  font-size: 2rem;
+  color: #ebcccc;
+}
+
+/* WHY WE EXIST SECTION (Dark Maroon) */
+.why-section {
+  background: linear-gradient(
+    to bottom,
+    #5c1a1a 0%,
+    #3c1010 30%,
+    #1f0606 50%,
+    #3c1010 70%,
+    #5c1a1a 100%
+  );
+  color: #fff;
+}
+.why-section h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ffdddd;
+}
+
+/* SLOGAN SECTION (Medium-Light Maroon) */
+.slogan-section {
+   background: linear-gradient(
+    to bottom,
+    #f0bebe 0%,   /* slightly darker pastel */
+    #a16666 25%,  /* medium soft maroon */
+    #4e1111 50%,  /* stronger center */
+    #a16666 75%,  
+    #f0bebe 100%
+  );
+  color: #f1ecec;
+  text-align: center;
+}
+.slogan-section h5 {
+  font-size: 1.5rem;
+  color: #d3bfbf;
+}
+
+
+
+
+
+/* ------------------------------
+   FOOTER
+-------------------------------- */
+/* Define CSS Variables */
+:root {
+  --brand-white: #ffffff;
+  --text-light: #f0f0f0;
+  --footer-border: #dcdcdc;
+  --text-muted: #bfbfbf;
+}
+
+/* FOOTER STYLES */
+.footer {
+  background-color: #4e1111;
+  color: var(--brand-white);
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: var(--brand-white);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.footer-section p {
+  margin: 0 0 8px 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.contact-info a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  color: var(--brand-white);
+}
+
+.footer-follow .social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-follow .social-icons a img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: rgb(240, 38, 38);
+  padding: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+}
+
+.footer-follow .social-icons a img:hover {
+  background-color: black;
+}
+
+.footer-follow .payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  /* overflow-x: auto; */
+  /* padding-bottom: 5px; */
+}
+
+.footer-follow .payment-methods-icons img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color:  rgb(230, 217, 217);
+  /* padding: 5px; */
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-follow .payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: rgb(246, 246, 248) ;
+}
+
+.footer-bottom {
+  border-top: 2px solid var(--footer-border);
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: var(--brand-white);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 6%;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  p, li {
+    font-size: 1rem;
+  }
+}
+
+

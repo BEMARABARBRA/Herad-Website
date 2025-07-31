@@ -1,462 +1,436 @@
 /* ===== Reset basic default styles ===== */
 * {
-    margin: 0;                 /* Remove default margin on all elements */
-    padding: 0;                /* Remove default padding on all elements */
-    box-sizing: border-box;    /* Include padding and border in element's total width and height */
-  }
-  
-  /* ===== Body styles ===== */
-  body {
-    font-family: 'Roboto', sans-serif; /* Use Roboto font for the page */
-    background-color: #f9f9f9;          /* Light grey background color */
-    color: #333;                       /* Dark grey text color */
-    /* padding: 20px;                     Padding around the whole page */
-    line-height: 1.5;                  /* Line height for better readability */
-  }
+  margin: 0;                 
+  padding: 0;                
+  box-sizing: border-box;    
+}
 
-  /* =================== NAVIGATION BAR =================== */
+/* ===== Body styles ===== */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* =================== NAVIGATION BAR =================== */
 nav {
-    background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
-    background-repeat: no-repeat;       /* No repeat */
-    background-size: cover;             /* Cover entire nav area */
-    background-position: center;        /* Center image */
-    background-blend-mode: darken;      /* Blend mode to darken image */
-    background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent overlay */
-    height: 130px;                      /* Fixed height for navbar */
-    display: flex;                     /* Flex container */
-    align-items: center;               /* Vertically center nav items */
-    justify-content: space-between;    /* Space between left and right items */
-    box-shadow: 0 2px 5px black;       /* Subtle shadow below navbar */
-    color: white;                     /* Text color white */
-    padding: 0 20px;                  /* Horizontal padding */
-    position: fixed;                  /* Fix navbar to top */
-    top: 0;                          /* Align to top */
-    left: 0;                         /* Align to left */
-    width: 100%;                    /* Full viewport width */
-    z-index: 1000;                  /* High z-index to appear on top */
-  }
-  
-  /* Logo container */
-  .logo {
-    padding: 10px;                   /* Inner padding */
-    display: flex;                  /* Flex container for alignment */
-    align-items: center;            /* Vertically center logo */
-  }
-  
-  /* Logo image */
-  .logo img {
-    height: 120px;                  /* Fixed logo height */
-    width: 220px;                   /* Fixed logo width */
-    max-width: 100%;                /* Responsive max width */
-    object-fit: contain;            /* Maintain image proportions */
-    display: block;                 /* Block element */
-  }
-  
-  /* Navigation menu list */
-  nav ul {
-    list-style: none;               /* Remove bullet points */
-    display: flex;                  /* Horizontal flex layout */
-    flex-wrap: nowrap;              /* Prevent wrapping */
-    margin: 0;                     /* Remove default margin */
-    padding: 0;                    /* Remove default padding */
-  }
-  
-  /* Each navigation item */
-  nav ul li {
-    display: block;                /* Block level for proper spacing */
-  }
-  
-  /* Navigation links */
-  nav ul li a {
-    color: black;                  /* Link text color */
-    background-color: #c77d83;    /* Link background color */
-    border-right: 1px solid #692727; /* Right border */
-    text-decoration: none;         /* Remove underline */
-    font-weight: 900;              /* Bold font */
-    padding: 15px 10px;            /* Link padding */
-    display: block;                /* Block display */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-    white-space: nowrap;           /* Prevent text wrapping */
-  }
-  
-  /* Navigation link hover */
-  nav ul li a:hover {
-    background-color: #692727;     /* Darker background on hover */
-    color: white;                  /* White text on hover */
-    border-radius: 4px;            /* Rounded corners */
-  }
-  
-  /* Dropdown container relative positioning */
-  nav ul li.dropdown {
-    position: relative;            /* For absolute positioning of dropdown */
-  }
-  
-  /* Dropdown menu */
-  .dropdown-content {
-    display: none;                 /* Hidden by default */
-    position: absolute;            /* Positioned relative to parent */
-    top: 100%;                    /* Below parent */
-    left: 0;                      /* Align left */
-    background-color: #c77d83;    /* Background color */
-    min-width: 220px;             /* Minimum width */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow */
-    border-radius: 4px;           /* Rounded corners */
-    z-index: 1001;                /* On top */
-    padding: 8px 0;               /* Vertical padding */
-  }
-  
-  /* Show dropdown on hover */
-  nav ul li:hover > .dropdown-content {
-    display: block;               /* Show dropdown */
-  }
-  
-  /* Dropdown links */
-  .dropdown-content a {
-    display: block;               /* Block level */
-    padding: 10px 16px;           /* Padding */
-    color: black;                 /* Text color */
-    text-decoration: none;        /* No underline */
-    font-weight: 600;             /* Semi-bold */
-    transition: background-color 0.3s ease; /* Smooth hover */
-  }
-  
-  /* Dropdown link hover */
-  .dropdown-content a:hover {
-    background-color: #692727;    /* Dark background on hover */
-    color: white;                 /* White text */
-  }
-  
-  /* Dropdown divider */
-  .dropdown-content hr {
-    border: 0;                   /* Remove border */
-    border-top: 2px solid #692727; /* Top border line */
-    margin: 8px 12px;            /* Margin */
-  }
+  background-image: url("/herad_images/Herad-vegetables.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(7, 7, 7, 0.4);
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 
+.logo {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
 
+.logo img {
+  height: 120px;
+  width: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
 
-  
-  /* ===== Hero section styles ===== */
-  .hero-section{
-    padding-top: 40px;
-    
-  }
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
 
-  .hero-section img {
-    text-align: center; /* Center the text */
-    position: relative;   /* Make this a positioned container for absolute children */
-    background-color: #FBA23F;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
-    padding-top: 40px;
-    width: 100%;                      /* Make image fill the full width of its container */
-    max-height: 600px;                /* Limit max height of hero image */
-    object-fit: cover;                /* Crop image to cover container without distortion */
-    border-radius: 10px;              /* Rounded corners for the image */
-    display: block;                   /* Display as block element to remove inline space */
-    z-index: 2;           /* Ensure it appears above the image and overlay */
-  }
-  
-  /* =============== Main page heading ========= */
-  h1 {
-    text-align: center; /* center the text */
-    margin-top: 0px; /* space from image */
-    margin-bottom: 60px; /* space before next content */
-    color: #2c3e50; /* dark blue for visibility */
-    font-size: 2.5rem; /* larger font */
-    text-shadow: 6px 6px 16px black;
+nav ul li {
+  display: block;
+}
 
-  }
-  
-  /* ===== Category headings ===== */
-  h3 {
-    font-size: 2rem;                 /* Font size for category titles */
-    color: #27ae60;                 /* Green color for category titles */
-    border-bottom: 3px solid #27ae60; /* Green bottom border under heading */
-    padding-bottom: 8px;            /* Space between text and border */
-    margin: 40px 0 20px;            /* Margin: top 40px, sides 0, bottom 20px */
-  }
-  
-  /* ===== Container to group products per category in a grid ===== */
-  .category-grid {
-    display: grid; /* activate grid layout */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive layout */
-    gap: 20px; /* space between items */
-    padding: 20px 10px; /* spacing around grid */
-    justify-items: center; /* center items inside grid cells */
-  }
-  
-  /* ===== Each vegetable item box ===== */
-  .veg-item {
-    background-color: #fff;          /* White background for each item */
-    border-radius: 12px;             /* Rounded corners */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    text-align: center;              /* Center-align text inside item */
-    padding: 15px;                   /* Padding inside each item */
-    transition: transform 0.2s ease-in-out; /* Smooth scale effect on hover */
-  }
-  
-  /* ===== Hover effect for vegetable items ===== */
-  .veg-item:hover {
-    transform: scale(1.05);          /* Slightly enlarge item on hover */
-  }
-  
-  /* ===== Vegetable images ===== */
-  .veg-item img {
-    width: 100%;                    /* Image fills full width of container */
-    height: 150px;                  /* Fixed height for uniform size */
-    object-fit: cover;              /* Crop image without distortion */
-    border-radius: 8px;             /* Rounded corners on images */
-    margin-bottom: 12px;            /* Space below each image */
-  }
-  
-  /* ===== Vegetable captions ===== */
-  .veg-item p {
-    font-weight: 600;               /* Semi-bold font for captions */
-    color: #34495e;                 /* Dark blue-grey text color */
-    font-size: 1.1rem;              /* Slightly larger font size */
-  }
-  
-  /* ===== Responsive tweaks for smaller screens ===== */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 2.2rem;            /* Smaller main heading font size on small screens */
-    }
-  
-    h3 {
-      font-size: 1.5rem;            /* Smaller category heading font size */
-    }
-    
-    .veg-item img {
-      height: 120px;                /* Smaller image height on small screens */
-    }
-  }
-  
-  /* =================== FOOTER DESIGNING =================== */
+nav ul li a {
+  color: black;
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+nav ul li a:hover {
+  background-color: #692727;
+  color: white;
+  border-radius: 4px;
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #c77d83;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
+  padding: 8px 0;
+}
+
+nav ul li:hover > .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #692727;
+  color: white;
+}
+
+.dropdown-content hr {
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
+}
+
+/* ===== Hero section styles ===== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.hero-section img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.7);
+  border-radius: 10px;
+}
+
+/* =============== Main page heading ========= */
+.hero-section h1 {
+  margin-top: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 60px;
+  text-shadow: 6px 6px 1px #000000;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* ===== Category headings ===== */
+h3 {
+  font-size: 2rem;
+  color: #27ae60;
+  border-bottom: 3px solid #27ae60;
+  padding-bottom: 8px;
+  margin: 40px 0 20px;
+}
+
+/* ===== Vegetable card styling ===== */
+.veg-container {
+  display: flex;
+  flex-wrap: wrap; /* Wraps on smaller screens */
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.veg-item {
+  position: relative;
+  background: rgba(128, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px 15px;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  color: #fff;
+
+  flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
+  max-width: calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+
+.veg-item:hover {
+  transform: scale(1.05);
+}
+
+.veg-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-bottom: 60px solid rgba(255, 255, 255, 0.1);
+}
+
+.veg-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: 60px solid transparent;
+  border-top: 60px solid rgba(255, 255, 255, 0.05);
+}
+
+.veg-item img,
+.veg-item p {
+  position: relative;
+  z-index: 2;
+}
+
+.veg-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #fff;
+}
+
+.veg-item p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* =================== FOOTER DESIGNING =================== */
 .footer {
-    background-color: #692727; /* Dark red footer */
-    color: #ffffff; /* White text */
-    padding: 40px 0 20px; /* Padding top and bottom */
-    font-family: Arial, sans-serif; /* Simple readable font */
-    line-height: 1.6; /* Space between lines */
-  }
-  
-  /* Wrapper for footer content */
-  .footer-content {
-    max-width: 1200px; /* Max width */
-    margin: 0 auto; /* Center horizontally */
-    padding: 0 20px; /* Horizontal padding */
-    display: flex; /* Flex layout */
-    flex-wrap: wrap; /* Wrap on small screens */
-    gap: 30px; /* Space between items */
-    align-items: flex-start; /* Align top */
-    justify-content: space-between; /* Space out */
-  }
-  
-  /* Footer logo container */
-  .footer-logo-container {
-    flex-shrink: 0; /* Prevent shrinking */
-    min-width: 180px; /* Minimum width */
-    text-align: center; /* Center content */
-  }
-  
-  /* Footer logo */
-  .footer-logo {
-    padding-top: 20px; /* Space on top */
-    max-height: 90px; /* Max height */
-    width: auto; /* Auto width */
-    object-fit: contain; /* Maintain aspect */
-  }
-  
-  /* Footer sections grid */
+  background-color: #692727;
+  color: #ffffff;
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-section p {
+  margin: 0 0 8px 0;
+  color: #cccccc;
+  font-size: 14px;
+}
+
+.contact-info strong {
+  color: #ffffff;
+}
+
+.email-links a {
+  color: #0e5ab1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.email-links a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.social-icons a img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #424040;
+  padding: 5px;
+  transition: background-color 0.3s;
+}
+
+.social-icons a img:hover {
+  background-color: #555;
+}
+
+.payment-methods {
+  margin-top: 20px;
+}
+
+.payment-methods h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-bottom: 5px;
+}
+
+.payment-methods-icons img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #424040;
+  padding: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: #727070;
+}
+
+.payment-methods-icons .airtel-logo {
+  background-color: #000000 !important;
+}
+
+.footer-bottom {
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-bottom a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+/* =================== RESPONSIVENESS =================== */
+@media (max-width: 768px) {
   .footer-sections {
-    flex: 1; /* Take remaining space */
-    display: grid; /* Grid layout */
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive columns */
-    gap: 30px; /* Space between columns */
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Section headings */
-  .footer-section h3,
-  .footer-section h4 {
-    color: #ffffff; /* White color */
-    text-transform: uppercase; /* Uppercase text */
-    margin-bottom: 10px; /* Margin below */
-    font-size: 14px; /* Font size */
-  }
-  
-  /* Paragraphs in footer */
-  .footer-section p {
-    margin: 0 0 8px 0; /* Bottom margin */
-    color: #cccccc; /* Light grey */
-    font-size: 14px; /* Font size */
-  }
-  
-  /* Highlighted contact labels */
-  .contact-info strong {
-    color: #ffffff; /* Bright white */
-  }
-  
-  /* Email links */
-  .email-links a {
-    color: #0e5ab1; /* Blue links */
-    text-decoration: none; /* No underline */
-    font-size: 14px; /* Font size */
-  }
-  
-  /* Email hover */
-  .email-links a:hover {
-    text-decoration: underline; /* Underline on hover */
-  }
-  
-  /* Social media container */
-  .social-media {
-    margin-top: 20px; /* Space above */
-  }
-  
-  /* Social media headings */
-  .social-media h4 {
-    font-size: 14px; /* Size */
-    margin-bottom: 10px; /* Space below */
-    color: #ffffff; /* White */
-  }
-  
-  /* Social icons container */
-  .social-icons {
-    display: flex; /* Horizontal row */
-    gap: 10px; /* Space between icons */
-    flex-wrap: wrap; /* Wrap if needed */
-    justify-content: start; /* Align left */
-  }
-  
-  /* Social icons */
-  .social-icons a img {
-    height: 30px; /* Size */
-    width: 30px;
-    border-radius: 50%; /* Circular */
-    object-fit: cover; /* Fit image */
-    background-color: #424040; /* Dark background */
-    padding: 5px; /* Padding */
-    transition: background-color 0.3s; /* Hover transition */
-  }
-  
-  /* Social icon hover */
-  .social-icons a img:hover {
-    background-color: #555; /* Lighten */
-  }
-  
-  /* Payment methods container */
-  .payment-methods {
-    margin-top: 20px; /* Space */
-  }
-  
-  /* Payment heading */
-  .payment-methods h4 {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #ffffff;
-  }
-  
-  /* Payment icons container */
-  .payment-methods-icons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: start;
-    padding-bottom: 5px;
-  }
-  
-  /* Payment icons */
-  .payment-methods-icons img {
-    height: 30px;
-    width: 30px;
-    object-fit: contain;
-    border-radius: 50%;
-    background-color: #424040;
-    padding: 5px;
-    opacity: 0.85;
-    transition: opacity 0.3s ease, background-color 0.3s ease;
-  }
-  
-  /* Hover on payment icons */
-  .payment-methods-icons img:hover {
-    opacity: 1;
-    background-color: #727070;
-  }
-  
-  /* Airtel logo override */
-  .payment-methods-icons .airtel-logo {
-    background-color: #000000 !important;
-  }
-  
-  /* Bottom footer strip */
+
   .footer-bottom {
-    border-top: 2px solid #444;
-    margin-top: 30px;
-    padding: 20px;
-    font-size: 14px;
-    color: #999999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
   }
-  
-  /* Footer bottom links */
+
   .footer-bottom a {
-    color: #cccccc;
-    text-decoration: none;
-    margin-left: 20px;
+    margin-left: 0;
+    margin-right: 20px;
   }
-  
-  /* Hover on footer bottom links */
-  .footer-bottom a:hover {
-    color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* =================== RESPONSIVENESS =================== */
-  
-  /* Tablet breakpoint */
-  @media (max-width: 768px) {
-    .footer-sections {
-      grid-template-columns: repeat(2, 1fr); /* Two columns */
-    }
-  
-    .footer-bottom {
-      flex-direction: column; /* Stack vertically */
-      text-align: center; /* Center text */
-      gap: 10px; /* Space */
-    }
-  
-    .footer-bottom a {
-      margin-left: 0;
-      margin-right: 20px;
-    }
+
+  .footer-sections {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
-  
-  /* Mobile breakpoint */
-  @media (max-width: 480px) {
-    .footer-content {
-      flex-direction: column; /* Stack sections */
-      align-items: center; /* Center align */
-    }
-  
-    .footer-sections {
-      grid-template-columns: 1fr; /* Single column */
-      width: 100%;
-    }
-  
-    .footer-logo-container {
-      width: 100%;
-    }
-  
-    .social-icons {
-      justify-content: center; /* Center icons */
-    }
-  
-    .payment-methods-icons {
-      justify-content: center; /* Center icons */
-    }
+
+  .footer-logo-container {
+    width: 100%;
   }
-  
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .payment-methods-icons {
+    justify-content: center;
+  }
+}

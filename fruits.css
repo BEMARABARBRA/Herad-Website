@@ -8,9 +8,9 @@
 /* =================== BASE STYLES =================== */
 body {
   overflow-x: hidden;          /* Prevent horizontal scroll */
-  font-family: "Roboto", sans-serif;  /* Use Roboto font */
-  padding: 0;                  /* Remove default padding */
-  background-color: #f4f4f4;   /* Light gray background */
+  font-family: "Times New Roman", Times, serif;
+  padding-top: 140px;                  /* Remove default padding */
+  background-color: rgb(253, 191, 191);   /* Light gray background */
   color: #333;                 /* Dark gray text color */
   line-height: 1.6;            /* Comfortable line spacing */
 }
@@ -160,19 +160,37 @@ nav ul li:hover > .dropdown-content {
 }
 
 /* Hero main heading */
-h1 {
-  position: absolute;        /* Position relative to .hero-section container */
-  top: 50%;                  /* Vertically center inside hero */
-  left: 50%;                 /* Horizontally center inside hero */
-  transform: translate(-50%, -50%); /* Offset by half width/height for perfect centering */
-  color: white;              /* White text for contrast on image */
-  text-shadow: 6px 6px 18px black; /* Shadow for better readability */
-  font-size: 50px;           /* Large font size */
-  font-weight: 900;          /* Bold font weight */
-  margin-top: 100px;                 /* Remove default margins */
-  pointer-events: none;      /* Prevent interfering with mouse clicks */
-  z-index: 5;                /* Make sure heading appears above the image */
+h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+  pointer-events: none;
+  z-index: 5;
+  margin-top: 60px;
+  line-height: 1.2;
+  text-shadow:
+    4px 4px 0 white,
+    6px 6px 0 #111,
+    8px 8px 10px maroon; /* 3D shadow */
 }
+
+/* Add second line "FRUITS" centered */
+h1::after {
+  display: block;
+  font-size: 94px;
+  margin-top: 10px;
+  color: white;
+  text-shadow:
+    2px 2px 0 #333,
+    4px 4px 0 #111,
+    6px 6px 8px #000;
+}
+
 
 .hero-section h1::after {
   content: '↓';                  /* Unicode down arrow */
@@ -182,204 +200,340 @@ h1 {
   animation: bounce 1.5s infinite; /* Bouncing animation */
 }
 
+/* Lift-Off Animation
+@keyframes liftOff {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-10px) scale(1.05) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1) rotate(1deg);
+  }
+  70% {
+    transform: translateY(-30px) scale(1.0) rotate(-1deg);
+    -webkit-transform: translateY(-30px) scale(1.0) rotate(-1deg);
+    -moz-transform: translateY(-30px) scale(1.0) rotate(-1deg);
+    -ms-transform: translateY(-30px) scale(1.0) rotate(-1deg);
+    -o-transform: translateY(-30px) scale(1.0) rotate(-1deg);
+}
+  100% {
+    transform: translateY(-100vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.lift-off {
+  animation: liftOff 4s ease-in-out infinite alternate;
+  -webkit-animation: liftOff 4s ease-in-out infinite alternate;
+} */
 
 
 /* Fruit category headings */
+/* Section Headings */
 h3 {
-  margin-top: 40px;            /* Space above */
-  margin-bottom: 15px;         /* Space below */
-  color: #27ae60;              /* Green color */
-  font-size: 1.6rem;           /* Font size */
-  border-bottom: 2px solid #27ae60; /* Underline */
-  display: inline-block;       /* Fit width to content */
-  padding-bottom: 5px;         /* Padding below */
+  font-size: 52px;
+  color: black; /* Rich green */
+  text-align: center;
+  margin-top: 40px 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
 }
 
-/* =================== FRUIT GRID CONTAINER =================== */
+h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Fruit Grid Container */
 .fruit-grid {
-  display: grid;                             /* Use grid layout */
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive columns */
-  gap: 20px;                                /* Gap between items */
-  margin-bottom: 40px;                      /* Bottom margin */
+  background-color: rgb(65, 6, 6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* =================== FRUIT BOX =================== */
+/* Each Fruit Box */
 .fruit-box {
-  background-color: #ffffff;                 /* White background */
-  border-radius: 12px;                       /* Rounded corners */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
-  text-align: center;                        /* Center text */
-  padding: 20px;                            /* Inner padding */
-  transition: transform 0.2s ease-in-out;   /* Smooth transform */
-  display: flex;                            /* Flex container */
-  flex-direction: column;                   /* Stack vertically */
-  align-items: center;                      /* Center horizontally */
-  justify-content: center;                  /* Center vertically */
+  background: rgb(150, 109, 109);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-/* Fruit box hover effect */
 .fruit-box:hover {
-  transform: scale(1.03);                    /* Slightly enlarge */
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Fruit box images */
+/* Fruit Images */
 .fruit-box img {
-  width: 90%;                 /* Almost full width */
-  max-width: 250px;           /* Max width */
-  height: auto;               /* Maintain aspect ratio */
-  border-radius: 12px;        /* Rounded corners */
-  object-fit: contain;        /* Show whole image */
-  margin: 0 auto;             /* Center horizontally */
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-/* Fruit labels */
+/* Fruit Names */
 .fruit-box p {
-  margin-top: 8px;            /* Space above text */
-  font-weight: bold;          /* Bold text */
-  color: #34495e;             /* Dark slate blue */
-  font-size: 1rem;            /* Normal font size */
+  font-size: 35px;
+  font-weight: 900px;
+  color: white;
+  margin: 0;
 }
+
 
 /* =================== FOOTER STYLES =================== */
 .footer {
-  background-color: #692727;    /* Dark red background */
-  color: #ffffff;               /* White text */
-  padding: 40px 0 20px;         /* Vertical padding */
-  font-family: Arial, sans-serif; /* Sans-serif font */
-  line-height: 1.6;             /* Line spacing */
+  background-color: #330505; /* Matches body background */
+  color: #ffffff;
+  padding: 20px 0 20px;
+  line-height: 1.6;
 }
 
+/* Footer content wrapper */
 .footer-content {
-  max-width: 1200px;            /* Max width */
-  margin: 0 auto;               /* Center horizontally */
-  padding: 0 20px;              /* Horizontal padding */
-  display: flex;                /* Flex container */
-  flex-wrap: wrap;              /* Wrap on small screens */
-  gap: 30px;                   /* Gap between items */
-  align-items: flex-start;      /* Align top */
-  justify-content: space-between; /* Space out */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-/* Footer logo container */
+/* ============================LOGO AREA============================ */
+
 .footer-logo-container {
-  flex-shrink: 0;              /* Prevent shrinking */
-  min-width: 180px;            /* Minimum width */
-  text-align: center;          /* Center content */
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
 }
 
-/* Footer logo */
 .footer-logo {
-  padding-top: 20px;           /* Space above */
-  max-height: 90px;            /* Max height */
-  width: auto;                 /* Width auto */
-  object-fit: contain;         /* Maintain aspect */
+  padding-top: 20px;
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
 }
 
-/* Footer sections grid */
+/* ============================ FOOTER SECTIONS============================ */
+
 .footer-sections {
-  flex: 1;                     /* Take remaining space */
-  display: grid;               /* Grid layout */
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive columns */
-  gap: 30px;                   /* Gap */
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
 }
 
-/* Section headings */
+/* All headings in footer sections */
 .footer-section h3,
-.footer-section h4 {
-  color: #ffffff;              /* White text */
-  text-transform: uppercase;   /* Uppercase */
-  margin-bottom: 10px;         /* Space below */
-  font-size: 14px;             /* Font size */
+.footer-section h4,
+.social-media h4,
+.payment-methods h4 {
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+  /* border-bottom: 2px solid #ffffff; Clear visible line */
+  padding-bottom: 6px;
 }
 
-/* Footer paragraphs */
-.footer-section p {
-  margin: 0 0 8px 0;           /* Margin bottom */
-  color: #cccccc;              /* Light grey */
-  font-size: 14px;             /* Font size */
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  list-style: none;
 }
 
-/* Highlight contact label */
+/* ============================CONTACT SECTION ============================= */
+
 .contact-info strong {
-  color: #ffffff;              /* Bright white */
+  color: #ffffff;
 }
 
-/* Email links */
+/* Email links styling */
 .email-links a {
-  color: #0e5ab1;              /* Blue */
-  text-decoration: none;       /* No underline */
-  font-size: 14px;             /* Font size */
+  color: #0e5ab1;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-/* Email hover */
 .email-links a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
-/* Social media container */
+/* =================== ADDRESS & CONTACT==================== */
+.address-section {
+  text-align: left;          /* Ensures entire block is left-aligned */
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.address-section h4 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+  text-align: left;          /* Ensure headings are left-aligned */
+}
+
+/* ============================ SOCIAL MEDIA SECTION ============================ */
+
 .social-media {
-  margin-top: 20px;            /* Top margin */
+  margin-top: 30px;
 }
 
-/* Social media heading */
-.social-media h3 {
-  font-size: 14px;             /* Font size */
-  margin-bottom: 10px;         /* Bottom margin */
-  color: #ffffff;              /* White */
-}
-
-/* Social icons container */
 .social-icons {
-  display: flex;               /* Flex container */
-  gap: 10px;                  /* Gap between icons */
-  flex-wrap: wrap;             /* Wrap if needed */
-  justify-content: start;      /* Left aligned */
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-/* Social icons */
 .social-icons a img {
-  height: 30px;                /* Icon height */
-  width: 30px;                 /* Icon width */
-  border-radius: 50%;          /* Circular icons */
-  object-fit: cover;           /* Fit image */
-  background-color: #424040;  /* Dark background */
-  padding: 5px;                /* Padding */
-  transition: background-color 0.3s; /* Hover effect */
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #a59b9b;
+  padding: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Social icon hover */
 .social-icons a img:hover {
-  background-color: #555;      /* Lighter background */
+  background-color: #727070;
+  transform: scale(1.1);
 }
 
-/* Payment methods container */
+/* =============================PAYMENT METHOD SECTION============================= */
+
 .payment-methods {
-  margin-top: 20px;            /* Top margin */
+  margin-top: 30px;
 }
 
-/* Payment heading */
-.payment-methods h3 {
-  font-size: 14px;             /* Font size */
-  margin-bottom: 10px;         /* Margin bottom */
-  color: #ffffff;              /* White */
-}
-
-/* Payment icons container */
 .payment-methods-icons {
-  display: flex;               /* Flex container */
-  gap: 10px;                  /* Gap */
-  flex-wrap: wrap;             /* Wrap */
-  justify-content: start;      /* Left aligned */
-  padding-bottom: 5px;         /* Padding bottom */
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-/* Payment icons */
 .payment-methods-icons img {
-  height: 30px;                /* Icon height */
-  width: 30px;                 /* Icon width */
-  object-fit: contain;         /* Fit image */
-  border-radius: 50%;          /* Circular icons */
-  background-color: #424040;   /* Dark background */
-  padding: 5px;                /* Padding */
-  opacity: 0.85;               /* Slightly transparent */
-  transition: opacity
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #a59b9b;
+  padding: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: #727070;
+  transform: scale(1.1);
+}
+
+/* Specific style for Airtel logo */
+.payment-methods-icons .airtel-logo {
+  background-color: #443e3e !important;
+}
+
+
+
+/* Bottom footer strip */
+.footer-bottom {
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Footer bottom links */
+.footer-bottom a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Hover on footer bottom links */
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+/* =================== RESPONSIVENESS =================== */
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  .footer-sections {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+
+  .footer-bottom {
+    flex-direction: column; /* Stack vertically */
+    text-align: center; /* Center text */
+    gap: 10px; /* Space */
+  }
+
+  .footer-bottom a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column; /* Stack sections */
+    align-items: center; /* Center align */
+  }
+
+  .footer-sections {
+    grid-template-columns: 1fr; /* Single column */
+    width: 100%;
+  }
+
+  .footer-logo-container {
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center; /* Center icons */
+  }
+
+  .payment-methods-icons {
+    justify-content: center; /* Center icons */
+  }
+}

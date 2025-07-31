@@ -7,27 +7,116 @@
     <link href="our_impact.css" rel="stylesheet" />
   </head>
 
-  <body>
-    <!-- Navigation bar inside header -->
-    <header>
-      <nav>
-        <div class="logo">
-          <img src="images/heradlogo.jpeg" alt="herad_logo" />
-        </div>
+ <body>
+  <!-- =================== NAVIGATION BAR =================== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="images/heradlogo.jpeg" alt="herad_logo" />
+      </div>
 
-        <div class="menu_list">
-          <ul>
-            <li><a href="/about.html">ABOUT US</a></li>
-            <li><a href="/what_we_do.html">WHAT WE DO</a></li>
-            <li><a href="/products.html">PRODUCTS/SERVICES</a></li>
-            <li><a href="/our_impact.html">OUR IMPACT</a></li>
-            <li><a href="/future_projects.html">FUTURE PROJECTS</a></li>
-            <li><a href="/contacts.html">CONTACT US</a></li>
-            <li><a href="/gallary.html">GALLARY</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+      <div class="menu_list">
+        <ul>
+          <!-- ABOUT US -->
+          <li class="dropdown">
+            <a href="/about.html">ABOUT US</a>
+            <div class="dropdown-content">
+              <a href="#">Herad Company</a>
+              <a href="#">Leadership</a>
+            </div>
+          </li>
+
+          <!-- WHAT WE DO -->
+          <li class="dropdown">
+            <a href="/what_we_do.html">WHAT WE DO</a>
+            <div class="dropdown-content">
+              <a href="#">We Are Growers</a>
+              <a href="#">We Are Processors</a>
+              <a href="#">We Are Exporters</a>
+              <a href="#">We Are Consultants</a>
+            </div>
+          </li>
+
+          <!-- PRODUCTS | SERVICES -->
+          <li class="dropdown">
+            <a href="/products.html">PRODUCTS | SERVICES</a>
+            <div class="dropdown-content">
+              <!-- Products -->
+              <a href="fruits.html">Fruits</a>
+              <a href="vegetables.html">Vegetables</a>
+              <a href="spices.html">Spices</a>
+              <a href="#">Cereals</a>
+              <a href="#">Natural Sugars</a>
+              <a href="#">Fats and Oils</a>
+              <a href="#">Meats | Fish | Poultry</a>
+              <a href="#">Beverages</a>
+              <a href="#">Kombucha Products</a>
+              <hr />
+              <!-- Services -->
+              <a href="#">Export & Imports</a>
+              <a href="#">Contractual Farming</a>
+              <a href="#">Tour & Travel</a>
+              <a href="#">Hospitality Management</a>
+              <a href="#">Consultancy</a>
+            </div>
+          </li>
+
+          <!-- OUR IMPACT -->
+          <!-- <li class="dropdown">
+            <a href="/our_impact.html">OUR IMPACT</a>
+            <div class="dropdown-content">
+              <a href="#">Local Farmers</a>
+              <a href="#">Local Communities</a>
+              <a href="#">Local Businesses</a>
+              <a href="#">Internal Agro Markets</a>
+            </div>
+          </li> -->
+
+
+    <!-- OUR IMPACT (Updated for smooth scrolling) -->
+<li class="dropdown">
+  <a href="#">OUR IMPACT</a>
+  <div class="dropdown-content">
+    <a href="#farmers">Local Farmers</a>
+    <a href="#businesses">Local Businesses</a>
+    <a href="#wellness">Wellness Products</a>
+    <a href="#markets">Internal Agro Markets</a>
+  </div>
+</li>
+
+          <!-- FUTURE PROJECTS -->
+          <li class="dropdown">
+            <a href="/future_projects.html">FUTURE PROJECTS</a>
+            <div class="dropdown-content">
+              <a href="#">Northern Uganda - Gulu</a>
+              <a href="#">Western Uganda - Kasese</a>
+              <a href="#">Central Uganda - Rakai</a>
+            </div>
+          </li>
+
+          <!-- CONTACT US -->
+          <li class="dropdown">
+            <a href="/contacts.html">CONTACT US</a>
+            <div class="dropdown-content">
+              <a href="#">Main Office</a>
+              <a href="#">Administration</a>
+              <a href="#">Marketing</a>
+            </div>
+          </li>
+
+          <!-- GALLERY -->
+          <li class="dropdown">
+            <a href="/gallery.html">GALLERY</a>
+            <div class="dropdown-content">
+              <a href="#">Photos</a>
+              <a href="#">Videos</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
 
     <main>
       <section class="intro">
@@ -42,7 +131,7 @@
         </p>
       </section>
 
-      <section class="empowering-farmers">
+      <section class="empowering-farmers" id="farmers">
         <h4>Empowering Farmers and Rural Communities</h4>
         <p>
           We work hand in hand with
@@ -66,7 +155,7 @@
         </p>
       </section>
 
-      <section class="export-excellence">
+      <section class="export-excellence" id="markets">
         <h3>Driving Export Excellence and Global Integration</h3>
         <p>
           Our presence in Uganda and the USA enables us to manage<strong>
@@ -87,7 +176,7 @@
         </p>
       </section>
 
-      <section class="wellness-products">
+      <section class="wellness-products" id="wellness">
         <h4>Promoting Wellness Through Natural Products</h4>
         <p>
           Our <strong>Kombucha Health Products </strong>and
@@ -127,7 +216,7 @@
         </p>
       </section>
 
-      <section class="sme-growth">
+    <section class="sme-growth" id="businesses">
         <h4>Supporting SME Growth and Resilience</h4>
         <p>
           With over 25 years of experience led by
@@ -208,10 +297,83 @@
           >
         </p>
       </section>
-
-
-
-
     </main>
+
+
+     <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-logo-container">
+        <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo" class="footer-logo" />
+      </div>
+
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h3>HERAD Offices</h3>
+          <p>Plot 443, Akright Estate, Wakiso</p>
+          <h4>Other Locations</h4>
+          <p>Kitaturwa LC1, Kasese District</p>
+          <p>Kitwaranyi LC1, Rwakai District</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>HERAD International</h3>
+          <p>Africa: East Africa | South Africa</p>
+          <h4>International</h4>
+          <p>USA | UAE | Europe</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Assistance</h3>
+          <p class="contact-info"><strong>Contacts:</strong><br />
+            <a href="tel:+256772593424">+256 772 593424</a><br />
+            <a href="tel:+256778943330">+256 778 943330</a><br />
+            <a href="tel:+256753044293">+256 753 044293</a><br />
+            <a href="tel:+256702593424">+256 702 593424</a>
+          </p>
+          <p class="contact-info email-links"><strong>Emails:</strong><br />
+            <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br />
+            <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-section footer-follow">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.tiktok.com/@heradcompany" target="_blank" rel="noopener noreferrer">
+              <img src="images/tiktok.png" alt="HERAD on TikTok" />
+            </a>
+            <a href="https://www.facebook.com/HERADExports" target="_blank" rel="noopener noreferrer">
+              <img src="images/facebook.png" alt="HERAD on Facebook" />
+            </a>
+            <a href="https://www.instagram.com/herad_exports" target="_blank" rel="noopener noreferrer">
+              <img src="images/instagram1.png" alt="HERAD on Instagram" />
+            </a>
+            <a href="https://wa.me/256772593424" target="_blank" rel="noopener noreferrer">
+              <img src="images/whatsap.png" alt="Chat with HERAD on WhatsApp" />
+            </a>
+          </div>
+
+          <h4>Payment Methods</h4>
+          <div class="payment-methods-icons">
+            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
+            <img src="images/mtn.jpg" alt="Pay with MTN Mobile Money" />
+            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
+            <img src="images/visa2.png" alt="Visa card" />
+            <img src="images/handcash1.png" alt="Cash Accepted" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
   </body>
 </html>

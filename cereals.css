@@ -4,6 +4,9 @@
     box-sizing: border-box;
   }
 
+  body{
+    background-color: rgb(250, 203, 203);
+  }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
@@ -138,14 +141,14 @@ nav {
 
 .hero-section img {
     animation: fadeInOut 8s ease-in-out infinite;
-    margin-top: 155px;
+    margin-top: 150px;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 170px;
   }
   
   /* Animation definition placed outside the selector */
@@ -183,3 +186,111 @@ nav {
     font-size: 60px;                          /* Increase the size of the heading text */
   }
   
+/* ========================= */
+/* Section Title Styling     */
+/* ========================= */
+.section-title, /* Apply also to your <h3> if you want uniform styling */
+.fruit-section-title, h3{
+  text-align: center;              /* Center the title horizontally */
+  font-size: 40px;                 /* Large font size for visibility */
+  color: maroon;                   /* Maroon color for branding */
+  margin-top: 40px;                /* Space above the title */
+  margin-bottom: 20px;             /* Space below the title */
+  font-weight: 900;                /* Bold font weight */
+  letter-spacing: 1px;             /* Spacing between letters */
+  text-transform: uppercase;       /* Convert text to uppercase */
+  position: relative;              /* Needed for the ::after element */
+}
+
+/* Decorative underline for title */
+.section-title::after,
+.fruit-section-title::after {
+  content: "";                     
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: maroon;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+/* ========================= */
+/* Grid Layout for Products  */
+/* ========================= */
+.fruit-grid {
+  padding: 20px;
+  /* background-color: #911407; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Equal flexible columns */
+  gap: 10px;                         /* Space between grid items */
+  width: 100vw;                      /* Full viewport width */
+  margin: 0;                        /* Remove default margins */
+  padding: 0px;                    /* Padding around the grid */
+  box-sizing: border-box;
+}
+
+/* ========================= */
+/* Individual Box Styling    */
+/* ========================= */
+.fruit-box {
+  display: flex;                         /* Use flexbox to arrange image and caption vertically */
+  flex-direction: column;                /* Stack image on top, caption below */
+  align-items: center;                   /* Center content horizontally */
+  border: 1px solid #4C5D00;              /* Maroon border around the box */
+  border-right: 7px solid #4C5D00;         /* Thicker black border on the right side */
+  border-top-right-radius: 20px;         /* Rounded top-right corner */
+  border-bottom-right-radius: 20px;      /* Rounded bottom-right corner */
+  padding: 10px;                           /* No padding so image fills box fully */
+  background-color: #4C5D00;             /* Brown background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.3s ease;       /* Smooth lift animation on hover */
+  color: white;                         /* Text color */
+  width: 100%;                         /* Fill the width of the grid cell */
+  box-sizing: border-box;               /* Include border in width */
+  overflow: hidden;                     /* Hide overflow for rounded corners */
+  height: 300px;                       /* Fixed height for equal-sized boxes */
+}
+
+/* Hover effect */
+.fruit-box:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ========================= */
+/* Image Styling             */
+/* ========================= */
+/* Image fills available space except reserved caption area */
+.fruit-box img {
+  width: 100%;                        /* Fill width of container */
+  height: calc(100% - 50px);          /* Fill height minus caption height */
+  object-fit: cover;                   /* Crop image to fill area without distortion */
+  border-top-right-radius: 20px;      /* Match container's top-right rounding */
+  display: block;                     /* Remove bottom gap from inline images */
+  flex-shrink: 0;                    /* Prevent image from shrinking */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Equal flexible columns filling width */
+  gap: 20px;                          /* Space between items */
+}
+
+
+
+/* ========================= */
+/* Text Label Below Image    */
+/* ========================= */
+/* Caption text styling */
+.fruit-box p {
+  text-align: center;
+  margin: 10px 0;                    /* Vertical margin around caption */
+  font-weight: bold;                 /* Bold text */
+  color: white;                     /* White text color */
+  font-size: 16px;                   /* Readable font size */
+  text-align: center;                /* Center the caption text */
+  height: 50px;                     /* Fixed height to reserve space below image */
+  line-height: 50px;                /* Vertically center text within caption area */
+  flex-shrink: 0;                   /* Prevent shrinking */
+}
+
+
+/* =================== FOOTER DESIGNING =================== */
+

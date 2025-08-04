@@ -147,7 +147,144 @@
   }
 
   /* ============================== HERO SECTION =============================== */
+  /* ======================= HERO SECTION ======================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height for impact */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Replace black background with a background image */
+  background-image: url('your-background-image.jpg'); /* <-- set your background image URL here */
+  background-size: cover;        /* Cover entire area */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
 
+/* Falling image animation */
+.falling-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* Cover container without distortion */
+  animation: fallFromSky 2.2s ease-out forwards; /* Falling animation */
+  z-index: 0;                   /* Behind text, above background */
+}
+
+/* Falling animation keyframes */
+@keyframes fallFromSky {
+  0% {
+    transform: translateY(-120%) scale(1.2); /* Start far above the viewport */
+    opacity: 0;                             /* Invisible at start */
+  }
+  60% {
+    opacity: 1;                             /* Fade in during fall */
+  }
+  100% {
+    transform: translateY(0) scale(1);     /* Land in place */
+    opacity: 1;                            /* Fully visible */
+  }
+}
+
+/* Dramatic title */
+.hero-title {
+  position: relative;
+  z-index: 1;                         /* On top of everything */
+  font-size: 60px;
+  color: white;
+  font-weight: 900;
+  background-color: rgba(101, 35, 27, 0.7); /* Semi-transparent maroon overlay */
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 2s ease-out 1s forwards; /* Fade and slide up */
+  opacity: 0;                         /* Start hidden */
+}
+
+/* Fade in + lift effect for text */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* ============================ SECTION TITLE ============================ */
+h3 {
+  text-align: center;           /* Center the heading */
+  font-size: 32px;              /* Font size for visibility */
+  color: maroon;                /* Brand color */
+  margin: 20px 0 20px;          /* Top and bottom spacing */
+  text-transform: uppercase;    /* Make text uppercase */
+  position: relative;           /* Required for ::after element */
+}
+
+h3::after {
+  content: "";
+  display: block;               /* Make it a block so width applies */
+  width: 100%;                 /* Full width of the h3 */
+  height: 2px;                 /* Thickness of the line */
+  background-color: maroon;    /* Match title color */
+  margin-top: 10px;            /* Space above the line */
+  border-radius: 6px;          /* Rounded edges */
+  /* Vendor prefixes for border-radius are not needed in modern browsers */
+}
+
+
+
+/* ============================ CATEGORY GRID ============================ */
+.category-grid {
+  display: grid;                                /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
+  gap: 20px;                                     /* Space between items */
+  padding: 0 20px 40px;                          /* Space around grid */
+  width: 100%;                                   /* Full width */
+  box-sizing: border-box;                        /* Includes padding in width */
+}
+
+
+/* ============================ CATEGORY ITEM BOX ============================ */
+.veg-item {
+  background-color: #8b6133;                     /* Unique brown background */
+  border: 2px solid rgb(94, 38, 38);                      /* Maroon border */
+  border-right: 8px solid rgb(83, 15, 15);                 /* Strong right border for visual interest */
+  border-top-right-radius: 20px;                 /* Rounded top-right corner */
+  border-bottom-right-radius: 20px;              /* Rounded bottom-right corner */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);       /* Subtle shadow for depth */
+  text-align: center;                            /* Center content inside */
+  color: white;                                  /* White text */
+  padding: 10px;                                 /* Inner spacing */
+  transition: transform 0.3s ease;               /* Smooth animation on hover */
+}
+
+.veg-item:hover {
+  transform: translateY(-5px);                   /* Slight raise on hover */
+}
+
+
+/* ============================ CATEGORY ITEM IMAGE ============================ */
+.veg-item img {
+  width: 100%;                                   /* Fill container width */
+  height: 200px;                                 /* Fixed height */
+  object-fit: cover;                             /* Maintain aspect, crop if needed */
+  border-radius: 8px;                            /* Rounded image corners */
+}
+
+
+/* ============================ CATEGORY ITEM TEXT ============================ */
+.veg-item p {
+  margin-top: 10px;                              /* Space between image and text */
+  font-weight: bold;                             /* Bold for readability */
+  font-size: 16px;                               /* Readable size */
+  color: white;                                  /* Text color */
+}
 
 
 

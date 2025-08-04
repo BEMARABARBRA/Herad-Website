@@ -7,7 +7,7 @@
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-    background-image: url("/herad_images/meats-nav-pic.jpeg"); /* Background image */
+    background-image: url("/herad_images/meat-chops.jpeg"); /* Background image */
     background-repeat: no-repeat;       /* No repeat */
     background-size: cover;             /* Cover entire nav area */
     background-position: center;        /* Center image */
@@ -127,26 +127,27 @@ nav {
 
 
   /* =============================== HERO SECTION ================================== */
-  .hero-section {
-    background-color: #1d1d03;
-    position: relative;              /* Allows absolute-positioned children to be placed relative to this container */
-    width: 100%;                     /* Makes the section span the full width of the page */
-    height: 100vh;                    /* Sets the height to 80% of the viewport height */
-    overflow: hidden;               /* Prevents content from overflowing outside the section */
-    
-}
+    .hero-section {
+      background-color: rgba(148, 90, 14, 0.774);
+      position: relative;              /* Allows absolute-positioned children to be placed relative to this container */
+      width: 100%;                     /* Makes the section span the full width of the page */
+      height: 100vh;                    /* Sets the height to 80% of the viewport height */
+      overflow: hidden;               /* Prevents content from overflowing outside the section */
+      
+  }
 
-.hero-section img {
+  .hero-section img {
+    margin-top: 130px;
+    padding: 15px;
+    padding-bottom: 145px;
     animation: fadeInOut 8s ease-in-out infinite;
-    margin-top: 155px;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
+    
   }
+  
   
   /* Animation definition placed outside the selector */
   @keyframes fadeInOut {
@@ -158,7 +159,7 @@ nav {
     }
   }
   
-
+  
   .hero-text {
     position: absolute;                       /* Position the element absolutely within its parent */
     top: 50%;                                 /* Move the element 50% down from the top of its parent */
@@ -179,10 +180,87 @@ nav {
   }
   
   .hero-text h1 {
-    margin-top: 160px;                        /* Push the heading down inside the text box (may be optional if text is already centered) */
-    font-size: 60px;                          /* Increase the size of the heading text */
+    margin-top: 160px; /* Push the heading down inside the hero section */
+    font-size: 60px;   /* Make the heading text large for visual impact */
+  
+    /* Create a layered 3D text-shadow effect */
+    text-shadow:
+      1px 1px 0 rgb(95, 10, 10),    /* First shadow layer, small offset */
+      2px 2px 0 maroon,    /* Second layer, slightly further out */
+      3px 3px 0 #000,    /* Third layer to add more depth */
+      4px 4px 0 #000,    /* Fourth layer to build on the effect */
+      5px 5px 10px rgba(0, 0, 0, 0.5); /* Final layer with blur for realism */
   }
   
+  
+/* Section titles: MEATS, POULTRY, FISH */
+h3 {
+  text-align: center;
+  margin-top: 60px; /* Extra top space before section title */
+  margin-bottom: 20px; /* Space after the heading before the grid */
+  color: maroon; /* Heading color */
+  font-size: 50px; /* Larger heading size */
+  font-weight: 900; /* Bold text */
+  text-transform: uppercase; /* All caps */
+  border-bottom: 5px solid maroon; /* Optional underline for separation */
+  padding-bottom: 5px; /* Space between text and border */
+}
+
+/* Container for each grid of products */
+.fruit-grid {
+  display: flex; /* Arrange boxes in a row */
+  flex-wrap: wrap; /* Wrap boxes onto the next line if needed */
+  gap: 20px; /* Space between boxes */
+  padding: 20px; /* Inner spacing */
+  margin-bottom: 50px; /* Space below each section */
+  background: linear-gradient(to right, rgb(49, 2, 2), rgb(197, 5, 5)); /* Maroon gradient background */
+  border-radius: 10px; /* Rounded corners */
+
+  /* Optional: Vendor-specific border-radius for older browsers */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+
+/* Box containing image and text */
+.fruit-box {
+  flex: 1 1 100px; /* Responsive box sizing with a base width of 100px */
+  background-color: white; /* White box background */
+  padding: 10px; /* Padding inside each box */
+  text-align: center; /* Center align image and text */
+  border-radius: 0 15px 15px 0; /* Rounded corners only on the right side */
+  border-right: 8px solid black; /* Thick black border on the right */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+
+  /* Optional: Vendor-specific border-radius for old browsers */
+  -webkit-border-radius: 0 15px 15px 0;
+  -moz-border-radius: 0 15px 15px 0;
+  -ms-border-radius: 0 15px 15px 0;
+  -o-border-radius: 0 15px 15px 0;
+}
+
+
+/* Image styling */
+.fruit-box img {
+  width: 250px; /* Uniform width */
+  height: 200px; /* Uniform height */
+  object-fit: cover; /* Keep image aspect ratio, crop if needed */
+  border-radius: 10px; /* Rounded image corners */
+  display: block; /* Remove bottom space */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Text under each image */
+.fruit-box p {
+  margin-top: 10px; /* Space between image and text */
+  font-weight: bold; /* Bold text */
+  color: #3d0404; /* Dark gray text */
+  font-size: 20px; /* Font size */
+}
+
 
 
 

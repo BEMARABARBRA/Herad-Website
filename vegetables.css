@@ -8,7 +8,7 @@
 /* ===== Body styles ===== */
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-color: #f9f9f9;
+  background-color: #f5bebe;
   color: #333;
   line-height: 1.5;
 }
@@ -120,119 +120,140 @@ nav ul li:hover > .dropdown-content {
   margin: 8px 12px;
 }
 
-/* ===== Hero section styles ===== */
+/* ============================= HERO SECTION ============================= */
+
+/* Container holding the hero image and heading */
 .hero-section {
-  position: relative;
-  width: 100%;
-  max-height: 600px;
-  overflow: hidden;
-  border-radius: 10px;
+  background-color: #3A0303;
+  position: relative;           /* Allows absolute positioning inside */
+  overflow: hidden;             /* Hides zoomed-out parts of image */
+  width: 100%;                  /* Full width of the screen */
+  height: 80vh;                 /* 80% of the viewport height */
 }
 
+/* Hero image with zoom effect */
 .hero-section img {
-  width: 100%;
-  height: 650px;
-  object-fit: cover;
-  display: block;
-  filter: brightness(0.7);
-  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 160px;
+  margin-top: 140px;
+  width: 100%;                  /* Stretch image across full width */
+  height: 100%;                 /* Stretch image across full height */
+  object-fit: cover;            /* Ensures image covers entire box without squishing */
+  animation: zoomInOut 8s ease-in-out infinite;  /* Apply the zoom animation infinitely */
+  transform-origin: center center; /* Zoom from the exact center (like a ball in the middle) */
 }
 
-/* =============== Main page heading ========= */
+/* Keyframes animation for zooming in and out */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);        /* Start at normal size */
+  }
+  0% {
+    transform: scale(2.1);            /*Zoominslightlyathalfwaypoint*/
+}
+  100% {
+    transform: scale(1);        /* Return to normal size */
+  }
+}
+
+/* Main heading displayed over the hero image with 3D effect */
 .hero-section h1 {
   margin-top: 60px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 60px;
-  text-shadow: 6px 6px 1px #000000;
+  position: absolute;                      /* Position on top of image */
+  top: 50%;                                /* Center vertically */
+  left: 50%;                               /* Center horizontally */
+  transform: translate(-50%, -50%);        /* Perfectly center */
+  color: white;                            /* Main text color */
+  font-size: 3rem;                         /* Large text */
   text-align: center;
-  padding: 10px 20px;
-  border-radius: 10px;
+  z-index: 2;                              /* Appear above image */
+
+  /* Layered text-shadows to simulate 3D depth */
+  text-shadow:
+    1px 1px 0 #3b0000,                     /* First base shadow (dark maroon) */
+    2px 2px 1px #4d0000,                   /* Slightly deeper shadow */
+    3px 3px 2px #5c0000,                   /* Deeper layer */
+    4px 4px 3px black;        /* Soft black shadow for depth */
 }
 
-/* ===== Category headings ===== */
+/* ================= Category headings =================== */
 h3 {
-  font-size: 2rem;
-  color: #27ae60;
-  border-bottom: 3px solid #27ae60;
-  padding-bottom: 8px;
-  margin: 40px 0 20px;
+  font-size: 2rem;                     /* Large, readable heading */
+  color: #3A0303;                     /* Brand green color */
+  border-bottom: 3px solid #3A0303;  /* Underline matching text color */
+  padding-bottom: 8px;                /* Space between text and underline */
+  margin: 40px 0 20px;               /* Space above and below heading */
+  text-transform: uppercase;          /* Capitalize all letters */
+  text-align: center;                 /* Center align the heading */
 }
 
-/* ===== Vegetable card styling ===== */
-.veg-container {
-  display: flex;
-  flex-wrap: wrap; /* Wraps on smaller screens */
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-}
-
-.veg-item {
-  position: relative;
-  background: rgba(128, 0, 0, 0.7);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  padding: 20px 15px;
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden;
-  color: #fff;
-
-  flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
-  max-width: calc(33.333% - 20px);
+/* ========================== CATEGORY GRID CONTAINER ========================== */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive grid with each box min 180px */
+  gap: 10px;                             /* Space between each veg-item */
+  padding: 10px;                       /* Less padding so images have more room */
+  margin-bottom: 10px;                  /* Spacing below each category */
   box-sizing: border-box;
 }
 
-.veg-item:hover {
+/* ========================== INDIVIDUAL VEGETABLE ITEM ========================== */
+.veg-item {
+  display: flex;                         /* Use flexbox for vertical stacking */
+  flex-direction: column;               /* Stack image and label vertically */
+  align-items: center;                  /* Center image and label */
+  background: rgb(58, 3, 3);            /* Dark red background */
+  border-radius: 8px;                   /* Rounded corners */
+  padding: 10px;                      /* Compact padding inside each item */
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  height: 100%;                         /* Ensure item stretches to fit the grid row */
+}
+
+/* Hover interaction effect */
+.veg-item:hover,
+.veg-item:focus {
+  transform: translateY(-4px);          /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+/* ========================== IMAGE STYLING ========================== */
+.veg-item img {
+  width: 100%;                          /* Full width inside .veg-item */
+  height: 320px;
+  object-fit: cover;                    /* Cover the space without distortion */
+  border-radius: 6px;
+  margin-bottom: 10px;
+  flex-grow: 1;                       /* Take up most vertical space */
+  max-height: 85%;                      /* Image should occupy ~70% of item height */
+  transition: transform 0.3s ease;
+}
+
+/* Zoom effect on hover */
+.veg-item:hover img,
+.veg-item:focus img {
   transform: scale(1.05);
 }
 
-.veg-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-left: 60px solid transparent;
-  border-bottom: 60px solid rgba(255, 255, 255, 0.1);
-}
-
-.veg-item::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-right: 60px solid transparent;
-  border-top: 60px solid rgba(255, 255, 255, 0.05);
-}
-
-.veg-item img,
+/* ========================== TEXT STYLING ========================== */
 .veg-item p {
-  position: relative;
-  z-index: 2;
-}
-
-.veg-item img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  border: 2px solid #fff;
-}
-
-.veg-item p {
-  font-weight: 600;
-  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 900px;
+  font-size: 30px;
+  text-align: center;
   margin: 0;
+  user-select: text;
+  line-height: 1.2;
 }
+
+
+
+
+
+
 
 /* =================== FOOTER DESIGNING =================== */
 .footer {

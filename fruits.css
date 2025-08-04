@@ -234,8 +234,8 @@ h1::after {
 /* Fruit category headings */
 /* Section Headings */
 h3 {
-  font-size: 52px;
-  color: black; /* Rich green */
+  font-size: 50px;
+  color: rgb(102, 9, 9); /* Rich green */
   text-align: center;
   margin-top: 40px 0 20px;
   text-transform: uppercase;

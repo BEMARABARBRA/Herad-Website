@@ -166,15 +166,17 @@ nav ul li:hover > .dropdown-content {
 
 /* Background overlay image for hero section */
 .hero-background {
-  position: absolute;             /* Positioned relative to nearest positioned ancestor */
-  top: 0; left: 0; right: 0; bottom: 0; /* Stretch to cover entire container */
-  background-image: url('/herad_images/green-coffee-beans.jpeg'); /* Background image */
-  background-size: cover;          /* Cover entire area without distortion */
-  background-position: center;    /* Center image within container */
-  background-repeat: no-repeat;   /* Prevent repeating image */
-  opacity: 0.;                   /* Slightly transparent for overlay effect */
-  z-index: 0;                    /* Behind other hero content */
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    linear-gradient(rgba(23, 109, 37, 0.5), rgba(29, 107, 59, 0.8)), /* overlay (black @ 50% opacity) */
+    url('/herad_images/green-coffee-beans.jpeg');      /* background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
+
 
 /* Hero slider container */
 .hero-slider {

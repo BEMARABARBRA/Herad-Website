@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Page title shown in browser tab -->
-    <title>Herad_homepage</title>
-
-    <!-- Character encoding set to UTF-8 for wide language support -->
     <meta charset="UTF-8" />
-
-    <!-- Responsive design meta tag for mobile friendliness -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Link to external CSS stylesheet for styling -->
+    <title>Herad Homepage</title>
     <link href="index.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!--===================== HEADER CONTAINER =======================-->
-    <!-- NAVIGATION BAR Contains:
-         - Logo on the left
-         - Navigation menu on the right
-         - The navigation bar is placed inside the Header tag
-    -->
+    <!-- HEADER -->
     <header>
       <nav>
         <!-- Logo Section on the left -->
@@ -37,21 +25,17 @@
         </div>
 
 
-        <!-- Navigation Menu container -->
         <div class="menu_list">
           <ul>
-            <!-- ABOUT US Dropdown Menu -->
             <li class="dropdown">
-              <a href="about.html">ABOUT US</a>
+              <a href="/about.html">ABOUT US</a>
               <div class="dropdown-content">
                 <a href="#">Herad Company</a>
                 <a href="#">Leadership</a>
               </div>
             </li>
-
-            <!-- WHAT WE DO Dropdown Menu -->
             <li class="dropdown">
-              <a href="/what_we_do.html">WHAT WE DO</a>
+              <a href="what_we_do.html">WHAT WE DO</a>
               <div class="dropdown-content">
                 <a href="#">We Are Growers</a>
                 <a href="#">We Are Processors</a>
@@ -59,12 +43,9 @@
                 <a href="#">We Are Consultants</a>
               </div>
             </li>
-
-            <!-- PRODUCTS | SERVICES Dropdown Menu -->
             <li class="dropdown">
-              <a href="/products.html">PRODUCTS | SERVICES</a>
+              <a href="products.html">PRODUCTS | SERVICES</a>
               <div class="dropdown-content">
-                <!-- Product categories -->
                 <a href="fruits.html">Fruits</a>
                 <a href="vegetables.html">Vegetables</a>
                 <a href="spices.html">Spices</a> 
@@ -74,11 +55,7 @@
                 <a href="meats.html">Meats | Fish | Poultry</a>
                 <a href="breverages.html">Beverages</a>
                 <a href="kombucha.html">Kombucha Products</a>
-
-                <!-- Horizontal line to separate product and service lists -->
-                <hr style="margin: 8px 0; border-color: #692727" />
-
-                <!-- Services -->
+                <hr style="margin:8px 0; border-color:#692727;" />
                 <a href="#">Export & Imports</a>
                 <a href="#">Contractual Farming</a>
                 <a href="#">Tour & Travel</a>
@@ -86,91 +63,45 @@
                 <a href="#">Consultancy</a>
               </div>
             </li>
-
-
-            <!-- OUR IMPACT Dropdown -->
-            <li class="dropdown">
-              <a href="/our_impact.html">OUR IMPACT</a>
-              <div class="dropdown-content">
-                <a href="#">Local Farmers</a>
-                <a href="#">Local Communities</a>
-                <a href="#">Local Businesses</a>
-                <a href="#">Internal Agro Markets</a>
-              </div>
-            </li>
-
-            <!-- FUTURE PROJECTS Dropdown -->
-            <li class="dropdown">
-              <a href="/future_projects.html">FUTURE PROJECTS</a>
-              <div class="dropdown-content">
-                <a href="#">Northern Uganda - Gulu</a>
-                <a href="#">Western Uganda - Kasese</a>
-                <a href="#">Central Uganda - Rakai</a>
-              </div>
-            </li>
-
-            <!-- CONTACT US Dropdown -->
-            <li class="dropdown">
-              <a href="/contacts.html">CONTACT US</a>
-              <div class="dropdown-content">
-                <a href="#">Main Office</a>
-                <a href="#">Administration</a>
-                <a href="#">Marketing</a>
-              </div>
-            </li>
-
-            <!-- GALLERY Dropdown -->
-            <li class="dropdown">
-              <a href="/gallery.html">GALLERY</a>
-              <div class="dropdown-content">
-                <a href="#">Photos</a>
-                <a href="#">Videos</a>
-              </div>
-            </li>
+            <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
+            <li class="dropdown"><a href="future_projects.html">FUTURE PROJECTS</a></li>
+            <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
+            <li class="dropdown"><a href="gallery.html">GALLERY</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <!--========================= HERO SECTION CONTAINER =========================-->
+    <!-- HERO SECTION -->
     <section class="hero-content">
-     
       <div class="hero-background"></div>
-
-      <!-- RIGHT COLUMN: Slideshow of product images -->
       <div class="hero-slider">
-        <div class="slider-wrapper" >
-          <!-- Repeated fade-slide image containers -->
-          <div class="fade-slide"><img src="/herad_images/HERO -FRUITS.png" alt="Fruits" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -VEGETABLES.png" alt="-VEGETABLES" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -SPICES.png" alt="spices" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -CEREALS.png" alt="Cereals" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -NATURAL SUGARS.png" alt="natural-sugars" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -FATS&OILS.png" alt="fats&oils" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -MEATS.png" alt="Meats" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -POUTRY.png" alt="POUTRY" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -FISH.png" alt="FISH" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -BREVERAGES.png" alt="Breverages" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -KOMBUCHA.png" alt="kombucha" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -HOSPITALITY.png" alt="Hospitality" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -TOUR.png" alt="Tour" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -FARMING.png" alt="Farming" /></div>
-          <div class="fade-slide"><img src="/herad_images/HERO -CONSULTANCY.png" alt="Consultancy" /></div>
-
-          
+        <div class="slider-wrapper">
+          <div class="fade-slide"><img src="herad_images/HERO -FRUITS.png" alt="Fruits" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -VEGETABLES.png" alt="Vegetables" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -SPICES.png" alt="Spices" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -CEREALS.png" alt="Cereals" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -NATURAL SUGARS.png" alt="Natural Sugars" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -FATS&OILS.png" alt="Fats & Oils" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -MEATS.png" alt="Meats" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -POUTRY.png" alt="Poultry" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -FISH.png" alt="Fish" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -BREVERAGES.png" alt="Beverages" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -KOMBUCHA.png" alt="Kombucha" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -HOSPITALITY.png" alt="Hospitality" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -TOUR.png" alt="Tour" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -FARMING.png" alt="Farming" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -CONSULTANCY.png" alt="Consultancy" /></div>
         </div>
       </div>
     </section>
 
-    <!--========================= FOOTER SECTION =========================-->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-content">
-        <!-- Logo Section in Footer -->
         <div class="footer-logo-container">
-          <img src="/herad_images/herad logo.jpg" alt="Herad Logo" class="footer-logo" />
+          <img src="herad_images/herad logo.jpg" alt="Herad Logo" class="footer-logo" />
         </div>
-
-        <!-- Office and Contact Information -->
         <div class="footer-sections">
           <div class="footer-section">
             <h3>HERAD OFFICES</h3>
@@ -179,55 +110,25 @@
             <p>Kitaturwa LC1, Kasese District</p>
             <p>Kitwaranyi LC1, Rwakai District</p>
           </div>
-
           <div class="footer-section">
             <h3>HERAD INTERNATIONAL</h3>
             <p>AFRICA: East Africa | South Africa</p>
             <h4>INTERNATIONAL</h4>
             <p>USA | UAE | Europe</p>
           </div>
-
           <div class="footer-section">
             <h3>ASSISTANCE</h3>
-            <p><strong>Contacts:</strong><br />+256 772 593424<br />+256 778 943330<br />+256 753 044293<br />+256 702 593424</p>
-            <p class="contact-info email-links">
-              <strong>Emails:</strong><br />
-              <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br />
+            <p><strong>Contacts:</strong><br>+256 772 593424<br>+256 778 943330<br>+256 753 044293<br>+256 702 593424</p>
+            <p><strong>Emails:</strong><br>
+              <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br>
               <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
             </p>
           </div>
-
-          <!-- Social Media & Payment Icons -->
-          <div class="social-media">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-              <a href="https://www.tiktok.com/@heradcompany" target="_blank"><img src="/herad_images/herad-tiktok icon.png" alt="TikTok" /></a>
-              <a href="https://www.facebook.com/HERADExports" target="_blank"><img src="/herad_images/Herad-Facebook icon.png" alt="Facebook" /></a>
-              <a href="https://www.instagram.com/herad_exports" target="_blank"><img src="/herad_images/Herad-Instagram icon.png" alt="Instagram" /></a>
-              <a href="https://wa.me/256772593424" target="_blank"><img src="/herad_images/Herad-whatsapp icon.png" alt="WhatsApp" /></a>
-            </div>
-
-            <div class="payment-methods">
-              <h3>Payment Methods</h3>
-              <div class="payment-methods-icons">
-                <img src="/herad_images/__Airtel_Wallpapers_on_WallpaperSafari-removebg-preview.png" alt="Airtel" class="airtel-logo" />
-                <img src="/herad_images/Herad-MTN_logo.png" alt="MTN" />
-                <img src="/herad_images/MasterCard_Black_Logo-removebg-preview.png" alt="MasterCard" />
-                <img src="/herad_images/_-removebg-preview.png" alt="Other Payment Method" />
-                <img src="/herad_images/herad-hand-cash.png" alt="Cash Payment" />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
-
-      <!-- Bottom Strip -->
       <div class="footer-bottom">
         <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
-        <div>
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy Policy</a>
-        </div>
+        <div><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></div>
       </div>
     </footer>
   </body>

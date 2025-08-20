@@ -1,0 +1,27 @@
+*{
+    padding: o;
+    margin: 0;
+}
+
+/* Nav Bar */
+.custom-navbar{
+    background-color: rgb(240, 174, 174);
+}
+.custom-navbar .nav-link{
+    color: rgb(48, 45, 45);
+    text-align: right;
+    font-weight: bolder;
+    font-size: large;
+}
+
+/* Limit the carousel height */
+.hero .carousel-inner {
+    height: 600px; /* You can adjust this height */
+    overflow: hidden;
+  }
+  
+  .hero .carousel-inner img {
+    height: 100%;
+    object-fit: cover; /* Ensures image fits without distortion */
+  }
+  

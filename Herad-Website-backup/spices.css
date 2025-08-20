@@ -1,0 +1,533 @@
+/* =================== RESET STYLES =================== */
+
+/* Reset margin for all elements */
+* {
+    margin: 0;                /* Remove default margin */
+    padding: 0;               /* Remove default padding */
+    box-sizing: border-box;   /* Include padding and border in element's total width and height */
+  }
+  
+  /* Set base font size and scrolling offset */
+  html {
+    font-size: 80%;               /* Set root font size to 80% of browser default */
+    scroll-padding-top: 130px;    /* Offset scroll for fixed nav (130px tall) */
+    overflow-x: hidden;           /* Prevent horizontal scrollbar */
+  }
+  
+  /* Basic body styling */
+  body {
+    font-family: "Times New Roman", Times, serif; /* Set font family */
+    background-color: #c77d83;    /* Set background color to soft pink */
+    color: black;                 /* Set text color */
+    line-height: 1.0;             /* Set line height to 1 */
+    overflow-x: hidden;           /* Prevent horizontal overflow */
+    padding-top: 130px;           /* Add top padding equal to fixed nav height */
+  }
+  
+  /* =================== NAVIGATION BAR =================== */
+  
+  /* Styles for the <nav> element */
+  nav {
+    background-image: url("/herad_images/nav-spice-img.jpeg"); /* Background image */
+    background-repeat: no-repeat;       /* Prevent background repetition */
+    background-size: cover;             /* Cover entire nav area */
+    background-position: center;        /* Center background image */
+    background-blend-mode: darken;      /* Blend overlay for darker effect */
+    background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent dark overlay */
+    height: 130px;                      /* Fixed height of nav bar */
+    display: flex;                     /* Use flexbox for layout */
+    align-items: center;               /* Vertically center content */
+    justify-content: space-between;    /* Space between items */
+    box-shadow: 0 2px 5px black;       /* Add shadow below nav */
+    color: white;                     /* Set text color */
+    padding: 0 20px;                  /* Horizontal padding */
+    position: fixed;                  /* Fix nav to viewport top */
+    top: 0;                          /* Align to top */
+    left: 0;                         /* Align to left */
+    width: 100vw;                    /* Full viewport width */
+    z-index: 1000;                   /* Ensure nav is on top */
+  }
+  
+  /* Logo container inside nav */
+  .logo {
+    padding: 10px;                   /* Inner padding */
+    display: flex;                  /* Use flexbox */
+    align-items: center;            /* Vertically center */
+  }
+  
+  /* Logo image styling */
+  .logo img {
+    height: 120px;                  /* Set fixed height */
+    width: 280px;                   /* Set fixed width */
+    max-width: 100%;                /* Responsive max width */
+    object-fit: contain;            /* Maintain image aspect */
+    display: block;                 /* Block element for spacing */
+  }
+  
+  /* Navigation list container */
+  nav ul {
+    list-style: none;               /* Remove bullet points */
+    display: flex;                  /* Flex row layout */
+    flex-wrap: nowrap;              /* No wrapping */
+    margin: 0;                     /* Remove default margin */
+    padding: 0;                    /* Remove default padding */
+  }
+  
+  /* Each navigation item */
+  nav ul li {
+    display: block;                /* Block display for each item */
+  }
+  
+  /* Navigation links */
+  nav ul li a {
+    color: white;                  /* Link text color */
+    background-color: #290101;    /* Background color */
+    border-right: 2px solid #692727; /* Right border */
+    text-decoration: none;         /* Remove underline */
+    font-weight: 900;              /* Very bold font */
+    padding: 15px 10px;            /* Padding inside links */
+    display: block;                /* Block display */
+    transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
+    white-space: nowrap;           /* Prevent text wrap */
+  }
+  
+  /* Hover state for links */
+  nav ul li a:hover {
+    background-color: #C77D83;     /* Darker background */
+    color: black;                  /* White text */
+    border-radius: 4px;            /* Rounded corners */
+  }
+  
+  /* Dropdown container position */
+  nav ul li.dropdown {
+    position: relative;            /* Needed for absolute dropdown */
+  }
+  
+  /* Dropdown menu styling */
+  .dropdown-content {
+    display: none;                 /* Hide dropdown by default */
+    position: absolute;            /* Absolute positioning */
+    top: 100%;                    /* Place below parent */
+    left: 0;                      /* Align left */
+    background-color: #63544F;    /* Background color */
+    min-width: 220px;             /* Minimum width */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Drop shadow */
+    border-radius: 4px;           /* Rounded corners */
+    z-index: 1001;                /* Above other content */
+    padding: 8px 0;               /* Vertical padding */
+  }
+  
+  /* Show dropdown on hover */
+  nav ul li:hover > .dropdown-content {
+    display: block;               /* Show dropdown */
+  }
+  
+  /* Dropdown link styling */
+  .dropdown-content a {
+    background-color: #59371A;
+    display: block;               /* Block display */
+    padding: 10px 16px;           /* Padding */
+    color: white;                 /* Text color */
+    text-decoration: none;        /* Remove underline */
+    font-weight: 600;             /* Medium font weight */
+    transition: background-color 0.3s ease; /* Smooth hover */
+  }
+  
+  /* Dropdown link hover effect */
+  .dropdown-content a:hover {
+    background-color: #EFA66D;    /* Darker background */
+    color: black;                 /* White text */
+  }
+  
+  /* Divider inside dropdown */
+  .dropdown-content hr {
+    border: 0;                   /* Remove default border */
+    border-top: 2px solid #692727; /* Top border line */
+    margin: 8px 12px;            /* Vertical and horizontal margin */
+  }
+
+  /* ============================== HERO SECTION =============================== */
+  /* ======================= HERO SECTION ======================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height for impact */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Replace black background with a background image */
+  background-image: url('your-background-image.jpg'); /* <-- set your background image URL here */
+  background-size: cover;        /* Cover entire area */
+  background-position: center;  /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+/* Falling image animation */
+.falling-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* Cover container without distortion */
+  animation: fallFromSky 2.2s ease-out forwards; /* Falling animation */
+  z-index: 0;                   /* Behind text, above background */
+}
+
+/* Falling animation keyframes */
+@keyframes fallFromSky {
+  0% {
+    transform: translateY(-120%) scale(1.2); /* Start far above the viewport */
+    opacity: 0;                             /* Invisible at start */
+  }
+  60% {
+    opacity: 1;                             /* Fade in during fall */
+  }
+  100% {
+    transform: translateY(0) scale(1);     /* Land in place */
+    opacity: 1;                            /* Fully visible */
+  }
+}
+
+/* Dramatic title */
+.hero-title {
+  position: relative;
+  z-index: 1;                         /* On top of everything */
+  font-size: 60px;
+  color: white;
+  font-weight: 900;
+  background-color: rgba(101, 35, 27, 0.7); /* Semi-transparent maroon overlay */
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 2s ease-out 1s forwards; /* Fade and slide up */
+  opacity: 0;                         /* Start hidden */
+}
+
+/* Fade in + lift effect for text */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* ============================ SECTION TITLE ============================ */
+h3 {
+  text-align: center;           /* Center the heading */
+  font-size: 32px;              /* Font size for visibility */
+  color: maroon;                /* Brand color */
+  margin: 20px 0 20px;          /* Top and bottom spacing */
+  text-transform: uppercase;    /* Make text uppercase */
+  position: relative;           /* Required for ::after element */
+}
+
+h3::after {
+  content: "";
+  display: block;               /* Make it a block so width applies */
+  width: 100%;                 /* Full width of the h3 */
+  height: 2px;                 /* Thickness of the line */
+  background-color: maroon;    /* Match title color */
+  margin-top: 10px;            /* Space above the line */
+  border-radius: 6px;          /* Rounded edges */
+  /* Vendor prefixes for border-radius are not needed in modern browsers */
+}
+
+
+
+/* ============================ CATEGORY GRID ============================ */
+.category-grid {
+  display: grid;                                /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
+  gap: 20px;                                     /* Space between items */
+  padding: 0 20px 40px;                          /* Space around grid */
+  width: 100%;                                   /* Full width */
+  box-sizing: border-box;                        /* Includes padding in width */
+}
+
+
+/* ============================ CATEGORY ITEM BOX ============================ */
+.veg-item {
+  background-color: #8b6133;                     /* Unique brown background */
+  border: 2px solid rgb(94, 38, 38);                      /* Maroon border */
+  border-right: 8px solid rgb(83, 15, 15);                 /* Strong right border for visual interest */
+  border-top-right-radius: 20px;                 /* Rounded top-right corner */
+  border-bottom-right-radius: 20px;              /* Rounded bottom-right corner */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);       /* Subtle shadow for depth */
+  text-align: center;                            /* Center content inside */
+  color: white;                                  /* White text */
+  padding: 10px;                                 /* Inner spacing */
+  transition: transform 0.3s ease;               /* Smooth animation on hover */
+}
+
+.veg-item:hover {
+  transform: translateY(-5px);                   /* Slight raise on hover */
+}
+
+
+/* ============================ CATEGORY ITEM IMAGE ============================ */
+.veg-item img {
+  width: 100%;                                   /* Fill container width */
+  height: 200px;                                 /* Fixed height */
+  object-fit: cover;                             /* Maintain aspect, crop if needed */
+  border-radius: 8px;                            /* Rounded image corners */
+}
+
+
+/* ============================ CATEGORY ITEM TEXT ============================ */
+.veg-item p {
+  margin-top: 10px;                              /* Space between image and text */
+  font-weight: bold;                             /* Bold for readability */
+  font-size: 16px;                               /* Readable size */
+  color: white;                                  /* Text color */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================== FOOTER DESIGNING =================== */
+.footer {
+    background-color: #692727; /* Dark red footer */
+    color: #ffffff; /* White text */
+    padding: 40px 0 20px; /* Padding top and bottom */
+    font-family: Arial, sans-serif; /* Simple readable font */
+    line-height: 1.6; /* Space between lines */
+  }
+  
+  /* Wrapper for footer content */
+  .footer-content {
+    max-width: 1200px; /* Max width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 20px; /* Horizontal padding */
+    display: flex; /* Flex layout */
+    flex-wrap: wrap; /* Wrap on small screens */
+    gap: 30px; /* Space between items */
+    align-items: flex-start; /* Align top */
+    justify-content: space-between; /* Space out */
+  }
+  
+  /* Footer logo container */
+  .footer-logo-container {
+    flex-shrink: 0; /* Prevent shrinking */
+    min-width: 180px; /* Minimum width */
+    text-align: center; /* Center content */
+  }
+  
+  /* Footer logo */
+  .footer-logo {
+    padding-top: 20px; /* Space on top */
+    max-height: 90px; /* Max height */
+    width: auto; /* Auto width */
+    object-fit: contain; /* Maintain aspect */
+  }
+  
+  /* Footer sections grid */
+  .footer-sections {
+    flex: 1; /* Take remaining space */
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between columns */
+  }
+  
+  /* Section headings */
+  .footer-section h3,
+  .footer-section h4 {
+    color: #ffffff; /* White color */
+    text-transform: uppercase; /* Uppercase text */
+    margin-bottom: 10px; /* Margin below */
+    font-size: 14px; /* Font size */
+  }
+  
+  /* Paragraphs in footer */
+  .footer-section p {
+    margin: 0 0 8px 0; /* Bottom margin */
+    color: #cccccc; /* Light grey */
+    font-size: 14px; /* Font size */
+  }
+  
+  /* Highlighted contact labels */
+  .contact-info strong {
+    color: #ffffff; /* Bright white */
+  }
+  
+  /* Email links */
+  .email-links a {
+    color: #0e5ab1; /* Blue links */
+    text-decoration: none; /* No underline */
+    font-size: 14px; /* Font size */
+  }
+  
+  /* Email hover */
+  .email-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Social media container */
+  .social-media {
+    margin-top: 20px; /* Space above */
+  }
+  
+  /* Social media headings */
+  .social-media h4 {
+    font-size: 14px; /* Size */
+    margin-bottom: 10px; /* Space below */
+    color: #ffffff; /* White */
+  }
+  
+  /* Social icons container */
+  .social-icons {
+    display: flex; /* Horizontal row */
+    gap: 10px; /* Space between icons */
+    flex-wrap: wrap; /* Wrap if needed */
+    justify-content: start; /* Align left */
+  }
+  
+  /* Social icons */
+  .social-icons a img {
+    height: 30px; /* Size */
+    width: 30px;
+    border-radius: 50%; /* Circular */
+    object-fit: cover; /* Fit image */
+    background-color: #424040; /* Dark background */
+    padding: 5px; /* Padding */
+    transition: background-color 0.3s; /* Hover transition */
+  }
+  
+  /* Social icon hover */
+  .social-icons a img:hover {
+    background-color: #555; /* Lighten */
+  }
+  
+  /* Payment methods container */
+  .payment-methods {
+    margin-top: 20px; /* Space */
+  }
+  
+  /* Payment heading */
+  .payment-methods h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  /* Payment icons container */
+  .payment-methods-icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding-bottom: 5px;
+  }
+  
+  /* Payment icons */
+  .payment-methods-icons img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #424040;
+    padding: 5px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hover on payment icons */
+  .payment-methods-icons img:hover {
+    opacity: 1;
+    background-color: #727070;
+  }
+  
+  /* Airtel logo override */
+  .payment-methods-icons .airtel-logo {
+    background-color: #000000 !important;
+  }
+  
+  /* Bottom footer strip */
+  .footer-bottom {
+    border-top: 2px solid #444;
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 14px;
+    color: #999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Footer bottom links */
+  .footer-bottom a {
+    color: #cccccc;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  /* Hover on footer bottom links */
+  .footer-bottom a:hover {
+    color: #ffffff;
+  }
+  
+  /* =================== RESPONSIVENESS =================== */
+  
+  /* Tablet breakpoint */
+  @media (max-width: 768px) {
+    .footer-sections {
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+  
+    .footer-bottom {
+      flex-direction: column; /* Stack vertically */
+      text-align: center; /* Center text */
+      gap: 10px; /* Space */
+    }
+  
+    .footer-bottom a {
+      margin-left: 0;
+      margin-right: 20px;
+    }
+  }
+  
+  /* Mobile breakpoint */
+  @media (max-width: 480px) {
+    .footer-content {
+      flex-direction: column; /* Stack sections */
+      align-items: center; /* Center align */
+    }
+  
+    .footer-sections {
+      grid-template-columns: 1fr; /* Single column */
+      width: 100%;
+    }
+  
+    .footer-logo-container {
+      width: 100%;
+    }
+  
+    .social-icons {
+      justify-content: center; /* Center icons */
+    }
+  
+    .payment-methods-icons {
+      justify-content: center; /* Center icons */
+    }
+  }
+  

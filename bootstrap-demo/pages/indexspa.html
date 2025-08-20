@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Meta tags for encoding and responsive design -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap 5.3.7 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"rel="stylesheet"/>
+    <!-- Page title -->
+    <title>SPA-landing page</title>
+    <link rel="stylesheet" href="indexspa.css">
+  </head>
+
+  <body>
+    <!-- ===================== NAVBAR ===================== -->
+     <!-- class="navbar": This is the main Bootstrap class that initializes the navbar styling and behavior.
+
+        navbar-expand-lg: Tells the navbar to be collapsible on small screens and fully visible on large screens (lg) and up.
+
+        navbar-light: Applies light theme text colors (usually dark text) — best used on light backgrounds.
+
+        bg-light: Sets the background color of the navbar to Bootstrap’s predefined light gray (#f8f9fa). -->
+    <!-- custom-navbar- below is a class i have created for the nav bar to be able to customise it as i wish -->
+    <nav class="navbar navbar-expand-lg custom-navbar ">    
+        <!-- container-fluid: A Bootstrap class that makes the container full width across all screen sizes, while still providing padding and layout control. It ensures content inside the navbar aligns correctly. -->
+    <div class="container-fluid">                   
+        <!-- Logo or brand name -->
+    <a class="navbar-brand" href="/images/herad-spa-Logo-black-removebg-preview.png"></a>
+    <img src="/images/herad-spa-Logo-black-removebg-preview.png" alt="Spa logo" class="w-70" style="height: 120px;">
+
+        <!-- Hamburger menu for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+
+            <li class="nav-item"></li>
+              <a class="nav-link" href="#">Spa Menu </a>
+            </li>
+
+            <!-- adding option to choose a language for use -->
+            <li class="nav-item"></li>
+              <a class="nav-link" href="#">Special Packages</a>
+            </li>
+
+            <!-- Language Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="languageDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Languages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li>
+                  <!-- Google Translate dropdown goes here -->
+                  <div id="google_translate_element" class="px-3"></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+      <!-- Start of the Hero Section -->
+<section class="hero">
+
+  <!-- Bootstrap carousel with auto-slide every 3 seconds -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <!-- Carousel items (your slides) -->
+    <div class="carousel-inner">
+
+      <!-- First image - marked active to show first -->
+      <div class="carousel-item active">
+        <img src="/images/massage-room.jpeg" class="d-block w-100" alt="Slide 1">
+      </div>
+
+      <!-- Second image -->
+      <div class="carousel-item">
+        <img src="/images/massage-stretches.jpeg" class="d-block w-100" alt="Slide 2">
+      </div>
+
+      <!-- Third image -->
+      <div class="carousel-item">
+        <img src="/images/male-massage-knots.jpeg" class="d-block w-100" alt="Slide 3">
+      </div>
+
+      <!-- Fourth image -->
+      <div class="carousel-item">
+        <img src="/images/hotstone-massage.jpeg" class="d-block w-100" alt="Slide 4">
+      </div>
+
+      <!-- Fifth image -->
+      <div class="carousel-item">
+        <img src="/images/herbal-ball-massage.jpeg" class="d-block w-100" alt="Slide 5">
+      </div>
+
+      <!-- Sixth image -->
+      <div class="carousel-item">
+        <img src="/images/Redlight-therapy-facial.jpeg" class="d-block w-100" alt="Slide 6">
+      </div>
+
+      <!-- Seventh image -->
+      <div class="carousel-item">
+        <img src="/images/Candle-Massage.jpeg" class="d-block w-100" alt="Slide 7">
+      </div>
+
+      <!-- Eigth image -->
+      <div class="carousel-item">
+        <img src="/images/bodyscrub-massage.jpeg" class="d-block w-100" alt="Slide 8">
+      </div>
+
+      <!-- Nineth image -->
+      <div class="carousel-item">
+        <img src="/images/wood-therapy-massage.jpeg" class="d-block w-100" alt="Slide 9">
+      </div>
+
+      <!-- tenth image -->
+      <div class="carousel-item">
+        <img src="/images/redlight-pain-massage.jpeg" class="d-block w-100" alt="Slide 10">
+      </div>
+
+      <!-- eleventh image -->
+      <div class="carousel-item">
+        <img src="/images/facial-treatment-room.jpeg" class="d-block w-100" alt="Slide 11">
+      </div>
+
+      <!-- twelveth image -->
+      <div class="carousel-item">
+        <img src="/images/spa-room.jpeg" class="d-block w-100" alt="Slide 12">
+      </div>
+
+    </div> <!-- End of carousel-inner -->
+
+    <!-- Optional: Previous/Next Buttons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+
+  </div> <!-- End of carousel -->
+
+</section>
+
+
+
+
+
+
+
+
+    <!-- ===================== SCRIPTS ===================== -->
+
+    <!-- Bootstrap Bundle JS (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <!-- Google Translate Script and Init -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'ar,fr,zh-CN,sw,es,en',
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+          },
+          'google_translate_element'
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
+</html>

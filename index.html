@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Viewport meta tag ensures proper scaling on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Herad Homepage</title>
     <link href="index.css" rel="stylesheet" />
@@ -12,19 +13,19 @@
     <header>
       <nav>
         <!-- Logo Section on the left -->
-      <div class="logo">
-        <!-- Company logo image wrapped in a link to index page -->
-        <a href="index.html">
-          <img
-            src="/herad_images/herad logo.jpg"
-            alt="Herad Logo"
-            height="100px"
-            width="300px"
+        <div class="logo">
+          <!-- Company logo image wrapped in a link to index page -->
+          <a href="index.html">
+            <img
+              src="/herad_images/herad logo.jpg"
+              alt="Herad Logo"
+              style="max-width: 100%; height: auto;" 
+              <!-- Responsive image: max-width 100% and height auto -->
             />
           </a>
         </div>
 
-
+        <!-- Menu list -->
         <div class="menu_list">
           <ul>
             <li class="dropdown">
@@ -44,7 +45,7 @@
               </div>
             </li>
             <li class="dropdown">
-              <a href="products.html">PRODUCTS | SERVICES</a>
+              <a href="products.html">PRODUCTS FOR EXPORT</a>
               <div class="dropdown-content">
                 <a href="fruits.html">Fruits</a>
                 <a href="vegetables.html">Vegetables</a>
@@ -57,9 +58,11 @@
                 <a href="kombucha.html">Kombucha Products</a>
               </div>
             </li>
+
+            <li class="dropdown"><a href="tour.html">TOUR & TRAVEL</a></li>
+            <li class="dropdown"><a href="consultancy.html">CONSULTANCY</a></li>
             <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
             <li class="dropdown"><a href="tour.html">FUTURE PROJECTS</a></li>
-            <li class="dropdown"><a href="consultancy.html">Consultancy</a></li>
             <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
           </ul>
         </div>
@@ -71,21 +74,22 @@
       <div class="hero-background"></div>
       <div class="hero-slider">
         <div class="slider-wrapper">
-          <div class="fade-slide"><img src="herad_images/HERO -FRUITS.png" alt="Fruits" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -VEGETABLES.png" alt="Vegetables" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -SPICES.png" alt="Spices" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -CEREALS.png" alt="Cereals" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -NATURAL SUGARS.png" alt="Natural Sugars" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -FATS&OILS.png" alt="Fats & Oils" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -MEATS.png" alt="Meats" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -POUTRY.png" alt="Poultry" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -FISH.png" alt="Fish" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -BREVERAGES.png" alt="Beverages" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -KOMBUCHA.png" alt="Kombucha" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -HOSPITALITY.png" alt="Hospitality" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -TOUR.png" alt="Tour" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -FARMING.png" alt="Farming" /></div>
-          <div class="fade-slide"><img src="herad_images/HERO -CONSULTANCY.png" alt="Consultancy" /></div>
+          <!-- Add responsive styling to images -->
+          <div class="fade-slide"><img src="herad_images/HERO -FRUITS.png" alt="Fruits" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -VEGETABLES.png" alt="Vegetables" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -SPICES.png" alt="Spices" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -CEREALS.png" alt="Cereals" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -NATURAL SUGARS.png" alt="Natural Sugars" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -FATS&OILS.png" alt="Fats & Oils" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -MEATS.png" alt="Meats" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -POUTRY.png" alt="Poultry" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -FISH.png" alt="Fish" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -BREVERAGES.png" alt="Beverages" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -KOMBUCHA.png" alt="Kombucha" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -HOSPITALITY.png" alt="Hospitality" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -TOUR.png" alt="Tour" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -FARMING.png" alt="Farming" style="width: 100%; height: auto;" /></div>
+          <div class="fade-slide"><img src="herad_images/HERO -CONSULTANCY.png" alt="Consultancy" style="width: 100%; height: auto;" /></div>
         </div>
       </div>
     </section>
@@ -94,7 +98,7 @@
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-logo-container">
-          <img src="herad_images/herad logo.jpg" alt="Herad Logo" class="footer-logo" />
+          <img src="herad_images/herad logo.jpg" alt="Herad Logo" class="footer-logo" style="max-width: 100%; height: auto;" />
         </div>
         <div class="footer-sections">
           <div class="footer-section">
@@ -112,18 +116,67 @@
           </div>
           <div class="footer-section">
             <h3>ASSISTANCE</h3>
-            <p><strong>Contacts:</strong><br>+256 772 593424<br>+256 778 943330<br>+256 753 044293<br>+256 702 593424</p>
-            <p><strong>Emails:</strong><br>
-              <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br>
+            <p><strong>Contacts:</strong><br />+256 772 593424<br />+256 778 943330<br />+256 753 044293<br />+256 702 593424</p>
+            <p><strong>Emails:</strong><br />
+              <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br />
               <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
             </p>
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
-        <div><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></div>
+        <div>
+          <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+        </div>
       </div>
     </footer>
+
+    <!-- Responsive Navigation Toggle Script -->
+    <script>
+      // Add toggle functionality for mobile navigation
+      document.addEventListener('DOMContentLoaded', function () {
+        const nav = document.querySelector('nav');
+        const menuList = document.querySelector('.menu_list');
+        
+        // Create hamburger menu button only for mobile
+        const hamburger = document.createElement('button');
+        hamburger.innerHTML = '&#9776;'; // Hamburger icon
+        hamburger.style.fontSize = '28px';
+        hamburger.style.background = 'none';
+        hamburger.style.border = 'none';
+        hamburger.style.color = 'white';
+        hamburger.style.cursor = 'pointer';
+        hamburger.style.display = 'none'; // Hidden by default
+        
+        nav.insertBefore(hamburger, nav.firstChild);
+
+        // Show hamburger on small screens
+        function checkScreen() {
+          if(window.innerWidth <= 768) {
+            hamburger.style.display = 'block';
+            menuList.style.display = 'none'; // Hide menu list initially
+          } else {
+            hamburger.style.display = 'none';
+            menuList.style.display = 'flex';
+          }
+        }
+        checkScreen();
+
+        // Toggle nav menu visibility on hamburger click
+        hamburger.addEventListener('click', function() {
+          if(menuList.style.display === 'none') {
+            menuList.style.display = 'flex';
+            menuList.style.flexDirection = 'column';
+          } else {
+            menuList.style.display = 'none';
+          }
+        });
+
+        // Recheck screen size on window resize
+        window.addEventListener('resize', checkScreen);
+      });
+    </script>
   </body>
 </html>

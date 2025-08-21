@@ -57,8 +57,8 @@ nav {
 
 /* Logo image styling */
 .logo img {
-  height: 120px;                  /* Set fixed height */
-  width: 280px;                   /* Set fixed width */
+  height: 100px;                  /* Set fixed height */
+  width: 240px;                   /* Set fixed width */
   max-width: 100%;                /* Responsive max width */
   object-fit: contain;            /* Maintain image aspect */
   display: block;                 /* Block element for spacing */
@@ -145,7 +145,7 @@ nav ul li:hover > .dropdown-content {
   margin: 8px 12px;            /* Vertical and horizontal margin */
 }
 
- /* =================== HERO SECTION =================== */
+/* =================== HERO SECTION =================== */
 
 /* Outer hero section container */
 .hero-content {
@@ -169,14 +169,13 @@ nav ul li:hover > .dropdown-content {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   background: 
-    linear-gradient(rgba(23, 109, 37, 0.5), rgba(29, 107, 59, 0.8)), /* overlay (black @ 50% opacity) */
+    linear-gradient(rgba(23, 109, 37, 0.5), rgba(29, 107, 59, 0.8)), /* overlay with opacity */
     url('/herad_images/green-coffee-beans.jpeg');      /* background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
 }
-
 
 /* Hero slider container */
 .hero-slider {
@@ -205,20 +204,30 @@ nav ul li:hover > .dropdown-content {
 /* Each individual slide */
 .fade-slide {
   position: absolute;
-  /*Stackallslidesontopofeachother*/top: 0;
+  /* Stack all slides on top of each other */
+  top: 0;
   left: 0;
   width: 100%;
-  /*Fullwidthofcontainer*/height: 100%;
-  /*Fullheightofcontainer*/opacity: 0;
-  /*Startfullytransparent*/transform: scale(1);
-  /*Startatnormalsize*/animation: zoomFadeInOut 12s infinite;
-  /*Applyzoom&fadeanimationcontinuously*/transition: opacity 1.5s ease-in-out, transform 10s ease-in-out;
-  /*Smoothtransitions*/border-radius: 40px;
-  /*Roundedcornersmatchingcontainer*/pointer-events: none;
-  /*Preventmouseinteraction*/z-index: 3;
-                   /* On top of background and container */;
+  /* Full width of container */
+  height: 100%;
+  /* Full height of container */
+  opacity: 0;
+  /* Start fully transparent */
+  transform: scale(1);
+  /* Start at normal size */
+  animation: zoomFadeInOut 12s infinite;
+  /* Apply zoom & fade animation continuously */
+  transition: opacity 1.5s ease-in-out, transform 10s ease-in-out;
+  /* Smooth transitions */
+  border-radius: 40px;
+  /* Rounded corners matching container */
+  pointer-events: none;
+  /* Prevent mouse interaction */
+  z-index: 3;
+  /* On top of background and container */
   -webkit-animation: zoomFadeInOut 60s infinite;
-  overflow: hidden;       /* Ensures zoomed image stays within its frame */
+  overflow: hidden;
+  /* Ensures zoomed image stays within its frame */
 }
 
 /* Image styling inside each slide */
@@ -230,7 +239,7 @@ nav ul li:hover > .dropdown-content {
   display: block;            /* Remove inline spacing */
 }
 
-/* Keyframes for zooming in and out with faster fade and scale */
+/* Keyframes for zooming in and out with fade and scale */
 @keyframes zoomFadeInOut {
   0%   { opacity: 0; transform: scale(1); }        /* Start hidden and normal size */
   10%  { opacity: 1; transform: scale(1.15); }     /* Zoom in to 115% and fade in */
@@ -238,7 +247,6 @@ nav ul li:hover > .dropdown-content {
   40%  { opacity: 0; transform: scale(1); }        /* Fade out completely */
   100% { opacity: 0; transform: scale(1); }        /* Remain hidden until next cycle */
 }
-
 
 /* Animation delay to stagger slide start times (12s per slide) */
 .fade-slide:nth-child(1)  { animation-delay: 0s; }
@@ -256,9 +264,6 @@ nav ul li:hover > .dropdown-content {
 .fade-slide:nth-child(13) { animation-delay: 144s; }
 .fade-slide:nth-child(14) { animation-delay: 156s; }
 .fade-slide:nth-child(15) { animation-delay: 168s; } 
-
-
-
 
 /* =================== FOOTER DESIGNING =================== */
 .footer {
@@ -446,16 +451,40 @@ nav ul li:hover > .dropdown-content {
 
 /* Tablet breakpoint */
 @media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap; /* Allow wrapping for nav links */
+  }
+  nav ul li a {
+    padding: 12px 8px; /* Make links smaller */
+    font-size: 0.9rem; /* Slightly smaller font for tablets */
+  }
+  nav ul li {
+    margin-bottom: 6px; /* Space between items when wrapped */
+  }
+  .logo img {
+    height: 80px; /* Reduce logo size on tablets */
+    width: auto; /* Maintain aspect */
+  }
+  .hero-content {
+    flex-direction: column; /* Stack vertically */
+    padding: 20px; /* Reduce padding */
+    min-height: auto; /* Remove fixed min-height */
+  }
+  .hero-slider {
+    height: 60vh; /* Shorter slider on tablets */
+    border-radius: 20px; /* Smaller border radius */
+  }
+  .fade-slide {
+    border-radius: 20px; /* Match slider border radius */
+  }
   .footer-sections {
     grid-template-columns: repeat(2, 1fr); /* Two columns */
   }
-
   .footer-bottom {
     flex-direction: column; /* Stack vertically */
     text-align: center; /* Center text */
     gap: 10px; /* Space */
   }
-
   .footer-bottom a {
     margin-left: 0;
     margin-right: 20px;
@@ -464,24 +493,50 @@ nav ul li:hover > .dropdown-content {
 
 /* Mobile breakpoint */
 @media (max-width: 480px) {
+  nav {
+    flex-direction: column; /* Stack nav items vertically */
+    height: auto; /* Auto height */
+    padding: 10px 15px; /* Reduce padding */
+  }
+  nav ul {
+    flex-direction: column; /* Stack nav links vertically */
+    width: 100%;
+  }
+  nav ul li a {
+    padding: 10px 5px; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller font */
+    border-right: none; /* Remove border for vertical layout */
+    border-bottom: 1px solid #692727; /* Bottom border for separation */
+    white-space: normal; /* Allow wrapping */
+  }
+  .logo img {
+    height: 60px; /* Smaller logo */
+    width: auto; /* Maintain aspect */
+  }
+  .hero-content {
+    padding: 10px; /* Smaller padding */
+  }
+  .hero-slider {
+    height: 40vh; /* Shorter slider */
+    border-radius: 10px; /* Smaller radius */
+  }
+  .fade-slide {
+    border-radius: 10px; /* Match slider radius */
+  }
   .footer-content {
     flex-direction: column; /* Stack sections */
     align-items: center; /* Center align */
   }
-
   .footer-sections {
     grid-template-columns: 1fr; /* Single column */
     width: 100%;
   }
-
   .footer-logo-container {
     width: 100%;
   }
-
   .social-icons {
     justify-content: center; /* Center icons */
   }
-
   .payment-methods-icons {
     justify-content: center; /* Center icons */
   }

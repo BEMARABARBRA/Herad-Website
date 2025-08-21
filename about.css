@@ -1,68 +1,131 @@
-/* ============================================================
-   NAVIGATION BAR STYLES - HERAD ICS
-============================================================ */
-header {
-  background-color: #692727;
-  background-image: url('images/bg.jpg');
-  color: #ffffff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  position: sticky;
+/* ===== NAVIGATION BAR ===== */
+nav {
+  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
+  background-repeat: no-repeat;
+  background-size: cover;      /* Cover entire nav area */
+  background-position: center;
+  background-blend-mode: darken; /* Darken image slightly */
+  background-color: rgba(7,7,7,0.4); /* Fallback overlay color */
+  height: 120px;               /* Reduced height from 130px → 120px */
+  display: flex;               /* Flex for horizontal layout */
+  align-items: center;         /* Center vertically */
+  justify-content: space-between; /* Spread items across */
+  box-shadow: 0 2px 5px black; /* Slight shadow for depth */
+  color: white;
+  padding: 0 15px;             /* Slightly smaller padding */
+  position: fixed;             /* Fixed to top of viewport */
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;                 /* Full width */
+  z-index: 1000;               /* Always on top */
 }
 
-header nav {
-  max-width: 2000px;
-  margin: 0 auto;
+/* Logo container */
+.logo {
+  padding: 5px;                /* Reduced padding */
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
+/* Logo image */
 .logo img {
-  height: 60px;
-  border-radius: 1px;
-  display:flex;
+  height: auto;               /* Reduced logo height */
+  width: 250px;
+  max-width: 100%;            /* Responsive scaling */
+  object-fit: contain;
+  display: block;
 }
 
+/* Navigation menu list */
 .menu_list ul {
-  list-style: none;
-  display: flex;
-  gap: 10px;
+  list-style: none;            /* Remove bullets */
+  display: flex;               /* Horizontal layout */
+  flex-wrap: nowrap;           /* Prevent wrapping */
   margin: 0;
   padding: 0;
 }
 
-.menu_list a {
-  color: #ffffff;
+/* Navigation list items */
+.menu_list ul li {
+  display: block;
+}
+
+/* Navigation links */
+.menu_list ul li a {
+  color: black;
+  background-color: #c77d83;  /* Button background */
+  border-right: 1px solid #692727; /* Divider between links */
   text-decoration: none;
-  padding: 8px 12px;
+  font-weight: 700;            /* Slightly lighter for cleaner look */
+  font-size: 14px;             /* Reduced font size */
+  padding: 10px 8px;           /* Reduced padding */
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;         /* Prevent text wrap */
+}
+
+/* Navigation link hover effect */
+.menu_list ul li a:hover {
+  background-color: #692727;   /* Darker hover background */
+  color: white;                /* White text on hover */
+  border-radius: 4px;          /* Rounded corners */
+}
+
+/* Dropdown menu container */
+.menu_list ul li.dropdown {
+  position: relative;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;               /* Hidden by default */
+  position: absolute;          /* Absolute to parent li */
+  top: 100%;                   /* Below parent item */
+  left: 0;
+  background-color: #c77d83;   /* Dropdown background */
+  min-width: 200px;            /* Slightly smaller */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 4px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: background 0.3s, color 0.3s;
+  z-index: 1001;
+  padding: 6px 0;              /* Reduced padding */
 }
 
-.menu_list a:hover {
-  background-color: rgb(226, 207, 207);
-  color: #692727;
+/* Show dropdown on hover */
+.menu_list ul li:hover > .dropdown-content {
+  display: block;
 }
 
-.menu_list a.active {
-  background-color: #ffffff;
-  color: #692727;
-  font-weight: bold;
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 8px 14px;           /* Reduced padding */
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;             /* Smaller dropdown text */
+  transition: background-color 0.3s ease;
 }
 
-/* ============================================================
-   BODY SECTIONS STYLES
-============================================================ */
+/* Dropdown link hover */
+.dropdown-content a:hover {
+  background-color: #692727;
+  color: white;
+}
+
+/* Divider inside dropdown */
+.dropdown-content hr {
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 6px 10px;
+}
+
+/* ============================================================ BODY SECTIONS STYLE ============================================================ */
 body {
   font-family: 'Times New Roman', serif;
   line-height: 1.7;
   background: #f8f8f8;
   color: #2b0d0d;
+  margin-top: 150px;  /* Offset for fixed navbar */
 }
 
 section {
@@ -78,7 +141,7 @@ section {
 
 section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 /* About Section */
@@ -90,6 +153,7 @@ section:hover {
   padding: 50px 30px;
   border-left-color: #f27c7c;
 }
+
 .about-section h3 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -97,9 +161,7 @@ section:hover {
   margin-bottom: 20px;
 }
 
-/* ============================================================
-   CARDS ROW STYLING
-============================================================ */
+/* ============================================================ CARDS ROW STYLING ============================================================ */
 .cards-row {
   display: flex;
   gap: 20px;
@@ -148,7 +210,6 @@ section:hover {
 .vision-section:hover {
   background: linear-gradient(145deg, #ffcaca, #ffa0a0);
 }
-
 .mission-section {
   background: linear-gradient(145deg, #fff6e6, #ffd7b3);
   color: #3A0000;
@@ -157,7 +218,6 @@ section:hover {
 .mission-section:hover {
   background: linear-gradient(145deg, #ffe0b3, #ffc080);
 }
-
 .why-section {
   background: linear-gradient(145deg, #fff9e6, #fff1cc);
   color: #3A0000;
@@ -200,7 +260,6 @@ section:hover {
   gap: 10px;
   margin-top: 15px;
 }
-
 .why-section ul li {
   background-color: rgba(255, 168, 0, 0.15);
   color: #3A0000;
@@ -210,7 +269,6 @@ section:hover {
   font-size: 14px;
   transition: background 0.3s;
 }
-
 .why-section ul li:hover {
   background-color: rgba(255, 168, 0, 0.25);
 }
@@ -234,9 +292,8 @@ section:hover {
   font-style: italic;
 }
 
-/* ============================================================
-   FOOTER STYLES - HERAD ICS
-============================================================ */
+/* ============================================================ FOOTER STYLES - HERAD ICS ============================================================ */
+
 :root {
   --brand-white: #ffffff;
   --text-light: #f0f0f0;
@@ -251,6 +308,7 @@ section:hover {
   padding: 40px 0 20px;
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  text-align: center;
 }
 
 .footer-content {
@@ -261,6 +319,7 @@ section:hover {
   flex-wrap: wrap;
   gap: 30px;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .footer-logo-container {
@@ -279,12 +338,12 @@ section:hover {
 .footer-sections {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 30px;
+  text-align: left;
 }
 
-.footer-section h3,
-.footer-section h4 {
+.footer-section h3, .footer-section h4 {
   color: var(--brand-white);
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -302,7 +361,6 @@ section:hover {
   color: var(--text-light);
   text-decoration: none;
 }
-
 .contact-info a:hover {
   text-decoration: underline;
   color: var(--brand-white);
@@ -339,14 +397,14 @@ section:hover {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color:  rgb(230, 217, 217);
+  background-color: rgb(230, 217, 217);
   opacity: 0.85;
   transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
 .footer-follow .payment-methods-icons img:hover {
   opacity: 1;
-  background-color: rgb(246, 246, 248) ;
+  background-color: rgb(246, 246, 248);
 }
 
 .footer-bottom {
@@ -356,7 +414,7 @@ section:hover {
   font-size: 0.75rem;
   color: var(--text-muted);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
@@ -391,3 +449,12 @@ section:hover {
     font-size: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* End of CSS */

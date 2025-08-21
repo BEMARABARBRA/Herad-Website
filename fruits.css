@@ -1,326 +1,281 @@
-/* =================== RESET STYLES =================== */
+/* ===== RESET BASIC DEFAULT STYLES ===== */
 * {
-  margin: 0;                   /* Remove default margin */
-  padding: 0;                  /* Remove default padding */
-  box-sizing: border-box;      /* Include padding/border in width/height */
+  margin: 0;                   /* Remove default browser margin */
+  padding: 0;                  /* Remove default browser padding */
+  box-sizing: border-box;      /* Include padding/border in width/height calculations */
 }
 
-/* =================== BASE STYLES =================== */
+/* ===== BASE STYLES ===== */
 body {
-  overflow-x: hidden;          /* Prevent horizontal scroll */
-  font-family: "Times New Roman", Times, serif;
-  padding-top: 140px;                  /* Remove default padding */
-  background-color: rgb(253, 191, 191);   /* Light gray background */
-  color: #333;                 /* Dark gray text color */
-  line-height: 1.6;            /* Comfortable line spacing */
+  font-family: "Times New Roman", Times, serif;  /* Elegant serif font */
+  background-color: #e7cbcb;   /* Soft pink background for the whole page */
+  color: #333;                 /* Dark text color for readability */
+  line-height: 1.5;            /* Comfortable line spacing */
+  overflow-x: hidden;          /* Prevent horizontal scrolling */
+  padding-left: 20px;          /* Prevent content from touching left edge */
+  padding-right: 20px;         /* Prevent content from touching right edge */
+  margin: 0 auto;              /* Center content horizontally on large screens */
+  max-width: 1200px;           /* Limit maximum width for readability */
+  padding-top: 130px;          /* Offset content so it doesn't hide under fixed nav */
+  text-align: center;          /* Center page content */
 }
 
-/* =================== NAVIGATION BAR =================== */
+/* ===== NAVIGATION BAR ===== */
 nav {
   background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
-  background-repeat: no-repeat;       /* No repeat */
-  background-size: cover;             /* Cover entire nav area */
-  background-position: center;        /* Center image */
-  background-blend-mode: darken;      /* Blend mode to darken image */
-  background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent overlay */
-  height: 130px;                      /* Fixed height for navbar */
-  display: flex;                     /* Flex container */
-  align-items: center;               /* Vertically center nav items */
-  justify-content: space-between;    /* Space between left and right items */
-  box-shadow: 0 2px 5px black;       /* Subtle shadow below navbar */
-  color: white;                     /* Text color white */
-  padding: 0 20px;                  /* Horizontal padding */
-  position: fixed;                  /* Fix navbar to top */
-  top: 0;                          /* Align to top */
-  left: 0;                         /* Align to left */
-  width: 100%;                    /* Full viewport width */
-  z-index: 1000;                  /* High z-index to appear on top */
+  background-repeat: no-repeat;
+  background-size: cover;      /* Cover entire nav area */
+  background-position: center;
+  background-blend-mode: darken; /* Darken image slightly */
+  background-color: rgba(7,7,7,0.4); /* Fallback overlay color */
+  height: 130px;               /* Fixed nav height */
+  display: flex;               /* Flex for horizontal layout */
+  align-items: center;         /* Center vertically */
+  justify-content: space-between; /* Spread items across */
+  box-shadow: 0 2px 5px black; /* Slight shadow for depth */
+  color: white;
+  padding: 0 20px;             /* Internal horizontal padding */
+  position: fixed;             /* Fixed to top of viewport */
+  top: 0;
+  left: 0;
+  width: 100%;                 /* Full width */
+  z-index: 1000;               /* Always on top */
 }
 
 /* Logo container */
 .logo {
-  padding: 10px;                   /* Inner padding */
-  display: flex;                  /* Flex container for alignment */
-  align-items: center;            /* Vertically center logo */
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 /* Logo image */
 .logo img {
-  height: 120px;                  /* Fixed logo height */
-  width: 220px;                   /* Fixed logo width */
-  max-width: 100%;                /* Responsive max width */
-  object-fit: contain;            /* Maintain image proportions */
-  display: block;                 /* Block element */
+  height: 100px;               /* Keep logo height consistent */
+  width: auto;                 /* Maintain aspect ratio */
+  max-width: 100%;             /* Responsive scaling */
+  object-fit: contain;         /* Prevent image cropping */
+  display: block;              /* Remove inline gap */
 }
 
 /* Navigation menu list */
-nav ul {
-  list-style: none;               /* Remove bullet points */
-  display: flex;                  /* Horizontal flex layout */
-  flex-wrap: nowrap;              /* Prevent wrapping */
-  margin: 0;                     /* Remove default margin */
-  padding: 0;                    /* Remove default padding */
+.menu_list ul {
+  list-style: none;            /* Remove bullets */
+  display: flex;               /* Horizontal layout */
+  flex-wrap: nowrap;           /* Prevent wrapping */
+  margin: 0;
+  padding: 0;
 }
 
-/* Each navigation item */
-nav ul li {
-  display: block;                /* Block level for proper spacing */
+/* Navigation list items */
+.menu_list ul li {
+  display: block;              /* Each link as block */
 }
 
 /* Navigation links */
-nav ul li a {
-  color: black;                  /* Link text color */
-  background-color: #c77d83;    /* Link background color */
-  border-right: 1px solid #692727; /* Right border */
-  text-decoration: none;         /* Remove underline */
-  font-weight: 900;              /* Bold font */
-  padding: 15px 10px;            /* Link padding */
-  display: block;                /* Block display */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-  white-space: nowrap;           /* Prevent text wrapping */
+.menu_list ul li a {
+  color: black;
+  background-color: #c77d83;  /* Button background */
+  border-right: 1px solid #692727; /* Divider between links */
+  text-decoration: none;
+  font-weight: 900;            /* Bold links */
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;         /* Prevent text wrapping */
 }
 
-/* Navigation link hover */
-nav ul li a:hover {
-  background-color: #692727;     /* Darker background on hover */
-  color: white;                  /* White text on hover */
-  border-radius: 4px;            /* Rounded corners */
+/* Navigation link hover effect */
+.menu_list ul li a:hover {
+  background-color: #692727;   /* Darker hover background */
+  color: white;                /* White text on hover */
+  border-radius: 4px;          /* Rounded corners on hover */
 }
 
-/* Dropdown container relative positioning */
-nav ul li.dropdown {
-  position: relative;            /* For absolute positioning of dropdown */
+/* Dropdown menu container */
+.menu_list ul li.dropdown {
+  position: relative;          /* Position relative for dropdown positioning */
 }
 
-/* Dropdown menu */
+/* Dropdown content */
 .dropdown-content {
-  display: none;                 /* Hidden by default */
-  position: absolute;            /* Positioned relative to parent */
-  top: 100%;                    /* Below parent */
-  left: 0;                      /* Align left */
-  background-color: #c77d83;    /* Background color */
-  min-width: 220px;             /* Minimum width */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow */
-  border-radius: 4px;           /* Rounded corners */
-  z-index: 1001;                /* On top */
-  padding: 8px 0;               /* Vertical padding */
+  display: none;               /* Hidden by default */
+  position: absolute;          /* Absolute to parent li */
+  top: 100%;                   /* Below parent item */
+  left: 0;
+  background-color: #c77d83;   /* Dropdown background */
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1001;               /* Above other content */
+  padding: 8px 0;
 }
 
 /* Show dropdown on hover */
-nav ul li:hover > .dropdown-content {
-  display: block;               /* Show dropdown */
+.menu_list ul li:hover > .dropdown-content {
+  display: block;
 }
 
 /* Dropdown links */
 .dropdown-content a {
-  display: block;               /* Block level */
-  padding: 10px 16px;           /* Padding */
-  color: black;                 /* Text color */
-  text-decoration: none;        /* No underline */
-  font-weight: 600;             /* Semi-bold */
-  transition: background-color 0.3s ease; /* Smooth hover */
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 /* Dropdown link hover */
 .dropdown-content a:hover {
-  background-color: #692727;    /* Dark background on hover */
-  color: white;                 /* White text */
+  background-color: #692727;
+  color: white;
 }
 
-/* Dropdown divider */
+/* Divider inside dropdown */
 .dropdown-content hr {
-  border: 0;                   /* Remove border */
-  border-top: 2px solid #692727; /* Top border line */
-  margin: 8px 12px;            /* Margin */
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
 }
 
-/* =================== HERO SECTION ================== */
-
-/* Hero section container */
-.hero-section {
+/* ===== HERO IMAGE SECTION ===== */
+.hero-image {
   width: 100vw;                /* Full viewport width */
-  padding-left: 10px;                  /* Remove default padding */
-  padding-right: 30px;
-  padding-bottom: 20px;
-  margin: 0;                   /* Remove default margin */
+  height: 100vh;               /* Full viewport height */
   overflow: hidden;            /* Hide overflow */
-  position: relative;          /* Relative for any child absolute positioning */
-  padding-top: 150px;          /* Push hero content below fixed nav (nav height) */
-  background-color: #935F6F;
+  position: relative;          /* Relative for children positioning */
 }
 
-/* Hero image */
-.hero-section img {
-  width: 100vw;                /* Full viewport width */
-  height: 550px;               /* Fixed height */
-  display: block;              /* Block element to remove whitespace */
-  object-fit: cover;           /* Crop to cover */
-  margin: 0;                   /* Remove margin */
-  padding: 0;                  /* Remove padding */
-}
-
-/* Hero main heading */
-h3 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 60px;
-  font-weight: 900;
-  text-align: center;
-  pointer-events: none;
-  z-index: 5;
-  margin-top: 60px;
-  line-height: 1.2;
-  text-shadow:
-    4px 4px 0 white,
-    6px 6px 0 #111,
-    8px 8px 10px maroon; /* 3D shadow */
-}
-
-/* Add second line "FRUITS" centered */
-h1::after {
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Cover entire area */
   display: block;
-  font-size: 94px;
-  margin-top: 10px;
-  color: white;
-  text-shadow:
-    2px 2px 0 #333,
-    4px 4px 0 #111,
-    6px 6px 8px #000;
+  animation: zoomPan 15s ease-in-out infinite; /* Smooth zoom and pan animation */
+  transform-origin: center center;
 }
 
-
-.hero-section h1::after {
-  content: '↓';                  /* Unicode down arrow */
-  display: block;
-  font-size: 2rem;               /* Arrow size */
-  margin-top: 15px;              /* Space below the text */
-  animation: bounce 1.5s infinite; /* Bouncing animation */
+/* Zoom & pan animation */
+@keyframes zoomPan {
+  0% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.1) translate(-5%, -5%); }
+  100% { transform: scale(1) translate(0,0); }
 }
 
-/* Lift-Off Animation
-@keyframes liftOff {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  30% {
-    transform: translateY(-10px) scale(1.05) rotate(-1deg);
-  }
-  50% {
-    transform: translateY(-20px) scale(1.1) rotate(1deg);
-  }
-  70% {
-    transform: translateY(-30px) scale(1.0) rotate(-1deg);
-    -webkit-transform: translateY(-30px) scale(1.0) rotate(-1deg);
-    -moz-transform: translateY(-30px) scale(1.0) rotate(-1deg);
-    -ms-transform: translateY(-30px) scale(1.0) rotate(-1deg);
-    -o-transform: translateY(-30px) scale(1.0) rotate(-1deg);
-}
-  100% {
-    transform: translateY(-100vh) scale(1.2);
-    opacity: 0;
-  }
+/* ===== FRUIT GRID ===== */
+.fruit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive columns */
+  gap: 25px;
+  padding: 20px 0;
+  margin: 20px auto 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background-color: transparent;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: center; /* Center grid content */
+  text-align: center; /* Center text inside */
 }
 
-.lift-off {
-  animation: liftOff 4s ease-in-out infinite alternate;
-  -webkit-animation: liftOff 4s ease-in-out infinite alternate;
-} */
-
-
-/* Fruit category headings */
-/* Section Headings */
+/* Section headings */
 h3 {
-  font-size: 50px;
-  color: rgb(102, 9, 9); /* Rich green */
-  text-align: center;
-  margin-top: 40px 0 20px;
+  font-size: 38px;
+  color: #490707;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin: 40px auto;
   position: relative;
-}
-
-h3::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
-/* Fruit Grid Container */
-.fruit-grid {
-  background-color: rgb(65, 6, 6);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Each Fruit Box */
-.fruit-box {
-  background: rgb(150, 109, 109);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding-bottom: 20px;
+  max-width: 600px;
+  z-index: 1;
   text-align: center;
+}
+
+/* Full width underline for headings */
+h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 4px;
+  background-color: #D89E9E;
+  border-radius: 2px;
+  z-index: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* Fruit box / card */
+.fruit-box {
+  background-color: #d89e9e;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  max-width: 280px; /* Add max width for uniform card size */
+  margin: 0 auto;
+  text-align: center;
 }
 
-.fruit-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+/* Shared hover effect for fruit-box */
+.fruit-box:hover,
+.fruit-box:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(194, 42, 42, 0.15);
+  outline: none;
 }
 
-/* Fruit Images */
+/* Fruit images inside card */
 .fruit-box img {
   width: 100%;
-  height: 350px;
+  height: 250px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 
-/* Fruit Names */
+.fruit-box:hover img,
+.fruit-box:focus img {
+  transform: scale(1.05);
+}
+
+/* Fruit names styling */
 .fruit-box p {
-  font-size: 35px;
-  font-weight: 900px;
-  color: white;
+  font-size: 24px;
+  font-weight: 900;
+  color: rgb(56,8,8);
   margin: 0;
+  line-height: 1.2;
+  user-select: text;
 }
 
-
-/* =================== FOOTER STYLES =================== */
+/* ===== FOOTER ===== */
 .footer {
-  background-color: #330505; /* Matches body background */
+  background-color: #330505;
   color: #ffffff;
-  padding: 20px 0 20px;
+  padding: 40px 20px; /* Add horizontal padding for alignment */
+  font-family: Arial, sans-serif;
   line-height: 1.6;
+  text-align: center; /* Center all footer text */
 }
 
-/* Footer content wrapper */
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* Center footer content horizontally */
   gap: 40px;
   align-items: flex-start;
 }
-
-/* ============================LOGO AREA============================ */
 
 .footer-logo-container {
   flex-shrink: 0;
@@ -333,18 +288,18 @@ h3::after {
   max-height: 150px;
   width: auto;
   object-fit: contain;
+  margin: 0 auto;
 }
-
-/* ============================ FOOTER SECTIONS============================ */
 
 .footer-sections {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 30px;
+  justify-content: center;
+  text-align: left; /* Individual section text aligned left */
 }
 
-/* All headings in footer sections */
 .footer-section h3,
 .footer-section h4,
 .social-media h4,
@@ -354,7 +309,6 @@ h3::after {
   text-transform: uppercase;
   font-size: 14px;
   margin-bottom: 10px;
-  /* border-bottom: 2px solid #ffffff; Clear visible line */
   padding-bottom: 6px;
 }
 
@@ -368,13 +322,10 @@ h3::after {
   list-style: none;
 }
 
-/* ============================CONTACT SECTION ============================= */
-
 .contact-info strong {
   color: #ffffff;
 }
 
-/* Email links styling */
 .email-links a {
   color: #0e5ab1;
   text-decoration: none;
@@ -385,23 +336,19 @@ h3::after {
   text-decoration: underline;
 }
 
-/* =================== ADDRESS & CONTACT==================== */
 .address-section {
-  text-align: left;          /* Ensures entire block is left-aligned */
   color: #ffffff;
   margin-top: 20px;
   font-size: 13px;
   line-height: 1.6;
+  text-align: left;
 }
 
 .address-section h4 {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 5px;
-  text-align: left;          /* Ensure headings are left-aligned */
 }
-
-/* ============================ SOCIAL MEDIA SECTION ============================ */
 
 .social-media {
   margin-top: 30px;
@@ -411,7 +358,7 @@ h3::after {
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center; /* Center social icons */
   align-items: center;
 }
 
@@ -430,8 +377,6 @@ h3::after {
   transform: scale(1.1);
 }
 
-/* =============================PAYMENT METHOD SECTION============================= */
-
 .payment-methods {
   margin-top: 30px;
 }
@@ -440,7 +385,7 @@ h3::after {
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center; /* Center payment icons */
   align-items: center;
 }
 
@@ -461,52 +406,56 @@ h3::after {
   transform: scale(1.1);
 }
 
-/* Specific style for Airtel logo */
 .payment-methods-icons .airtel-logo {
   background-color: #443e3e !important;
 }
 
-
-
-/* Bottom footer strip */
 .footer-bottom {
   border-top: 2px solid #444;
   margin-top: 30px;
-  padding: 20px;
+  padding: 20px 10px;
   font-size: 14px;
   color: #999999;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center footer bottom content */
   align-items: center;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* Footer bottom links */
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
   margin-left: 20px;
 }
 
-/* Hover on footer bottom links */
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* =================== RESPONSIVENESS =================== */
+/* ===== RESPONSIVENESS ===== */
 
 /* Tablet breakpoint */
 @media (max-width: 768px) {
+  body {
+    padding-left: 10px;        /* reduce side padding on smaller screens */
+    padding-right: 10px;
+    max-width: 100%;           /* Allow full width on smaller devices */
+  }
+  .fruit-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 10px;        /* less horizontal padding */
+    max-width: 100%;
+  }
   .footer-sections {
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-columns: repeat(2, 1fr);
   }
-
   .footer-bottom {
-    flex-direction: column; /* Stack vertically */
-    text-align: center; /* Center text */
-    gap: 10px; /* Space */
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
   }
-
   .footer-bottom a {
     margin-left: 0;
     margin-right: 20px;
@@ -515,25 +464,30 @@ h3::after {
 
 /* Mobile breakpoint */
 @media (max-width: 480px) {
-  .footer-content {
-    flex-direction: column; /* Stack sections */
-    align-items: center; /* Center align */
+  body {
+    padding-left: 5px;         /* even smaller side padding */
+    padding-right: 5px;
   }
-
+  .fruit-grid {
+    grid-template-columns: 1fr;
+    padding: 15px 5px;
+    gap: 20px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
   .footer-sections {
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr;
     width: 100%;
   }
-
   .footer-logo-container {
     width: 100%;
   }
-
   .social-icons {
-    justify-content: center; /* Center icons */
+    justify-content: center;
   }
-
   .payment-methods-icons {
-    justify-content: center; /* Center icons */
+    justify-content: center;
   }
 }

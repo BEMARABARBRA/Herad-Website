@@ -28,7 +28,7 @@ body {
 
 /* Styles for the <nav> element */
 nav {
-  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Set background image */
+  background-image: url("herad_images/Herad-vegetables.jpeg"); /* Set background image */
   background-repeat: no-repeat;       /* Prevent background repetition */
   background-size: cover;             /* Cover entire nav area */
   background-position: center;        /* Center background image */

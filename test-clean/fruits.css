@@ -1,0 +1,493 @@
+/* ===== RESET BASIC DEFAULT STYLES ===== */
+* {
+  margin: 0;                   /* Remove default browser margin */
+  padding: 0;                  /* Remove default browser padding */
+  box-sizing: border-box;      /* Include padding/border in width/height calculations */
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  font-family: "Times New Roman", Times, serif;  /* Elegant serif font */
+  background-color: #e7cbcb;   /* Soft pink background for the whole page */
+  color: #333;                 /* Dark text color for readability */
+  line-height: 1.5;            /* Comfortable line spacing */
+  overflow-x: hidden;          /* Prevent horizontal scrolling */
+  padding-left: 20px;          /* Prevent content from touching left edge */
+  padding-right: 20px;         /* Prevent content from touching right edge */
+  margin: 0 auto;              /* Center content horizontally on large screens */
+  max-width: 1200px;           /* Limit maximum width for readability */
+  padding-top: 130px;          /* Offset content so it doesn't hide under fixed nav */
+  text-align: center;          /* Center page content */
+}
+
+/* ===== NAVIGATION BAR ===== */
+nav {
+  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
+  background-repeat: no-repeat;
+  background-size: cover;      /* Cover entire nav area */
+  background-position: center;
+  background-blend-mode: darken; /* Darken image slightly */
+  background-color: rgba(7,7,7,0.4); /* Fallback overlay color */
+  height: 130px;               /* Fixed nav height */
+  display: flex;               /* Flex for horizontal layout */
+  align-items: center;         /* Center vertically */
+  justify-content: space-between; /* Spread items across */
+  box-shadow: 0 2px 5px black; /* Slight shadow for depth */
+  color: white;
+  padding: 0 20px;             /* Internal horizontal padding */
+  position: fixed;             /* Fixed to top of viewport */
+  top: 0;
+  left: 0;
+  width: 100%;                 /* Full width */
+  z-index: 1000;               /* Always on top */
+}
+
+/* Logo container */
+.logo {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image */
+.logo img {
+  height: 100px;               /* Keep logo height consistent */
+  width: auto;                 /* Maintain aspect ratio */
+  max-width: 100%;             /* Responsive scaling */
+  object-fit: contain;         /* Prevent image cropping */
+  display: block;              /* Remove inline gap */
+}
+
+/* Navigation menu list */
+.menu_list ul {
+  list-style: none;            /* Remove bullets */
+  display: flex;               /* Horizontal layout */
+  flex-wrap: nowrap;           /* Prevent wrapping */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation list items */
+.menu_list ul li {
+  display: block;              /* Each link as block */
+}
+
+/* Navigation links */
+.menu_list ul li a {
+  color: black;
+  background-color: #c77d83;  /* Button background */
+  border-right: 1px solid #692727; /* Divider between links */
+  text-decoration: none;
+  font-weight: 900;            /* Bold links */
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;         /* Prevent text wrapping */
+}
+
+/* Navigation link hover effect */
+.menu_list ul li a:hover {
+  background-color: #692727;   /* Darker hover background */
+  color: white;                /* White text on hover */
+  border-radius: 4px;          /* Rounded corners on hover */
+}
+
+/* Dropdown menu container */
+.menu_list ul li.dropdown {
+  position: relative;          /* Position relative for dropdown positioning */
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;               /* Hidden by default */
+  position: absolute;          /* Absolute to parent li */
+  top: 100%;                   /* Below parent item */
+  left: 0;
+  background-color: #c77d83;   /* Dropdown background */
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1001;               /* Above other content */
+  padding: 8px 0;
+}
+
+/* Show dropdown on hover */
+.menu_list ul li:hover > .dropdown-content {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+/* Dropdown link hover */
+.dropdown-content a:hover {
+  background-color: #692727;
+  color: white;
+}
+
+/* Divider inside dropdown */
+.dropdown-content hr {
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
+}
+
+/* ===== HERO IMAGE SECTION ===== */
+.hero-image {
+  width: 100vw;                /* Full viewport width */
+  height: 100vh;               /* Full viewport height */
+  overflow: hidden;            /* Hide overflow */
+  position: relative;          /* Relative for children positioning */
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Cover entire area */
+  display: block;
+  animation: zoomPan 15s ease-in-out infinite; /* Smooth zoom and pan animation */
+  transform-origin: center center;
+}
+
+/* Zoom & pan animation */
+@keyframes zoomPan {
+  0% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.1) translate(-5%, -5%); }
+  100% { transform: scale(1) translate(0,0); }
+}
+
+/* ===== FRUIT GRID ===== */
+.fruit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive columns */
+  gap: 25px;
+  padding: 20px 0;
+  margin: 20px auto 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background-color: transparent;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: center; /* Center grid content */
+  text-align: center; /* Center text inside */
+}
+
+/* Section headings */
+h3 {
+  font-size: 38px;
+  color: #490707;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 40px auto;
+  position: relative;
+  padding-bottom: 20px;
+  max-width: 600px;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Full width underline for headings */
+h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 4px;
+  background-color: #D89E9E;
+  border-radius: 2px;
+  z-index: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* Fruit box / card */
+.fruit-box {
+  background-color: #d89e9e;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  max-width: 280px; /* Add max width for uniform card size */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Shared hover effect for fruit-box */
+.fruit-box:hover,
+.fruit-box:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(194, 42, 42, 0.15);
+  outline: none;
+}
+
+/* Fruit images inside card */
+.fruit-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.fruit-box:hover img,
+.fruit-box:focus img {
+  transform: scale(1.05);
+}
+
+/* Fruit names styling */
+.fruit-box p {
+  font-size: 24px;
+  font-weight: 900;
+  color: rgb(56,8,8);
+  margin: 0;
+  line-height: 1.2;
+  user-select: text;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #330505;
+  color: #ffffff;
+  padding: 40px 20px; /* Add horizontal padding for alignment */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center; /* Center all footer text */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center footer content horizontally */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  text-align: left; /* Individual section text aligned left */
+}
+
+.footer-section h3,
+.footer-section h4,
+.social-media h4,
+.payment-methods h4 {
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  list-style: none;
+}
+
+.contact-info strong {
+  color: #ffffff;
+}
+
+.email-links a {
+  color: #0e5ab1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.email-links a:hover {
+  text-decoration: underline;
+}
+
+.address-section {
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.address-section h4 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.social-media {
+  margin-top: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: center; /* Center social icons */
+  align-items: center;
+}
+
+.social-icons a img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #a59b9b;
+  padding: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+  background-color: #727070;
+  transform: scale(1.1);
+}
+
+.payment-methods {
+  margin-top: 30px;
+}
+
+.payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: center; /* Center payment icons */
+  align-items: center;
+}
+
+.payment-methods-icons img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #a59b9b;
+  padding: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: #727070;
+  transform: scale(1.1);
+}
+
+.payment-methods-icons .airtel-logo {
+  background-color: #443e3e !important;
+}
+
+.footer-bottom {
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: center; /* Center footer bottom content */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+/* ===== RESPONSIVENESS ===== */
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  body {
+    padding-left: 10px;        /* reduce side padding on smaller screens */
+    padding-right: 10px;
+    max-width: 100%;           /* Allow full width on smaller devices */
+  }
+  .fruit-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 10px;        /* less horizontal padding */
+    max-width: 100%;
+  }
+  .footer-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .footer-bottom a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+  body {
+    padding-left: 5px;         /* even smaller side padding */
+    padding-right: 5px;
+  }
+  .fruit-grid {
+    grid-template-columns: 1fr;
+    padding: 15px 5px;
+    gap: 20px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-sections {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .footer-logo-container {
+    width: 100%;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .payment-methods-icons {
+    justify-content: center;
+  }
+}

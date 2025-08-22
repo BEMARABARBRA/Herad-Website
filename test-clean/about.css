@@ -1,0 +1,460 @@
+/* ===== NAVIGATION BAR ===== */
+nav {
+  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
+  background-repeat: no-repeat;
+  background-size: cover;      /* Cover entire nav area */
+  background-position: center;
+  background-blend-mode: darken; /* Darken image slightly */
+  background-color: rgba(7,7,7,0.4); /* Fallback overlay color */
+  height: 120px;               /* Reduced height from 130px → 120px */
+  display: flex;               /* Flex for horizontal layout */
+  align-items: center;         /* Center vertically */
+  justify-content: space-between; /* Spread items across */
+  box-shadow: 0 2px 5px black; /* Slight shadow for depth */
+  color: white;
+  padding: 0 15px;             /* Slightly smaller padding */
+  position: fixed;             /* Fixed to top of viewport */
+  top: 0;
+  left: 0;
+  width: 100%;                 /* Full width */
+  z-index: 1000;               /* Always on top */
+}
+
+/* Logo container */
+.logo {
+  padding: 5px;                /* Reduced padding */
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image */
+.logo img {
+  height: auto;               /* Reduced logo height */
+  width: 250px;
+  max-width: 100%;            /* Responsive scaling */
+  object-fit: contain;
+  display: block;
+}
+
+/* Navigation menu list */
+.menu_list ul {
+  list-style: none;            /* Remove bullets */
+  display: flex;               /* Horizontal layout */
+  flex-wrap: nowrap;           /* Prevent wrapping */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation list items */
+.menu_list ul li {
+  display: block;
+}
+
+/* Navigation links */
+.menu_list ul li a {
+  color: black;
+  background-color: #c77d83;  /* Button background */
+  border-right: 1px solid #692727; /* Divider between links */
+  text-decoration: none;
+  font-weight: 700;            /* Slightly lighter for cleaner look */
+  font-size: 14px;             /* Reduced font size */
+  padding: 10px 8px;           /* Reduced padding */
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;         /* Prevent text wrap */
+}
+
+/* Navigation link hover effect */
+.menu_list ul li a:hover {
+  background-color: #692727;   /* Darker hover background */
+  color: white;                /* White text on hover */
+  border-radius: 4px;          /* Rounded corners */
+}
+
+/* Dropdown menu container */
+.menu_list ul li.dropdown {
+  position: relative;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;               /* Hidden by default */
+  position: absolute;          /* Absolute to parent li */
+  top: 100%;                   /* Below parent item */
+  left: 0;
+  background-color: #c77d83;   /* Dropdown background */
+  min-width: 200px;            /* Slightly smaller */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
+  padding: 6px 0;              /* Reduced padding */
+}
+
+/* Show dropdown on hover */
+.menu_list ul li:hover > .dropdown-content {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 8px 14px;           /* Reduced padding */
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;             /* Smaller dropdown text */
+  transition: background-color 0.3s ease;
+}
+
+/* Dropdown link hover */
+.dropdown-content a:hover {
+  background-color: #692727;
+  color: white;
+}
+
+/* Divider inside dropdown */
+.dropdown-content hr {
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 6px 10px;
+}
+
+/* ============================================================ BODY SECTIONS STYLE ============================================================ */
+body {
+  font-family: 'Times New Roman', serif;
+  line-height: 1.7;
+  background: #f8f8f8;
+  color: #2b0d0d;
+  margin-top: 150px;  /* Offset for fixed navbar */
+}
+
+section {
+  padding: 40px 10%;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-left: 6px solid transparent; /* Section indicator */
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* About Section */
+.about-section {
+  background-color: #fdf0f0;
+  color: #690909;
+  font-size: 18px;
+  text-align: justify;
+  padding: 50px 30px;
+  border-left-color: #f27c7c;
+}
+
+.about-section h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #3A0000;
+  margin-bottom: 20px;
+}
+
+/* ============================================================ CARDS ROW STYLING ============================================================ */
+.cards-row {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px 10%;
+}
+
+/* Individual card styling */
+.card-section {
+  flex: 1 1 30%;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-left: 6px solid transparent; /* Section indicator */
+}
+
+/* Gradient overlay for extra style */
+.card-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.05);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+/* Hover Effect for all cards */
+.card-section:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07);
+}
+
+/* Specific card colors and hover gradients */
+.vision-section {
+  background: linear-gradient(145deg, #fde3e3, #fcbcbc);
+  color: #690909;
+  border-left-color: #f27c7c;
+}
+.vision-section:hover {
+  background: linear-gradient(145deg, #ffcaca, #ffa0a0);
+}
+.mission-section {
+  background: linear-gradient(145deg, #fff6e6, #ffd7b3);
+  color: #3A0000;
+  border-left-color: #ffb366;
+}
+.mission-section:hover {
+  background: linear-gradient(145deg, #ffe0b3, #ffc080);
+}
+.why-section {
+  background: linear-gradient(145deg, #fff9e6, #fff1cc);
+  color: #3A0000;
+  border-left-color: #ffde7d;
+}
+.why-section:hover {
+  background: linear-gradient(145deg, #fff1b3, #ffe699);
+}
+
+/* Headings inside cards */
+.card-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Small underline for headings */
+.card-section h3::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #ffcccc;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+/* Text inside cards */
+.card-section p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Modern bullet styling for Why We Exist */
+.why-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+.why-section ul li {
+  background-color: rgba(255, 168, 0, 0.15);
+  color: #3A0000;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.why-section ul li:hover {
+  background-color: rgba(255, 168, 0, 0.25);
+}
+
+/* Slogan Section */
+.slogan-section {
+  background-color: #fdf0e0;
+  color: #3A0000;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 15px;
+  border-left: 6px solid #f2bcbc;
+}
+.slogan-section h5 {
+  font-size: 1.5rem;
+  color: #3A0000;
+  margin-bottom: 10px;
+}
+.slogan-section p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* ============================================================ FOOTER STYLES - HERAD ICS ============================================================ */
+
+:root {
+  --brand-white: #ffffff;
+  --text-light: #f0f0f0;
+  --footer-border: #dcdcdc;
+  --text-muted: #bfbfbf;
+}
+
+.footer {
+  background-color: #3A0000;
+  background-image: url('images/bg.jpg');
+  color: var(--brand-white);
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: var(--brand-white);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.footer-section p {
+  margin: 0 0 8px 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.contact-info a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+  color: var(--brand-white);
+}
+
+.footer-follow .social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-follow .social-icons a img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: rgb(240, 38, 38);
+  padding: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+}
+
+.footer-follow .social-icons a img:hover {
+  background-color: black;
+}
+
+.footer-follow .payment-methods-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-follow .payment-methods-icons img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgb(230, 217, 217);
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-follow .payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: rgb(246, 246, 248);
+}
+
+.footer-bottom {
+  border-top: 2px solid var(--footer-border);
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: var(--brand-white);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .card-section {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 30px 6%;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  p, li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* End of CSS */

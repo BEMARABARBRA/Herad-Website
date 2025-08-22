@@ -29,10 +29,10 @@ nav {
 
 /* Logo image */
 .logo img {
-  height: auto;               /* Reduced logo height */
+  height: auto;               /* Keep aspect ratio */
   width: 250px;
   max-width: 100%;            /* Responsive scaling */
-  object-fit: contain;
+  object-fit: contain;        /* Contain within bounding box */
   display: block;
 }
 
@@ -210,6 +210,7 @@ section:hover {
 .vision-section:hover {
   background: linear-gradient(145deg, #ffcaca, #ffa0a0);
 }
+
 .mission-section {
   background: linear-gradient(145deg, #fff6e6, #ffd7b3);
   color: #3A0000;
@@ -218,6 +219,7 @@ section:hover {
 .mission-section:hover {
   background: linear-gradient(145deg, #ffe0b3, #ffc080);
 }
+
 .why-section {
   background: linear-gradient(145deg, #fff9e6, #fff1cc);
   color: #3A0000;
@@ -430,7 +432,7 @@ section:hover {
   color: var(--brand-white);
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 992px) {
   .card-section {
     flex: 1 1 100%;

@@ -1,52 +1,46 @@
 /* =================== RESET STYLES =================== */
 
-/* Reset margin and padding for all elements, and include padding and border in element's total width and height */
 * {
-    margin: 0;                
-    padding: 0;               
-    box-sizing: border-box;   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   
-  /* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
   html {
-    font-size: 80%;               
-    scroll-padding-top: 120px;    
-    overflow-x: hidden;           
+    font-size: 80%;
+    scroll-padding-top: 120px;
+    overflow-x: hidden;
   }
   
-  /* ============ BODY BACKGROUND TONE DOWN ============ */
+  /* ==================== BODY ==================== */
   body {
     font-family: "Times New Roman", Times, serif;
     line-height: 1.7;
     color: #ebd5d5;
     margin-top: 0;
     text-align: center;
-  
-    /* Background image properties */
     background-color: #ffe6e6;
     background-image: url('herad_images/sheabutterbackground.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-  
-    /* Position relative for overlay */
     position: relative;
   }
   
-  /* Overlay a semi-transparent tint over background to tone down */
   body::before {
     content: "";
-    position: fixed;       
+    position: fixed;
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(126, 69, 69, 0.5); /* Soft tint overlay */
-    z-index: -1;           
+    background-color: rgba(126, 69, 69, 0.5);
+    z-index: -1;
   }
   
   /* =================== NAVIGATION BAR =================== */
-  nav {
+  /* =================== NAVIGATION BAR =================== */
+nav {
     /* Background with image and dark overlay */
     background-image: url("herad_images/Herad-vegetables.jpeg");
     background-repeat: no-repeat;
@@ -167,20 +161,20 @@
     border-top: 2px solid #692727;
     margin: 8px 12px;
   }
-
-  /* --------------------- MAIN BODY STYLING ------------------- */
-/* Growers container with wider single-column layout */
-.growers {
+  
+  /* ================== HERO SECTION: GROWERS ================== */
+  /* Container for hero section cards */
+  .growers {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for stacked sections */
+    grid-template-columns: 1fr;
     gap: 30px;
     padding: 40px 20px;
-    width: 90vw;               /* Use 90% of viewport width for responsiveness */
-    max-width: 1000px;         /* Max width for larger screens */
-    margin: 120px auto 60px auto; /* Center container with top margin for nav offset */
+    width: 90vw;
+    max-width: 1000px;
+    margin: 120px auto 60px auto;
   }
   
-  /* Each section styled as a card/grid item */
+  /* Styles for sections inside .growers */
   .growers section {
     background-color: #d8b6b6;
     border-radius: 15px;
@@ -191,36 +185,41 @@
     font-size: 19px;
     line-height: 1.7;
     transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-    width: 100%;              /* Full width of container */
-    max-width: 900px;         /* Limit max width for readability */
-    margin: 0 auto;           /* Center within container */
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
   }
   
-  /* Hover effect on each section */
+  /* Hover effect including background and text color */
   .growers section:hover {
     background-color: #692727;
-    color: white; /* Text color turns white */
+    color: white;
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07);
   }
   
-  /* Ensure all text inside section turns white on hover */
+  /* Text inside section changes color on hover */
   .growers section:hover h1,
+  .growers section:hover h3,
   .growers section:hover h4,
   .growers section:hover p,
-  .growers section:hover p i {
+  .growers section:hover p i,
+  .growers section:hover ul,
+  .growers section:hover li,
+  .growers section:hover a {
     color: white;
   }
   
-  /* Headings inside sections */
-  .growers h1, 
+  /* Header styles scoped inside .growers */
+  .growers h1,
+  .growers h3,
   .growers h4 {
     color: #3A0000;
     font-weight: 900;
     margin-bottom: 15px;
   }
   
-  /* Paragraph tweaks */
+  /* Paragraph styling scoped to .growers */
   .growers p {
     margin-bottom: 20px;
     text-align: justify;
@@ -233,7 +232,56 @@
     color: #2c0303;
   }
   
-  /* Responsive adjustments */
+  /* =================== Unordered Lists inside .growers =================== */
+  .growers ul {
+    padding-left: 45px;
+    margin-bottom: 20px;
+    color: inherit; /* inherits from section or hover */
+    font-family: 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
+  /* List items flex layout for label/content alignment */
+  .growers ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  /* Label styling inside list items */
+  .growers ul li strong {
+    flex: 0 0 140px;
+    margin-right: 10px;
+    font-weight: 800;
+    color: #3A0000;
+  }
+  
+  /* For list items without strong, indent to align with labels */
+  .growers ul li:not(:has(strong)) {
+    display: block;
+    padding-left: 150px;
+  }
+  
+  /* Links inside lists */
+  .growers ul li a {
+    color: #361818;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  /* Links change color on hover inside .growers */
+  .growers ul li a:hover {
+    color: whitesmoke;
+  }
+  
+  /* List item and strong color on hover */
+  .growers ul li:hover,
+  .growers ul li:hover strong {
+    color: rgb(204, 191, 191);
+  }
+  
+  /* ==================== RESPONSIVE DESIGN ==================== */
   @media (max-width: 768px) {
     .growers {
       width: 100%;
@@ -242,62 +290,16 @@
   
     .growers section {
       padding: 25px 20px;
-      max-width: 100%; /* Full width on small screens */
+      max-width: 100%;
     }
   
-    .growers h1 {
+    .growers h1,
+    .growers h3,
+    .growers h4 {
       font-size: 1.8rem;
     }
   }
   
-    /*------------------ Style for all unordered lists ----------------*/
-
-ul {
-    padding-left: 20px;      /* Add left padding for indentation */
-    margin-bottom: 20px;     /* Space below the list */
-    color: #631919;          /* Text color consistent with your palette */
-    font-family: 'Times New Roman', serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    font-size: 15px;
-  }
-  
-  ul li {
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  ul li strong {
-    flex: 0 0 140px;    /* Fixed width for label */
-    margin-right: 10px; /* Space after the strong label */
-  }
-  
-  ul li:not(:has(strong)) {
-    display: block;     /* Normal flow for items without strong */
-    padding-left: 150px; /* Indent to align with other list items */
-  }
-  
-  
-  /* Responsive adjustment inside grower's sections */
-  .growers ul {
-    padding-left: 45px;
-  }
-  
-  /* Optional: if links inside lists */
-  ul li a {
-    color: #361818;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-  }
-  
-  ul li:hover {
-    color: whitesmoke;
-  }
-  
-  /* Also ensure strong elements keep their color or adjust accordingly */
-  ul li:hover strong {
-    color: whitesmoke; /* Or another contrasting color if preferred */
-  }
   
   
   

@@ -18,7 +18,7 @@
   body {
     font-family: "Times New Roman", Times, serif;
     line-height: 1.7;
-    color: #2b0d0d;
+    color: #ebd5d5;
     margin-top: 0;
     text-align: center;
   
@@ -169,78 +169,91 @@
   }
 
   /* --------------------- MAIN BODY STYLING ------------------- */
-
-//* ===== MAIN GRID CONTAINER ===== */
-.main-grid {
+/* Growers container with wider single-column layout */
+.growers {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12 column grid */
-    grid-template-rows: auto auto auto; /* Adjust number of rows as needed */
-    grid-template-areas:
-      "hero hero hero hero hero hero hero hero hero hero hero hero"
-      "section1 section1 section1 section2 section2 section2 section3 section3 section3 section4 section4 section4"
-      "footer footer footer footer footer footer footer footer footer footer footer footer";
-    gap: 20px; /* Space between grid items */
-    padding: 20px;
-    max-width: 1200px;
-    margin: 150px auto 0 auto; /* Top margin offset for fixed nav */
+    grid-template-columns: 1fr; /* Single column for stacked sections */
+    gap: 30px;
+    padding: 40px 20px;
+    width: 90vw;               /* Use 90% of viewport width for responsiveness */
+    max-width: 1000px;         /* Max width for larger screens */
+    margin: 120px auto 60px auto; /* Center container with top margin for nav offset */
   }
   
-  /* ===== ASSIGN SECTIONS TO GRID AREAS ===== */
-  .growers {
-    grid-area: hero; /* Hero section at top spanning full width */
-  }
-  
-  .section1 {
-    grid-area: section1;
-  }
-  
-  .section2 {
-    grid-area: section2;
-  }
-  
-  .section3 {
-    grid-area: section3;
-  }
-  
-  .section4 {
-    grid-area: section4;
-  }
-  
-  /* Footer already styled - just assign area */
-  footer.footer {
-    grid-area: footer;
-  }
-  
-  /* Example styling for other sections */
-  .section1, .section2, .section3, .section4 {
-    background-color: #fdf0f0;
+  /* Each section styled as a card/grid item */
+  .growers section {
+    background-color: #d8b6b6;
     border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    color: #690909;
+    padding: 30px 25px;
+    box-shadow: 0 8px 20px rgba(58, 21, 21, 0.1);
+    color: #361818;
     font-family: 'Times New Roman', serif;
     font-size: 18px;
     line-height: 1.7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    width: 100%;              /* Full width of container */
+    max-width: 900px;         /* Limit max width for readability */
+    margin: 0 auto;           /* Center within container */
   }
   
-  /* Responsive - stack grids on small devices */
+  /* Hover effect on each section */
+  .growers section:hover {
+    background-color: #692727;
+    color: white; /* Text color turns white */
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07);
+  }
+  
+  /* Ensure all text inside section turns white on hover */
+  .growers section:hover h1,
+  .growers section:hover h4,
+  .growers section:hover p,
+  .growers section:hover p i {
+    color: white;
+  }
+  
+  /* Headings inside sections */
+  .growers h1, 
+  .growers h4 {
+    color: #3A0000;
+    font-weight: 900;
+    margin-bottom: 15px;
+  }
+  
+  /* Paragraph tweaks */
+  .growers p {
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #631919;
+  }
+  
+  /* Italic paragraphs */
+  .growers p i {
+    font-style: italic;
+    color: #2c0303;
+  }
+  
+  /* Responsive adjustments */
   @media (max-width: 768px) {
-    .main-grid {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      grid-template-areas:
-        "hero"
-        "section1"
-        "section2"
-        "section3"
-        "section4"
-        "footer";
+    .growers {
+      width: 100%;
+      padding: 20px 15px;
+    }
+  
+    .growers section {
+      padding: 25px 20px;
+      max-width: 100%; /* Full width on small screens */
+    }
+  
+    .growers h1 {
+      font-size: 1.8rem;
     }
   }
   
   
-
-
+  
+  
+  
 
 
   /* ============ FOOTER =============== */

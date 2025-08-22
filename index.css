@@ -157,7 +157,7 @@ nav ul li:hover > .dropdown-content {
 
 /* Dropdown link hover effect */
 .dropdown-content a:hover {
-  background-color: #692727;
+  background-color: #e09393;
   color: white;
 }
 

@@ -1,17 +1,17 @@
 /* =================== RESET STYLES =================== */
 
-/* Reset margin and padding for all elements, and set box-sizing */
+/* Reset margin and padding for all elements, and include padding and border in element's total width and height */
 * {
-  margin: 0;                /* Remove default margin */
-  padding: 0;               /* Remove default padding */
-  box-sizing: border-box;   /* Include padding and border in element's total width and height */
+  margin: 0;                
+  padding: 0;               
+  box-sizing: border-box;   
 }
 
-/* Set base font size and scrolling offset */
+/* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
 html {
-  font-size: 80%;               /* Root font size to 80% of browser default */
-  scroll-padding-top: 120px;    /* Offset scroll for fixed nav (130px tall) */
-  overflow-x: hidden;           /* Prevent horizontal scrollbar */
+  font-size: 80%;               
+  scroll-padding-top: 120px;    
+  overflow-x: hidden;           
 }
 
 /* ============ BODY BACKGROUND TONE DOWN ============ */
@@ -22,36 +22,39 @@ body {
   margin-top: 0;
   text-align: center;
 
-  /* Background image settings */
+  /* Background image properties */
   background-color: #ffe6e6;
-  background-image: url('/herad_images/coffeebackground.jpeg');
+  background-image: url('herad_images/coffeebackground.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 
-  /* Add subtle overlay to fade background */
+  /* Position relative for overlay */
   position: relative;
 }
 
+/* Overlay a semi-transparent tint over background to tone down */
 body::before {
   content: "";
-  position: fixed;       /* Stays fixed behind everything */
+  position: fixed;       
   top: 0; left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(126, 69, 69, 0.5); /* Soft tint overlay */
-  z-index: -1;           /* Keep behind content */
+  z-index: -1;           
 }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
+  /* Background with image and dark overlay */
+  background-image: url("herad_images/Herad-vegetables.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;                 /* Cover entire nav area */
+  background-size: cover;                
   background-position: center;
   background-blend-mode: darken;
-  background-color: rgba(7, 7, 7, 0.4);  /* Fallback overlay color */
+  background-color: rgba(7, 7, 7, 0.4);  
+
   height: 130px;
   display: flex;
   align-items: center;
@@ -59,6 +62,8 @@ nav {
   box-shadow: 0 2px 5px black;
   color: white;
   padding: 0 20px;
+
+  /* Fixed position nav */
   position: fixed;
   top: 0;
   left: 0;
@@ -66,23 +71,23 @@ nav {
   z-index: 1000;
 }
 
-/* Logo container */
+/* Logo container styles */
 .logo {
   padding: 10px;
   display: flex;
   align-items: center;
 }
 
-/* Logo image */
+/* Logo image scales responsively */
 .logo img {
-  height: auto;             /* Let height adjust naturally */
+  height: auto;
   width: 220px;
   max-width: 100%;
-  object-fit: contain;      /* Ensure logo is never cropped */
+  object-fit: contain;      
   display: block;
 }
 
-/* Navigation menu */
+/* Navigation menu styles */
 nav ul {
   list-style: none;
   display: flex;
@@ -91,12 +96,12 @@ nav ul {
   padding: 0;
 }
 
-/* Navigation items */
+/* Navigation list item block display */
 nav ul li {
   display: block;
 }
 
-/* Navigation links */
+/* Navigation links style and transitions */
 nav ul li a {
   color: black;
   background-color: #c77d83;
@@ -109,19 +114,19 @@ nav ul li a {
   white-space: nowrap;
 }
 
-/* Hover state */
+/* Hover effect on navigation links */
 nav ul li a:hover {
   background-color: #692727;
   color: white;
   border-radius: 4px;
 }
 
-/* Dropdown container */
+/* Dropdown container positioning */
 nav ul li.dropdown {
   position: relative;
 }
 
-/* Dropdown menu */
+/* Dropdown menu hidden initially */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -140,7 +145,7 @@ nav ul li:hover > .dropdown-content {
   display: block;
 }
 
-/* Dropdown links */
+/* Dropdown links style */
 .dropdown-content a {
   display: block;
   padding: 10px 16px;
@@ -150,13 +155,13 @@ nav ul li:hover > .dropdown-content {
   transition: background-color 0.3s ease;
 }
 
-/* Dropdown hover */
+/* Dropdown link hover effect */
 .dropdown-content a:hover {
   background-color: #692727;
   color: white;
 }
 
-/* Dropdown divider */
+/* Dropdown divider styling */
 .dropdown-content hr {
   border: 0;
   border-top: 2px solid #692727;
@@ -165,21 +170,22 @@ nav ul li:hover > .dropdown-content {
 
 /* =================== HERO SECTION =================== */
 .hero-slider {
-  margin-top: 130px;                 /* Push below fixed nav */
-  margin-bottom: 0;                  /* No unnecessary gap */
-  position: relative;                /* For absolute slides */
-  width: 100%;                       /* Full width */
-  height: calc(100vh - 10px - 150px);  /* Adjust for navbar and footer */
-  overflow: hidden;                  /* Hide overflow */
+  margin-top: 130px;               /* Positioned below nav */
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 10px - 150px);  /* Adjust for nav and footer */
+  overflow: hidden;
   border-radius: 40px;
 
-  -webkit-border-radius: 40px; /* Vendor prefixes */
+  /* Vendor prefixes for border radius */
+  -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
   -ms-border-radius: 40px;
   -o-border-radius: 40px;
 }
 
-/* Each slide in hero slider */
+/* Individual slides positioned on top of each other, hidden by default */
 .fade-slide {
   position: absolute;
   top: 0;
@@ -192,15 +198,15 @@ nav ul li:hover > .dropdown-content {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
-  pointer-events: none;
+  pointer-events: none;  /* Prevent interaction */
 }
 
-/* Make first slide visible */
+/* Show only the first slide initially */
 .fade-slide:first-child {
   opacity: 1;
 }
 
-/* Stagger slides */
+/* Stagger animation start times for slides */
 .fade-slide:nth-child(1)  { animation-delay: 0s; }
 .fade-slide:nth-child(2)  { animation-delay: 4s; }
 .fade-slide:nth-child(3)  { animation-delay: 8s; }
@@ -217,15 +223,15 @@ nav ul li:hover > .dropdown-content {
 .fade-slide:nth-child(14) { animation-delay: 52s; }
 .fade-slide:nth-child(15) { animation-delay: 56s; }
 
-/* Hero images */
+/* Hero images scale without cropping */
 .fade-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;      /* Changed from cover to contain to prevent cropping */
+  object-fit: contain;
   display: block;
 }
 
-/* Keyframes for fade/zoom animation */
+/* Animation keyframes for fade and zoom */
 @keyframes fastFadeZoom {
   0%   { opacity: 1; transform: scale(1); }
   10%  { opacity: 1; transform: scale(1.05); }
@@ -241,15 +247,17 @@ section {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
-  overflow: hidden;                 /* Keep inside section */
+  overflow: hidden;
   border-left: 6px solid transparent;
 }
 
+/* Move up and increase shadow on hover */
 section:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
+/* About section styling */
 .about-section {
   background-color: #fdf0f0;
   color: #690909;
@@ -259,6 +267,7 @@ section:hover {
   border-left-color: #f27c7c;
 }
 
+/* About section header */
 .about-section h3 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -266,7 +275,7 @@ section:hover {
   margin-bottom: 20px;
 }
 
-/* Cards row */
+/* Cards row setup */
 .cards-row {
   display: flex;
   gap: 20px;
@@ -275,7 +284,7 @@ section:hover {
   margin: 30px 10%;
 }
 
-/* Individual card */
+/* Individual cards */
 .card-section {
   flex: 1 1 30%;
   padding: 30px;
@@ -287,17 +296,20 @@ section:hover {
   border-left: 6px solid transparent;
 }
 
+/* Card hover effect */
 .card-section:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07);
 }
 
+/* Card header styling */
 .card-section h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   position: relative;
 }
 
+/* Card header underline */
 .card-section h3::after {
   content: '';
   display: block;
@@ -308,6 +320,7 @@ section:hover {
   border-radius: 2px;
 }
 
+/* Card paragraph text */
 .card-section p {
   font-size: 16px;
   line-height: 1.7;
@@ -315,9 +328,15 @@ section:hover {
 
 /* =================== MEDIA QUERIES =================== */
 @media (max-width: 768px) {
-  .logo img { height: 50px !important; opacity: 0.7; }
+
+  /* Smaller logo with opacity effect */
+  .logo img { 
+    height: 50px !important; 
+    opacity: 0.7; 
+  }
   .logo img:hover { opacity: 1; }
 
+  /* Navigation menu collapses and styles for mobile */
   nav ul {
     display: none;
     flex-direction: column;
@@ -338,15 +357,21 @@ section:hover {
     border-right: none;
     white-space: normal;
   }
+
+  /* Fruit grid adapts layout */
   .fruit-grid {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
     padding: 20px 10px;
     max-width: 100%;
   }
+
+  /* Footer adjusts sections */
   .footer-sections {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Footer bottom stacked */
   .footer-bottom {
     flex-direction: column;
     text-align: center;
@@ -359,23 +384,36 @@ section:hover {
 }
 
 @media (max-width: 480px) {
+
+  /* Smaller logo */
   .logo img { height: 40px !important; }
-  .hero-slider { height: 40vh; border-radius: 10px; }
+
+  /* Smaller hero slider */
+  .hero-slider { 
+    height: 40vh; 
+    border-radius: 10px; 
+  }
   .hero-slider img { border-radius: 10px; }
 
+  /* Body content padding */
   body {
     padding-left: 5px;
     padding-right: 5px;
   }
+
+  /* Fruit grid becomes one column */
   .fruit-grid {
     grid-template-columns: 1fr;
     padding: 15px 5px;
     gap: 20px;
   }
+
+  /* Footer stacks vertically */
   .footer-content {
     flex-direction: column;
     align-items: center;
   }
+
   .footer-sections {
     grid-template-columns: 1fr;
     width: 100%;
@@ -383,6 +421,8 @@ section:hover {
   .footer-logo-container {
     width: 100%;
   }
+
+  /* Center social and payment icons */
   .social-icons, .payment-methods-icons {
     justify-content: center;
   }

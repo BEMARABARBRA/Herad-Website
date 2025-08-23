@@ -428,14 +428,14 @@ section:hover {
   }
 }
 
-/* ============ FOOTER =============== */
+/* ===== FOOTER ===== */
 .footer {
   background-color: #330505;
   color: #ffffff;
-  padding: 40px 20px;
+  padding: 40px 20px; /* Add horizontal padding for alignment */
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  text-align: center;
+  text-align: center; /* Center all footer text */
 }
 
 .footer-content {
@@ -443,7 +443,7 @@ section:hover {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* Center footer content horizontally */
   gap: 40px;
   align-items: flex-start;
 }
@@ -458,7 +458,7 @@ section:hover {
   padding-top: 20px;
   max-height: 150px;
   width: auto;
-  object-fit: contain; /* Never crop logo */
+  object-fit: contain;
   margin: 0 auto;
 }
 
@@ -468,7 +468,7 @@ section:hover {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 30px;
   justify-content: center;
-  text-align: left;
+  text-align: left; /* Individual section text aligned left */
 }
 
 .footer-section h3,
@@ -529,7 +529,7 @@ section:hover {
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: center; /* Center social icons */
   align-items: center;
 }
 
@@ -556,14 +556,14 @@ section:hover {
   display: flex;
   gap: 10px;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: center; /* Center payment icons */
   align-items: center;
 }
 
 .payment-methods-icons img {
   height: 30px;
   width: 30px;
-  object-fit: contain; /* Never crop payment logos */
+  object-fit: contain;
   border-radius: 50%;
   background-color: #a59b9b;
   padding: 5px;
@@ -588,7 +588,7 @@ section:hover {
   font-size: 14px;
   color: #999999;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center footer bottom content */
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
@@ -602,6 +602,65 @@ section:hover {
 
 .footer-bottom a:hover {
   color: #ffffff;
+}
+
+/* ===== RESPONSIVENESS ===== */
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  body {
+    padding-left: 10px;        /* reduce side padding on smaller screens */
+    padding-right: 10px;
+    max-width: 100%;           /* Allow full width on smaller devices */
+  }
+  .fruit-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 10px;        /* less horizontal padding */
+    max-width: 100%;
+  }
+  .footer-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .footer-bottom a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 480px) {
+  body {
+    padding-left: 5px;         /* even smaller side padding */
+    padding-right: 5px;
+  }
+  .fruit-grid {
+    grid-template-columns: 1fr;
+    padding: 15px 5px;
+    gap: 20px;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-sections {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .footer-logo-container {
+    width: 100%;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .payment-methods-icons {
+    justify-content: center;
+  }
 }
 
 

@@ -1,122 +1,151 @@
-/* ===== RESET BASIC DEFAULT STYLES ===== */
+/* =================== RESET STYLES =================== */
+
+/* Reset margin and padding for all elements, and include padding and border in element's total width and height */
 * {
-  margin: 0;                   /* Remove default browser margin */
-  padding: 0;                  /* Remove default browser padding */
-  box-sizing: border-box;      /* Include padding/border in width/height calculations */
+  margin: 0;                
+  padding: 0;               
+  box-sizing: border-box;   
 }
 
-/* ===== BASE STYLES ===== */
+/* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
+html {
+  font-size: 80%;               
+  scroll-padding-top: 120px;    
+  overflow-x: hidden;           
+}
+
+/* ============ BODY BACKGROUND TONE DOWN ============ */
 body {
-  font-family: "Times New Roman", Times, serif;  /* Elegant serif font */
-  background-color: #e7cbcb;   /* Soft pink background for the whole page */
-  color: #333;                 /* Dark text color for readability */
-  line-height: 1.5;            /* Comfortable line spacing */
-  overflow-x: hidden;          /* Prevent horizontal scrolling */
-  padding-left: 20px;          /* Prevent content from touching left edge */
-  padding-right: 20px;         /* Prevent content from touching right edge */
-  margin: 0 auto;              /* Center content horizontally on large screens */
-  max-width: 1200px;           /* Limit maximum width for readability */
-  padding-top: 130px;          /* Offset content so it doesn't hide under fixed nav */
-  text-align: center;          /* Center page content */
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1;
+  color: #2b0d0d;
+  margin-top: 150px;
+  text-align: center;
+
+  /* Background image properties */
+  background-color: #ffe6e6;
+  background-image: url('herad_images/fruitsbackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* Position relative for overlay */
+  position: relative;
 }
 
-/* ===== NAVIGATION BAR ===== */
+/* Overlay a semi-transparent tint over background to tone down */
+body::before {
+  content: "";
+  position: fixed;       
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(126, 69, 69, 0.8); /* Soft tint overlay */
+  z-index: -1;           
+}
+
+/* =================== NAVIGATION BAR =================== */
 nav {
-  background-image: url("/herad_images/Herad-vegetables.jpeg"); /* Background image */
+  /* Background with image and dark overlay */
+  background-image: url("herad_images/Herad-vegetables.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;      /* Cover entire nav area */
+  background-size: cover;                
   background-position: center;
-  background-blend-mode: darken; /* Darken image slightly */
-  background-color: rgba(7,7,7,0.4); /* Fallback overlay color */
-  height: 130px;               /* Fixed nav height */
-  display: flex;               /* Flex for horizontal layout */
-  align-items: center;         /* Center vertically */
-  justify-content: space-between; /* Spread items across */
-  box-shadow: 0 2px 5px black; /* Slight shadow for depth */
+  background-blend-mode: darken;
+  background-color: rgba(7, 7, 7, 0.4);  
+
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
   color: white;
-  padding: 0 20px;             /* Internal horizontal padding */
-  position: fixed;             /* Fixed to top of viewport */
+  padding: 0 20px;
+
+  /* Fixed position nav */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;                 /* Full width */
-  z-index: 1000;               /* Always on top */
+  width: 100vw;
+  z-index: 1000;
 }
 
-/* Logo container */
+/* Logo container styles */
 .logo {
   padding: 10px;
   display: flex;
   align-items: center;
 }
 
-/* Logo image */
+/* Logo image scales responsively */
 .logo img {
-  height: 100px;               /* Keep logo height consistent */
-  width: auto;                 /* Maintain aspect ratio */
-  max-width: 100%;             /* Responsive scaling */
-  object-fit: contain;         /* Prevent image cropping */
-  display: block;              /* Remove inline gap */
+  height: auto;
+  width: 220px;
+  max-width: 100%;
+  object-fit: contain;      
+  display: block;
 }
 
-/* Navigation menu list */
-.menu_list ul {
-  list-style: none;            /* Remove bullets */
-  display: flex;               /* Horizontal layout */
-  flex-wrap: nowrap;           /* Prevent wrapping */
+/* Navigation menu styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
   margin: 0;
   padding: 0;
 }
 
-/* Navigation list items */
-.menu_list ul li {
-  display: block;              /* Each link as block */
+/* Navigation list item block display */
+nav ul li {
+  display: block;
 }
 
-/* Navigation links */
-.menu_list ul li a {
+/* Navigation links style and transitions */
+nav ul li a {
   color: black;
-  background-color: #c77d83;  /* Button background */
-  border-right: 1px solid #692727; /* Divider between links */
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
   text-decoration: none;
-  font-weight: 900;            /* Bold links */
+  font-weight: 900;
   padding: 15px 10px;
   display: block;
   transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap;         /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
-/* Navigation link hover effect */
-.menu_list ul li a:hover {
-  background-color: #692727;   /* Darker hover background */
-  color: white;                /* White text on hover */
-  border-radius: 4px;          /* Rounded corners on hover */
-}
-
-/* Dropdown menu container */
-.menu_list ul li.dropdown {
-  position: relative;          /* Position relative for dropdown positioning */
-}
-
-/* Dropdown content */
-.dropdown-content {
-  display: none;               /* Hidden by default */
-  position: absolute;          /* Absolute to parent li */
-  top: 100%;                   /* Below parent item */
-  left: 0;
-  background-color: #c77d83;   /* Dropdown background */
-  min-width: 220px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Hover effect on navigation links */
+nav ul li a:hover {
+  background-color: #692727;
+  color: white;
   border-radius: 4px;
-  z-index: 1001;               /* Above other content */
+}
+
+/* Dropdown container positioning */
+nav ul li.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu hidden initially */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #c77d83;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
   padding: 8px 0;
 }
 
 /* Show dropdown on hover */
-.menu_list ul li:hover > .dropdown-content {
+nav ul li:hover > .dropdown-content {
   display: block;
 }
 
-/* Dropdown links */
+/* Dropdown links style */
 .dropdown-content a {
   display: block;
   padding: 10px 16px;
@@ -126,136 +155,149 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-/* Dropdown link hover */
+/* Dropdown link hover effect */
 .dropdown-content a:hover {
-  background-color: #692727;
+  background-color: #e09393;
   color: white;
 }
 
-/* Divider inside dropdown */
+/* Dropdown divider styling */
 .dropdown-content hr {
   border: 0;
   border-top: 2px solid #692727;
   margin: 8px 12px;
 }
 
-/* ===== HERO IMAGE SECTION ===== */
-.hero-image {
-  width: 100vw;                /* Full viewport width */
-  height: 100vh;               /* Full viewport height */
-  overflow: hidden;            /* Hide overflow */
-  position: relative;          /* Relative for children positioning */
+
+/* ===================== HERO / FRUIT SECTION ===================== */
+
+/* Container for the entire fruit section */
+.fruit-section {
+  max-width: 1200px;                     /* Limit section width */
+  padding: 50px 40px;                    /* Padding all around */
+  /* background-color: #e49a5f;             Light background for section */
+  border-radius: 12px;                   /* Rounded corners for softness */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);/* Subtle shadow for elevation */
+  margin: 0 auto;                        /* Center section horizontally */
 }
 
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;           /* Cover entire area */
-  display: block;
-  animation: zoomPan 15s ease-in-out infinite; /* Smooth zoom and pan animation */
-  transform-origin: center center;
-}
+/* Section headings for each fruit type */
+.fruit-section h3 {
+  font-family: 'Georgia', 'Times New Roman', serif;   /* Elegant serif font */
+  font-size: 60px;                                   /* Large and bold */
+  font-weight: bold;                                 /* Strong visual weight */
+  text-align: center;                                /* Center heading */
+  text-transform: uppercase;                         /* Make it prominent */
+  letter-spacing: 3px;                               /* Spacing between letters */
+  margin-bottom: 40px;                               /* Space below heading */
+  padding-bottom: 10px;                              /* Space between underline & text */
 
-/* Zoom & pan animation */
-@keyframes zoomPan {
-  0% { transform: scale(1) translate(0,0); }
-  50% { transform: scale(1.1) translate(-5%, -5%); }
-  100% { transform: scale(1) translate(0,0); }
-}
+  /* Gradient text color */
+  background: linear-gradient(45deg, #ff8c00, #ffd700, #ff4500);
+  -webkit-background-clip: text;                    /* Clip gradient to text */
+  -webkit-text-fill-color: transparent;             /* Make text fill transparent */
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 
-/* ===== FRUIT GRID ===== */
-.fruit-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsive columns */
-  gap: 25px;
-  padding: 20px 0;
-  margin: 20px auto 60px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  background-color: transparent;
-  max-width: 100%;
-  box-sizing: border-box;
-  justify-content: center; /* Center grid content */
-  text-align: center; /* Center text inside */
-}
+  /* Shadow for depth */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 
-/* Section headings */
-h3 {
-  font-size: 38px;
-  color: #490707;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 40px auto;
+  /* Decorative underline */
   position: relative;
-  padding-bottom: 20px;
-  max-width: 600px;
-  z-index: 1;
-  text-align: center;
+  display: inline-block;                            /* Inline block allows centering with ::after */
 }
 
-/* Full width underline for headings */
-h3::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 4px;
-  background-color: #D89E9E;
-  border-radius: 2px;
-  z-index: 0;
-  pointer-events: none;
-  box-sizing: border-box;
+/* Decorative underline for headings
+.fruit-section h3::after {
+  content: "";                                       /* Decorative line */
+  display: block;
+  width: 120px;                                     /* Line width */
+  height: 4px;                                      /* Line thickness */
+  background: #ff4500;                              /* Line color */
+  margin: 10px auto 0 auto;                         /* Center line below text */
+  border-radius: 2px;                               /* Rounded ends */
+} */
+
+/* Responsive adjustments for headings */
+@media (max-width: 768px) {
+  .fruit-section h3 {
+    font-size: 36px;                                 /* Smaller on mobile */
+    letter-spacing: 2px;                             /* Adjust spacing */
+  }
+  .fruit-section h3::after {
+    width: 80px;                                     /* Shorter underline */
+    height: 3px;                                     /* Slightly thinner line */
+  }
 }
 
-/* Fruit box / card */
+/* Grid container for fruit boxes */
+.fruit-grid {
+  display: flex;                            /* Flex layout for columns */
+  flex-wrap: wrap;                          /* Wrap to next line if needed */
+  gap: 25px;                                /* Space between boxes */
+  justify-content: center;                  /* Center all boxes horizontally */
+  margin-bottom: 60px;                      /* Space below grid */
+}
+
+/* Individual fruit box styling */
 .fruit-box {
-  background-color: #d89e9e;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 15px;
+  height: auto;
+  flex: 1 1 220px;                          /* Flexible width, min 220px per box */
+  max-width: 500px;                          /* Prevent boxes from getting too big */
+  background-color: #744214;                 /* Box background */
+  border-radius: 12px;                       /* Rounded corners */
+  overflow: hidden;                          /* Prevent content overflow */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  user-select: none;
-  max-width: 280px; /* Add max width for uniform card size */
-  margin: 0 auto;
+  flex-direction: column;                    /* Stack image and caption vertically */
+  align-items: center;                       /* Center content horizontally */
+  padding: 20px;                             /* Inner padding */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+/* Image inside fruit box */
+.fruit-box img {
+  width: 100%;                               /* Fill width of box */
+  height: 280px;                             /* Height for visibility */
+  object-fit: cover;                          /* Crop without stretching */
+  border-radius: 12px;                        /* Rounded corners */
+  margin-bottom: 15px;                        /* Space below image */
+  transition: transform 0.3s ease;            /* Smooth hover zoom */
+}
+
+/* Fruit name/caption */
+.fruit-box p {
+  font-size: 30px;                            /* Slightly larger text */
+  font-weight: bold;                          /* Bold for clarity */
+  color: white;                             /* Light text for contrast */
   text-align: center;
 }
 
-/* Shared hover effect for fruit-box */
-.fruit-box:hover,
-.fruit-box:focus {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(194, 42, 42, 0.15);
-  outline: none;
+/* Hover effect for fruit box */
+.fruit-box:hover {
+  transform: translateY(-5px) scale(1.05);    /* Lift and zoom on hover */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);   /* Shadow on hover */
+  background-color: #a3570fd2;                  /* Slight highlight */
 }
 
-/* Fruit images inside card */
-.fruit-box img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 992px) {
+  .fruit-box {
+    flex: 1 1 45%;                            /* Two boxes per row on medium screens */
+  }
 }
 
-.fruit-box:hover img,
-.fruit-box:focus img {
-  transform: scale(1.05);
+@media (max-width: 768px) {
+  .fruit-box {
+    flex: 1 1 100%;                           /* Full width on small screens */
+  }
+
+  .fruit-section h3 {
+    font-size: 58px;                          /* Slightly smaller heading on small screens */
+  }
 }
 
-/* Fruit names styling */
-.fruit-box p {
-  font-size: 24px;
-  font-weight: 900;
-  color: rgb(56,8,8);
-  margin: 0;
-  line-height: 1.2;
-  user-select: text;
-}
+
+
 
 /* ===== FOOTER ===== */
 .footer {

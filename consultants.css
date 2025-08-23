@@ -1,193 +1,426 @@
-/* ===== Reset ===== */
+/* =================== RESET STYLES =================== */
+
+/* Reset margin and padding for all elements, and include padding and border in element's total width and height */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;                
+  padding: 0;               
+  box-sizing: border-box;   
 }
 
+/* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
+html {
+  font-size: 80%;               
+  scroll-padding-top: 120px;    
+  overflow-x: hidden;           
+}
+
+/* ============ BODY BACKGROUND TONE DOWN ============ */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
+  padding-top: 40px; /* Space for fixed nav */
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.7;
+  color: #2b0d0d;
+  margin-top: 0px;
+  text-align: center;
 
-/* ===== Navigation Bar ===== */
-nav {
-  background: #004d26;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
+  /* Background image properties */
+  background-color: #ffe6e6;
+  background-image: url('herad_images/consultancybackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 
-.logo img {
-  max-width: 120px;
-  height: auto;
-}
-
-.menu_list ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.menu_list a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: background 0.3s;
-}
-
-.menu_list a:hover {
-  background: #006633;
-  border-radius: 4px;
-}
-
-/* Dropdown */
-.dropdown {
+  /* Position relative for overlay */
   position: relative;
 }
 
+/* Overlay a semi-transparent tint over background to tone down */
+body::before {
+  content: "";
+  position: fixed;       
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(126, 69, 69, 0.5); /* Soft tint overlay */
+  z-index: -1;           
+}
+
+/* =================== NAVIGATION BAR =================== */
+nav {
+  /* Background with image and dark overlay */
+  background-image: url("herad_images/Herad-vegetables.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;                
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(7, 7, 7, 0.4);  
+
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  padding: 0 20px;
+
+  /* Fixed position nav */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+/* Logo container styles */
+.logo {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image scales responsively */
+.logo img {
+  height: auto;
+  width: 220px;
+  max-width: 100%;
+  object-fit: contain;      
+  display: block;
+}
+
+/* Navigation menu styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation list item block display */
+nav ul li {
+  display: block;
+}
+
+/* Navigation links style and transitions */
+nav ul li a {
+  color: black;
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+/* Hover effect on navigation links */
+nav ul li a:hover {
+  background-color: #692727;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Dropdown container positioning */
+nav ul li.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu hidden initially */
 .dropdown-content {
   display: none;
   position: absolute;
-  background: white;
-  min-width: 200px;
   top: 100%;
   left: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background-color: #c77d83;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
+  padding: 8px 0;
 }
 
+/* Show dropdown on hover */
+nav ul li:hover > .dropdown-content {
+  display: block;
+}
+
+/* Dropdown links style */
 .dropdown-content a {
-  color: #333;
-  padding: 10px;
   display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
+/* Dropdown link hover effect */
 .dropdown-content a:hover {
-  background: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Hamburger */
-.hamburger-btn {
-  font-size: 28px;
-  background: none;
-  border: none;
+  background-color: #e09393;
   color: white;
-  cursor: pointer;
-  display: none;
 }
 
-/* ===== Hero Section ===== */
-/* Hero Section Container */
-.hero {
-  display: flex; /* Establishes a flexbox container */
-  align-items: center; /* Vertically centers the items within the container */
-  justify-content: center; /* Horizontally centers the items */
-  gap: 40px; /* Adds space between the columns */
-  padding: 50px 20px; /* Provides internal spacing */
-  max-width: 1200px; /* Limits the maximum width for better readability */
-  margin: 0 auto; /* Centers the entire container on the page */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-  border-radius: 8px; /* Rounds the corners */
-  background-color: #f9f9f9; /* Sets a light background color */
+/* Dropdown divider styling */
+.dropdown-content hr {
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
+}
+  
+  /* ================= HERO SECTION ==================== */
+
+/* Container for hero section: text + image */
+.row.hero {
+  display: flex;                     
+  align-items: center;               /* Vertically center text and image within row */
+  justify-content: center;           /* Horizontally center the entire row within parent */
+  gap: 20px;                         /* Space between text column and image column */
+  padding: 30px 20px;                /* Padding all around: top/bottom 50px, left/right 40px */
+  max-width: 1000px;                 /* Limit width so it doesn't stretch too much on large screens */
+  margin: 120px auto 40px auto;      /* Center the row horizontally, 120px top margin to avoid navbar, 40px bottom */
+  background: #f5cfbd;               /* Light grey background for the hero section */
+  border-radius: 12px;               /* Rounded corners for a softer look */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth animation on hover */
+  text-align: left;                  /* Default text alignment */
 }
 
-/* Text Content Column */
+/* Text column inside hero */
 .col-7 {
-  flex: 1; /* Allows this column to grow and fill available space */
-  padding-right: 20px; /* Adds space between the text and the image */
+  font-size: 13px;
+  flex: 0 0 60%;                     /* Take ~60% of row width */
+  color: #330505;                     /* Dark red text color for readability */
+  display: flex;
+  flex-direction: column;             /* Stack headings, paragraphs vertically */
+  justify-content: center;            /* Vertically center text within column */
 }
 
-/* Image Column */
+/* Image column inside hero */
 .col-5 {
-  flex-shrink: 0; /* Prevents the image column from shrinking */
-  width: 40%; /* Sets a specific width for the image */
+  flex: 0 0 40%;                     /* Take ~40% of row width */
+  display: flex;
+  align-items: center;                /* Vertically center image inside column */
+  justify-content: center;            /* Horizontally center image inside column */
 }
 
-/* Image Styling */
+/* Hero image styling */
 .hero-img {
-  max-width: 100%; /* Ensures the image is responsive and fits its container */
-  height: auto; /* Maintains the image's aspect ratio */
-  display: block; /* Removes any extra space below the image */
-  border-radius: 8px; /* Matches the container's border radius */
+  height: 350px;                      /* Fixed height for consistency */
+  width: 100%;                         /* Full width of column */
+  max-width: 450px;                   /* Prevent image from getting too large */
+  border-radius: 12px;                /* Rounded corners for image */
+  object-fit: cover;                  /* Ensure image fills container without distortion */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animations */
 }
 
-/* Separator Line Styling */
-hr {
-  border: none;
-  border-top: 2px solid #ddd;
-  margin: 20px 0;
+/* Hover effect for the entire hero row */
+.row.hero:hover {
+  transform: translateY(-5px);        /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Subtle shadow on hover */
 }
 
-/* Media Queries for Responsiveness */
+/* ---------- Responsive adjustments ---------- */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column; /* Stacks the columns vertically on smaller screens */
-    text-align: center; /* Centers the text for better mobile viewing */
+  .row.hero {
+    flex-direction: column;          /* Stack text and image vertically on small screens */
+    text-align: center;              /* Center text on mobile */
+    max-width: 95%;                  /* Reduce horizontal width on small devices */
+    padding: 30px 20px;              /* Adjust padding for mobile */
+    margin-top: 140px;               /* Ensure enough space from fixed navbar */
   }
 
-  .col-7 {
-    padding-right: 0; /* Removes the extra padding */
-    margin-bottom: 20px; /* Adds space between the text and the image */
+  .col-7, .col-5 {
+    flex: 0 0 100%;                  /* Full width columns */
+    justify-content: center;          /* Center content vertically */
+    align-items: center;              /* Center content horizontally */
   }
 
-  .col-5 {
-    width: 100%; /* Makes the image take up the full width */
+  .hero-img {
+    max-width: 80%;                  /* Reduce image width on mobile for responsiveness */
+    height: auto;                    /* Let image height adjust proportionally */
+  }
+
+  /* Disable hover effects on mobile */
+  .row.hero:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
-/* =============== Footer ================== */
+  
+  /* ============ FOOTER =============== */
 .footer {
-  background: #222;
-  color: #999;
-  padding: 30px 20px;
+  background-color: #330505;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
 }
 
 .footer-logo-container {
-  flex: 1;
-  min-width: 150px;
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 150px;
+  width: auto;
+  object-fit: contain; /* Never crop logo */
+  margin: 0 auto;
 }
 
 .footer-sections {
-  display: flex;
-  gap: 40px;
-  flex: 2;
-  flex-wrap: wrap;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  text-align: left;
 }
 
-.footer-section h3, .footer-section h4 {
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.footer-section p, .footer-section a {
+.footer-section h3,
+.footer-section h4,
+.social-media h4,
+.payment-methods h4 {
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
   font-size: 14px;
-  color: #ccc;
-  text-decoration: none;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
 }
 
-.footer-section a:hover {
-  color: white;
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  list-style: none;
+}
+
+.contact-info strong {
+  color: #ffffff;
+}
+
+.email-links a {
+  color: #0e5ab1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.email-links a:hover {
+  text-decoration: underline;
+}
+
+.address-section {
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.address-section h4 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.social-media {
+  margin-top: 30px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #a59b9b;
+  padding: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+  background-color: #727070;
+  transform: scale(1.1);
+}
+
+.payment-methods {
+  margin-top: 30px;
+}
+
+.payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-methods-icons img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain; /* Never crop payment logos */
+  border-radius: 50%;
+  background-color: #a59b9b;
+  padding: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: #727070;
+  transform: scale(1.1);
+}
+
+.payment-methods-icons .airtel-logo {
+  background-color: #443e3e !important;
 }
 
 .footer-bottom {
-  border-top: 1px solid #444;
-  margin-top: 20px;
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px 10px;
   font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
 }

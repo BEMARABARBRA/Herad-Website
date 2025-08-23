@@ -1,548 +1,309 @@
 /* =================== RESET STYLES =================== */
-
-/* Reset margin for all elements */
 * {
-  margin: 0;                /* Remove default margin */
-  padding: 0;               /* Remove default padding */
-  box-sizing: border-box;   /* Include padding and border in element's total width and height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Set base font size and scrolling offset */
 html {
-  font-size: 80%;               /* Set root font size to 80% of browser default */
-  scroll-padding-top: 130px;    /* Offset scroll for fixed nav (130px tall) */
-  overflow-x: hidden;           /* Prevent horizontal scrollbar */
+  font-size: 80%;
+  scroll-padding-top: 150px;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 body {
- 
-  background-color: rgba(255, 192, 203, 0.5); /* Soft pink with opacity */
-  background-blend-mode: multiply; /* Or try: overlay, darken, lighten */
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.5;
+  color: #2b0d0d;
+  margin-top: 120px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background-color: #f3ebeb;
+  background-image: url('herad_images/billionaerbackground4.jpeg');
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
-  font-family: "Times New Roman", Times, serif;
-  color: black;
-  line-height: 1.0;
-  overflow-x: hidden;
-  padding-top: 130px;
+  background-attachment: fixed;
+  position: relative;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(156, 90, 35, 0.6);
+  z-index: -1;
+}
 
 /* =================== NAVIGATION BAR =================== */
-
 nav {
-  background-image: url("/herad_images/WHISKEY-glass.jpeg"); /* Set background image */
-  background-repeat: no-repeat;       /* Prevent background repetition */
-  background-size: cover;             /* Cover entire nav area */
-  background-position: center;        /* Center background image */
-  background-blend-mode: darken;      /* Blend overlay for darker effect */
-  background-color: rgba(7, 7, 7, 0.4); /* Semi-transparent dark overlay */
-  height: 130px;                      /* Fixed height of nav bar */
-  display: flex;                     /* Use flexbox for layout */
-  align-items: center;               /* Vertically center content */
-  justify-content: space-between;    /* Space between items */
-  box-shadow: 0 2px 5px black;       /* Add shadow below nav */
-  color: white;                     /* Set text color */
-  padding: 0 20px;                  /* Horizontal padding */
-  position: fixed;                  /* Fix nav to viewport top */
-  top: 0;                          /* Align to top */
-  left: 0;                         /* Align to left */
-  width: 100vw;                    /* Full viewport width */
-  z-index: 1000;                   /* Ensure nav is on top */
+  background-image: url("herad_images/Herad-vegetables.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(7, 7, 7, 0.4);
+
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  padding: 0 20px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
 }
 
-
-/* Logo image styling */
 .logo img {
-  height: 120px;                  /* Set fixed height */
-  width: 280px;                   /* Set fixed width */
-  max-width: 100%;                /* Responsive max width */
-  object-fit: contain;            /* Maintain image aspect */
-  display: block;                 /* Block element for spacing */
+  width: 220px;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Navigation list container */
 nav ul {
-  list-style: none;               /* Remove bullet points */
-  display: flex;                  /* Flex row layout */
-  flex-wrap: nowrap;              /* No wrapping */
-  margin: 0;                     /* Remove default margin */
-  padding: 0;                    /* Remove default padding */
+  list-style: none;
+  display: flex;
 }
 
-/* Each navigation item */
-nav ul li {
-  display: block;                /* Block display for each item */
-}
-
-/* Navigation links */
 nav ul li a {
-  color: black;                  /* Link text color */
-  background-color: #c77d83;    /* Background color */
-  border-right: 1px solid #692727; /* Right border */
-  text-decoration: none;         /* Remove underline */
-  font-weight: 900;              /* Very bold font */
-  padding: 15px 10px;            /* Padding inside links */
-  display: block;                /* Block display */
-  transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
-  white-space: nowrap;           /* Prevent text wrap */
+  color: black;
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 15px 10px;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
-/* Hover state for links */
 nav ul li a:hover {
-  background-color: #692727;     /* Darker background */
-  color: white;                  /* White text */
-  border-radius: 4px;            /* Rounded corners */
+  background-color: #692727;
+  color: white;
+  border-radius: 4px;
 }
 
-/* Dropdown container position */
-nav ul li.dropdown {
-  position: relative;            /* Needed for absolute dropdown */
-}
-
-/* Dropdown menu styling */
+nav ul li.dropdown { position: relative; }
 .dropdown-content {
-  display: none;                 /* Hide dropdown by default */
-  position: absolute;            /* Absolute positioning */
-  top: 100%;                    /* Place below parent */
-  left: 0;                      /* Align left */
-  background-color: #c77d83;    /* Background color */
-  min-width: 220px;             /* Minimum width */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Drop shadow */
-  border-radius: 4px;           /* Rounded corners */
-  z-index: 1001;                /* Above other content */
-  padding: 8px 0;               /* Vertical padding */
+  display: none;
+  position: absolute;
+  top: 100%; left: 0;
+  background-color: #c77d83;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
 }
+nav ul li:hover > .dropdown-content { display: block; }
 
-/* Show dropdown on hover */
-nav ul li:hover > .dropdown-content {
-  display: block;               /* Show dropdown */
-}
-
-/* Dropdown link styling */
 .dropdown-content a {
-  display: block;               /* Block display */
-  padding: 10px 16px;           /* Padding */
-  color: black;                 /* Text color */
-  text-decoration: none;        /* Remove underline */
-  font-weight: 600;             /* Medium font weight */
-  transition: background-color 0.3s ease; /* Smooth hover */
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
 }
-
-/* Dropdown link hover effect */
 .dropdown-content a:hover {
-  background-color: #692727;    /* Darker background */
-  color: white;                 /* White text */
+  background-color: #e09393;
+  color: white;
 }
-
-/* Divider inside dropdown */
 .dropdown-content hr {
-  border: 0;                   /* Remove default border */
-  border-top: 2px solid #692727; /* Top border line */
-  margin: 8px 12px;            /* Vertical and horizontal margin */
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
 }
 
-/* ============================ HERO SECTION ======================================== */
+/* ===================== MAIN ===================== */
+main {
+  flex: 1;
+  width: 100%;
+  display: block;
+}
+
+/* ===================== HERO SECTION ===================== */
 .hero-section {
   position: relative;
   width: 100%;
-  max-height: 600px;
+  height: 450px;
   overflow: hidden;
 }
-
 .hero-section img {
-  border-radius: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 15px;
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  /*orremovethislinecompletely*/display: block;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
 }
-
-
-/* Overlay text on hero image */
-.hero-overlay-text {
+.hero-section h3 {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  text-shadow: 6px 6px 18px black;
-  padding: 20px;
-}
-
-.hero-overlay-text h1 {
-  margin-top: 60px;
   font-size: 60px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 10px rgba(14,1,1,0.7);
+}
+@media (max-width: 768px) {
+  .hero-section { height: 300px; }
+  .hero-section h3 { font-size: 40px; }
+}
+@media (max-width: 480px) {
+  .hero-section { height: 200px; }
+  .hero-section h3 { font-size: 28px; }
 }
 
-.hero-overlay-text hr {
-  width: 80px;
-  /* border: 2px solid #fff; */
-  margin: 0 auto;
-}
-
-/*========== Glitch Text Effect==========*/
-.glitch {
-  position: relative;
-  font-size: 40px;
+/* ================== SECTION HEADINGS ================== */
+.veg-section h3,
+.meats-section h3,
+.breverage-section h3 {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+  font-family: 'Georgia', serif;
+  color: #2b0d0d;
   text-transform: uppercase;
   letter-spacing: 3px;
-  animation: flicker 1s infinite;
-  -webkit-animation: flicker 1s infinite;
-}
-
-.glitch::before,
-.glitch::after {
-  content: "HERAD BILLIONAER PRODUCTS";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  overflow: hidden;
-}
-
-.glitch::before {
-  left: 2px;
-  text-shadow: -10px 0 maroon;
-  animation: glitch-anim-up 3s infinite linear alternate-reverse;
-  -webkit-animation: glitch-anim-up 3s infinite linear alternate-reverse;
-}
-
-/* .glitch::after {
-  left: -2px;
-  text-shadow: -6px 0 rgb(6, 6, 110);
-  animation: glitch-anim-down 2s infinite linear alternate-reverse;
-}  */
-
-/* Vertical Glitch Animations */
-@keyframes glitch-anim-up {
-  0% { transform: translateY(-2px); clip-path: inset(0 0 20% 0); }
-  50% { transform: translateY(-5px); clip-path: inset(30% 0 30% 0); }
-  100% { transform: translateY(-1px); clip-path: inset(60% 0 0 0); }
-}
-
-@keyframes glitch-anim-down {
-  0% { transform: translateY(2px); clip-path: inset(0 0 60% 0); }
-  50% { transform: translateY(5px); clip-path: inset(10% 0 40% 0); }
-  100% { transform: translateY(1px); clip-path: inset(0 0 10% 0); }
-}
-
-/* Optional flicker for extra effect */
-/* @keyframes flicker {
-  0%, 100% { opacity: 1; }
-  45% { opacity: 0.8; }
-  50% { opacity: 0.4; }
-  55% { opacity: 0.9; }
-} */
-
-
-/* Positioning the overlay text in center */
-.hero-overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
 
-
-
-/* ========= PAGE TITLE ========== */
-h3 {
-  text-align: center;
-  margin: 30px 0 10px;
-  font-size: 40px;
-  color: maroon;
-  letter-spacing: 1px;
-}
-
-/* ========= GRID SECTION ========== */
+/* ========== GRID SECTIONS ========== */
+.category-grid,
 .fruit-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */
-  gap: 30px;
-  padding: 20px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
   margin: 0 auto 40px;
 }
 
-.fruit-box {
-  background-color: rgb(206, 232, 240);
-  border-left: 10px solid maroon;
-  padding: 10px 0px;
-  border-radius: 10px;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); */
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.veg-item, .fruit-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.veg-item:hover, .fruit-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.15);
 }
 
-.fruit-box:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.fruit-box img {
-  width: 50%;
-  height: 300px;
+.veg-item img, .fruit-box img {
+  width: 100%;
+  height: 220px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
-.fruit-box p {
-  margin-top: 10px;
-  font-size: 30px;
+.veg-item p, .fruit-box p {
+  font-size: 18px;
   font-weight: 600;
   color: #333;
+  margin: 0;
 }
 
+/* ====================== FOOTER =================== */
+.footer {
+  background-color: #330505;
+  color: #ffffff;
+  padding: 40px 20px;
+  margin-top: auto;
+  text-align: center;
+}
 
-  /* ================================== FOOTER DESIGNING =================================== */
-  .footer {
-    background-color: #330505; /* Matches body background */
-    color: #ffffff;
-    padding: 20px 0 20px;
-    line-height: 1.6;
-  }
-  
-  /* Footer content wrapper */
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    align-items: flex-start;
-  }
-  
-  /* ============================LOGO AREA============================ */
-  
-  .footer-logo-container {
-    flex-shrink: 0;
-    min-width: 180px;
-    text-align: center;
-  }
-  
-  .footer-logo {
-    padding-top: 20px;
-    max-height: 150px;
-    width: auto;
-    object-fit: contain;
-  }
-  
-  /* ============================ FOOTER SECTIONS============================ */
-  
-  .footer-sections {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 30px;
-  }
-  
-  /* All headings in footer sections */
-  .footer-section h3,
-  .footer-section h4,
-  .social-media h4,
-  .payment-methods h4 {
-    text-align: left;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-bottom: 10px;
-    /* border-bottom: 2px solid #ffffff; Clear visible line */
-    padding-bottom: 6px;
-  }
-  
-  .footer-section p,
-  .footer-section a,
-  .footer-section li {
-    margin: 6px 0;
-    font-size: 14px;
-    color: #cccccc;
-    text-decoration: none;
-    list-style: none;
-  }
-  
-  /* ============================CONTACT SECTION ============================= */
-  
-  .contact-info strong {
-    color: #ffffff;
-  }
-  
-  /* Email links styling */
-  .email-links a {
-    color: #0e5ab1;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .email-links a:hover {
-    text-decoration: underline;
-  }
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
 
-  /* =================== ADDRESS & CONTACT==================== */
-.address-section {
-    text-align: left;          /* Ensures entire block is left-aligned */
-    color: #ffffff;
-    margin-top: 20px;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-  
-  .address-section h4 {
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 5px;
-    text-align: left;          /* Ensure headings are left-aligned */
-  }
-  
-  /* ============================ SOCIAL MEDIA SECTION ============================ */
-  
-  .social-media {
-    margin-top: 30px;
-  }
-  
-  .social-icons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .social-icons a img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #a59b9b;
-    padding: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .social-icons a img:hover {
-    background-color: #727070;
-    transform: scale(1.1);
-  }
-  
-  /* =============================PAYMENT METHOD SECTION============================= */
-  
-  .payment-methods {
-    margin-top: 30px;
-  }
-  
-  .payment-methods-icons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .payment-methods-icons img {
-    height: 30px;
-    width: 30px;
-    object-fit: contain;
-    border-radius: 50%;
-    background-color: #a59b9b;
-    padding: 5px;
-    opacity: 0.85;
-    transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .payment-methods-icons img:hover {
-    opacity: 1;
-    background-color: #727070;
-    transform: scale(1.1);
-  }
-  
-  /* Specific style for Airtel logo */
-  .payment-methods-icons .airtel-logo {
-    background-color: #443e3e !important;
-  }
-  
+.footer-logo-container img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
-  
-  /* Bottom footer strip */
-  .footer-bottom {
-    border-top: 2px solid #444;
-    margin-top: 30px;
-    padding: 20px;
-    font-size: 14px;
-    color: #999999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  /* Footer bottom links */
-  .footer-bottom a {
-    color: #cccccc;
-    text-decoration: none;
-    margin-left: 20px;
-  }
-  
-  /* Hover on footer bottom links */
-  .footer-bottom a:hover {
-    color: #ffffff;
-  }
-  
-  /* =================== RESPONSIVENESS =================== */
-  
-  /* Tablet breakpoint */
-  @media (max-width: 768px) {
-    .footer-sections {
-      grid-template-columns: repeat(2, 1fr); /* Two columns */
-    }
-  
-    .footer-bottom {
-      flex-direction: column; /* Stack vertically */
-      text-align: center; /* Center text */
-      gap: 10px; /* Space */
-    }
-  
-    .footer-bottom a {
-      margin-left: 0;
-      margin-right: 20px;
-    }
-  }
-  
-  /* Mobile breakpoint */
-  @media (max-width: 480px) {
-    .footer-content {
-      flex-direction: column; /* Stack sections */
-      align-items: center; /* Center align */
-    }
-  
-    .footer-sections {
-      grid-template-columns: 1fr; /* Single column */
-      width: 100%;
-    }
-  
-    .footer-logo-container {
-      width: 100%;
-    }
-  
-    .social-icons {
-      justify-content: center; /* Center icons */
-    }
-  
-    .payment-methods-icons {
-      justify-content: center; /* Center icons */
-    }
-  }
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4,
+.social-media h4,
+.payment-methods h4 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  list-style: none;
+}
+
+.social-icons img, .payment-methods-icons img {
+  height: 30px; width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #a59b9b;
+  padding: 5px;
+  transition: transform 0.3s, background 0.3s;
+}
+.social-icons img:hover,
+.payment-methods-icons img:hover {
+  transform: scale(1.1);
+  background-color: #727070;
+}
+
+.footer-bottom {
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom a {
+  color: #cccccc;
+  text-decoration: none;
+}
+.footer-bottom a:hover { color: #ffffff; }
+
+@media (max-width: 768px) {
+  .footer-sections { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .footer-content { flex-direction: column; align-items: center; }
+  .footer-sections { grid-template-columns: 1fr; }
+}

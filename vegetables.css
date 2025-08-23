@@ -1,59 +1,60 @@
 /* =================== RESET STYLES =================== */
 
-/* Reset margin and padding for all elements, and include padding and border in element's total width and height */
+/* Reset margin and padding for all elements */
 * {
-  margin: 0;                
-  padding: 0;               
-  box-sizing: border-box;   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
+/* Set base font size, scrolling offset for fixed nav */
 html {
-  font-size: 80%;               
-  scroll-padding-top: 120px;    
-  overflow-x: hidden;           
+  font-size: 80%;
+  scroll-padding-top: 150px;  /* accounts for fixed nav */
+  overflow-x: hidden;
+  height: 100%; /* ensure full height for flex layout */
 }
 
-/* ============ BODY BACKGROUND TONE DOWN ============ */
+/* ============ BODY BACKGROUND & BASE ============ */
 body {
   font-family: "Times New Roman", Times, serif;
-  line-height: 1;
+  line-height: 1.;
   color: #2b0d0d;
-  margin-top: 150px;
+  margin-top: 120px; /* push down content so nav doesn’t overlap */
   text-align: center;
 
-  /* Background image properties */
+  /* Flex layout for sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* Background image + tint overlay */
   background-color: #ffe6e6;
-  background-image: url('herad_images/maize-nav-background.jpeg');
+  background-image: url('herad_images/naturalsugarsbackground.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
-  /* Position relative for overlay */
   position: relative;
 }
 
-/* Overlay a semi-transparent tint over background to tone down */
 body::before {
   content: "";
-  position: fixed;       
+  position: fixed;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(126, 69, 69, 0.6); /* Soft tint overlay */
-  z-index: -1;           
+  width: 100%; height: 100%;
+  background-color: rgba(126, 69, 69, 0.6); /* tint */
+  z-index: -1;
 }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-  /* Background with image and dark overlay */
   background-image: url("herad_images/Herad-vegetables.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;                
+  background-size: cover;
   background-position: center;
   background-blend-mode: darken;
-  background-color: rgba(7, 7, 7, 0.4);  
+  background-color: rgba(7, 7, 7, 0.4);
 
   height: 130px;
   display: flex;
@@ -63,7 +64,6 @@ nav {
   color: white;
   padding: 0 20px;
 
-  /* Fixed position nav */
   position: fixed;
   top: 0;
   left: 0;
@@ -71,37 +71,30 @@ nav {
   z-index: 1000;
 }
 
-/* Logo container styles */
 .logo {
   padding: 10px;
   display: flex;
   align-items: center;
 }
 
-/* Logo image scales responsively */
 .logo img {
-  height: auto;
   width: 220px;
   max-width: 100%;
-  object-fit: contain;      
-  display: block;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Navigation menu styles */
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: nowrap;
   margin: 0;
   padding: 0;
 }
 
-/* Navigation list item block display */
 nav ul li {
   display: block;
 }
 
-/* Navigation links style and transitions */
 nav ul li a {
   color: black;
   background-color: #c77d83;
@@ -114,19 +107,16 @@ nav ul li a {
   white-space: nowrap;
 }
 
-/* Hover effect on navigation links */
 nav ul li a:hover {
   background-color: #692727;
   color: white;
   border-radius: 4px;
 }
 
-/* Dropdown container positioning */
 nav ul li.dropdown {
   position: relative;
 }
 
-/* Dropdown menu hidden initially */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -140,12 +130,10 @@ nav ul li.dropdown {
   padding: 8px 0;
 }
 
-/* Show dropdown on hover */
 nav ul li:hover > .dropdown-content {
   display: block;
 }
 
-/* Dropdown links style */
 .dropdown-content a {
   display: block;
   padding: 10px 16px;
@@ -155,116 +143,343 @@ nav ul li:hover > .dropdown-content {
   transition: background-color 0.3s ease;
 }
 
-/* Dropdown link hover effect */
 .dropdown-content a:hover {
   background-color: #e09393;
   color: white;
 }
 
-/* Dropdown divider styling */
 .dropdown-content hr {
   border: 0;
   border-top: 2px solid #692727;
   margin: 8px 12px;
 }
 
+/* ===================== MAIN CONTENT ===================== */
 
-/* ===================== CEREALS SECTION ===================== */
-
-/* Container for the entire cereals section */
-.cereals-section {
-  max-width: 1200px;                     /* Limit section width */
-  padding: 40px 20px;                    /* Padding all around */
-  margin: 0 auto;                        /* Center section horizontally */
+/* Allow main to expand and push footer down */
+main {
+  flex: 1;
+  width: 100%;
+  display: block;
 }
 
-/* Headings for each cereal category */
-.cereals-section h3 {
+    /* ===================== HERO SECTION ===================== */
+/* Container for hero banner image and title */
+.hero-section {
+  position: relative; /* Allows absolute positioning for the heading */
+  width: 100%;        /* Full width */
+  height: 450px;      /* Adjust as needed for large banner */
+  overflow: hidden;   /* Hide anything that overflows */
+}
+
+/* Hero image styling */
+.hero-section img {
+  width: 100%;       /* Full width */
+  height: 100%;      /* Fill container height */
+  object-fit: cover; /* Crop or scale image to cover */
+  filter: brightness(70%); /* Darken image for text readability */
+}
+
+/* Hero heading text */
+.hero-section h3 {
+  position: absolute;          /* Overlay text on image */
+  top: 50%;                    /* Center vertically */
+  left: 50%;                   /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering */
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: bold;
+  color: #ffd700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2; /* Ensure text is above image */
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
+  }
+  .hero-section h3 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .hero-section {
+    height: 200px;
+  }
+  .hero-section h3 {
+    font-size: 28px;
+  }
+}
+
+/* ===================== VEGETABLES SECTION ===================== */
+.veg-section {
+  max-width: 1200px;        /* Contain section */
+  padding: 20px 10px;       /* Space around */
+  margin: 0 auto;           /* Center it */
+}
+
+/* Section Headings (Onions, Tomatoes, etc.) */
+.veg-section h3 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 60px;
+  font-weight: bolder;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin: 50px 0 30px 0;
-
-  /* Gradient text effect */
-  background: linear-gradient(45deg, #d4a017, #ffd700, #a0522d);
+  margin: 0px 0 30px 0;
+  background: linear-gradient(45deg, black, #08e96dc7, black); /* Green shades */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
 }
 
-/* Grid for cereal items */
-.cereals-section .fruit-grid {
+/* Grid for each vegetable category */
+.veg-section .category-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-  margin-bottom: 60px;
+  flex-wrap: wrap;          /* Wrap items */
+  gap: 25px;                /* Space between boxes */
+  justify-content: center;  /* Center content */
+  margin-bottom: 60px;      /* Space below each category */
 }
 
-/* Individual cereal item */
-.cereals-section .fruit-box {
-  flex: 1 1 220px;                       
-  max-width: 500px;
-  background-color: #6b4226;             
+/* Individual vegetable item box */
+.veg-section .veg-item {
+  flex: 1 1 220px;          /* Flexible with min size */
+  max-width: 400px;         /* Limit max width */
+  background-color: #3a4e3a; /* Deep earthy green */
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, 
+              box-shadow 0.3s ease, 
+              background-color 0.3s ease;
 }
 
-/* Cereal item image */
-.cereals-section .fruit-box img {
+/* Images inside vegetable cards */
+.veg-section .veg-item img {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  height: 300px;
+  object-fit: cover;        /* Keep image ratio */
   border-radius: 12px;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
 
-/* Cereal item caption */
-.cereals-section .fruit-box p {
-  font-size: 22px;
+/* Vegetable names */
+.veg-section .veg-item p {
+  font-size: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #fff;              /* White for contrast */
   text-align: center;
 }
 
-/* Hover effect for cereal item */
-.cereals-section .fruit-box:hover {
+/* Hover Effects */
+.veg-section .veg-item:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-  background-color: #7a5133;             
+  background-color: #356f36; /* Slightly lighter green on hover */
+}
+.veg-section .veg-item:hover img {
+  transform: scale(1.05);
 }
 
-/* Responsive adjustments */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 992px) {
-  .cereals-section .fruit-box {
-    flex: 1 1 45%;                        /* Two items per row on medium screens */
-  }
+  .veg-section .veg-item { flex: 1 1 45%; }
 }
 
 @media (max-width: 768px) {
-  .cereals-section h3 {
-    font-size: 36px;                      /* Smaller heading on mobile */
-  }
-  .cereals-section .fruit-box {
-    flex: 1 1 100%;                       /* Full width on small screens */
-  }
+  .veg-section h3 { font-size: 36px; }
+  .veg-section .veg-item { flex: 1 1 100%; }
 }
 
 @media (max-width: 480px) {
-  .cereals-section .fruit-grid {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .cereals-section .fruit-box {
-    flex: 1 1 100%;
-  }
+  .veg-section .category-grid { flex-direction: column; gap: 20px; }
+  .veg-section .veg-item { flex: 1 1 100%; }
+}
+
+
+
+
+
+/* ====================== FOOTER =================== */
+.footer {
+  background-color: #330505;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: auto; /* ensures footer sticks at bottom */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Footer Logo Size */
+.footer-logo-container img {
+  max-width: 150px; /* Adjust width as needed */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;   /* Center the logo */
+}
+
+/* .footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+} */
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4,
+.social-media h4,
+.payment-methods h4 {
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  list-style: none;
+}
+
+.contact-info strong { color: #ffffff; }
+
+.email-links a {
+  color: #0e5ab1;
+  text-decoration: none;
+  font-size: 14px;
+}
+.email-links a:hover { text-decoration: underline; }
+
+.address-section {
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.address-section h4 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.social-media { margin-top: 30px; }
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a img {
+  height: 30px; width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #a59b9b;
+  padding: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.social-icons a img:hover {
+  background-color: #727070;
+  transform: scale(1.1);
+}
+
+.payment-methods { margin-top: 30px; }
+
+.payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.payment-methods-icons img {
+  height: 30px; width: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #a59b9b;
+  padding: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+}
+.payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: #727070;
+  transform: scale(1.1);
+}
+.payment-methods-icons .airtel-logo {
+  background-color: #443e3e !important;
+}
+
+.footer-bottom {
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.footer-bottom a:hover { color: #ffffff; }
+
+/* ================== RESPONSIVE FOOTER ================== */
+@media (max-width: 768px) {
+  .footer-sections { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .footer-content { flex-direction: column; align-items: center; }
+  .footer-sections { grid-template-columns: 1fr; width: 100%; }
 }

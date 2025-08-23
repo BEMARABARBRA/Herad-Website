@@ -1,585 +1,476 @@
-/* ===== GLOBAL RESET ===== */
+/* =================== RESET STYLES =================== */
+
+/* Reset margin and padding for all elements */
 * {
-  margin: 0;               /* Remove default margin from all elements */
-  padding: 0;              /* Remove default padding from all elements */
-  box-sizing: border-box;  /* Include padding and border in element width/height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===== BODY STYLING ===== */
+/* Set base font size, scrolling offset for fixed nav */
+html {
+  font-size: 80%;
+  scroll-padding-top: 150px;  /* accounts for fixed nav */
+  overflow-x: hidden;
+  height: 100%; /* ensure full height for flex layout */
+}
+
+/* ============ BODY BACKGROUND & BASE ============ */
 body {
-  background-color: #f5e0e0;
-  margin: 0;                      /* Ensure no default margin */
-  padding: 0;                     /* Ensure no default padding */
-  font-family: Arial, sans-serif; /* Use clean and readable font */
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.4;
+  color: #2b0d0d;
+  margin-top: 150px; /* push down content so nav doesn’t overlap */
+  text-align: center;
+
+  /* Flex layout for sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* Background image + tint overlay */
+  background-color: #ffe6e6;
+  background-image: url('herad_images/naturalsugarsbackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(126, 69, 69, 0.6); /* tint */
+  z-index: -1;
 }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-  background-image: url("/herad_images/nats-nav-image.jpeg"); /* Background image for navbar */
-  background-repeat: no-repeat;       /* Prevent repetition of background image */
-  background-size: cover;             /* Cover entire nav area with image */
-  background-position: center;        /* Center the background image */
-  background-blend-mode: darken;      /* Blend overlay to darken background */
-  background-color: rgba(34, 48, 3, 0.4); /* Semi-transparent dark overlay */
-  height: 130px;                      /* Fixed navbar height */
-  display: flex;                     /* Use flexbox for horizontal layout */
-  align-items: center;               /* Vertically center nav items */
-  justify-content: space-between;    /* Space out logo and menu */
-  box-shadow: 0 2px 5px black;       /* Subtle shadow below navbar */
-  color: white;                     /* Text color inside navbar */
-  padding: 0 20px;                  /* Horizontal padding */
-  position: fixed;                  /* Fix navbar at top */
-  top: 0;                          /* Align to top */
-  left: 0;                         /* Align to left */
-  width: 100%;                    /* Full width of viewport */
-  z-index: 1000;                  /* Ensure navbar stays on top */
+  background-image: url("herad_images/Herad-vegetables.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(7, 7, 7, 0.4);
+
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  padding: 0 20px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
 }
 
-/* ===== LOGO CONTAINER ===== */
 .logo {
-  padding: 10px;                   /* Padding inside logo container */
-  display: flex;                  /* Flex container for logo */
-  align-items: center;            /* Vertically center logo image */
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
-/* ===== LOGO IMAGE ===== */
 .logo img {
-  height: 120px;                  /* Fixed height for logo */
-  width: 220px;                   /* Fixed width for logo */
-  max-width: 100%;                /* Make responsive on smaller screens */
-  object-fit: contain;            /* Maintain logo aspect ratio */
-  display: block;                 /* Block element to avoid inline gaps */
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-/* ===== NAVIGATION MENU ===== */
 nav ul {
-  list-style: none;               /* Remove default list bullets */
-  display: flex;                  /* Display menu items in a row */
-  flex-wrap: nowrap;              /* Prevent wrapping to next line */
-  margin: 0;                     /* Remove default margin */
-  padding: 0;                    /* Remove default padding */
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-/* ===== EACH NAV ITEM ===== */
 nav ul li {
-  display: block;                /* Display each list item as block */
+  display: block;
 }
 
-/* ===== NAV LINKS ===== */
 nav ul li a {
-  color: black;                  /* Link text color */
-  background-color: #c77d83;    /* Pinkish background color for links */
-  border-right: 1px solid #692727; /* Right border as separator */
-  text-decoration: none;         /* Remove underline */
-  font-weight: 900;              /* Bold font */
-  padding: 15px 10px;            /* Padding inside links */
-  display: block;                /* Make entire area clickable */
-  transition: background-color 0.3s, color 0.3s; /* Smooth hover transitions */
-  white-space: nowrap;           /* Prevent text wrapping */
+  color: black;
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
-/* ===== NAV LINK HOVER EFFECT ===== */
 nav ul li a:hover {
-  background-color: #692727;     /* Dark maroon background on hover */
-  color: white;                  /* White text on hover */
-  border-radius: 4px;            /* Rounded corners on hover */
+  background-color: #692727;
+  color: white;
+  border-radius: 4px;
 }
 
-/* ===== DROPDOWN CONTAINER POSITIONING ===== */
 nav ul li.dropdown {
-  position: relative;            /* Needed for absolutely positioned dropdown */
+  position: relative;
 }
 
-/* ===== DROPDOWN MENU ===== */
 .dropdown-content {
-  display: none;                 /* Hide dropdown by default */
-  position: absolute;            /* Position relative to dropdown parent */
-  top: 100%;                    /* Position below parent */
-  left: 0;                      /* Align left edge */
-  background-color: #c77d83;    /* Pinkish background */
-  min-width: 220px;             /* Minimum dropdown width */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Soft shadow for depth */
-  border-radius: 4px;           /* Rounded corners */
-  z-index: 1001;                /* Appear above other content */
-  padding: 8px 0;               /* Vertical padding inside dropdown */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #c77d83;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
+  padding: 8px 0;
 }
 
-/* ===== SHOW DROPDOWN ON HOVER ===== */
 nav ul li:hover > .dropdown-content {
-  display: block;               /* Show dropdown menu on parent hover */
+  display: block;
 }
 
-/* ===== DROPDOWN LINKS ===== */
 .dropdown-content a {
-  display: block;               /* Make dropdown links block level */
-  padding: 10px 16px;           /* Padding for clickable area */
-  color: black;                 /* Text color */
-  text-decoration: none;        /* No underline */
-  font-weight: 600;             /* Semi-bold font */
-  transition: background-color 0.3s ease; /* Smooth hover transition */
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-/* ===== DROPDOWN LINK HOVER ===== */
 .dropdown-content a:hover {
-  background-color: #692727;    /* Dark maroon background on hover */
-  color: white;                 /* White text on hover */
+  background-color: #e09393;
+  color: white;
 }
 
-/* ===== DROPDOWN DIVIDER LINE ===== */
 .dropdown-content hr {
-  border: 0;                   /* Remove default border */
-  border-top: 2px solid #692727; /* Thin maroon top border as divider */
-  margin: 8px 12px;            /* Space around divider */
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
 }
 
+/* ===================== MAIN CONTENT ===================== */
 
-/* ========================== HERO SECTION ======================== */
-/* Hero section container */
+/* Allow main to expand and push footer down */
+main {
+  flex: 1;
+  width: 100%;
+  display: block;
+}
+
+    /* ===================== HERO SECTION ===================== */
+/* Container for hero banner image and title */
 .hero-section {
-  margin-top: 0;              /* No space at the top */
-  position: relative;         /* Enables absolute positioning if needed */
-  width: 100%;                /* Full width */
-  overflow: hidden;           /* Hide anything that overflows */
-  padding: 0;                 /* No extra space */
+  position: relative; /* Allows absolute positioning for the heading */
+  width: 100%;        /* Full width */
+  height: 400px;      /* Adjust as needed for large banner */
+  overflow: hidden;   /* Hide anything that overflows */
 }
 
-/* Hero image styles */
+/* Hero image styling */
 .hero-section img {
-  margin-top: 80px;           /* Push image below fixed navbar (if any) */
-  width: 100%;                /* Full width of screen */
-  height: auto;               /* Maintain original aspect ratio */
-  display: block;             /* Prevents bottom whitespace */
-  object-fit: cover;          /* Fill container, may crop */
-  max-height: 100vh;          /* Don’t exceed screen height */
-  animation: pulseZoom 4s ease-in-out infinite; /* Smooth zoom effect */
-  transform-origin: center;   /* Zoom from the center */
+  width: 100%;       /* Full width */
+  height: 100%;      /* Fill container height */
+  object-fit: cover; /* Crop or scale image to cover */
+  filter: brightness(70%); /* Darken image for text readability */
 }
 
-/* Zoom animation */
-@keyframes pulseZoom {
-  0%, 100% {
-    transform: scale(1);       /* Original size at start and end */
-  }
-  50% {
-    transform: scale(1.10);    /* Slight zoom at midpoint */
-  }
-}
-
-
-
-/* Heading overlay */
+/* Hero heading text */
 .hero-section h3 {
-  margin-top: 80px; /* Adds space above the heading to position it lower within the section */
-  position: absolute; /* Allows precise placement within the containing .hero-section */
-  top: 50%; /* Moves the element 50% down from the top of its container */
-  left: 50%; /* Moves the element 50% from the left of its container */
-  transform: translate(-50%, -50%); /* Offsets the element back by 50% of its own width and height to perfectly center it */
-  color: #ffffff; /* Sets the text color to white for high contrast over background */
-  font-size: 68px; /* Makes the heading text large and eye-catching */
-  font-weight: 1000; /* Makes the font extremely bold for a strong visual impact */
-  pointer-events: none; /* Allows mouse clicks to pass through the text element */
-  user-select: none; /* Prevents the text from being selected by the user */
-  z-index: 10; /* Ensures the text appears above other layered elements */
+  position: absolute;          /* Overlay text on image */
+  top: 50%;                    /* Center vertically */
+  left: 50%;                   /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #ffd700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2; /* Ensure text is above image */
+}
 
-  /* 3D text effect using multiple shadows for depth */
-  text-shadow: 
-    2px 2px 0 #000, /* First shadow offset slightly for a subtle edge */
-    4px 4px 0 #000, /* Second layer for more depth */
-    6px 6px 0 #000, /* Third layer deepens the shadow */
-    6px 6px 0 #000, /* Fourth shadow adds further extrusion */
-    8px 5px 15px rgba(0, 0, 0, 0.5); /* Final shadow with blur to give a soft glowing effect */
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
+  }
+  .hero-section h3 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .hero-section {
+    height: 200px;
+  }
+  .hero-section h3 {
+    font-size: 28px;
+  }
+}
+
+/* ===================== SUGARS / OILS SECTION ===================== */
+.sugars-section {
+  max-width: 1200px; /* Constrain width */
+  padding: 20px 10px; /* Space around content */
+  margin: 0 auto; /* Center section horizontally */
+}
+
+/* Section headings */
+.sugars-section h3 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0px 0 30px 0;
+  background: linear-gradient(45deg, #d4a017, #ffd700, #a0522d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Grid layout for products */
+.sugars-section .fruit-grid {
+  display: flex;          /* Flex container */
+  flex-wrap: wrap;        /* Wrap to next row if needed */
+  gap: 25px;              /* Space between items */
+  justify-content: center;/* Center items horizontally */
+  margin-bottom: 60px;    /* Space below grid */
+}
+
+/* Individual product boxes */
+.sugars-section .fruit-box {
+  flex: 1 1 220px;        /* Flexible width with min 220px */
+  max-width: 500px;       /* Limit maximum width */
+  background-color: #6b4226; /* Dark brown background */
+  border-radius: 12px;    /* Rounded corners */
+  overflow: hidden;       /* Prevent content overflow */
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Product images */
+.sugars-section .fruit-box img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Product labels */
+.sugars-section .fruit-box p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+/* Hover effect for products */
+.sugars-section .fruit-box:hover {
+  transform: translateY(-5px) scale(1.05); /* Slight lift and zoom */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2); /* Shadow effect */
+  background-color: #7a5133; /* Darker on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { 
+  .sugars-section .fruit-box { flex: 1 1 45%; } 
+}
+@media (max-width: 768px) { 
+  .sugars-section h3 { font-size: 36px; }
+  .sugars-section .fruit-box { flex: 1 1 100%; }
+}
+@media (max-width: 480px) {
+  .sugars-section .fruit-grid { flex-direction: column; gap: 20px; }
+  .sugars-section .fruit-box { flex: 1 1 100%; }
 }
 
 
 
-/* Section heading styles */
-.section-container h3 {
-  padding-top: 20px;
-  color: #6a1b1b;                /* Deep maroon color for rich look */
-  font-size: 58px;               /* Slightly larger font size for prominence */
-  margin-bottom: 20px;           /* Space below the heading */
-  text-transform: uppercase;     /* All uppercase letters for emphasis */
-  font-weight: 1000;              /* Extra bold for strong presence */
-  letter-spacing: 2px;           /* Spaced out letters for readability */
-  text-align: center;            /* Center align the heading */
-  font-family: 'Georgia', serif; /* Elegant serif font */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Subtle shadow for depth */
-  border-bottom: 3px solid #7B2A2A; /* Maroon underline below heading */
-  padding-bottom: 8px;           /* Padding below text for spacing */
-  max-width: 400px;              /* Limit width for better focus */
-  margin-left: auto;             /* Center horizontally */
-  margin-right: auto;            /* Center horizontally */
-  background: linear-gradient(90deg, #8B0000 0%, #B22222 100%); /* Gradient text background fallback */
-  -webkit-background-clip: text; /* Clip background to text */
-  -webkit-text-fill-color: transparent; /* Make text fill transparent to show gradient */
-  cursor: default;               /* Normal cursor on hover */
-}
-
-
-
-/* =================== IMAGE SECTIONS (GRID) =================== */
-
-/* Container wrapping each section of fruit/oil groups */
-.section-container {
-  padding: 20px 30px;            /* Vertical and horizontal padding */
-  margin-bottom: 40px;           /* Space below each section */
-  max-width: 1200px;             /* Maximum content width */
-  margin-left: auto;             /* Center horizontally */
-  margin-right: auto;            /* Center horizontally */
-}
-
-/* Section heading styles */
-.section-container h3 {
-  color: #692727;                /* Dark maroon text color */
-  font-size: 24px;               /* Larger font size for heading */
-  margin-bottom: 15px;           /* Space below the heading */
-  text-transform: uppercase;     /* Uppercase letters for emphasis */
-  font-weight: 700;              /* Bold font weight */
-  letter-spacing: 1.5px;         /* Spacing between letters */
-  text-align: center;            /* Center the heading text */
-}
-
-/* Grid layout for fruit boxes inside a section */
-.fruit-grid {
-  display: flex;                 /* Use flexbox for layout */
-  justify-content: space-between; /* Evenly space fruit boxes */
-  gap: 20px;                    /* Gap between fruit boxes */
-  flex-wrap: wrap;              /* Wrap boxes on smaller screens */
-}
-
-/* Individual fruit box container */
-.fruit-box {
-  flex: 1 1 0;                  /* Grow and shrink equally, no base width */
-  max-width: 100%;              /* Max width is 100% of its flex share */
-  border-radius: 10px;          /* Rounded corners for the box */
-  padding: 12px;                /* Inner spacing inside the box */
-  text-align: center;           /* Center text inside the box */
-  color: white;                 /* White text color for contrast */
-  box-shadow: 4px 4px 16px rgba(201, 9, 9, 0.25); /* Soft shadow around box */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transitions */
-  display: flex;                /* Use flex to align contents */
-  flex-direction: column;       /* Stack children vertically */
-  align-items: center;          /* Center children horizontally */
-}
-
-/* Gradient backgrounds with different maroon shades for each box */
-.fruit-box:nth-child(1) {
-  background: linear-gradient(135deg, #800000, #a0522d);
-}
-
-.fruit-box:nth-child(2) {
-  background: linear-gradient(to right, #800000, #8b0000);
-}
-
-.fruit-box:nth-child(3) {
-  background: radial-gradient(circle, #800000, #5c0a0a);
-}
-
-.fruit-box:nth-child(4) {
-  background: linear-gradient(to bottom right, #6b0e0e, #b22222);
-}
-
-.fruit-box:nth-child(5) {
-  background: linear-gradient(45deg, #7b1c1c, #9b1d1d);
-}
-
-.fruit-box:nth-child(6) {
-  background: radial-gradient(ellipse, #5d0b0b, #800000);
-}
-
-.fruit-box:nth-child(7) {
-  background: linear-gradient(90deg, #822222, #c04040);
-}
-
-.fruit-box:nth-child(8) {
-  background: linear-gradient(to top left, #911e1e, #6a1a1a);
-}
-
-.fruit-box:nth-child(9) {
-  background: radial-gradient(circle at top, #732121, #a52a2a);
-}
-
-.fruit-box:nth-child(10) {
-  background: linear-gradient(to bottom, #7e1f1f, #993333);
-}
-
-.fruit-box:nth-child(11) {
-  background: linear-gradient(135deg, #5a0a0a, #a94442);
-}
-
-.fruit-box:nth-child(12) {
-  background: radial-gradient(ellipse at center, #800000, #bc8f8f);
-}
-
-.fruit-box:nth-child(13) {
-  background: linear-gradient(to right bottom, #6f1d1b, #a52a2a);
-}
-
-.fruit-box:nth-child(14) {
-  background: linear-gradient(30deg, #8b0000, #a0522d);
-}
-
-.fruit-box:nth-child(15) {
-  background: linear-gradient(to top, #721c24, #d46a6a);
-}
-
-.fruit-box:nth-child(16) {
-  background: radial-gradient(circle at bottom, #581010, #aa3939);
-}
-
-.fruit-box:nth-child(17) {
-  background: linear-gradient(to left, #780000, #b03a2e);
-}
-
-.fruit-box:nth-child(18) {
-  background: linear-gradient(to right, #872727, #e9967a);
-}
-
-.fruit-box:nth-child(19) {
-  background: radial-gradient(circle, #6d1e1e, #b22222);
-}
-
-.fruit-box:nth-child(20) {
-  background: linear-gradient(60deg, #912020, #cc6666);
-}
-
-/* Hover effect for fruit boxes */
-.fruit-box:hover {
-  transform: scale(1.05);                    /* Slightly enlarge box */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.5);   /* Darker and larger shadow */
-}
-
-/* Images inside fruit box */
-.fruit-box img {
-  width: 100%;             /* Image fills the box width */
-  height: 360px;           /* Fixed height for uniformity */
-  object-fit: cover;       /* Crop image proportionally without distortion */
-  border-radius: 8px;      /* Rounded corners matching the box */
-  margin-bottom: 10px;     /* Space below image */
-}
-
-/* Text captions under images */
-.fruit-box p {
-  font-weight: 600px;        /* Semi-bold text style */
-  font-size: 20px;         /* Slightly larger font */
-  margin: 0;               /* Remove default margin */
-  color: white;            /* White color for contrast */
-}
-
-
-
-
-/* =================== FOOTER STYLES =================== */
+/* ====================== FOOTER =================== */
 .footer {
-  background-color: #692727;         /* Dark maroon footer background */
-  color: #ffffff;                    /* White text in footer */
-  padding: 40px 0 20px;              /* Top and bottom padding */
-  font-family: Arial, sans-serif;    /* Consistent font */
-  line-height: 1.6;                 /* Line spacing for readability */
+  background-color: #330505;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: auto; /* ensures footer sticks at bottom */
 }
 
-/* ===== FOOTER CONTENT WRAPPER ===== */
 .footer-content {
-  max-width: 1200px;                /* Max width for footer content */
-  margin: 0 auto;                  /* Center horizontally */
-  padding: 0 20px;                 /* Horizontal padding */
-  display: flex;                   /* Flex layout for sections */
-  flex-wrap: wrap;                 /* Wrap on smaller screens */
-  gap: 30px;                      /* Gap between footer items */
-  align-items: flex-start;         /* Align items to top */
-  justify-content: space-between;  /* Space between footer sections */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-/* ===== FOOTER LOGO ===== */
-.footer-logo-container {
-  flex-shrink: 0;                 /* Prevent shrinking */
-  min-width: 180px;               /* Minimum width */
-  text-align: center;             /* Center logo */
+/* Footer Logo Size */
+.footer-logo-container img {
+  max-width: 150px; /* Adjust width as needed */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;   /* Center the logo */
 }
+
+/* .footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+} */
 
 .footer-logo {
-  padding-top: 20px;              /* Padding above logo */
-  max-height: 90px;               /* Limit logo height */
-  width: auto;                   /* Automatic width */
-  object-fit: contain;            /* Maintain image proportions */
+  padding-top: 20px;
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
-/* ===== FOOTER SECTIONS GRID ===== */
 .footer-sections {
-  flex: 1;                       /* Take remaining space */
-  display: grid;                 /* Grid layout for footer sections */
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive columns */
-  gap: 30px;                    /* Gap between columns */
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  text-align: left;
 }
 
-/* ===== FOOTER SECTION HEADINGS ===== */
 .footer-section h3,
-.footer-section h4 {
-  color: #ffffff;                /* White headings */
-  text-transform: uppercase;    /* Uppercase text */
-  margin-bottom: 10px;          /* Space below heading */
-  font-size: 14px;              /* Smaller font size */
+.footer-section h4,
+.social-media h4,
+.payment-methods h4 {
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
 }
 
-/* ===== FOOTER PARAGRAPHS ===== */
-.footer-section p {
-  margin: 0 0 8px 0;            /* Margin below paragraphs */
-  color: #cccccc;               /* Light grey text */
-  font-size: 14px;              /* Font size */
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  list-style: none;
 }
 
-/* ===== CONTACT LABELS ===== */
-.contact-info strong {
-  color: #ffffff;               /* Bright white labels */
-}
+.contact-info strong { color: #ffffff; }
 
-/* ===== EMAIL LINKS ===== */
 .email-links a {
-  color: #0e5ab1;               /* Blue color for email links */
-  text-decoration: none;        /* Remove underline */
-  font-size: 14px;              /* Font size */
+  color: #0e5ab1;
+  text-decoration: none;
+  font-size: 14px;
+}
+.email-links a:hover { text-decoration: underline; }
+
+.address-section {
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
 }
 
-.email-links a:hover {
-  text-decoration: underline;  /* Underline on hover */
+.address-section h4 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-/* ===== SOCIAL MEDIA ===== */
-.social-media {
-  margin-top: 20px;             /* Space above social media section */
-}
-
-.social-media h3 {
-  font-size: 14px;              /* Font size */
-  margin-bottom: 10px;          /* Space below heading */
-  color: #ffffff;               /* White text */
-}
+.social-media { margin-top: 30px; }
 
 .social-icons {
-  display: flex;                /* Horizontal layout for icons */
-  gap: 10px;                   /* Space between icons */
-  flex-wrap: wrap;             /* Wrap if needed */
-  justify-content: start;       /* Align icons left */
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icons a img {
-  height: 30px;                /* Icon height */
-  width: 30px;                 /* Icon width */
-  border-radius: 50%;          /* Make icons circular */
-  object-fit: cover;           /* Ensure images fill icon container */
-  background-color: #424040;   /* Dark background behind icons */
-  padding: 5px;                /* Padding around icons */
-  transition: background-color 0.3s; /* Smooth background transition */
+  height: 30px; width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #a59b9b;
+  padding: 5px;
+  transition: background-color 0.3s, transform 0.3s;
 }
-
 .social-icons a img:hover {
-  background-color: #555;      /* Slightly lighter background on hover */
+  background-color: #727070;
+  transform: scale(1.1);
 }
 
-/* ===== PAYMENT METHODS ===== */
-.payment-methods {
-  margin-top: 20px;            /* Space above payment methods */
-}
-
-.payment-methods h3 {
-  font-size: 14px;             /* Heading font size */
-  margin-bottom: 10px;         /* Space below heading */
-  color: #ffffff;              /* White text */
-}
+.payment-methods { margin-top: 30px; }
 
 .payment-methods-icons {
-  display: flex;               /* Horizontal layout */
-  gap: 10px;                   /* Space between icons */
-  flex-wrap: wrap;             /* Wrap if needed */
-  justify-content: start;      /* Align left */
-  padding-bottom: 5px;         /* Padding below icons */
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
-
 .payment-methods-icons img {
-  height: 30px;               /* Icon height */
-  width: 30px;                /* Icon width */
-  object-fit: contain;        /* Contain image proportionally */
-  border-radius: 50%;         /* Circular icons */
-  background-color: #424040;  /* Dark background */
-  padding: 5px;               /* Padding inside icons */
-  opacity: 0.85;              /* Slight transparency */
-  transition: opacity 0.3s ease, background-color 0.3s ease; /* Smooth effects */
+  height: 30px; width: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #a59b9b;
+  padding: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
 }
-
 .payment-methods-icons img:hover {
-  opacity: 1;                 /* Full opacity on hover */
-  background-color: #727070; /* Lighter background on hover */
+  opacity: 1;
+  background-color: #727070;
+  transform: scale(1.1);
 }
-
-/* Airtel logo special override */
 .payment-methods-icons .airtel-logo {
-  background-color: #000000 !important; /* Airtel logo black background */
+  background-color: #443e3e !important;
 }
 
-/* ===== FOOTER BOTTOM STRIP ===== */
 .footer-bottom {
-  border-top: 2px solid #444;           /* Top border line */
-  margin-top: 30px;                     /* Space above strip */
-  padding: 20px;                        /* Padding inside strip */
-  font-size: 14px;                     /* Text size */
-  color: #999999;                      /* Grey text color */
-  display: flex;                       /* Flexbox layout */
-  justify-content: space-between;     /* Space between items */
-  align-items: center;                 /* Vertically center content */
-  flex-wrap: wrap;                    /* Wrap on smaller screens */
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .footer-bottom a {
-  color: #cccccc;                     /* Link color */
-  text-decoration: none;              /* Remove underline */
-  margin-left: 20px;                  /* Space before links */
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 20px;
 }
+.footer-bottom a:hover { color: #ffffff; }
 
-.footer-bottom a:hover {
-  color: #ffffff;                     /* White text on hover */
-}
-
-/* =================== RESPONSIVE STYLES =================== */
-
-/* Tablet breakpoint */
+/* ================== RESPONSIVE FOOTER ================== */
 @media (max-width: 768px) {
-  .footer-sections {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-  }
-
-  .footer-bottom {
-    flex-direction: column; /* Stack footer bottom vertically */
-    text-align: center;     /* Center text */
-    gap: 10px;              /* Gap between stacked items */
-  }
-
-  .footer-bottom a {
-    margin-left: 0;         /* Remove left margin */
-    margin-right: 20px;     /* Add right margin */
-  }
+  .footer-sections { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
 }
 
-/* Mobile breakpoint */
 @media (max-width: 480px) {
-  .footer-content {
-    flex-direction: column; /* Stack footer content vertically */
-    align-items: center;    /* Center items horizontally */
-  }
-
-  .footer-sections {
-    grid-template-columns: 1fr; /* Single column */
-    width: 100%;                /* Full width */
-  }
-
-  .footer-logo-container {
-    width: 100%;              /* Full width */
-  }
-
-  .social-icons {
-    justify-content: center;  /* Center social icons */
-  }
-
-  .payment-methods-icons {
-    justify-content: center;  /* Center payment icons */
-  }
+  .footer-content { flex-direction: column; align-items: center; }
+  .footer-sections { grid-template-columns: 1fr; width: 100%; }
 }

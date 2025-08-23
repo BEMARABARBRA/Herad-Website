@@ -10,26 +10,27 @@
 
 <body>
 
-<!-- HEADER -->
+
 <!-- HEADER -->
 <header>
   <nav>
-    
-    <!-- Logo Section on the left -->
+    <!-- Logo -->
     <div class="logo">
-      <!-- Company logo image wrapped in a link to index page -->
       <a href="index.html">
-        <!-- Responsive logo image: max-width 100% and height auto -->
-        <img src="herad_images/herad_logo.jpg" alt="Herad Logo" style="max-width: 100%; height: auto;" />
-
+        <img src="herad_images/herad_logo.jpg" alt="Herad Logo" />
       </a>
     </div>
 
+    <!-- Hamburger Button (mobile) -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
     <!-- Navigation Menu -->
     <div class="menu_list">
-      <ul>
-        <!-- ABOUT US Dropdown -->
+      <ul id="nav-links">
         <li class="dropdown">
           <a href="about.html">ABOUT US</a>
           <div class="dropdown-content">
@@ -37,8 +38,6 @@
             <a href="leadership.html">Leadership</a>
           </div>
         </li>
-
-        <!-- WHAT WE DO Dropdown -->
         <li class="dropdown">
           <a href="what_we_do.html">WHAT WE DO</a>
           <div class="dropdown-content">
@@ -48,33 +47,28 @@
             <a href="consultants.html">We Are Consultants</a>
           </div>
         </li>
-
-        <!-- PRODUCTS Dropdown -->
         <li class="dropdown">
           <a href="products.html">PRODUCTS FOR EXPORT</a>
           <div class="dropdown-content">
             <a href="fruits.html">Fruits</a>
             <a href="vegetables.html">Vegetables</a>
-            <a href="spices.html">Spices</a> 
+            <a href="spices.html">Spices</a>
             <a href="cereals.html">Cereals</a>
             <a href="natural-sugars.html">Natural Sugars</a>
             <a href="fats-oils.html">Fats and Oils</a>
             <a href="meats.html">Meats | Fish | Poultry</a>
-            <a href="breverages.html">Beverages</a> <!-- typo: should be beverages.html -->
+            <a href="beverages.html">Beverages</a>
             <a href="kombucha.html">Kombucha Products</a>
           </div>
         </li>
-
-        <!-- Other Menu Items -->
-        <li class="dropdown"><a href="tour.html">TOUR & TRAVEL</a></li>
-        <li class="dropdown"><a href="consultancy.html">CONSULTANCY</a></li>
-        <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
-        <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
+        <li><a href="tour.html">TOUR & TRAVEL</a></li>
+        <li><a href="consultancy.html">CONSULTANCY</a></li>
+        <li><a href="our_impact.html">OUR IMPACT</a></li>
+        <li><a href="contacts.html">CONTACT US</a></li>
       </ul>
     </div>
   </nav>
 </header>
-
 
 <!-- About Us Section -->
 <section class="about-section">
@@ -208,6 +202,45 @@
     </div>
   </div>
 </footer>
+
+  <script>
+// Select hamburger button and main menu
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".menu_list ul"); // corrected selector
+
+// Toggle mobile menu
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// Toggle dropdown menus on mobile
+const dropdownLinks = document.querySelectorAll("nav ul li.dropdown > a");
+
+dropdownLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("active");
+    }
+  });
+});
+
+// Close menu when a link is clicked
+const navLinks = document.querySelectorAll("nav ul li a");
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+      document.querySelectorAll("nav ul li.dropdown").forEach(li => li.classList.remove("active"));
+    }
+  });
+});
+
+
+</script>
+
 
 </body>
 </html>

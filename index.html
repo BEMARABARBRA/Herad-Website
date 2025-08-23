@@ -21,10 +21,17 @@
 
         </a>
     </div>
+    <!-- Hamburger Menu for Mobile -->
+<div id="hamburger" class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
         <!-- Menu list -->
         <div class="menu_list">
-          <ul>
+  <ul id="nav-links">
+          
             <li class="dropdown">
               <a href="about.html">ABOUT US</a>
               <div class="dropdown-content">
@@ -137,26 +144,40 @@
       </div>
     </footer>
 
-   <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+  <script>
+  // Select hamburger button and nav menu
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector("nav ul");
 
-  // Toggle menu visibility
+  // Toggle menu visibility and hamburger animation
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
+    navMenu.classList.toggle("active");       // show/hide menu
+    hamburger.classList.toggle("active");     // animate hamburger to X
   });
 
-  // Toggle dropdowns on mobile
-  const dropdowns = document.querySelectorAll("nav ul li.dropdown");
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener("click", () => {
-      if(window.innerWidth <= 768){
-        dropdown.classList.toggle("active");
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll("nav ul li a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        navMenu.classList.remove("active");   // close menu
+        hamburger.classList.remove("active"); // reset hamburger
+      }
+    });
+  });
+
+  // Mobile dropdown toggle
+  document.querySelectorAll("nav ul li.dropdown > a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();                   // prevent page navigation
+        link.parentElement.classList.toggle("active"); // toggle dropdown
       }
     });
   });
 </script>
+
+
+
 
   </body>
 </html>

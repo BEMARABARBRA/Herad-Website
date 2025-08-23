@@ -1,0 +1,427 @@
+/* =================== RESET STYLES =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 80%;
+  scroll-padding-top: 120px;
+  overflow-x: hidden;
+}
+
+/* =================== BODY =================== */
+body {
+  font-family: "Times New Roman", Times, serif;
+  color: #2b0d0d;
+  text-align: center;
+  background: #ffe6e6 url('herad_images/consultancybackground.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(126, 69, 69, 0.5);
+  z-index: -1;
+}
+
+/* =================== NAVIGATION BAR =================== */
+nav {
+  background-image: url("herad_images/Herad-vegetables.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(7, 7, 7, 0.4);
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+nav ul li {
+  display: block;
+}
+
+nav ul li a {
+  color: black;
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+nav ul li a:hover {
+  background-color: #692727;
+  color: white;
+  border-radius: 4px;
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #c77d83;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
+  padding: 8px 0;
+}
+
+nav ul li:hover > .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #e09393;
+  color: white;
+}
+
+.dropdown-content hr {
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
+}
+
+/* =================== HAMBURGER TOGGLE =================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu_list ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 130px;
+    left: 0;
+    width: 100vw;
+    background-color: rgba(7,7,7,0.95);
+    padding: 10px 0;
+    z-index: 1099;
+  }
+
+  .menu_list ul.active {
+    display: flex;
+  }
+
+  .menu_list ul li a {
+    font-size: 16px;
+    padding: 15px 20px;
+    color: white;
+    border-right: none;
+    text-align: left;
+  }
+
+  .menu_list ul li a:hover {
+    background-color: #692727;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    background-color: #692727;
+    margin: 5px 0;
+    border-radius: 4px;
+    padding: 5px 0;
+  }
+
+  .menu_list ul li.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding-left: 30px;
+  }
+}
+
+/* =================== CONTACT FORM =================== */
+.contact-container {
+  max-width: 600px;
+  margin: 160px auto 50px auto;
+  background: linear-gradient(145deg, #ffffff, #f5d7d9);
+  padding: 40px 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
+  border: 2px solid #7d1f1f;
+  text-align: left;
+}
+
+.contact-container h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #7d1f1f;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.contact-container p {
+  font-size: 15px;
+  color: #5a3d3d;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Form Styles */
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #7d1f1f;
+  font-size: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #c77d83;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #fffafc;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #7d1f1f;
+  background-color: #fff1f3;
+  box-shadow: 0 0 8px rgba(139, 0, 0, 0.3);
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.submit-btn,
+.whatsapp-btn {
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.submit-btn {
+  background-color: #7d1f1f;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #500f0f;
+  transform: scale(1.05);
+}
+
+.whatsapp-btn {
+  background-color: #087c32;
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1da851;
+  transform: scale(1.05);
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    margin: 140px 20px 40px;
+    padding: 30px 25px;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* =================== FOOTER =================== */
+:root {
+  --brand-white: #ffffff;
+  --text-light: #f0f0f0;
+  --footer-border: #dcdcdc;
+  --text-muted: #bfbfbf;
+}
+
+.footer {
+  background-color: #3A0000;
+  color: var(--brand-white);
+  padding: 40px 0 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: var(--brand-white);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.footer-section p {
+  margin: 0 0 8px 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.footer-bottom {
+  border-top: 2px solid var(--footer-border);
+  margin-top: 30px;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+  color: var(--brand-white);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-sections {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

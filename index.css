@@ -10,7 +10,7 @@
 /* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
 html {
   font-size: 80%;               
-  scroll-padding-top: 120px;    
+  scroll-padding-top: 100px;    
   overflow-x: hidden;           
 }
 
@@ -242,7 +242,7 @@ nav ul li:hover > .dropdown-content {
 /* =================== SECTIONS =================== */
 section {
   padding: 40px 15%;
-  margin: 30px auto;
+  margin: 20px auto;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;

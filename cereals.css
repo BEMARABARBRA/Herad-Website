@@ -1,296 +1,422 @@
+/* =================== RESET STYLES =================== */
+
+/* Reset margin and padding for all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body{
-    background-color: rgb(250, 203, 203);
-  }
-
-/* =================== NAVIGATION BAR =================== */
-nav {
-    background-image: url("/herad_images/soghum-nav.jpeg"); /* Background image */
-    background-repeat: no-repeat;       /* No repeat */
-    background-size: cover;             /* Cover entire nav area */
-    background-position: center;        /* Center image */
-    background-blend-mode: darken;      /* Blend mode to darken image */
-    background-color: rgba(34, 48, 3, 0.4); /* Semi-transparent overlay */
-    height: 130px;                      /* Fixed height for navbar */
-    display: flex;                     /* Flex container */
-    align-items: center;               /* Vertically center nav items */
-    justify-content: space-between;    /* Space between left and right items */
-    box-shadow: 0 2px 5px black;       /* Subtle shadow below navbar */
-    color: white;                     /* Text color white */
-    padding: 0 20px;                  /* Horizontal padding */
-    position: fixed;                  /* Fix navbar to top */
-    top: 0;                          /* Align to top */
-    left: 0;                         /* Align to left */
-    width: 100%;                    /* Full viewport width */
-    z-index: 1000;                  /* High z-index to appear on top */
-  }
-  
-  /* Logo container */
-  .logo {
-    padding: 10px;                   /* Inner padding */
-    display: flex;                  /* Flex container for alignment */
-    align-items: center;            /* Vertically center logo */
-  }
-  
-  /* Logo image */
-  .logo img {
-    height: 120px;                  /* Fixed logo height */
-    width: 220px;                   /* Fixed logo width */
-    max-width: 100%;                /* Responsive max width */
-    object-fit: contain;            /* Maintain image proportions */
-    display: block;                 /* Block element */
-  }
-  
-  /* Navigation menu list */
-  nav ul {
-    list-style: none;               /* Remove bullet points */
-    display: flex;                  /* Horizontal flex layout */
-    flex-wrap: nowrap;              /* Prevent wrapping */
-    margin: 0;                     /* Remove default margin */
-    padding: 0;                    /* Remove default padding */
-  }
-  
-  /* Each navigation item */
-  nav ul li {
-    display: block;                /* Block level for proper spacing */
-  }
-  
-  /* Navigation links */
-  nav ul li a {
-    color: black;                  /* Link text color */
-    background-color: #c77d83;    /* Link background color */
-    border-right: 1px solid #692727; /* Right border */
-    text-decoration: none;         /* Remove underline */
-    font-weight: 900;              /* Bold font */
-    padding: 15px 10px;            /* Link padding */
-    display: block;                /* Block display */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
-    white-space: nowrap;           /* Prevent text wrapping */
-  }
-  
-  /* Navigation link hover */
-  nav ul li a:hover {
-    background-color: #692727;     /* Darker background on hover */
-    color: white;                  /* White text on hover */
-    border-radius: 4px;            /* Rounded corners */
-  }
-  
-  /* Dropdown container relative positioning */
-  nav ul li.dropdown {
-    position: relative;            /* For absolute positioning of dropdown */
-  }
-  
-  /* Dropdown menu */
-  .dropdown-content {
-    display: none;                 /* Hidden by default */
-    position: absolute;            /* Positioned relative to parent */
-    top: 100%;                    /* Below parent */
-    left: 0;                      /* Align left */
-    background-color: #c77d83;    /* Background color */
-    min-width: 220px;             /* Minimum width */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow */
-    border-radius: 4px;           /* Rounded corners */
-    z-index: 1001;                /* On top */
-    padding: 8px 0;               /* Vertical padding */
-  }
-  
-  /* Show dropdown on hover */
-  nav ul li:hover > .dropdown-content {
-    display: block;               /* Show dropdown */
-  }
-  
-  /* Dropdown links */
-  .dropdown-content a {
-    display: block;               /* Block level */
-    padding: 10px 16px;           /* Padding */
-    color: black;                 /* Text color */
-    text-decoration: none;        /* No underline */
-    font-weight: 600;             /* Semi-bold */
-    transition: background-color 0.3s ease; /* Smooth hover */
-  }
-  
-  /* Dropdown link hover */
-  .dropdown-content a:hover {
-    background-color: #692727;    /* Dark background on hover */
-    color: white;                 /* White text */
-  }
-  
-  /* Dropdown divider */
-  .dropdown-content hr {
-    border: 0;                   /* Remove border */
-    border-top: 2px solid #692727; /* Top border line */
-    margin: 8px 12px;            /* Margin */
-  }
-
-
-
-  /* ======================= HERO SECTION ======================= */
-  .hero-section {
-    background-color: #9E5820;
-    position: relative;              /* Allows absolute-positioned children to be placed relative to this container */
-    width: 100%;                     /* Makes the section span the full width of the page */
-    height: 100vh;                    /* Sets the height to 80% of the viewport height */
-    overflow: hidden;               /* Prevents content from overflowing outside the section */
-    
-}
-
-.hero-section img {
-    animation: fadeInOut 8s ease-in-out infinite;
-    margin-top: 150px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 170px;
-  }
-  
-  /* Animation definition placed outside the selector */
-  @keyframes fadeInOut {
-    0%, 100% {
-      opacity: 0.3;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-  
-
-  .hero-text {
-    position: absolute;                       /* Position the element absolutely within its parent */
-    top: 50%;                                 /* Move the element 50% down from the top of its parent */
-    left: 50%;                                /* Move the element 50% from the left of its parent */
-    transform: translate(-50%, -50%);         /* Center the element exactly by shifting it back half of its own width and height */
-    color: white;                             /* Set the text color to white */
-    text-align: center;                       /* Center the text inside the box */
-    /* background-color: rgba(0, 0, 0, 0.4); */ /* Optional: Semi-transparent background for better readability (currently commented out) */
-    padding: 1rem 2rem;                       /* Add padding inside the box: 1rem top/bottom and 2rem left/right */
-    border-radius: 10px;                      /* Round the corners of the box with a 10px radius */
-    text-shadow: 6px 6px 18px black;          /* Add a black shadow to the text to make it stand out */
-  
-    /* Vendor-specific transforms for better browser support */
-    -webkit-transform: translate(-50%, -50%); /* Safari/Chrome support for transform */
-    -moz-transform: translate(-50%, -50%);    /* Firefox support for transform */
-    -ms-transform: translate(-50%, -50%);     /* Internet Explorer support for transform */
-    -o-transform: translate(-50%, -50%);      /* Opera support for transform */
-  }
-  
-  .hero-text h1 {
-    margin-top: 160px;                        /* Push the heading down inside the text box (may be optional if text is already centered) */
-    font-size: 60px;                          /* Increase the size of the heading text */
-  }
-  
-/* ========================= */
-/* Section Title Styling     */
-/* ========================= */
-.section-title, /* Apply also to your <h3> if you want uniform styling */
-.fruit-section-title, h3{
-  text-align: center;              /* Center the title horizontally */
-  font-size: 40px;                 /* Large font size for visibility */
-  color: maroon;                   /* Maroon color for branding */
-  margin-top: 40px;                /* Space above the title */
-  margin-bottom: 20px;             /* Space below the title */
-  font-weight: 900;                /* Bold font weight */
-  letter-spacing: 1px;             /* Spacing between letters */
-  text-transform: uppercase;       /* Convert text to uppercase */
-  position: relative;              /* Needed for the ::after element */
-}
-
-/* Decorative underline for title */
-.section-title::after,
-.fruit-section-title::after {
-  content: "";                     
-  display: block;
-  width: 80px;
-  height: 4px;
-  background-color: maroon;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-
-/* ========================= */
-/* Grid Layout for Products  */
-/* ========================= */
-.fruit-grid {
-  padding: 20px;
-  /* background-color: #911407; */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* Equal flexible columns */
-  gap: 10px;                         /* Space between grid items */
-  width: 100vw;                      /* Full viewport width */
-  margin: 0;                        /* Remove default margins */
-  padding: 0px;                    /* Padding around the grid */
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* ========================= */
-/* Individual Box Styling    */
-/* ========================= */
-.fruit-box {
-  display: flex;                         /* Use flexbox to arrange image and caption vertically */
-  flex-direction: column;                /* Stack image on top, caption below */
-  align-items: center;                   /* Center content horizontally */
-  border: 1px solid #4C5D00;              /* Maroon border around the box */
-  border-right: 7px solid #4C5D00;         /* Thicker black border on the right side */
-  border-top-right-radius: 20px;         /* Rounded top-right corner */
-  border-bottom-right-radius: 20px;      /* Rounded bottom-right corner */
-  padding: 10px;                           /* No padding so image fills box fully */
-  background-color: #4C5D00;             /* Brown background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: transform 0.3s ease;       /* Smooth lift animation on hover */
-  color: white;                         /* Text color */
-  width: 100%;                         /* Fill the width of the grid cell */
-  box-sizing: border-box;               /* Include border in width */
-  overflow: hidden;                     /* Hide overflow for rounded corners */
-  height: 300px;                       /* Fixed height for equal-sized boxes */
+/* Set base font size, scrolling offset for fixed nav */
+html {
+  font-size: 80%;
+  scroll-padding-top: 150px;  /* accounts for fixed nav */
+  overflow-x: hidden;
+  height: 100%; /* ensure full height for flex layout */
 }
 
-/* Hover effect */
-.fruit-box:hover {
-  transform: translateY(-5px);
-}
-
-
-/* ========================= */
-/* Image Styling             */
-/* ========================= */
-/* Image fills available space except reserved caption area */
-.fruit-box img {
-  width: 100%;                        /* Fill width of container */
-  height: calc(100% - 50px);          /* Fill height minus caption height */
-  object-fit: cover;                   /* Crop image to fill area without distortion */
-  border-top-right-radius: 20px;      /* Match container's top-right rounding */
-  display: block;                     /* Remove bottom gap from inline images */
-  flex-shrink: 0;                    /* Prevent image from shrinking */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Equal flexible columns filling width */
-  gap: 20px;                          /* Space between items */
-}
-
-
-
-/* ========================= */
-/* Text Label Below Image    */
-/* ========================= */
-/* Caption text styling */
-.fruit-box p {
+/* ============ BODY BACKGROUND & BASE ============ */
+body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.4;
+  color: #2b0d0d;
+  margin-top: 150px; /* push down content so nav doesn’t overlap */
   text-align: center;
-  margin: 10px 0;                    /* Vertical margin around caption */
-  font-weight: bold;                 /* Bold text */
-  color: white;                     /* White text color */
-  font-size: 16px;                   /* Readable font size */
-  text-align: center;                /* Center the caption text */
-  height: 50px;                     /* Fixed height to reserve space below image */
-  line-height: 50px;                /* Vertically center text within caption area */
-  flex-shrink: 0;                   /* Prevent shrinking */
+
+  /* Flex layout for sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* Background image + tint overlay */
+  background-color: #ffe6e6;
+  background-image: url('herad_images/maize-nav-background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(126, 69, 69, 0.6); /* tint */
+  z-index: -1;
+}
 
-/* =================== FOOTER DESIGNING =================== */
+/* =================== NAVIGATION BAR =================== */
+nav {
+  background-image: url("herad_images/Herad-vegetables.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(7, 7, 7, 0.4);
 
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  padding: 0 20px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.logo {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: block;
+}
+
+nav ul li a {
+  color: black;
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+nav ul li a:hover {
+  background-color: #692727;
+  color: white;
+  border-radius: 4px;
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #c77d83;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
+  padding: 8px 0;
+}
+
+nav ul li:hover > .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #e09393;
+  color: white;
+}
+
+.dropdown-content hr {
+  border: 0;
+  border-top: 2px solid #692727;
+  margin: 8px 12px;
+}
+
+/* ===================== MAIN CONTENT ===================== */
+
+/* Allow main to expand and push footer down */
+main {
+  flex: 1;
+  width: 100%;
+  display: block;
+}
+
+/* ===================== CEREALS SECTION ===================== */
+.cereals-section {
+  max-width: 1200px;
+  padding: 20px 10px;
+  margin: 0 auto;
+}
+
+/* Scoped heading styles */
+.cereals-section h3 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: px 0 10px 0;
+  background: linear-gradient(45deg, #d4a017, #ffd700, #a0522d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Scoped grid */
+.cereals-section .fruit-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+/* Scoped fruit box */
+.cereals-section .fruit-box {
+  flex: 1 1 220px;
+  max-width: 500px;
+  background-color: #6b4226;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.cereals-section .fruit-box img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.cereals-section .fruit-box p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.cereals-section .fruit-box:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  background-color: #7a5133;
+}
+
+/* Responsive cereal grid */
+@media (max-width: 992px) {
+  .cereals-section .fruit-box { flex: 1 1 45%; }
+}
+@media (max-width: 768px) {
+  .cereals-section h3 { font-size: 36px; }
+  .cereals-section .fruit-box { flex: 1 1 100%; }
+}
+@media (max-width: 480px) {
+  .cereals-section .fruit-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cereals-section .fruit-box { flex: 1 1 100%; }
+}
+
+/* ====================== FOOTER =================== */
+.footer {
+  background-color: #330505;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+  margin-top: auto; /* ensures footer sticks at bottom */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Footer Logo Size */
+.footer-logo-container img {
+  max-width: 150px; /* Adjust width as needed */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;   /* Center the logo */
+}
+
+/* .footer-logo-container {
+  flex-shrink: 0;
+  min-width: 180px;
+  text-align: center;
+} */
+
+.footer-logo {
+  padding-top: 20px;
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.footer-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4,
+.social-media h4,
+.payment-methods h4 {
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: none;
+  list-style: none;
+}
+
+.contact-info strong { color: #ffffff; }
+
+.email-links a {
+  color: #0e5ab1;
+  text-decoration: none;
+  font-size: 14px;
+}
+.email-links a:hover { text-decoration: underline; }
+
+.address-section {
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.address-section h4 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.social-media { margin-top: 30px; }
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a img {
+  height: 30px; width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #a59b9b;
+  padding: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.social-icons a img:hover {
+  background-color: #727070;
+  transform: scale(1.1);
+}
+
+.payment-methods { margin-top: 30px; }
+
+.payment-methods-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.payment-methods-icons img {
+  height: 30px; width: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #a59b9b;
+  padding: 5px;
+  opacity: 0.85;
+  transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+}
+.payment-methods-icons img:hover {
+  opacity: 1;
+  background-color: #727070;
+  transform: scale(1.1);
+}
+.payment-methods-icons .airtel-logo {
+  background-color: #443e3e !important;
+}
+
+.footer-bottom {
+  border-top: 2px solid #444;
+  margin-top: 30px;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom a {
+  color: #cccccc;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.footer-bottom a:hover { color: #ffffff; }
+
+/* ================== RESPONSIVE FOOTER ================== */
+@media (max-width: 768px) {
+  .footer-sections { grid-template-columns: repeat(2, 1fr); }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .footer-content { flex-direction: column; align-items: center; }
+  .footer-sections { grid-template-columns: 1fr; width: 100%; }
+}

@@ -249,11 +249,20 @@ nav ul li:hover > .dropdown-content {
 }
 
   
-  /* ============ FOOTER =============== */
+    /* ============================================================ FOOTER STYLES - HERAD ICS ============================================================ */
+
+:root {
+  --brand-white: #ffffff;
+  --text-light: #f0f0f0;
+  --footer-border: #dcdcdc;
+  --text-muted: #bfbfbf;
+}
+
 .footer {
-  background-color: #330505;
-  color: #ffffff;
-  padding: 40px 20px;
+  background-color: #3A0000;
+  background-image: url('images/bg.jpg');
+  color: var(--brand-white);
+  padding: 40px 0 20px;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   text-align: center;
@@ -262,11 +271,12 @@ nav ul li:hover > .dropdown-content {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  gap: 30px;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .footer-logo-container {
@@ -277,10 +287,9 @@ nav ul li:hover > .dropdown-content {
 
 .footer-logo {
   padding-top: 20px;
-  max-height: 150px;
+  max-height: 90px;
   width: auto;
-  object-fit: contain; /* Never crop logo */
-  margin: 0 auto;
+  object-fit: contain;
 }
 
 .footer-sections {
@@ -288,139 +297,347 @@ nav ul li:hover > .dropdown-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 30px;
-  justify-content: center;
   text-align: left;
 }
 
-.footer-section h3,
-.footer-section h4,
-.social-media h4,
-.payment-methods h4 {
-  text-align: left;
-  color: #ffffff;
+.footer-section h3, .footer-section h4 {
+  color: var(--brand-white);
   text-transform: uppercase;
-  font-size: 14px;
   margin-bottom: 10px;
-  padding-bottom: 6px;
+  font-size: 0.875rem;
+  font-weight: 700;
 }
 
-.footer-section p,
-.footer-section a,
-.footer-section li {
-  margin: 6px 0;
-  font-size: 14px;
-  color: #cccccc;
+.footer-section p {
+  margin: 0 0 8px 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.contact-info a {
+  color: var(--text-light);
   text-decoration: none;
-  list-style: none;
 }
-
-.contact-info strong {
-  color: #ffffff;
-}
-
-.email-links a {
-  color: #0e5ab1;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.email-links a:hover {
+.contact-info a:hover {
   text-decoration: underline;
+  color: var(--brand-white);
 }
 
-.address-section {
-  color: #ffffff;
-  margin-top: 20px;
-  font-size: 13px;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.address-section h4 {
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.social-media {
-  margin-top: 30px;
-}
-
-.social-icons {
+.footer-follow .social-icons {
   display: flex;
   gap: 10px;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-.social-icons a img {
+.footer-follow .social-icons a img {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  object-fit: cover;
-  background-color: #a59b9b;
+  object-fit: contain;
+  background-color: rgb(240, 38, 38);
   padding: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s;
+  display: flex;
 }
 
-.social-icons a img:hover {
-  background-color: #727070;
-  transform: scale(1.1);
+.footer-follow .social-icons a img:hover {
+  background-color: black;
 }
 
-.payment-methods {
-  margin-top: 30px;
-}
-
-.payment-methods-icons {
+.footer-follow .payment-methods-icons {
   display: flex;
   gap: 10px;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
 }
 
-.payment-methods-icons img {
-  height: 30px;
-  width: 30px;
-  object-fit: contain; /* Never crop payment logos */
+.footer-follow .payment-methods-icons img {
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  background-color: #a59b9b;
-  padding: 5px;
+  background-color: rgb(230, 217, 217);
   opacity: 0.85;
-  transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
-.payment-methods-icons img:hover {
+.footer-follow .payment-methods-icons img:hover {
   opacity: 1;
-  background-color: #727070;
-  transform: scale(1.1);
-}
-
-.payment-methods-icons .airtel-logo {
-  background-color: #443e3e !important;
+  background-color: rgb(246, 246, 248);
 }
 
 .footer-bottom {
-  border-top: 2px solid #444;
+  border-top: 2px solid var(--footer-border);
   margin-top: 30px;
-  padding: 20px 10px;
-  font-size: 14px;
-  color: #999999;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
 }
 
 .footer-bottom a {
-  color: #cccccc;
+  color: var(--text-light);
   text-decoration: none;
   margin-left: 20px;
 }
 
 .footer-bottom a:hover {
-  color: #ffffff;
+  color: var(--brand-white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .card-section {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 30px 6%;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  p, li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* End of CSS */
+
+
+
+
+/* =================== HAMBURGER TOGGLE =================== */
+
+/* Hamburger button hidden by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100; /* on top of nav */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Transform hamburger into X when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =================== MEDIA QUERY FOR HAMBURGER =================== */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Nav ul hidden by default, will show on toggle */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 130px; /* same as nav height */
+    left: 0;
+    width: 100vw;
+    background-color: rgba(7,7,7,0.95);
+    padding: 10px 0;
+    z-index: 1099;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  /* Nav links adjustments for mobile */
+  nav ul li a {
+    font-size: 16px;
+    padding: 15px 0;
+    border-right: none;
+    white-space: normal;
+    color: white;
+  }
+
+  nav ul li a:hover {
+    background-color: #692727;
+  }
+
+  /* Center dropdown items */
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding-left: 20px;
+    background-color: #692727;
+    margin: 2px 10px;
+    border-radius: 4px;
+  }
+}
+
+/* MOBILE FOOTER CENTERING */
+@media (max-width: 768px) {
+  /* Center footer content */
+  .footer-content {
+    flex-direction: column;
+    align-items: center; /* center horizontally */
+    text-align: center;  /* center text inside sections */
+  }
+
+  /* Footer sections stack vertically */
+  .footer-sections {
+    grid-template-columns: 1fr; /* one column */
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Footer-bottom */
+  .footer-bottom {
+    flex-direction: column; /* stack copyright and links */
+    align-items: center;    /* center horizontally */
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-bottom a {
+    margin: 0 5px; /* spacing between links */
+  }
+
+  /* Logo container */
+  .footer-logo-container {
+    text-align: center; 
+    margin-bottom: 20px;
+  }
+  .footer-section h3 {
+    text-align: center;
+  }
+  .footer-section h4 {
+    text-align: center;
+  }
+}
+
+
+
+
+/* =================== HAMBURGER TOGGLE =================== */
+
+/* Hamburger button hidden by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1100; /* on top of nav */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Transform hamburger into X when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =================== MOBILE NAVIGATION =================== */
+@media (max-width: 768px) {
+  /* Show hamburger on small screens */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Main nav menu hidden by default */
+  .menu_list ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 120px; /* adjust to your nav height */
+    left: 0;
+    width: 100vw;
+    background-color: rgba(7,7,7,0.95);
+    padding: 10px 0;
+    z-index: 1099;
+  }
+
+  /* Show nav when active */
+  .menu_list ul.active {
+    display: flex;
+  }
+
+  /* Mobile nav links */
+  .menu_list ul li a {
+    font-size: 16px;
+    padding: 15px 20px;
+    color: white;
+    border-right: none;
+    text-align: left;
+  }
+
+  .menu_list ul li a:hover {
+    background-color: #692727;
+  }
+
+  /* Mobile dropdown links hidden by default */
+  .dropdown-content {
+    position: static;
+    display: none;
+    background-color: #692727;
+    margin: 5px 0;
+    border-radius: 4px;
+    padding: 5px 0;
+  }
+
+  /* Show dropdown when parent <li> is active */
+  .menu_list ul li.active .dropdown-content {
+    display: block;
+  }
+
+  /* Dropdown link styling */
+  .dropdown-content a {
+    color: white;
+    padding-left: 30px;
+    display: block;
+  }
 }

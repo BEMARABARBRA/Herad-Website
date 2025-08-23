@@ -10,60 +10,63 @@
 
   <body>
     <!-- HEADER -->
-    <header>
-      <nav>
-        <!-- Logo Section on the left -->
+<header>
+  <nav>
+    <!-- Logo -->
     <div class="logo">
-        <!-- Company logo image wrapped in a link to index page -->
-        <a href="index.html">
-          <!-- Responsive logo image: max-width 100% and height auto -->
-          <img src="herad_images/herad_logo.jpg" alt="Herad Logo" style="max-width: 100%; height: auto;" />
-
-        </a>
+      <a href="index.html">
+        <img src="herad_images/herad_logo.jpg" alt="Herad Logo" />
+      </a>
     </div>
 
-        <!-- Menu list -->
-        <div class="menu_list">
-          <ul>
-            <li class="dropdown">
-              <a href="about.html">ABOUT US</a>
-              <div class="dropdown-content">
-                <a href="about.html">Herad Company</a>
-                <a href="leadership.html">Leadership</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <a href="what_we_do.html">WHAT WE DO</a>
-              <div class="dropdown-content">
-                <a href="growers.html">We Are Growers</a>
-                <a href="producers.html">We Are Processors</a>
-                <a href="exporters.html">We Are Exporters</a>
-                <a href="consultants.css">We Are Consultants</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <a href="products.html">PRODUCTS FOR EXPORT</a>
-              <div class="dropdown-content">
-                <a href="fruits.html">Fruits</a>
-                <a href="vegetables.html">Vegetables</a>
-                <a href="spices.html">Spices</a> 
-                <a href="cereals.html">Cereals</a>
-                <a href="natural-sugars.html">Natural Sugars</a>
-                <a href="fats-oils.html">Fats and Oils</a>
-                <a href="meats.html">Meats | Fish | Poultry</a>
-                <a href="breverages.html">Beverages</a>
-                <a href="kombucha.html">Kombucha Products</a>
-              </div>
-            </li>
+    <!-- Hamburger Button (mobile) -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-            <li class="dropdown"><a href="tour.html">TOUR & TRAVEL</a></li>
-            <li class="dropdown"><a href="consultancy.html">CONSULTANCY</a></li>
-            <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
-            <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <!-- Navigation Menu -->
+    <div class="menu_list">
+      <ul id="nav-links">
+        <li class="dropdown">
+          <a href="about.html">ABOUT US</a>
+          <div class="dropdown-content">
+            <a href="about.html">Herad Company</a>
+            <a href="leadership.html">Leadership</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="what_we_do.html">WHAT WE DO</a>
+          <div class="dropdown-content">
+            <a href="growers.html">We Are Growers</a>
+            <a href="producers.html">We Are Processors</a>
+            <a href="exporters.html">We Are Exporters</a>
+            <a href="consultants.html">We Are Consultants</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="products.html">PRODUCTS FOR EXPORT</a>
+          <div class="dropdown-content">
+            <a href="fruits.html">Fruits</a>
+            <a href="vegetables.html">Vegetables</a>
+            <a href="spices.html">Spices</a>
+            <a href="cereals.html">Cereals</a>
+            <a href="natural-sugars.html">Natural Sugars</a>
+            <a href="fats-oils.html">Fats and Oils</a>
+            <a href="meats.html">Meats | Fish | Poultry</a>
+            <a href="beverages.html">Beverages</a>
+            <a href="kombucha.html">Kombucha Products</a>
+          </div>
+        </li>
+        <li><a href="tour.html">TOUR & TRAVEL</a></li>
+        <li><a href="consultancy.html">CONSULTANCY</a></li>
+        <li><a href="our_impact.html">OUR IMPACT</a></li>
+        <li><a href="contacts.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
     <!-- HERO SECTION -->
 
@@ -143,50 +146,42 @@
       </div>
     </footer>
 
-    <!-- Responsive Navigation Toggle Script -->
-    <script>
-      // Add toggle functionality for mobile navigation
-      document.addEventListener('DOMContentLoaded', function () {
-        const nav = document.querySelector('nav');
-        const menuList = document.querySelector('.menu_list');
-        
-        // Create hamburger menu button only for mobile
-        const hamburger = document.createElement('button');
-        hamburger.innerHTML = '&#9776;'; // Hamburger icon
-        hamburger.style.fontSize = '28px';
-        hamburger.style.background = 'none';
-        hamburger.style.border = 'none';
-        hamburger.style.color = 'white';
-        hamburger.style.cursor = 'pointer';
-        hamburger.style.display = 'none'; // Hidden by default
-        
-        nav.insertBefore(hamburger, nav.firstChild);
+     <script>
+// Select hamburger button and main menu
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".menu_list ul"); // corrected selector
 
-        // Show hamburger on small screens
-        function checkScreen() {
-          if(window.innerWidth <= 768) {
-            hamburger.style.display = 'block';
-            menuList.style.display = 'none'; // Hide menu list initially
-          } else {
-            hamburger.style.display = 'none';
-            menuList.style.display = 'flex';
-          }
-        }
-        checkScreen();
+// Toggle mobile menu
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
 
-        // Toggle nav menu visibility on hamburger click
-        hamburger.addEventListener('click', function() {
-          if(menuList.style.display === 'none') {
-            menuList.style.display = 'flex';
-            menuList.style.flexDirection = 'column';
-          } else {
-            menuList.style.display = 'none';
-          }
-        });
+// Toggle dropdown menus on mobile
+const dropdownLinks = document.querySelectorAll("nav ul li.dropdown > a");
 
-        // Recheck screen size on window resize
-        window.addEventListener('resize', checkScreen);
-      });
-    </script>
+dropdownLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      link.parentElement.classList.toggle("active");
+    }
+  });
+});
+
+// Close menu when a link is clicked
+const navLinks = document.querySelectorAll("nav ul li a");
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      navMenu.classList.remove("active");
+      hamburger.classList.remove("active");
+      document.querySelectorAll("nav ul li.dropdown").forEach(li => li.classList.remove("active"));
+    }
+  });
+});
+
+
+</script>
   </body>
 </html>

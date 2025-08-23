@@ -137,50 +137,26 @@
       </div>
     </footer>
 
-    <!-- Responsive Navigation Toggle Script -->
-    <script>
-      // Add toggle functionality for mobile navigation
-      document.addEventListener('DOMContentLoaded', function () {
-        const nav = document.querySelector('nav');
-        const menuList = document.querySelector('.menu_list');
-        
-        // Create hamburger menu button only for mobile
-        const hamburger = document.createElement('button');
-        hamburger.innerHTML = '&#9776;'; // Hamburger icon
-        hamburger.style.fontSize = '28px';
-        hamburger.style.background = 'none';
-        hamburger.style.border = 'none';
-        hamburger.style.color = 'white';
-        hamburger.style.cursor = 'pointer';
-        hamburger.style.display = 'none'; // Hidden by default
-        
-        nav.insertBefore(hamburger, nav.firstChild);
+   <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
 
-        // Show hamburger on small screens
-        function checkScreen() {
-          if(window.innerWidth <= 768) {
-            hamburger.style.display = 'block';
-            menuList.style.display = 'none'; // Hide menu list initially
-          } else {
-            hamburger.style.display = 'none';
-            menuList.style.display = 'flex';
-          }
-        }
-        checkScreen();
+  // Toggle menu visibility
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  });
 
-        // Toggle nav menu visibility on hamburger click
-        hamburger.addEventListener('click', function() {
-          if(menuList.style.display === 'none') {
-            menuList.style.display = 'flex';
-            menuList.style.flexDirection = 'column';
-          } else {
-            menuList.style.display = 'none';
-          }
-        });
+  // Toggle dropdowns on mobile
+  const dropdowns = document.querySelectorAll("nav ul li.dropdown");
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener("click", () => {
+      if(window.innerWidth <= 768){
+        dropdown.classList.toggle("active");
+      }
+    });
+  });
+</script>
 
-        // Recheck screen size on window resize
-        window.addEventListener('resize', checkScreen);
-      });
-    </script>
   </body>
 </html>

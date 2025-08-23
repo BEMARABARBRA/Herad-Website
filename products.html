@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Herad_products</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="fruits.css" />
+    <title>Products For Export</title>
   </head>
 
   <body>
-    <!--to turn a code into a comment we press control and / at the same time and to undo we still press the same-->
-    <!--creating the navigation bar. lets note the nav bar is found under the header-->
-
+    <!--===================== HEADER CONTAINER =======================-->
+    <!-- NAVIGATION BAR Contains:
+         - Logo on the left
+         - Navigation menu on the right
+         - The navigation bar is placed inside the Header tag
+    -->
+    <!-- HEADER -->
     <header>
-    <nav>
+      <nav>
         <!-- Logo Section on the left -->
     <div class="logo">
         <!-- Company logo image wrapped in a link to index page -->
         <a href="index.html">
           <!-- Responsive logo image: max-width 100% and height auto -->
-          <img 
-            src="herad_images/herad logo.jpg" 
-            alt="Herad Logo" 
-            style="max-width: 40%; height: auto;" 
-          />
+          <img src="herad_images/herad_logo.jpg" alt="Herad Logo" style="max-width: 100%; height: auto;" />
+
         </a>
     </div>
-
-     
 
         <!-- Menu list -->
         <div class="menu_list">
@@ -41,14 +40,14 @@
             <li class="dropdown">
               <a href="what_we_do.html">WHAT WE DO</a>
               <div class="dropdown-content">
-                <a href="#growers">We Are Growers</a>
-                <a href="#processors">We Are Processors</a>
-                <a href="#exporters">We Are Exporters</a>
-                
+                <a href="growers.html">We Are Growers</a>
+                <a href="producers.html">We Are Processors</a>
+                <a href="exporters.html">We Are Exporters</a>
+                <a href="consultants.css">We Are Consultants</a>
               </div>
             </li>
             <li class="dropdown">
-              <a href="products.html">PRODUCTS </a>
+              <a href="products.html">PRODUCTS FOR EXPORT</a>
               <div class="dropdown-content">
                 <a href="fruits.html">Fruits</a>
                 <a href="vegetables.html">Vegetables</a>
@@ -64,208 +63,282 @@
 
             <li class="dropdown"><a href="tour.html">TOUR & TRAVEL</a></li>
             <li class="dropdown"><a href="consultancy.html">CONSULTANCY</a></li>
-            <li class="dropdown"><a href="our_impact.html"> IMPACT</a></li>
+            <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
             <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
           </ul>
         </div>
       </nav>
-  </header>
+    </header>
 
 
-    <ol>
-      <li><h4>Fresh Fruits & Vegetable Exports</h4></li>
-    </ol>
-    <p>
-      We connect Ugandan farmers to premium markets across Europe, the Middle
-      East, and North Africa with fresh, quality produce including:
-    </p>
-    <ul>
-      <li>Coffee / Vanilla / Cocoa</li>
-      <li>Avocado</li>
-      <li>Bananas</li>
-      <li>Mangoes</li>
-      <li>Passion Fruits</li>
-      <li>Cassava</li>
-      <li>Sweet Potatoes</li>
-      <li>Ginger</li>
-      <li>cloves</li>
-      <li>tumeric</li>
-      <li>Pineapples</li>
-      <li>Chilli Pepper</li>
-      <li>Cabbage</li>
-      <li>Beans</li>
-      <li>Aubergines(egg plants)</li>
-      <li>Ground Nuts</li>
-      <li>Sesame seeds</li>
-      <li>Shea Butter</li>
-      <li>Honey</li>
-      <li>Fish</li>
-    </ul>
+  <!-- ====================== hero section ===================== -->
+ 
+    <!-- <div class="hero-image">
+      <img src="herad_images/fruity.jpeg" alt="fruit photos">
+    </div> -->
 
-    <ol>
-      <li><h3>Beverages – Local & International</h3></li>
-    </ol>
-    <p>
-      HERAD proudly promotes <strong>quality beverages</strong> for both local
-      and international markets.
-    </p>
+    <div class="fruit-section">
 
-    <h4>Kombucha Health Products - By Heradics Ltd</h4>
-    <ul>
-      <li>
-        Kombucha: Supplying healthy, organic, fermented beverages to meet the
-        rising demand for wellness drinks.
-      </li>
-      <li>
-        Kombucha Vinegar: A powerful, multipurpose fermented vinegar rich in
-        enzymes and probiotics. Ideal for:
-        <strong>Health & Detox,Culinary Uses,Home Remedies </strong>
-      </li>
-    </ul>
-    <p>
-      Both products are crafted to support healthy lifestyles with a natural,
-      organic touch.
-    </p>
+      <h3>Avocados</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img src="herad_images/herad_avocado_fruit.jpeg" alt="Hass Avocado" />
+        <p>Hass Avocado</p>
+      </div>
+      <div class="fruit-box">
+        <img src="herad_images/herad_local_avocado.jpeg" alt="Fuerte Avocado" />
+        <p>Fuerte Avocado</p>
+      </div>
+    </div>
 
-    <h4>Billionaer Premium Beverages (Official Distributor)</h4>
-    <p>
-      HERAD is also the
-      <strong>official distributor of Billionaer products,</strong> a
-      distinguished brand offering luxury alcoholic beverages, including:
-    </p>
-    <ul>
-      <li>Whisky</li>
-      <li>Gin</li>
-      <li>Vodka</li>
-      <li>Champagne</li>
-    </ul>
+    
+    
+    <h3>Mangoes</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_Organic_Kent_Mangos.jpeg"
+          alt="Kent Mangoes"
+        />
+        <p>Kent Mangoes</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_mango_Tommy_Atkins_fruits1.jpeg"
+          alt="Tommy Atkins Mangoes"
+        />
+        <p>Tommy Atkins Mangoes</p>
+      </div>
+      <div class="fruit-box">
+        <img src="herad_images/herad_mangoes_Keitt.jpeg" alt="Keitt Mangoes" />
+        <p>Keitt Mangoes</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_Apple_Mango_fruits.jpeg"
+          alt="Apple Mangoes"
+        />
+        <p>Apple Mangoes</p>
+      </div>
+    </div>
 
-    <p>
-      Through our beverages division, we bring together
-      <strong>health, luxury, and lifestyle,</strong> catering to a wide range
-      of consumer preferences from wellness seekers to connoisseurs of fine
-      drinks.
-    </p>
+    
+    
+    <h3>Bananas</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img
+          src="herad_images/Bananas-Cavendish-Bananas.jpeg"
+          alt="Cavendish Bananas"
+        />
+        <p>Cavendish Bananas</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_desert_bananas.jpeg"
+          alt="Desert Bananas"
+        />
+        <p>Desert Bananas</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_plantain_bananas.jpeg"
+          alt="Plantain Bananas"
+        />
+        <p>Plantain Bananas</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/Apple-Sweet-Bananas.jpeg"
+          alt="Apple-Sweet-Banana"
+        />
+        <p>Apple Sweet Bananas</p>
+      </div>
+    </div>
 
-    <h3>
-      <ol>
-        <li>SME Business Development Support</li>
-      </ol>
-    </h3>
-    <p>
-      With over 25 years of experience led by Henry, a renowned Public Financial
-      Management Consultant and SME Development Expert, HERAD provides:
-    </p>
+    
+    
+    <h3>Pineapples</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_Pineapples.jpeg"
+          alt="Smooth Cayenne Pineapples"
+        />
+        <p>Smooth Cayenne Pineapples</p>
+      </div>
+      <div class="fruit-box">
+        <img src="herad_images/MD2-pineapples.jpeg" alt="MD2 Pineapples" />
+        <p>MD2 Pineapples</p>
+      </div>
+    </div>
 
-    <ul>
-      <li>Business Capacity Building & Training</li>
-      <li>Market Linkages & Export Readiness</li>
-      <li>Financial Literacy & Investment Advisory</li>
-      <li>Regulatory Compliance & Governance Support</li>
-      <li>Innovation, Technology, & Resilience Strategies</li>
-    </ul>
+    
+    
+    <h3>Passion Fruits</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_Purple_Passion_Fruit_2.jpeg"
+          alt="Purple Passion Fruits"
+        />
+        <p>Purple Passion Fruits</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/herad_passion_fruits.jpeg"
+          alt="Yellow Passion Fruits"
+        />
+        <p>Yellow Passion Fruits</p>
+      </div>
+    </div>
 
-    <h3>
-      <ol>
-        <li>Hospitality, Wellness, Tours & Travel</li>
-      </ol>
-    </h3>
-    <p>
-      HERAD goes beyond just travel. We believe in
-      <strong>experiences that heal, inspire, and empower.</strong> Through our
-      <strong>Hospitality, Tours & Wellness Division,</strong> we curate
-      <strong>unforgettable travel adventures </strong>across
-      <strong>Uganda and East Africa,</strong> showcasing the region’s
-      <strong>natural beauty, rich culture, and vibrant adventure spots.</strong>
-    </p>
+    
+    
+    <h3>Oranges</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img src="herad_images/Valencia-Oranges.jpeg" alt="Valencia Oranges" />
+        <p>Valencia Oranges</p>
+      </div>
+      <div class="fruit-box">
+        <img src="herad_images/Navel_oranges.jpeg" alt="Navel Oranges" />
+        <p>Navel Oranges</p>
+      </div>
+    </div>
 
-    <h4>HERAD Spas – Wellness & Rejuvenation</h4>
-    <p>
-      At the heart of our hospitality offering are our
-      <strong>HERAD Spas,</strong> where we provide world-class wellness
-      treatments designed to rejuvenate the body, mind, and spirit. We combine
-      local traditions with modern wellness techniques to deliver a truly
-      <strong>Ugandan-inspired spa experience.</strong>
-    </p>
+    
+    
+    <h3>Tangerines</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img
+          src="herad_images/tangerines.jpeg"
+          alt="Murcott Tangerines"
+        />
+        <p>Murcott Tangerines</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/Clementine-Tangerines.jpeg"
+          alt="Clementine Tangerines"
+        />
+        <p>Clementine Tangerines</p>
+      </div>
+    </div>
 
-    <h4>Coffee-Based Beauty Products – Nature’s Luxury</h4>
+    
+    
+    <h3>Papayas (Pawpaw)</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img
+          src="herad_images/Solo-variety-papayas.jpeg"
+          alt="Solo Variety Papayas"
+        />
+        <p>Solo Variety Papayas</p>
+      </div>
+    </div>
 
-    <p>
-      We are proud to produce a premium range of
-      <strong>coffee-infused beauty and skincare products,</strong> harnessing
-      the power of Uganda’s rich coffee heritage to create
-      <strong>natural, luxurious, and effective beauty solutions.</strong>
-    </p>
-    <h4>Our Product Range Includes:</h4>
-    <ul>
-      <li>
-        Coffee Body Butter – Deeply moisturizing with antioxidant-rich coffee
-        extracts.
-      </li>
-      <li>
-        Coffee Face Cream – Nourishing hydration with anti-aging properties.
-      </li>
-      <li>Coffee Hair Oil – Promotes hair growth, strength, and shine.</li>
-      <li>
-        Coffee Shampoo – Cleanses, stimulates the scalp, and strengthens hair.
-      </li>
-      <li>
-        Coffee Body Scrub – Exfoliates dead skin cells, revealing smoother,
-        glowing skin.
-      </li>
-      <li>Coffee Face Scrub – Gentle exfoliation for radiant, healthy skin.</li>
-      <li>
-        Coffee Body Oil – Silky smooth hydration with a subtle coffee aroma.
-      </li>
-      <h4>Additional Signature Products:</h4>
-      <ul>
-        <li>
-          Coffee Lip Balm – Hydrates and protects lips with a hint of coffee
-          flavor.
-        </li>
-        <li>
-          Coffee Hand & Foot Cream – Softens rough skin and nourishes dry areas.
-        </li>
-        <li>
-          Coffee Bath Salts – Relaxing soak infused with coffee antioxidants for
-          skin rejuvenation.
-        </li>
-        <li>
-          Coffee Beard Oil – Conditioning treatment for healthy, soft beards.
-        </li>
-        <li>
-          Coffee Clay Mask – Detoxifying mask that brightens and tightens the
-          skin.
-        </li>
-      </ul>
 
-      <p><strong>NB:</strong>All HERAD beauty products are</p>
-      <ul>
-        <li>Natural & Organic</li>
-        <li>Chemical-Free</li>
-        <li>Ethically Sourced</li>
-        <li>Handcrafted with Ugandan Excellence</li>
-      </ul>
-      <h4>The HERAD Experience</h4>
-      <p>
-        Whether you’re exploring Uganda’s majestic landscapes or relaxing at one
-        of our signature spas, HERAD brings you
-        <strong>luxury, wellness, and authenticity, </strong>all inspired by the
-        richness of Uganda’s natural resources.
-      </p>
-    </ul>
+    
+    <h3>Watermelons</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img
+          src="herad_images/Seedless-varieties-watermelon.jpeg"
+          alt="Seedless Varieties Watermelon"
+        />
+        <p>Seedless Varieties Watermelon</p>
+      </div>
+      <div class="fruit-box">
+        <img
+          src="herad_images/Picnic-watermelon.jpeg"
+          alt="Picnic Watermelon"
+        />
+        <p>Picnic Watermelon</p>
+      </div>
+    </div>
 
-    <h3>
-      <ol>
-        <li>Financial Management & Governance</li>
-      </ol>
-    </h3>
-    <p>
-      We help organizations strengthen their
-      <strong
-        >financial systems, internal controls, leadership frameworks, and
-        strategic direction </strong
-      >to ensure long-term sustainability and success.
-    </p>
-  </body>
+
+    
+    <h3>Guavas</h3>
+    <div class="fruit-grid">
+      <div class="fruit-box">
+        <img src="herad_images/guava.jpeg" alt="Guava" />
+        <p>Red/Pink Guava</p>
+      </div>
+    </div>
+</div>
+  <!--========================= FOOTER SECTION =========================-->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo-container">
+        <!-- Logo Section on the left -->
+  <div class="logo">
+    <!-- Company logo image wrapped in a link to index page -->
+    <a href="index.html">
+      <!-- Responsive logo image: max-width 100% and height auto -->
+      <img src="herad_images/herad_logo.jpg" alt="Herad Logo" style="max-width: 100%; height: auto;" />
+
+    </a>
+</div>
+      </div>
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h3>HERAD OFFICES</h3>
+          <p>Plot 443, Akright Estate, Wakiso</p>
+          <h4>Other Locations</h4>
+          <p>Kitaturwa LC1, Kasese District</p>
+          <p>Kitwaranyi LC1, Rwakai District</p>
+        </div>
+        <div class="footer-section">
+          <h3>HERAD INTERNATIONAL</h3>
+          <p>AFRICA: East Africa | South Africa</p>
+          <h4>INTERNATIONAL</h4>
+          <p>USA | UAE | Europe</p>
+        </div>
+        <div class="footer-section">
+          <h3>ASSISTANCE</h3>
+          <p><strong>Contacts:</strong><br />+256 772 593424<br />+256 778 943330<br />+256 753 044293<br />+256 702 593424</p>
+          <p><strong>Emails:</strong><br />
+            <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br />
+            <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
+      <div>
+        <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+ <script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+// Toggle menu visibility
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("active");
+});
+
+// Toggle dropdowns on mobile
+const dropdowns = document.querySelectorAll("nav ul li.dropdown");
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener("click", () => {
+    if(window.innerWidth <= 768){
+      dropdown.classList.toggle("active");
+    }
+  });
+});
+</script>
+
+</body>
 </html>

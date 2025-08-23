@@ -1,0 +1,193 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===== Navigation Bar ===== */
+nav {
+  background: #004d26;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+
+.menu_list ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu_list a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.menu_list a:hover {
+  background: #006633;
+  border-radius: 4px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger */
+.hamburger-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* ===== Hero Section ===== */
+/* Hero Section Container */
+.hero {
+  display: flex; /* Establishes a flexbox container */
+  align-items: center; /* Vertically centers the items within the container */
+  justify-content: center; /* Horizontally centers the items */
+  gap: 40px; /* Adds space between the columns */
+  padding: 50px 20px; /* Provides internal spacing */
+  max-width: 1200px; /* Limits the maximum width for better readability */
+  margin: 0 auto; /* Centers the entire container on the page */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  border-radius: 8px; /* Rounds the corners */
+  background-color: #f9f9f9; /* Sets a light background color */
+}
+
+/* Text Content Column */
+.col-7 {
+  flex: 1; /* Allows this column to grow and fill available space */
+  padding-right: 20px; /* Adds space between the text and the image */
+}
+
+/* Image Column */
+.col-5 {
+  flex-shrink: 0; /* Prevents the image column from shrinking */
+  width: 40%; /* Sets a specific width for the image */
+}
+
+/* Image Styling */
+.hero-img {
+  max-width: 100%; /* Ensures the image is responsive and fits its container */
+  height: auto; /* Maintains the image's aspect ratio */
+  display: block; /* Removes any extra space below the image */
+  border-radius: 8px; /* Matches the container's border radius */
+}
+
+/* Separator Line Styling */
+hr {
+  border: none;
+  border-top: 2px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Stacks the columns vertically on smaller screens */
+    text-align: center; /* Centers the text for better mobile viewing */
+  }
+
+  .col-7 {
+    padding-right: 0; /* Removes the extra padding */
+    margin-bottom: 20px; /* Adds space between the text and the image */
+  }
+
+  .col-5 {
+    width: 100%; /* Makes the image take up the full width */
+  }
+}
+
+/* =============== Footer ================== */
+.footer {
+  background: #222;
+  color: #999;
+  padding: 30px 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-logo-container {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-sections {
+  display: flex;
+  gap: 40px;
+  flex: 2;
+  flex-wrap: wrap;
+}
+
+.footer-section h3, .footer-section h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+}

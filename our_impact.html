@@ -1,379 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>OUR IMPACT</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="our_impact.css" rel="stylesheet" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR IMPACT - HERAD</title>
+    <link rel="stylesheet" href="our_impact.css">
+</head>
+<body>
 
- <body>
-  <!-- =================== NAVIGATION BAR =================== -->
-  <header>
+<!-- =================== NAVIGATION BAR =================== -->
+<header>
     <nav>
-      <div class="logo">
-        <img src="images/heradlogo.jpeg" alt="herad_logo" />
-      </div>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="herad_images/herad_logo.jpg" alt="Herad Logo">
+            </a>
+        </div>
 
-      <div class="menu_list">
-        <ul>
-          <!-- ABOUT US -->
-          <li class="dropdown">
-            <a href="about.html">ABOUT US</a>
-            <div class="dropdown-content">
-              <a href="#">Herad Company</a>
-              <a href="#">Leadership</a>
-            </div>
-          </li>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-          <!-- WHAT WE DO -->
-          <li class="dropdown">
-            <a href="what_we_do.html">WHAT WE DO</a>
-            <div class="dropdown-content">
-              <a href="#">We Are Growers</a>
-              <a href="#">We Are Processors</a>
-              <a href="#">We Are Exporters</a>
-              <a href="#">We Are Consultants</a>
-            </div>
-          </li>
-
-          <!-- PRODUCTS | SERVICES -->
-          <li class="dropdown">
-            <a href="products.html">PRODUCTS | SERVICES</a>
-            <div class="dropdown-content">
-              <!-- Products -->
-              <a href="fruits.html">Fruits</a>
-              <a href="vegetables.html">Vegetables</a>
-              <a href="spices.html">Spices</a>
-              <a href="cereals.html">Cereals</a>
-              <a href="natural-sugars.html">Natural Sugars</a>
-              <a href="fats-oils.html">Fats and Oils</a>
-              <a href="meats.html">Meats | Fish | Poultry</a>
-              <a href="breverages.html">Beverages</a>
-              <a href="kombucha.html">Kombucha Products</a>
-              <hr />
-              <!-- Services -->
-              <a href="#">Export & Imports</a>
-              <a href="#">Contractual Farming</a>
-              <a href="#">Tour & Travel</a>
-              <a href="#">Hospitality Management</a>
-              <a href="#">Consultancy</a>
-            </div>
-          </li>
-
-          <!-- OUR IMPACT -->
-          <!-- <li class="dropdown">
-            <a href="/our_impact.html">OUR IMPACT</a>
-            <div class="dropdown-content">
-              <a href="#">Local Farmers</a>
-              <a href="#">Local Communities</a>
-              <a href="#">Local Businesses</a>
-              <a href="#">Internal Agro Markets</a>
-            </div>
-          </li> -->
-
-
-    <!-- OUR IMPACT (Updated for smooth scrolling) -->
-<li class="dropdown">
-  <a href="#">OUR IMPACT</a>
-  <div class="dropdown-content">
-    <a href="#farmers">Local Farmers</a>
-    <a href="#businesses">Local Businesses</a>
-    <a href="#wellness">Wellness Products</a>
-    <a href="#markets">Internal Agro Markets</a>
-  </div>
-</li>
-
-          <!-- FUTURE PROJECTS -->
-          <li class="dropdown">
-            <a href="future_projects.html">FUTURE PROJECTS</a>
-            <div class="dropdown-content">
-              <a href="#">Northern Uganda - Gulu</a>
-              <a href="#">Western Uganda - Kasese</a>
-              <a href="#">Central Uganda - Rakai</a>
-            </div>
-          </li>
-
-          <!-- CONTACT US -->
-          <li class="dropdown">
-            <a href="contacts.html">CONTACT US</a>
-            <div class="dropdown-content">
-              <a href="#">Main Office</a>
-              <a href="#">Administration</a>
-              <a href="#">Marketing</a>
-            </div>
-          </li>
-
-          <!-- GALLERY -->
-          <li class="dropdown">
-            <a href="gallery.html">GALLERY</a>
-            <div class="dropdown-content">
-              <a href="#">Photos</a>
-              <a href="#">Videos</a>
-            </div>
-          </li>
-        </ul>
-      </div>
+        <!-- Navigation Menu -->
+        <div class="menu_list">
+            <ul>
+                <li class="dropdown">
+                    <a href="about.html">ABOUT US</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">Herad Company</a>
+                        <a href="leadership.html">Leadership</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="what_we_do.html">WHAT WE DO</a>
+                    <div class="dropdown-content">
+                        <a href="growers.html">We Are Growers</a>
+                        <a href="producers.html">We Are Processors</a>
+                        <a href="exporters.html">We Are Exporters</a>
+                        <a href="consultants.html">We Are Consultants</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="products.html">PRODUCTS FOR EXPORT</a>
+                    <div class="dropdown-content">
+                        <a href="fruits.html">Fruits</a>
+                        <a href="vegetables.html">Vegetables</a>
+                        <a href="spices.html">Spices</a>
+                        <a href="cereals.html">Cereals</a>
+                        <a href="natural-sugars.html">Natural Sugars</a>
+                        <a href="fats-oils.html">Fats and Oils</a>
+                        <a href="meats.html">Meats | Fish | Poultry</a>
+                        <a href="beverages.html">Beverages</a>
+                        <a href="kombucha.html">Kombucha Products</a>
+                    </div>
+                </li>
+                <li class="dropdown"><a href="tour.html">TOUR & TRAVEL</a></li>
+                <li class="dropdown"><a href="consultancy.html">CONSULTANCY</a></li>
+                <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
+                <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
+</header>
 
+<!-- =================== MAIN CONTENT =================== -->
+<main>
 
-    <main>
-      <section class="intro">
+    <!-- Intro Section -->
+    <section class="intro">
         <h3>OUR IMPACT</h3>
         <p>
-          At<strong> Herad,</strong> impact is not a side effect of business, it’s
-          the reason we do what we do. Across every sector we operate in, from
-          agriculture to wellness and enterprise support, we are committed to
-          <strong>empowering people, preserving the environment, </strong>and
-          <strong>building sustainable, locally-rooted systems</strong> that deliver
-          long-term value.
+            At <strong>Herad,</strong> impact is not a side effect of business, it’s the reason we do what we do. 
+            Across every sector we operate in, from agriculture to wellness and enterprise support, we are committed to 
+            <strong>empowering people, preserving the environment,</strong> and <strong>building sustainable, locally-rooted systems</strong> that deliver long-term value.
         </p>
-      </section>
+    </section>
 
-      <section class="empowering-farmers" id="farmers">
+    <!-- Empowering Farmers Section -->
+    <section class="empowering-farmers" id="farmers">
         <h4>Empowering Farmers and Rural Communities</h4>
-        <p>
-          We work hand in hand with
-          <strong>farming cooperatives and independent farmers </strong>across
-          Uganda, offering them consistent market access, fair pricing, technical
-          training, and post-harvest support. Through this, we:
-        </p>
+        <p>We work hand in hand with <strong>farming cooperatives and independent farmers</strong> across Uganda, offering them consistent market access, fair pricing, technical training, and post-harvest support. Through this, we:</p>
         <ul>
-          <li>Improve household incomes and food security</li>
-          <li>Promote gender-inclusive participation in agriculture</li>
-          <li>
-            Create employment across farming, packing, logistics, and processing
-          </li>
-          <li>Support youth engagement in agribusiness</li>
+            <li>Improve household incomes and food security</li>
+            <li>Promote gender-inclusive participation in agriculture</li>
+            <li>Create employment across farming, packing, logistics, and processing</li>
+            <li>Support youth engagement in agribusiness</li>
         </ul>
-        <p>
-          By connecting smallholders to
-          <strong>premium markets in Europe, the Middle East, and Africa, </strong
-          >we transform agriculture into a scalable, profitable venture for Ugandan
-          growers.
-        </p>
-      </section>
+        <p>By connecting smallholders to <strong>premium markets in Europe, the Middle East, and Africa,</strong> we transform agriculture into a scalable, profitable venture for Ugandan growers.</p>
+    </section>
 
-      <section class="export-excellence" id="markets">
+    <!-- Export Excellence Section -->
+    <section class="export-excellence" id="markets">
         <h3>Driving Export Excellence and Global Integration</h3>
-        <p>
-          Our presence in Uganda and the USA enables us to manage<strong>
-            end-to-end export programs,</strong
-          >
-          with a focus on quality, traceability, and efficiency. Through our work,
-          we:
-        </p>
+        <p>Our presence in Uganda and the USA enables us to manage <strong>end-to-end export programs,</strong> with a focus on quality, traceability, and efficiency. Through our work, we:</p>
         <ul>
-          <li>Strengthen Uganda’s position in global agricultural trade</li>
-          <li>Increase foreign exchange earnings</li>
-          <li>Promote Uganda’s reputation for high-quality fresh produce</li>
-          <li>Build robust cold chain infrastructure for export sustainability</li>
+            <li>Strengthen Uganda’s position in global agricultural trade</li>
+            <li>Increase foreign exchange earnings</li>
+            <li>Promote Uganda’s reputation for high-quality fresh produce</li>
+            <li>Build robust cold chain infrastructure for export sustainability</li>
         </ul>
-        <p>
-          Herad is not just exporting products, we are exporting trust, quality, and
-          Ugandan excellence.
-        </p>
-      </section>
+        <p>Herad is not just exporting products, we are exporting trust, quality, and Ugandan excellence.</p>
+    </section>
 
-      <section class="wellness-products" id="wellness">
+    <!-- Wellness Products Section -->
+    <section class="wellness-products" id="wellness">
         <h4>Promoting Wellness Through Natural Products</h4>
-        <p>
-          Our <strong>Kombucha Health Products </strong>and
-          <strong>coffee-based beauty line </strong>are designed to enhance physical
-          and emotional well-being using
-          <strong>organic, chemical-free ingredients.</strong> These initiatives:
-        </p>
+        <p>Our <strong>Kombucha Health Products</strong> and <strong>coffee-based beauty line</strong> are designed to enhance physical and emotional well-being using <strong>organic, chemical-free ingredients.</strong> These initiatives:</p>
         <ul>
-          <li>Support local producers of coffee and herbs</li>
-          <li>Promote natural health alternatives</li>
-          <li>Reduce dependency on imported wellness and beauty products</li>
-          <li>Encourage environmentally friendly consumer habits</li>
+            <li>Support local producers of coffee and herbs</li>
+            <li>Promote natural health alternatives</li>
+            <li>Reduce dependency on imported wellness and beauty products</li>
+            <li>Encourage environmentally friendly consumer habits</li>
         </ul>
-        <p>
-          Through <strong>Heradics Ltd,</strong> we are positioning Uganda as a
-          leader in <strong>functional foods and botanical skincare.</strong>
-        </p>
-      </section>
+        <p>Through <strong>Heradics Ltd,</strong> we are positioning Uganda as a leader in <strong>functional foods and botanical skincare.</strong></p>
+    </section>
 
-      <section class="luxury-lifestyle">
+    <!-- Luxury Lifestyle Section -->
+    <section class="luxury-lifestyle">
         <h4>Bringing Luxury and Lifestyle to New Markets</h4>
-        <p>
-          As the official distributor of
-          <strong>Billionaer Premium Beverages,</strong> we serve a growing market
-          for <strong>high-end spirits</strong> in East-Africa and beyond. This
-          division:
-        </p>
+        <p>As the official distributor of <strong>Billionaer Premium Beverages,</strong> we serve a growing market for <strong>high-end spirits</strong> in East Africa and beyond. This division:</p>
         <ul>
-          <li>Expands consumer choice and luxury experiences</li>
-          <li>Creates employment in distribution, retail, and hospitality</li>
-          <li>Partners with local events and entertainment industries</li>
+            <li>Expands consumer choice and luxury experiences</li>
+            <li>Creates employment in distribution, retail, and hospitality</li>
+            <li>Partners with local events and entertainment industries</li>
         </ul>
-        <p>
-          We bridge local and international markets, combining<strong>
-            heritage and elegance.</strong
-          >
-        </p>
-      </section>
+        <p>We bridge local and international markets, combining <strong>heritage and elegance.</strong></p>
+    </section>
 
+    <!-- SME Growth Section -->
     <section class="sme-growth" id="businesses">
         <h4>Supporting SME Growth and Resilience</h4>
-        <p>
-          With over 25 years of experience led by
-          <strong>Henry Ndinaiwe (CEO),</strong> Herad provides capacity-building
-          services that help small businesses grow, formalize, and access capital.
-          Our programs focus on:
-        </p>
+        <p>With over 25 years of experience led by <strong>Henry Ndinaiwe (CEO),</strong> Herad provides capacity-building services that help small businesses grow, formalize, and access capital. Our programs focus on:</p>
         <ul>
-          <li>Business development and export readiness</li>
-          <li>Financial literacy and investment planning</li>
-          <li>Governance, compliance, and accountability</li>
-          <li>Innovation and resilience in competitive markets</li>
+            <li>Business development and export readiness</li>
+            <li>Financial literacy and investment planning</li>
+            <li>Governance, compliance, and accountability</li>
+            <li>Innovation and resilience in competitive markets</li>
         </ul>
-        <p>
-          We help businesses thrive from farm-level enterprises to service and
-          manufacturing SMEs.
-        </p>
-      </section>
+        <p>We help businesses thrive from farm-level enterprises to service and manufacturing SMEs.</p>
+    </section>
 
-      <section class="hospitality-tourism">
+    <!-- Hospitality & Tourism Section -->
+    <section class="hospitality-tourism">
         <h4>Championing Sustainable Hospitality and Tourism</h4>
-        <p>
-          Through our <strong>hospitality and wellness offerings,</strong> we
-          promote <strong>Uganda and East Africa </strong>as premier destinations
-          for healing, exploration, and cultural discovery. Our impact includes:
-        </p>
+        <p>Through our <strong>hospitality and wellness offerings,</strong> we promote <strong>Uganda and East Africa</strong> as premier destinations for healing, exploration, and cultural discovery. Our impact includes:</p>
         <ul>
-          <li>Supporting eco-conscious tourism and local artisans</li>
-          <li>
-            Providing employment in hospitality, spa therapy, and tour services
-          </li>
-          <li>Promoting wellness tourism rooted in African traditions</li>
-          <li>Showcasing Uganda’s natural beauty to global travelers</li>
+            <li>Supporting eco-conscious tourism and local artisans</li>
+            <li>Providing employment in hospitality, spa therapy, and tour services</li>
+            <li>Promoting wellness tourism rooted in African traditions</li>
+            <li>Showcasing Uganda’s natural beauty to global travelers</li>
         </ul>
-        <p>
-          Our <strong>HERAD Spas </strong>and travel packages create memorable,
-          restorative experiences while stimulating the regional economy.
-        </p>
-      </section>
+        <p>Our <strong>HERAD Spas</strong> and travel packages create memorable, restorative experiences while stimulating the regional economy.</p>
+    </section>
 
-      <section class="financial-governance">
+    <!-- Financial Governance Section -->
+    <section class="financial-governance">
         <h4>Strengthening Institutions Through Financial Governance</h4>
-        <p>
-          We work with NGOs, SMEs, and government institutions to improve
-          <strong>financial systems, leadership, and strategic direction.</strong>
-          Our advisory services:
-        </p>
+        <p>We work with NGOs, SMEs, and government institutions to improve <strong>financial systems, leadership, and strategic direction.</strong> Our advisory services:</p>
         <ul>
-          <li>Increase transparency and accountability</li>
-          <li>Improve budget performance and reporting</li>
-          <li>Support long-term financial sustainability</li>
-          <li>Build leadership capacity and governance culture</li>
+            <li>Increase transparency and accountability</li>
+            <li>Improve budget performance and reporting</li>
+            <li>Support long-term financial sustainability</li>
+            <li>Build leadership capacity and governance culture</li>
         </ul>
-        <p>
-          Our work ensures that organizations are not just surviving, but thriving
-          with impact and integrity.
-        </p>
-      </section>
+        <p>Our work ensures that organizations are not just surviving, but thriving with impact and integrity.</p>
+    </section>
 
-      <section class="summary">
+    <!-- Summary Section -->
+    <section class="summary">
         <h3>SUMMARY</h3>
-        <p>
-          Herad stands at the intersection of
-          <strong>agriculture, enterprise, wellness, and trade</strong> making a
-          real difference where it matters most. Every initiative we take is guided
-          by our commitment to:
-        </p>
+        <p>Herad stands at the intersection of <strong>agriculture, enterprise, wellness, and trade</strong> making a real difference where it matters most. Every initiative we take is guided by our commitment to:</p>
         <ul>
-          <li>Empower people</li>
-          <li>Protect the planet</li>
-          <li>Promote prosperity</li>
-          <li>Elevate Uganda’s presence on the world stage</li>
+            <li>Empower people</li>
+            <li>Protect the planet</li>
+            <li>Promote prosperity</li>
+            <li>Elevate Uganda’s presence on the world stage</li>
         </ul>
-        <p>
-          <strong
-            >We are more than a business. We are a movement growing opportunity,
-            health, and impact.</strong
-          >
-        </p>
-      </section>
-    </main>
+        <p><strong>We are more than a business. We are a movement growing opportunity, health, and impact.</strong></p>
+    </section>
 
+</main>
 
-     <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
     <div class="footer-content">
-      <div class="footer-logo-container">
-        <img src="images/heradlogo.jpeg" alt="HERAD Intercontinental Services logo" class="footer-logo" />
-      </div>
-
-      <div class="footer-sections">
-        <div class="footer-section">
-          <h3>HERAD Offices</h3>
-          <p>Plot 443, Akright Estate, Wakiso</p>
-          <h4>Other Locations</h4>
-          <p>Kitaturwa LC1, Kasese District</p>
-          <p>Kitwaranyi LC1, Rwakai District</p>
+        <div class="footer-logo-container">
+            <img src="images/heradlogo.jpeg" alt="HERAD Logo">
         </div>
 
-        <div class="footer-section">
-          <h3>HERAD International</h3>
-          <p>Africa: East Africa | South Africa</p>
-          <h4>International</h4>
-          <p>USA | UAE | Europe</p>
-        </div>
+        <div class="footer-sections">
+            <div class="footer-section">
+                <h3>HERAD Offices</h3>
+                <p>Plot 443, Akright Estate, Wakiso</p>
+                <h4>Other Locations</h4>
+                <p>Kitaturwa LC1, Kasese District</p>
+                <p>Kitwaranyi LC1, Rwakai District</p>
+            </div>
 
-        <div class="footer-section">
-          <h3>Assistance</h3>
-          <p class="contact-info"><strong>Contacts:</strong><br />
-            <a href="tel:+256772593424">+256 772 593424</a><br />
-            <a href="tel:+256778943330">+256 778 943330</a><br />
-            <a href="tel:+256753044293">+256 753 044293</a><br />
-            <a href="tel:+256702593424">+256 702 593424</a>
-          </p>
-          <p class="contact-info email-links"><strong>Emails:</strong><br />
-            <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br />
-            <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
-          </p>
-        </div>
+            <div class="footer-section">
+                <h3>HERAD International</h3>
+                <p>Africa: East Africa | South Africa</p>
+                <h4>International</h4>
+                <p>USA | UAE | Europe</p>
+            </div>
 
-        <div class="footer-section footer-follow">
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="https://www.tiktok.com/@heradcompany" target="_blank" rel="noopener noreferrer">
-              <img src="images/tiktok.png" alt="HERAD on TikTok" />
-            </a>
-            <a href="https://www.facebook.com/HERADExports" target="_blank" rel="noopener noreferrer">
-              <img src="images/facebook.png" alt="HERAD on Facebook" />
-            </a>
-            <a href="https://www.instagram.com/herad_exports" target="_blank" rel="noopener noreferrer">
-              <img src="images/instagram1.png" alt="HERAD on Instagram" />
-            </a>
-            <a href="https://wa.me/256772593424" target="_blank" rel="noopener noreferrer">
-              <img src="images/whatsap.png" alt="Chat with HERAD on WhatsApp" />
-            </a>
-          </div>
+            <div class="footer-section">
+                <h3>Assistance</h3>
+                <p class="contact-info"><strong>Contacts:</strong><br>
+                    <a href="tel:+256772593424">+256 772 593424</a><br>
+                    <a href="tel:+256778943330">+256 778 943330</a><br>
+                    <a href="tel:+256753044293">+256 753 044293</a><br>
+                    <a href="tel:+256702593424">+256 702 593424</a>
+                </p>
+                <p class="contact-info email-links"><strong>Emails:</strong><br>
+                    <a href="mailto:heradics@gmail.com">heradics@gmail.com</a><br>
+                    <a href="mailto:ndinaiwehenry@gmail.com">ndinaiwehenry@gmail.com</a>
+                </p>
+            </div>
 
-          <h4>Payment Methods</h4>
-          <div class="payment-methods-icons">
-            <img src="images/airtel.png" alt="Pay with Airtel Money" class="airtel-logo" />
-            <img src="images/mtn.jpg" alt="Pay with MTN Mobile Money" />
-            <img src="images/mastercard1.jpeg" alt="Pay with MasterCard" />
-            <img src="images/visa2.png" alt="Visa card" />
-            <img src="images/handcash1.png" alt="Cash Accepted" />
-          </div>
+            <div class="footer-section footer-follow">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@heradcompany" target="_blank"><img src="images/tiktok.png" alt="TikTok"></a>
+                    <a href="https://www.facebook.com/HERADExports" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/herad_exports" target="_blank"><img src="images/instagram1.png" alt="Instagram"></a>
+                    <a href="https://wa.me/256772593424" target="_blank"><img src="images/whatsap.png" alt="WhatsApp"></a>
+                </div>
+                <h4>Payment Methods</h4>
+                <div class="payment-methods-icons">
+                    <img src="images/airtel.png" alt="Airtel Money">
+                    <img src="images/mtn.jpg" alt="MTN Mobile Money">
+                    <img src="images/mastercard1.jpeg" alt="MasterCard">
+                    <img src="images/visa2.png" alt="Visa">
+                    <img src="images/handcash1.png" alt="Cash">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
-      <div class="footer-legal-links">
-        <a href="#">Terms of Use</a>
-        <a href="#">Privacy Policy</a>
-      </div>
+        <p>&copy; 2025 HERAD ICS. All rights reserved.</p>
+        <div class="footer-legal-links">
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+        </div>
     </div>
-  </footer>
+</footer>
 
-  </body>
+<!-- =================== JS =================== -->
+<script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.querySelector('.menu_list ul');
+
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('show');
+    });
+
+    // Mobile dropdown toggle
+    document.querySelectorAll('.menu_list ul li.dropdown > a').forEach(item => {
+        item.addEventListener('click', e => {
+            if(window.innerWidth <= 900){
+                e.preventDefault();
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            }
+        });
+    });
+
+    // Section reveal animation
+    const sections = document.querySelectorAll("section");
+    const revealSection = (entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+    const observer = new IntersectionObserver(revealSection, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
 </html>

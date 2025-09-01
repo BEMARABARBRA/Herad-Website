@@ -145,7 +145,7 @@ nav {
   width: calc(100% - 20px);  /* left + right margin = 10px each */
   height: calc(100% - 20px); /* top + bottom margin = 10px each */
   margin: 10px;               /* add margin on all sides */
-  background-image: url(herad_images/editedforherad-homeheradbackgroundimage.jpg);
+  background-image: url(herad_images/herobackgroundimage-new.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

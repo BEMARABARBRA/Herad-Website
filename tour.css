@@ -1,0 +1,331 @@
+/* =================== RESET STYLES =================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 80%;
+    scroll-padding-top: 120px;
+    overflow-x: hidden;
+  }
+  
+  /* =================== BODY =================== */
+  body {
+    font-family: "Times New Roman", Times, serif;
+    line-height: 1.7;
+    color: #2b0d0d;
+    text-align: center;
+    background-color: #ffe6e6;
+    background-image: url('herad_images/exportersbackground.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  /* Background overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(218, 154, 154, 0.5);
+    z-index: -1;
+  }
+  
+  /* =================== NAVIGATION BAR =================== */
+  nav {
+    background-image: url("herad_images/Herad-vegetables.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(7,7,7,0.4);
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px black;
+    color: white;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+  }
+  
+  .logo img {
+    width: 220px;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* Nav menu */
+  .menu_list ul {
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    gap: 0px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu_list ul li a {
+    color: black;
+    background-color: #c77d83;
+    border-right: 1px solid #692727;
+    text-decoration: none;
+    font-weight: 900;
+    padding: 15px 10px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  
+  .menu_list ul li a:hover {
+    background-color: #692727;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  /* Dropdown */
+  .menu_list ul li.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #660911;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1001;
+    padding: 8px 0;
+  }
+  
+  .menu_list ul li.dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #e09393;
+    color: white;
+  }
+
+/* =========================== HERO SECTION ========================== */
+
+
+
+
+
+
+
+
+/* ====================== FOOTER =================== */
+.footer {
+    background-color: #330505;
+    color: #ffffff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Container for all footer sections */
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Footer logo */
+  .footer-logo-container img {
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto 15px auto;
+    display: block;
+  }
+  
+  /* Footer sections layout */
+  .footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  /* Each section */
+  .footer-section h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  
+  .footer-section h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .footer-section p {
+    font-size: 13px;
+    margin: 3px 0;
+    color: #cccccc;
+  }
+  
+  /* Links inside footer sections */
+  .footer-section a {
+    color: #0e5ab1;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  .footer-section a:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* Social Media Icons */
+  .social-icons, .payment-methods-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  
+  .social-icons img, .payment-methods-icons img {
+    width: 40px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #9B2325;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .social-icons img:hover, .payment-methods-icons img:hover {
+    transform: scale(1.1);
+    background-color: #727070;
+  }
+  
+  /* Footer bottom */
+  .footer-bottom {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-bottom a {
+    color: #cccccc;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    color: #ffffff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer-sections {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  
+  
+  /* =================== HAMBURGER =================== */
+  .hamburger {
+    display: none;                /* Hidden on desktop */
+    flex-direction: column;       /* Stack bars vertically */
+    justify-content: space-between;
+    width: 30px;                  /* Adjusted width */
+    height: 20px;                 /* Adjusted height for shorter look */
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 4px;                  /* Slightly thicker bars */
+    background-color: #eee5e5;    /* Dark maroon background color */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hamburger active state (cross) */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* =================== MEDIA QUERIES =================== */
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+  
+    /* Menu styling */
+    .menu_list ul {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 80px;                  /* Adjusted top for smaller height */
+      left: 0;
+      width: 100vw;
+      background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+      padding: 10px 0;
+      z-index: 1099;
+    }
+    .menu_list ul.active { display: flex; }
+    .menu_list ul li a {
+      color: white;
+      padding: 12px 20px;         /* Adjusted spacing */
+      font-size: 16px;
+      text-align: left;
+      border-right: none;
+    }
+  
+    /* Dropdown menu */
+    .dropdown-content {
+      position: static;
+      display: none;
+      background-color: #692727;
+      margin: 5px 0;
+      border-radius: 4px;
+      padding: 5px 0;
+    }
+    .menu_list ul li.active .dropdown-content { display: block; }
+    .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  }
+  

@@ -1,4 +1,5 @@
 /* =================== RESET STYLES =================== */
+/* Resetting default margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +7,9 @@
 }
 
 html {
-  font-size: 80%;
-  scroll-padding-top: 120px;
-  overflow-x: hidden;
+  font-size: 80%; /* Base font size for scaling */
+  scroll-padding-top: 120px; /* For anchor link offset */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* =================== BODY =================== */
@@ -27,7 +28,7 @@ body {
   min-height: 100vh;
 }
 
-/* Background overlay */
+/* Background overlay for semi-transparent effect */
 body::before {
   content: "";
   position: fixed;
@@ -60,6 +61,7 @@ nav {
   z-index: 1000;
 }
 
+/* Logo sizing and responsiveness */
 .logo img {
   width: 220px;
   max-width: 100%;
@@ -67,7 +69,7 @@ nav {
   display: block;
 }
 
-/* Nav menu */
+/* Nav menu styling */
 .menu_list ul {
   font-size: 15px;
   list-style: none;
@@ -95,7 +97,7 @@ nav {
   border-radius: 4px;
 }
 
-/* Dropdown */
+/* Dropdown menu */
 .menu_list ul li.dropdown {
   position: relative;
 }
@@ -130,11 +132,104 @@ nav {
   color: white;
 }
 
+/* ==================================== HERO SECTION =================== */
 
-/* =================== HERO SECTION  =================== */
+/* ======================= PARTNERS SECTION HEADING ======================= */
+.partners-title {
+  background-color: rgb(255, 255, 255, 0.3); /* white background box */
+  padding: 20px 0px;            /* more padding for emphasis */
+  margin: 150px 150px 20px 150px;/* top, left/right, bottom */
+  text-align: center;
+  font-size: 3.0rem;             /* large heading */
+  font-weight: 900;              /* extra bold */
+  color: #750404;                /* dark text */
+  text-shadow: 2px 2px 5px rgb(5, 5, 5); /* subtle shadow for depth */
+  text-transform: uppercase;     /* make it prominent */
+  letter-spacing: 2px;           /* elegant spacing */
+  border-radius: 15px;           /* rounded corners for style */
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effects */
+}
+
+/* Hover effect for interactive feel */
+.partners-title:hover {
+  transform: scale(1.05);       /* slight zoom on hover */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25); /* stronger shadow on hover */
+}
 
 
-/* ====================== FOOTER =================== */
+/* Hover effect for heading */
+.partners-title:hover {
+  transform: scale(1.05); /* slight zoom on hover */
+  color: #c50505; /* soft highlight on hover */
+  text-shadow: 2px 2px 5px rgb(5, 5, 5); /* subtle shadow for depth */
+}
+
+/* ======================= PARTNERS GRID ======================= */
+.partners-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 logos per row on desktop */
+  gap: 2rem; /* spacing between logos */
+  padding: 2rem;
+  justify-items: center; /* center logos horizontally */
+  align-items: center;   /* center logos vertically */
+  background-color: rgb(255, 255, 255); /* white background box */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* light shadow for depth */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for grid container */
+.partners-section:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* ======================= PARTNER LOGOS ======================= */
+.partner img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain; /* maintain aspect ratio */
+  background: #fff; /* white background for uniformity */
+  border-radius: 12px; /* smooth corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: block;
+  padding: 10px; /* small padding for spacing inside box */
+}
+
+/* Hover effect for partner logos */
+.partner img:hover {
+  transform: scale(1.1); /* bigger zoom on hover */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* stronger shadow on hover */
+  border: 2px solid #c77d83; /* subtle border highlight */
+}
+
+/* ======================= RESPONSIVE GRID ======================= */
+/* Tablets - 3 logos per row */
+@media (max-width: 1024px) {
+  .partners-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Phones - 2 logos per row */
+@media (max-width: 600px) {
+  .partners-section {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+
+  .partner img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .partners-title {
+    font-size: 2rem; /* smaller heading for small screens */
+    letter-spacing: 1px;
+  }
+}
+
+/* ======================= FOOTER =================== */
 .footer {
   background-color: #330505;
   color: #ffffff;
@@ -143,7 +238,6 @@ nav {
   text-align: center;
 }
 
-/* Container for all footer sections */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -151,7 +245,6 @@ nav {
   gap: 20px;
 }
 
-/* Footer logo */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -159,7 +252,6 @@ nav {
   display: block;
 }
 
-/* Footer sections layout */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -167,7 +259,6 @@ nav {
   gap: 30px;
 }
 
-/* Each section */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
@@ -185,7 +276,6 @@ nav {
   color: #cccccc;
 }
 
-/* Links inside footer sections */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
@@ -197,7 +287,6 @@ nav {
   text-decoration: none;
 }
 
-/* Social Media Icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -221,7 +310,6 @@ nav {
   background-color: #727070;
 }
 
-/* Footer bottom */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -242,35 +330,21 @@ nav {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-
-
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none;
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
 
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
@@ -287,31 +361,40 @@ nav {
 }
 
 /* =================== MEDIA QUERIES =================== */
+
+/* ===== NAVBAR & MENU RESPONSIVENESS ===== */
+@media (max-width: 1024px) {
+  .partners-section {
+    grid-template-columns: repeat(3, 1fr); /* 3 logos per row on tablets */
+  }
+}
+
 @media (max-width: 768px) {
+  /* Navbar Hamburger */
   .hamburger { display: flex; }
 
-  /* Menu styling */
+  /* Menu */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
+    top: 80px;
     left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
   .menu_list ul li a {
     color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
+    padding: 12px 20px;
     font-size: 16px;
     text-align: left;
     border-right: none;
   }
 
-  /* Dropdown menu */
+  /* Dropdown */
   .dropdown-content {
     position: static;
     display: none;
@@ -322,4 +405,35 @@ nav {
   }
   .menu_list ul li.active .dropdown-content { display: block; }
   .dropdown-content a { color: white; padding-left: 30px; display: block; }
+
+  /* Footer adjustments */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-sections {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Partners section on phones */
+  .partners-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .partner img {
+    width: 120px;
+    height: 120px;
+  }
 }
+
+@media (max-width: 480px) {
+  .partners-section {
+    grid-template-columns: repeat(1, 1fr); /* 1 logo per row on small phones */
+  }
+  .partner img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* ===== END OF RESPONSIVE CSS ===== */

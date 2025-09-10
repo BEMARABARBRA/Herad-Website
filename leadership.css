@@ -1,54 +1,62 @@
 /* =================== RESET STYLES =================== */
 
-/* Reset margin for all elements */
+/* Reset margin, padding, and box-sizing for all elements */
 * {
   margin: 0;                /* Remove default margin */
   padding: 0;               /* Remove default padding */
-  box-sizing: border-box;   /* Include padding and border in element's total width and height */
+  box-sizing: border-box;   /* Include padding and border in element's total width/height */
 }
 
-/* Set base font size and scrolling offset */
+/* Base HTML settings */
 html {
-  font-size: 80%;               /* Set root font size to 80% of browser default */
-  scroll-padding-top: 130px;    /* Offset scroll for fixed nav (130px tall) */
-  overflow-x: hidden;           /* Prevent horizontal scrollbar */
+  font-size: 80%;               /* Root font size for scalable text */
+  scroll-padding-top: 130px;    /* Offset for fixed navbar */
+  overflow-x: hidden;           /* Prevent horizontal scrolling */
 }
 
-/* Basic body styling */
 body {
-  font-family: "Times New Roman", Times, serif; /* Set font family */
-  background-color: #d6bec0;    /* Set background color to soft pink */
-  color: black;                 /* Set text color */
-  line-height: 1.0;             /* Set line height to 1 */
-  overflow-x: hidden;           /* Prevent horizontal overflow */
-  padding-top: 130px;           /* Add top padding equal to fixed nav height */
-}
-
-/* =================== NAVIGATION BAR =================== */
-nav {
-  background-image: url("herad_images/Herad-vegetables.jpeg");
+  /* Combine overlay + background image */
+  background-image: linear-gradient(rgba(180, 133, 88, 0.493), rgba(196, 182, 182, 0)),
+                    url("herad_images/leadershipbackground8.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-blend-mode: darken;
-  background-color: rgba(7,7,7,0.4);
+  
+  font-family: "Times New Roman", Times, serif; /* Base font */
+  background-color: #d6bec0;    /* Fallback color */
+  color: black;                 /* Default text color */
+  line-height: 1.0;             /* Base line-height */
+  padding-top: 130px;           /* Offset for fixed navbar */
+  overflow-x: hidden;           /* Prevent horizontal scrolling */
+}
+
+
+/* =================== NAVIGATION BAR =================== */
+nav {
+  background-image: url("herad_images/Herad-vegetables.jpeg"); /* Navbar background image */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken; 
+  background-color: rgba(7,7,7,0.4); /* Dark overlay */
   height: 130px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px black;
+  box-shadow: 0 2px 5px black; /* Subtle shadow */
   color: white;
   padding: 0 20px;
-  position: fixed;
+  position: fixed; /* Stick to top */
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 1000;
+  z-index: 1000;  /* On top of other elements */
 }
 
+/* Logo styling */
 .logo img {
   width: 220px;
-  max-width: 100%;
+  max-width: 100%;   /* Responsive scaling */
   object-fit: contain;
   display: block;
 }
@@ -81,15 +89,15 @@ nav {
   border-radius: 4px;
 }
 
-/* Dropdown */
+/* Dropdown menus */
 .menu_list ul li.dropdown {
-  position: relative;
+  position: relative; /* For absolute positioning of dropdown */
 }
 
 .dropdown-content {
-  display: none;
+  display: none; /* Hidden by default */
   position: absolute;
-  top: 100%;
+  top: 100%;      /* Below parent item */
   left: 0;
   background-color: #660911;
   min-width: 220px;
@@ -100,7 +108,7 @@ nav {
 }
 
 .menu_list ul li.dropdown:hover .dropdown-content {
-  display: block;
+  display: block; /* Show on hover */
 }
 
 .dropdown-content a {
@@ -116,160 +124,169 @@ nav {
   color: white;
 }
 
-/*==================== HERO CONTENT ====================*/
+/* =================== HERO CONTENT =================== */
 .hero-content {
-  max-width: 1200px;             /* Limit container width */
-  margin: 0 auto;                /* Center horizontally */
-  padding: 40px 20px;            /* Inner spacing */
-  text-align: center;            /* Default text alignment */
+  max-width: 1200px;        /* Limit hero width */
+  margin: 0 auto;           /* Center horizontally */
+  padding: 40px 20px;
+  text-align: center;
 }
 
-/*==================== HERO TEXT ====================*/
+/* Hero title */
 .hero-text h1 {
-  background: linear-gradient(135deg, rgba(175,60,60,0.7), rgba(121,65,65,0.7));
+  background: linear-gradient(135deg, rgba(51,2,2,0.7), rgba(250,166,166,0.7), rgba(51,2,2,0.7));
   color: #701f1f;
-  padding: 20px;
-  font-size: clamp(2rem, 5vw, 50px); /* Responsive font size */
-  margin-bottom: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 20px 10px;
+  font-size: clamp(2.5rem, 5vw, 60px); /* Responsive text */
+  margin-bottom: 50px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/*==================== LEADERS TREE ====================*/
+/* =================== LEADERS TREE =================== */
 .leaders-tree {
   display: flex;
-  flex-direction: column;        /* Stack rows vertically */
+  flex-direction: column;
   align-items: center;
-  gap: 60px;                     /* Space between rows */
+  gap: 80px; /* Space between rows */
 }
 
-/*==================== ROWS ====================*/
-/*==================== ROWS ====================*/
+/* TREE ROWS */
+.tree-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
 /* First row: CEO centered */
 .first-row {
-  display: flex;
-  justify-content: center; /* CEO stays centered */
-  flex-wrap: wrap;
-  gap: 60px;
+  justify-content: center;
 }
 
-/* Second row: 2 leaders per row, stretch on large screens */
-.second-row,
+/* Second row: 2 leaders side by side */
+.second-row {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* Third row: 3 leaders side by side */
 .third-row {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* =================== CARDS =================== */
+.ceo-card, .leader-card {
   display: flex;
-  justify-content: space-between; /* Cards spread out to use full width */
-  flex-wrap: wrap;
-  gap: 60px;
-  width: 100%;
-  max-width: 1200px; /* Limit total row width */
-}
-
-/*==================== CEO CARD ====================*/
-.ceo-card {
-  display: flex;                 /* Image left, text right */
-  flex-direction: row;
+  flex-direction: row;       /* Image left, text right */
   align-items: center;
-  gap: 30px;                     
-  background: #c99595;
-  padding: 40px;                 
-  border-radius: 12px;
-  border-right: 8px solid #701c10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #f3ebeb;
+  box-shadow: 2px 2px 8px rgba(48, 42, 42, 0.75);
+  padding: 25px;
+  border-radius: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 500px;              /* Centered alone */
+  max-width: 600px;
+  flex: 1 1 auto;
 }
 
-/*==================== LEADER CARDS ====================*/
-.leader-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
-  background: #c99595;
-  padding: 40px;
-  border-radius: 12px;
-  border-right: 8px solid #701c10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(50% - 30px); /* Two cards per row with gap accounted for */
-  max-width: 550px;
-}
-/*==================== IMAGE STYLING ====================*/
-.ceo-card img,
-.leader-card img {
-  width: auto;                   
-  height: 220px;                 
-  object-fit: contain;           /* Do not crop images */
-  border-radius: 12px;
+/* Immy's card adopts CEO style */
+.third-row .leader-card:last-child {
+  max-width: 600px;
+  padding: 25px;
+  margin: 0 auto; /* Center horizontally */
 }
 
-/*==================== INFO CONTAINER ====================*/
+/* Hover effect */
+.ceo-card:hover, .leader-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(39,2,2,0.85);
+}
+
+/* =================== IMAGE STYLING =================== */
+.ceo-card img, .leader-card img {
+  width: auto;
+  max-height: 150px;
+  border-radius: 12px;
+  object-fit: contain;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+/* =================== TEXT STYLING =================== */
 .leader-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  gap: 15px;                     /* Space between h2, h4, p */
-  flex: 1;                        /* Use remaining space for text */
-  padding: 10px 0;                /* Add vertical padding */
+  gap: 10px;
+  flex: 1;
 }
 
-/*==================== HOVER EFFECT ====================*/
-.leader-card:hover,
-.ceo-card:hover {
-  transform: scale(1.03);        
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.leader-info h2 {
+  color: #63190e;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
 }
 
-.leader-card:hover img,
-.ceo-card:hover img {
-  transform: scale(1.05);
+.leader-info h4 {
+  color: #4b4545;
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
 }
 
-/*==================== RESPONSIVE DESIGN ====================*/
+.leader-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #050505;
+  word-wrap: break-word;
+}
+
+/* =================== RESPONSIVE DESIGN =================== */
+
+/* Medium devices (tablets) */
 @media (max-width: 992px) {
-  .ceo-card,
-  .leader-card {
-    flex-direction: column;      /* Stack image above text on tablets */
+  .tree-row {
+    flex-direction: column;  /* Stack cards vertically */
+    gap: 40px;
+  }
+
+  .ceo-card, .leader-card {
+    width: 90%;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .ceo-card img, .leader-card img {
+    width: 120px;
+    max-height: 120px;
+    margin-bottom: 0;
+  }
+}
+
+/* Small devices (phones) */
+@media (max-width: 576px) {
+  .ceo-card, .leader-card {
+    width: 95%;
+    flex-direction: column; /* Stack image above text */
     align-items: center;
-    text-align: center;
+    padding: 15px;
+  }
+
+  .ceo-card img, .leader-card img {
+    width: 80%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 15px;
   }
 
   .leader-info {
-    justify-content: center;
-    gap: 10px;
-    padding: 0;                  
-  }
-
-  .ceo-card img,
-  .leader-card img {
-    width: 70%;
-    height: auto;               
-  }
-
-  .leader-card {
-    width: 70%;                  
-    max-width: 500px;
+    text-align: center;
   }
 }
 
-@media (max-width: 576px) {
-  .leader-card,
-  .ceo-card {
-    width: 90%;                  
-  }
-
-  .ceo-card img,
-  .leader-card img {
-    width: 80%;
-    height: auto;
-  }
-}
-
-
-
-/* ====================== FOOTER =================== */
+/* =================== FOOTER =================== */
 .footer {
   background-color: #330505;
   color: #ffffff;
@@ -278,7 +295,6 @@ nav {
   text-align: center;
 }
 
-/* Flex container for footer */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -286,7 +302,6 @@ nav {
   gap: 20px;
 }
 
-/* Logo in footer */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -294,7 +309,6 @@ nav {
   display: block;
 }
 
-/* Footer section containers */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -302,7 +316,6 @@ nav {
   gap: 30px;
 }
 
-/* Section titles */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
@@ -318,7 +331,6 @@ nav {
   color: #cccccc;
 }
 
-/* Footer links */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
@@ -329,7 +341,6 @@ nav {
   text-decoration: none;
 }
 
-/* Social & payment icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -351,7 +362,6 @@ nav {
   background-color: #727070;
 }
 
-/* Footer bottom bar */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -393,7 +403,7 @@ nav {
 
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Visible only on mobile */
+  display: none;                /* Hidden on desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -408,7 +418,6 @@ nav {
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-/* Transform hamburger → X */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -424,10 +433,10 @@ nav {
   .hamburger { display: flex; }
 
   .menu_list ul {
-    display: none;
+    display: none; /* Hidden by default on mobile */
     flex-direction: column;
     position: fixed;
-    top: 80px; /* Below navbar */
+    top: 80px; 
     left: 0;
     width: 100vw;
     background-color: rgba(50, 0, 0, 0.95);

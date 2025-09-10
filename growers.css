@@ -1,51 +1,46 @@
 /* =================== RESET STYLES =================== */
-
-/* Reset margin and padding for all elements, and include padding and border in element's total width and height */
+/* Reset all default browser styles and ensure box sizing includes padding and borders */
 * {
-    margin: 0;                
-    padding: 0;               
-    box-sizing: border-box;   
-  }
-  
-  /* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
-  html {
-    font-size: 80%;               
-    scroll-padding-top: 120px;    
-    overflow-x: hidden;           
-  }
-  
-  /* ============ BODY BACKGROUND TONE DOWN ============ */
-  body {
-    font-family: "Times New Roman", Times, serif;
-    line-height: 1.7;
-    color: #ebd5d5;
-    margin-top: 0;
-    text-align: center;
-  
-    /* Background image properties */
-    background-color: #ffe6e6;
-    background-image: url('herad_images/coffeewomenafrican.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  
-    /* Position relative for overlay */
-    position: relative;
-  }
-  
-  /* Overlay a semi-transparent tint over background to tone down */
-  body::before {
-    content: "";
-    position: fixed;       
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(126, 69, 69, 0.5); /* Soft tint overlay */
-    z-index: -1;           
-  }
-  
+  margin: 0;                
+  padding: 0;               
+  box-sizing: border-box;   
+}
 
+html {
+  font-size: 80%;               /* Base font size */
+  scroll-padding-top: 120px;    /* Offset for fixed navbar */
+  overflow-x: hidden;           /* Prevent horizontal scrollbar */
+}
+
+/* =================== BODY BACKGROUND =================== */
+body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.7;
+  color: #ebd5d5;
+  margin-top: 0;
+  text-align: center;
+
+  /* Background image settings */
+  background-color: #ffe6e6;
+  background-image: url('herad_images/coffeewomenafrican.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  position: relative; /* Required for overlay */
+}
+
+/* Overlay to darken the background */
+body::before {
+  content: "";
+  position: fixed;       
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(126, 69, 69, 0.5); /* Soft tint overlay */
+  z-index: -1;           
+}
 
 /* =================== NAVIGATION BAR =================== */
 nav {
@@ -69,6 +64,7 @@ nav {
   z-index: 1000;
 }
 
+/* Logo */
 .logo img {
   width: 220px;
   max-width: 100%;
@@ -76,12 +72,12 @@ nav {
   display: block;
 }
 
-/* Nav menu */
+/* Navigation menu */
 .menu_list ul {
   font-size: 15px;
   list-style: none;
   display: flex;
-  gap: 0px;
+  gap: 0;
   margin: 0;
   padding: 0;
 }
@@ -139,93 +135,108 @@ nav {
   color: white;
 }
 
-
-  /* --------------------- MAIN BODY STYLING ------------------- */
-/* Growers container with wider single-column layout */
+/* =================== MAIN BODY STYLING =================== */
+/* Growers container - grid layout for responsive stacking */
 .growers {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for stacked sections */
-    gap: 30px;
-    padding: 40px 20px;
-    width: 90vw;               /* Use 90% of viewport width for responsiveness */
-    max-width: 1000px;         /* Max width for larger screens */
-    margin: 120px auto 60px auto; /* Center container with top margin for nav offset */
+  display: grid;
+  grid-template-columns: 1fr; /* Stacked sections */
+  gap: 30px;
+  padding: 40px 20px;
+  width: 90vw;               
+  max-width: 1000px;         
+  margin: 120px auto 60px auto; /* Space for navbar */
+}
+
+/* Individual section card styling */
+.growers section {
+  background-color: rgb(216, 182, 182, 0.7);
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 20px rgba(58, 21, 21, 0.1);
+  color: #361818;
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  width: 100%;
+  max-width: 900px;  
+  margin: 0 auto;   
+}
+
+/* Hover effect */
+.growers section:hover {
+  background-color: #692727;
+  color: white;
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07);
+}
+
+/* Ensure text inside sections changes color on hover */
+.growers section:hover h1,
+.growers section:hover h4,
+.growers section:hover p,
+.growers section:hover p i {
+  color: white;
+}
+
+/* Headings inside sections */
+.growers h1, 
+.growers h4 {
+  color: #3A0000;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+/* Paragraph tweaks */
+.growers p {
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #631919;
+}
+
+/* Italic text */
+.growers p i {
+  font-style: italic;
+  color: #2c0303;
+}
+
+/* =================== RESPONSIVE ADJUSTMENTS =================== */
+@media (max-width: 992px) {
+  .growers {
+      width: 95vw;
+      padding: 30px 15px;
   }
-  
-  /* Each section styled as a card/grid item */
-  .growers section {
-    background-color: #d8b6b6;
-    border-radius: 15px;
-    padding: 30px 25px;
-    box-shadow: 0 8px 20px rgba(58, 21, 21, 0.1);
-    color: #361818;
-    font-family: 'Times New Roman', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-    width: 100%;              /* Full width of container */
-    max-width: 900px;         /* Limit max width for readability */
-    margin: 0 auto;           /* Center within container */
-  }
-  
-  /* Hover effect on each section */
-  .growers section:hover {
-    background-color: #692727;
-    color: white; /* Text color turns white */
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07);
-  }
-  
-  /* Ensure all text inside section turns white on hover */
-  .growers section:hover h1,
-  .growers section:hover h4,
-  .growers section:hover p,
-  .growers section:hover p i {
-    color: white;
-  }
-  
-  /* Headings inside sections */
-  .growers h1, 
-  .growers h4 {
-    color: #3A0000;
-    font-weight: 900;
-    margin-bottom: 15px;
-  }
-  
-  /* Paragraph tweaks */
-  .growers p {
-    margin-bottom: 20px;
-    text-align: justify;
-    color: #631919;
-  }
-  
-  /* Italic paragraphs */
-  .growers p i {
-    font-style: italic;
-    color: #2c0303;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .growers {
+}
+
+@media (max-width: 768px) {
+  .growers {
       width: 100%;
       padding: 20px 15px;
-    }
-  
-    .growers section {
-      padding: 25px 20px;
-      max-width: 100%; /* Full width on small screens */
-    }
-  
-    .growers h1 {
-      font-size: 1.8rem;
-    }
   }
-  
-  
-  
-  
-  /* ====================== FOOTER =================== */
+
+  .growers section {
+      padding: 25px 20px;
+      max-width: 100%;
+  }
+
+  .growers h1 {
+      font-size: 1.8rem;
+  }
+
+  .menu_list ul {
+      flex-direction: column; /* Stack nav items on smaller screens */
+      display: none; 
+      position: fixed;
+      top: 80px; 
+      left: 0;
+      width: 100vw;
+      background-color: rgba(50, 0, 0, 0.95);
+      padding: 10px 0;
+      z-index: 1099;
+  }
+}
+
+/* =================== FOOTER =================== */
 .footer {
   background-color: #330505;
   color: #ffffff;
@@ -234,7 +245,6 @@ nav {
   text-align: center;
 }
 
-/* Container for all footer sections */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -242,7 +252,6 @@ nav {
   gap: 20px;
 }
 
-/* Footer logo */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -250,7 +259,6 @@ nav {
   display: block;
 }
 
-/* Footer sections layout */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -258,37 +266,31 @@ nav {
   gap: 30px;
 }
 
-/* Each section */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-
 .footer-section h4 {
   font-size: 13px;
   margin-bottom: 5px;
 }
-
 .footer-section p {
   font-size: 13px;
   margin: 3px 0;
   color: #cccccc;
 }
 
-/* Links inside footer sections */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
 .footer-section a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* Social Media Icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -297,22 +299,19 @@ nav {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
 }
 
-/* Footer bottom */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -323,50 +322,52 @@ nav {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
-
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
+/* Footer responsive adjustments */
 @media (max-width: 768px) {
   .footer-content {
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
   }
   .footer-sections {
-    flex-direction: column;
-    gap: 20px;
+      flex-direction: column;
+      gap: 20px;
   }
 }
-
-
+@media (max-width: 480px) {
+  .footer-sections {
+      gap: 15px;
+      text-align: center;
+  }
+  .footer-section h3, .footer-section h4, .footer-section p {
+      font-size: 12px;
+  }
+}
 
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none; 
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
-/* Hamburger active state (cross) */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -377,40 +378,22 @@ nav {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* Mobile dropdown */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
-
-  /* Menu styling */
-  .menu_list ul {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
-    left: 0;
-    width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
-    padding: 10px 0;
-    z-index: 1099;
-  }
   .menu_list ul.active { display: flex; }
-  .menu_list ul li a {
-    color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
-    font-size: 16px;
-    text-align: left;
-    border-right: none;
-  }
-
-  /* Dropdown menu */
   .dropdown-content {
-    position: static;
-    display: none;
-    background-color: #692727;
-    margin: 5px 0;
-    border-radius: 4px;
-    padding: 5px 0;
+      position: static;
+      display: none;
+      background-color: #692727;
+      margin: 5px 0;
+      border-radius: 4px;
+      padding: 5px 0;
   }
   .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .dropdown-content a {
+      color: white;
+      padding-left: 30px; 
+      display: block;
+  }
 }

@@ -1,6 +1,7 @@
 /* ==========================
    GENERAL STYLING
 ========================== */
+/* Reset margins, paddings, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
@@ -8,25 +9,26 @@
   font-family: 'Arial', sans-serif;
 }
 
+/* Body styling: background image, fallback color, text color */
 body {
   background-image: url(herad_images/whatwedobackground.jpeg);
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Fixed for parallax effect */
   background-position: center;
-
   line-height: 1.6;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa;   /* fallback color */
   color: #333;
 }
 
 /* =================== NAVIGATION BAR =================== */
+/* Navbar container */
 nav {
   background-image: url("herad_images/Herad-vegetables.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-blend-mode: darken;
-  background-color: rgba(7,7,7,0.4);
+  background-color: rgba(7,7,7,0.4); /* semi-transparent overlay */
   height: 130px;
   display: flex;
   align-items: center;
@@ -41,14 +43,15 @@ nav {
   z-index: 1000;
 }
 
+/* Navbar logo */
 .logo img {
   width: 220px;
-  max-width: 100%;
+  max-width: 100%; /* responsive scaling */
   object-fit: contain;
   display: block;
 }
 
-/* Nav menu */
+/* Nav menu container */
 .menu_list ul {
   font-size: 15px;
   list-style: none;
@@ -58,6 +61,7 @@ nav {
   padding: 0;
 }
 
+/* Nav menu items */
 .menu_list ul li a {
   color: black;
   background-color: #c77d83;
@@ -70,21 +74,23 @@ nav {
   white-space: nowrap;
 }
 
+/* Hover effect on nav items */
 .menu_list ul li a:hover {
   background-color: #692727;
   color: white;
   border-radius: 4px;
 }
 
-/* Dropdown */
+/* Dropdown container */
 .menu_list ul li.dropdown {
   position: relative;
 }
 
+/* Dropdown menu */
 .dropdown-content {
-  display: none;
+  display: none; /* hidden by default */
   position: absolute;
-  top: 100%;
+  top: 100%; /* appear below parent */
   left: 0;
   background-color: #660911;
   min-width: 220px;
@@ -94,10 +100,12 @@ nav {
   padding: 8px 0;
 }
 
+/* Show dropdown on hover */
 .menu_list ul li.dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* Dropdown links */
 .dropdown-content a {
   display: block;
   padding: 10px 16px;
@@ -106,21 +114,20 @@ nav {
   font-weight: 600;
 }
 
+/* Dropdown link hover */
 .dropdown-content a:hover {
   background-color: #e09393;
   color: white;
 }
 
-
-/* ============ MAIN CONTENT ============ */
-
+/* =================== MAIN CONTENT =================== */
 
 /* =================== Intro Section =================== */
 #intro {
-  margin: 160px auto 50px auto;  /* Center horizontally */
+  margin: 160px auto 50px auto; /* offset below fixed navbar */
   text-align: center;
   padding: 20px;
-  max-width: 500px;              /* Reduced width for a narrower look */
+  max-width: 500px;
   background: linear-gradient(135deg, #692727, #f0c6c6, #692727);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -151,7 +158,6 @@ nav {
   100% { background-position: 0% 50%; }
 }
 
-
 #intro h3 {
   font-size: 2.5rem;
   color: #f8f8f8;
@@ -164,66 +170,43 @@ nav {
   color: #fffefe;
 }
 
-/* =================== Intro Section =================== */
-#intro {
-  margin: 160px auto 50px auto;
-  text-align: center;
-  padding: 20px;
-  max-width: 500px;
-  background: linear-gradient(135deg, #692727, #f0c6c6, #692727);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-
-  /* Animation */
-  opacity: 0;
-  transform: translateY(50px);
-  animation: introFadeIn 1s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Fade-in animation */
-@keyframes introFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* =================== Sections Container =================== */
 .sections-container {
   display: flex;
-  flex-wrap: wrap;                  /* Allow wrapping */
+  flex-wrap: wrap;                  /* Allow wrapping for responsiveness */
   gap: 20px;                        /* Space between sections */
   max-width: 1200px;
   margin: 30px auto;
-  justify-content: center;          /* Center rows */
+  justify-content: center;          /* Center rows horizontally */
 }
 
-/* =================== Individual Sections =================== */
+/* Individual sections */
 .sections-container > section {
   padding: 20px 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
   color: #eedede;
+  transition: transform 0.3s ease; /* subtle hover effect for responsiveness */
 }
 
 /* Growers & Processors: two per row */
 #growers,
 #processors {
-  flex: 1 1 45%;                     /* Approx 45% width each */
+  flex: 1 1 45%; /* flexible width, responsive */
 }
 
-/* Exporters: full width but centered */
+/* Exporters: centered full-width section */
 #exporters {
-  flex: 0 1 60%;                     /* 60% width */
-  margin: 0 auto;                    /* Center horizontally */
+  flex: 0 1 60%;
+  margin: 0 auto; /* center horizontally */
 }
 
 /* Section colors */
-#growers { background-color: #531e1e; }
-#processors { background-color: #aa7474; }
-#exporters { background-color: #531e1e; }
+#growers { background-color: rgb(83, 30, 30, 0.9);}
+#processors { background-color: rgb(170, 116, 116, 0.9);}
+#exporters { background-color: rgb(83, 30, 30, 0.9);
+}
 
 /* Headings and text inside sections */
 .sections-container h4 {
@@ -239,33 +222,10 @@ nav {
 }
 
 .sections-container p strong {
-  color: #b22222; /* Tomato red for emphasis */
+  color: #b22222; /* Emphasis color */
 }
 
-/* =================== Responsive =================== */
-@media (max-width: 992px) {
-  #growers,
-  #processors {
-    flex: 1 1 45%;   /* Two per row on medium screens */
-  }
-  #exporters {
-    flex: 0 1 80%;   /* Slightly wider but still centered */
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .sections-container {
-    flex-direction: column; /* Stack vertically on small screens */
-  }
-  .sections-container > section {
-    flex: 1 1 100%;   /* Full width */
-    margin: 0 auto;
-  }
-}
-
-
-/* ====================== FOOTER =================== */
+/* =================== FOOTER =================== */
 .footer {
   background-color: #330505;
   color: #ffffff;
@@ -274,7 +234,7 @@ nav {
   text-align: center;
 }
 
-/* Container for all footer sections */
+/* Flex container for footer */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -282,7 +242,7 @@ nav {
   gap: 20px;
 }
 
-/* Footer logo */
+/* Logo in footer */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -290,7 +250,7 @@ nav {
   display: block;
 }
 
-/* Footer sections layout */
+/* Footer section containers */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -298,37 +258,34 @@ nav {
   gap: 30px;
 }
 
-/* Each section */
+/* Section titles */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-
 .footer-section h4 {
   font-size: 13px;
   margin-bottom: 5px;
 }
-
 .footer-section p {
   font-size: 13px;
   margin: 3px 0;
   color: #cccccc;
 }
 
-/* Links inside footer sections */
+/* Footer links */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
 .footer-section a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* Social Media Icons */
+/* Social & payment icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -337,22 +294,20 @@ nav {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
 }
 
-/* Footer bottom */
+/* Footer bottom bar */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -363,50 +318,32 @@ nav {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
-
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-
-
-/* =================== HAMBURGER =================== */
+/* =================== HAMBURGER MENU =================== */
 .hamburger {
   display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
-/* Hamburger active state (cross) */
+/* Transform hamburger → X on click */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -417,34 +354,34 @@ nav {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE NAVIGATION =================== */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 
-  /* Menu styling */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
+    top: 80px; /* offset below navbar */
     left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
+
   .menu_list ul li a {
     color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
+    padding: 12px 20px;
     font-size: 16px;
     text-align: left;
     border-right: none;
   }
 
-  /* Dropdown menu */
+  /* Mobile dropdown adjustments */
   .dropdown-content {
-    position: static;
+    position: static; /* stack naturally in column */
     display: none;
     background-color: #692727;
     margin: 5px 0;
@@ -452,5 +389,21 @@ nav {
     padding: 5px 0;
   }
   .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .dropdown-content a {
+    color: white;
+    padding-left: 30px; /* indent nested links */
+    display: block;
+  }
+}
+
+/* =================== ADDITIONAL RESPONSIVE FIXES =================== */
+/* Ensure hero section scales on smaller devices */
+@media (max-width: 992px) {
+  #intro { max-width: 90%; margin: 140px auto 30px auto; }
+  .sections-container > section { flex: 1 1 90%; }
+}
+
+@media (max-width: 576px) {
+  #intro { padding: 15px; font-size: 0.9rem; }
+  .sections-container > section { padding: 15px 10px; }
 }

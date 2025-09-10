@@ -359,7 +359,7 @@ section {
   text-align: center;
 }
 
-/* Container for all footer sections */
+/* Flex container for footer */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -367,7 +367,7 @@ section {
   gap: 20px;
 }
 
-/* Footer logo */
+/* Logo in footer */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -375,7 +375,7 @@ section {
   display: block;
 }
 
-/* Footer sections layout */
+/* Footer section containers */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -383,37 +383,34 @@ section {
   gap: 30px;
 }
 
-/* Each section */
+/* Section titles */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-
 .footer-section h4 {
   font-size: 13px;
   margin-bottom: 5px;
 }
-
 .footer-section p {
   font-size: 13px;
   margin: 3px 0;
   color: #cccccc;
 }
 
-/* Links inside footer sections */
+/* Footer links */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
 .footer-section a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* Social Media Icons */
+/* Social & payment icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -422,22 +419,20 @@ section {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
 }
 
-/* Footer bottom */
+/* Footer bottom bar */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -448,17 +443,15 @@ section {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
-
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
+/* Responsive footer */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -469,29 +462,34 @@ section {
     gap: 20px;
   }
 }
-
-
+@media (max-width: 480px) {
+  .footer-sections {
+    gap: 15px;
+    text-align: center;
+  }
+  .footer-section h3, .footer-section h4, .footer-section p {
+    font-size: 12px;
+  }
+}
 
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none;                /* Visible only on mobile */
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #ebdfdf;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
-/* Hamburger active state (cross) */
+/* Transform hamburger → X */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -502,40 +500,44 @@ section {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE NAV =================== */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 
-  /* Menu styling */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
+    top: 80px; /* Below navbar */
     left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
+
   .menu_list ul li a {
     color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
+    padding: 12px 20px;
     font-size: 16px;
     text-align: left;
     border-right: none;
   }
 
-  /* Dropdown menu */
+  /* Mobile dropdown */
   .dropdown-content {
     position: static;
     display: none;
-    background-color: #140101;
+    background-color: #692727;
     margin: 5px 0;
     border-radius: 4px;
     padding: 5px 0;
   }
   .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .dropdown-content a {
+    color: white;
+    padding-left: 30px; /* indent nested links */
+    display: block;
+  }
 }

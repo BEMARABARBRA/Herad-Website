@@ -313,6 +313,31 @@
   });
   </script>
   
+<!-- page animations  -->
+<script>
+  // Select all sections
+  const sections = document.querySelectorAll('section');
+
+  // Function to check if a section is in the viewport
+  function revealSections() {
+    const windowHeight = window.innerHeight;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const revealPoint = 150; // How far from bottom to trigger
+      if(sectionTop < windowHeight - revealPoint) {
+        section.classList.add('visible');
+      } else {
+        section.classList.remove('visible'); // Optional: remove if scroll up
+      }
+    });
+  }
+
+  // Listen to scroll events
+  window.addEventListener('scroll', revealSections);
+
+  // Trigger animation on page load
+  revealSections();
+</script>
 
   </body>
 </html>

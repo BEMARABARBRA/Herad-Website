@@ -23,7 +23,7 @@ body {
   margin-top: 0;
   text-align: center;
   background-color: #ffe6e6;
-  background-image: url('herad_images/coffeebackground.jpeg');
+  background-image: url('herad_images/кофе.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -167,7 +167,7 @@ nav {
 ======================================================= */
 main {
   max-width: 1200px;
-  margin: 150px auto 60px auto; /* Add top margin for fixed navbar */
+  margin: 120px auto 60px auto; /* Add top margin for fixed navbar */
   padding: 60px 20px;
 }
 
@@ -199,7 +199,7 @@ h3, h4 {
 
 /* Paragraphs */
 p {
-  font-size: 1.05rem;
+  font-size: 1.55rem;
   color: #4d0b0b;
   line-height: 1.8;
   margin-bottom: 20px;
@@ -222,6 +222,25 @@ ul li:hover {
   transform: translateX(5px);
   color: #e21b1b;
 }
+
+
+/* =======================================================
+   SCROLL ANIMATION FOR SECTIONS
+======================================================= */
+
+/* Initial state: sections are slightly down and invisible */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* Visible state: sections slide up and become visible */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ====================== FOOTER =================== */
 .footer {

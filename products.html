@@ -20,12 +20,16 @@
 
         </a>
     </div>
+
+
     <!-- Hamburger Menu for Mobile -->
-            <div id="hamburger" class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+          <!-- Hamburger button in your nav -->
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
 
         <!-- Menu list -->
         <div class="menu_list">
@@ -328,7 +332,7 @@
         <h3>Payment Methods</h3>
         <div class="payment-methods-icons">
           <a href="https://wa.me/256753044293" target="_blank">
-            <img src="herad_images/__Airtel_Wallpapers_on_WallpaperSafari-removebg-preview.png" alt="Airtel" />
+            <img src="herad_images/airtel_logonew.png" alt="Airtel" />
           </a>
           <a href="https://wa.me/256772593424" target="_blank">
             <img src="herad_images/Herad-MTN_logo.png" alt="MTN" />
@@ -337,7 +341,7 @@
             <img src="herad_images/MasterCard_Black_Logo-removebg-preview.png" alt="MasterCard" />
           </a>
           <a href="YOUR_EQUITY_BANK_PAYMENT_LINK" target="_blank">
-            <img src="herad_images/Herad-_Visa_Card.png" alt="Pay with Equity Bank" />
+            <img src="herad_images/Black_Visa_Card-removebg-preview.png" alt="Pay with Equity Bank" />
           </a>
           
           <a href="https://wa.me/256778943330" target="_blank">
@@ -384,40 +388,25 @@
 
 
 
-
-  <script>
-  // Select hamburger button and nav menu
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector("nav ul");
-
-  // Toggle menu visibility and hamburger animation
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");       // show/hide menu
-    hamburger.classList.toggle("active");     // animate hamburger to X
+<!-- ============= js for hamburger on small screens ================================== -->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu_list ul');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active'); // Animate hamburger
+    menu.classList.toggle('active');      // Show/hide menu
   });
-
-  // Close mobile menu when a link is clicked
-  document.querySelectorAll("nav ul li a").forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 768) {
-        navMenu.classList.remove("active");   // close menu
-        hamburger.classList.remove("active"); // reset hamburger
-      }
-    });
+  
+  // Optional: Close dropdowns on mobile when clicking outside
+  document.addEventListener('click', function(e){
+    if(!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
   });
+  </script>
+  
 
-  // Mobile dropdown toggle
-  document.querySelectorAll("nav ul li.dropdown > a").forEach(link => {
-    link.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();                   // prevent page navigation
-        link.parentElement.classList.toggle("active"); // toggle dropdown
-      }
-    });
-  });
-</script>
-
-
-
-</body>
+  </body>
 </html>

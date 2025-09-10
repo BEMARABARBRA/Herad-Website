@@ -2,410 +2,398 @@
 
 /* Reset margin and padding for all elements, and include padding and border in element's total width and height */
 * {
-    margin: 0;                
-    padding: 0;               
-    box-sizing: border-box;   
-  }
-  
-  /* Set base font size, scrolling offset for fixed nav, and prevent horizontal scrollbar */
-  html {
-    font-size: 80%;               
-    scroll-padding-top: 120px;    
-    overflow-x: hidden;           
-  }
-  
-  /* ============ BODY BACKGROUND TONE DOWN ============ */
-  body {
-    font-family: "Times New Roman", Times, serif;
-    line-height: 1;
-    color: #2b0d0d;
-    margin-top: 150px;
-    text-align: center;
-  
-    /* Background image properties */
-    background-color: #ffe6e6;
-    background-image: url('herad_images/fruitsbackground.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  
-    /* Position relative for overlay */
-    position: relative;
-  }
-  
-  /* Overlay a semi-transparent tint over background to tone down */
-  body::before {
-    content: "";
-    position: fixed;       
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(126, 69, 69, 0.8); /* Soft tint overlay */
-    z-index: -1;           
-  }
-  
+  margin: 0;                 /* Remove all default margins */
+  padding: 0;                /* Remove all default paddings */
+  box-sizing: border-box;    /* Ensure padding + border don’t increase width/height */
+}
 
-  /* =================== NAVIGATION BAR =================== */
-/* ===== NAVIGATION BAR ===== */
+/* Root HTML element */
+html {
+  font-size: 80%;               /* Base font size (relative units scale better on small screens) */
+  scroll-padding-top: 120px;    /* Offset for anchor links to avoid overlapping fixed nav */
+  overflow-x: hidden;           /* Prevent unwanted horizontal scrollbars */
+}
+
+/* =================== BODY STYLING =================== */
+body {
+  font-family: "Times New Roman", Times, serif; /* Elegant serif font */
+  line-height: 1;                               /* Compact line height */
+  color: #2b0d0d;                               /* Dark brown text */
+  margin-top: 120px;                            /* Push content below navbar */
+  text-align: center;                           /* Center align text by default */
+
+  /* Background styles */
+  background-color: #ffe6e6;                    /* Fallback soft pink background */
+  background-image: url('herad_images/fruitsbackground.jpeg'); /* Decorative bg image */
+  background-repeat: no-repeat;                 /* No tiling */
+  background-size: cover;                       /* Scale to cover full screen */
+  background-position: center;                  /* Keep image centered */
+  background-attachment: fixed;                 /* Parallax effect (stays in place) */
+
+  position: relative;                           /* For overlay positioning */
+}
+
+/* Overlay tint to darken/soften background image */
+body::before {
+  content: "";                                  /* Empty pseudo-element */
+  position: fixed;                              /* Sticks to viewport */
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(126, 69, 69, 0.8);     /* Transparent maroon overlay */
+  z-index: -1;                                  /* Stay behind content */
+}
+
+/* =================== NAVIGATION BAR =================== */
 nav {
-  background: linear-gradient(90deg, #5c1a1a, #8b2e2e); /* gradient effect */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  position: sticky;
-  top: 0;
-  z-index: 1100;
+background: linear-gradient(90deg, #5c1a1a, #8b2e2e); /* Gradient background */
+box-shadow: 0 2px 8px rgba(0,0,0,0.3);                /* Shadow for depth */
+position: sticky;                                    /* Sticks to top on scroll */
+top: 0;                                              /* Stick point */
+z-index: 1100;                                       /* Stay above all content */
 }
 
-/* Menu links */
+/* Menu links inside navigation */
 .menu_list ul li a {
-  color: #fff;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
-  transition: color 0.3s ease;
+color: #fff;                                /* White text */
+padding: 15px 20px;                         /* Spacing for clickability */
+text-decoration: none;                      /* Remove underlines */
+font-weight: 600;                           /* Semi-bold */
+position: relative;                         /* Needed for underline effect */
+transition: color 0.3s ease;                /* Smooth color transition */
 }
 
-/* Hover underline slide effect */
+/* Decorative hover underline animation */
 .menu_list ul li a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 5px;
-  left: 0;
-  background: #ffd700; /* golden line */
-  transition: width 0.3s ease;
+content: "";                                /* Pseudo element */
+position: absolute;
+width: 0%;                                  /* Initially hidden */
+height: 2px;                                /* Thin underline */
+bottom: 5px;                                /* Place near text */
+left: 0;
+background: #ffd700;                        /* Golden underline */
+transition: width 0.3s ease;                /* Animate growth */
 }
 .menu_list ul li a:hover::after {
-  width: 100%;
+width: 100%;                                /* Expand fully on hover */
 }
 .menu_list ul li a:hover {
-  color: #ffd700;
+color: #ffd700;                             /* Change text color to gold */
 }
 
-/* Dropdown menu */
+/* Dropdown menu styling */
 .dropdown-content {
-  background: rgba(50, 0, 0, 0.95);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  border-radius: 4px;
-  animation: fadeIn 0.3s ease;
+background: rgba(50, 0, 0, 0.95);           /* Dark red semi-transparent */
+box-shadow: 0 4px 10px rgba(0,0,0,0.4);     /* Depth shadow */
+border-radius: 4px;                         /* Rounded corners */
+animation: fadeIn 0.3s ease;                /* Smooth fade animation */
 }
 .dropdown-content a:hover {
-  background: #8b2e2e;
-  color: #ffd700;
+background: #8b2e2e;                        /* Highlight item */
+color: #ffd700;                             /* Gold text */
 }
 
-/* Hamburger bars */
+/* Hamburger icon styling (3 bars) */
 .hamburger span {
-  background-color: white;
-  transition: all 0.3s ease;
+background-color: white;                    /* White bars */
+transition: all 0.3s ease;                  /* Smooth transform */
 }
+/* Animate bars into "X" when active */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+transform: rotate(45deg) translate(5px, 5px);
 }
 .hamburger.active span:nth-child(2) {
-  opacity: 0;
+opacity: 0;                                 /* Middle bar disappears */
 }
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Animation for dropdowns */
+/* Fade-in animation for dropdown menus */
 @keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-10px);}
-  to {opacity: 1; transform: translateY(0);}
+from {opacity: 0; transform: translateY(-10px);}  /* Start faded above */
+to   {opacity: 1; transform: translateY(0);}      /* End visible in place */
 }
 
-  
-  /* ===================== HERO / FRUIT SECTION ===================== */
-  
-  /* Container for the entire fruit section */
-  .fruit-section {
-    max-width: 1200px;                     /* Limit section width */
-    padding: 50px 40px;                    /* Padding all around */
-    /* background-color: #e49a5f;             Light background for section */
-    border-radius: 12px;                   /* Rounded corners for softness */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);/* Subtle shadow for elevation */
-    margin: 0 auto;                        /* Center section horizontally */
-  }
-  
-  /* Section headings for each fruit type */
+/* ===================== HERO / FRUIT SECTION ===================== */
+
+/* Container for fruit showcase */
+.fruit-section {
+  max-width: 1200px;                     /* Prevent too wide on big screens */
+  padding: 50px 40px;                    /* Spacing inside */
+  border-radius: 12px;                   /* Rounded box */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);/* Subtle shadow */
+  margin: 0 auto;                        /* Center horizontally */
+}
+
+/* Fruit section heading */
+.fruit-section h3 {
+  font-family: 'Georgia', 'Times New Roman', serif; /* Classy font */
+  font-size: 60px;                                   /* Large text */
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;                         /* All caps */
+  letter-spacing: 3px;                               /* Spread letters */
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+
+  /* Gradient text effect */
+  background: linear-gradient(45deg, #ff8c00, #ffd700, #ff4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);          /* Depth shadow */
+  position: relative;
+  display: inline-block;
+}
+
+/* Responsive heading scaling */
+@media (max-width: 768px) {
   .fruit-section h3 {
-    font-family: 'Georgia', 'Times New Roman', serif;   /* Elegant serif font */
-    font-size: 60px;                                   /* Large and bold */
-    font-weight: bold;                                 /* Strong visual weight */
-    text-align: center;                                /* Center heading */
-    text-transform: uppercase;                         /* Make it prominent */
-    letter-spacing: 3px;                               /* Spacing between letters */
-    margin-bottom: 40px;                               /* Space below heading */
-    padding-bottom: 10px;                              /* Space between underline & text */
-  
-    /* Gradient text color */
-    background: linear-gradient(45deg, #ff8c00, #ffd700, #ff4500);
-    -webkit-background-clip: text;                    /* Clip gradient to text */
-    -webkit-text-fill-color: transparent;             /* Make text fill transparent */
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-  
-    /* Shadow for depth */
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  
-    /* Decorative underline */
-    position: relative;
-    display: inline-block;                            /* Inline block allows centering with ::after */
+    font-size: 36px;      /* Smaller on tablets/mobiles */
+    letter-spacing: 2px;  /* Reduce spacing */
   }
-  
-  
-  /* Responsive adjustments for headings */
-  @media (max-width: 768px) {
-    .fruit-section h3 {
-      font-size: 36px;                                 /* Smaller on mobile */
-      letter-spacing: 2px;                             /* Adjust spacing */
-    }
-    .fruit-section h3::after {
-      width: 80px;                                     /* Shorter underline */
-      height: 3px;                                     /* Slightly thinner line */
-    }
-  }
-  
-  /* Grid container for fruit boxes */
-  .fruit-grid {
-    display: flex;                            /* Flex layout for columns */
-    flex-wrap: wrap;                          /* Wrap to next line if needed */
-    gap: 25px;                                /* Space between boxes */
-    justify-content: center;                  /* Center all boxes horizontally */
-    margin-bottom: 60px;                      /* Space below grid */
-  }
-  
-  /* Individual fruit box styling */
-  .fruit-box {
-    height: auto;
-    flex: 1 1 220px;                          /* Flexible width, min 220px per box */
-    max-width: 500px;                          /* Prevent boxes from getting too big */
-    background-color: #744214;                 /* Box background */
-    border-radius: 12px;                       /* Rounded corners */
-    overflow: hidden;                          /* Prevent content overflow */
-    display: flex;
-    flex-direction: column;                    /* Stack image and caption vertically */
-    align-items: center;                       /* Center content horizontally */
-    padding: 20px;                             /* Inner padding */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
-  }
-  
-  /* Image inside fruit box */
-  .fruit-box img {
-    width: 100%;                               /* Fill width of box */
-    height: 280px;                             /* Height for visibility */
-    object-fit: cover;                          /* Crop without stretching */
-    border-radius: 12px;                        /* Rounded corners */
-    margin-bottom: 15px;                        /* Space below image */
-    transition: transform 0.3s ease;            /* Smooth hover zoom */
-  }
-  
-  /* Fruit name/caption */
-  .fruit-box p {
-    font-size: 30px;                            /* Slightly larger text */
-    font-weight: bold;                          /* Bold for clarity */
-    color: white;                             /* Light text for contrast */
-    text-align: center;
-  }
-  
-  /* Hover effect for fruit box */
-  .fruit-box:hover {
-    transform: translateY(-5px) scale(1.05);    /* Lift and zoom on hover */
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);   /* Shadow on hover */
-    background-color: #a3570fd2;                  /* Slight highlight */
-  }
-  
-  
-  
-/* ====================== FOOTER =================== */
-.footer {
-  background-color: #330505;
-  color: #ffffff;
+}
+
+/* Grid layout for fruits */
+.fruit-grid {
+  display: flex;             /* Flex layout */
+  flex-wrap: wrap;           /* Wrap to new line */
+  gap: 25px;                 /* Space between items */
+  justify-content: center;   /* Center horizontally */
+  margin-bottom: 60px;
+}
+
+/* Each fruit box */
+.fruit-box {
+  flex: 1 1 220px;                          /* Responsive flexible width */
+  max-width: 500px;                         /* Limit max width */
+  background-color: #744214;                /* Brown box background */
+  border-radius: 12px;
+  overflow: hidden;                         /* Clip overflow */
+  display: flex;
+  flex-direction: column;                   /* Stack vertically */
+  align-items: center;                      /* Center items */
   padding: 20px;
-  font-family: Arial, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fruit image */
+.fruit-box img {
+  width: 100%;                               /* Full width */
+  height: 280px;                             /* Fixed height */
+  object-fit: cover;                         /* Crop nicely */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Fruit name text */
+.fruit-box p {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
   text-align: center;
 }
 
-/* Container for all footer sections */
+/* Hover effect */
+.fruit-box:hover {
+  transform: translateY(-5px) scale(1.05);    /* Lift slightly */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);   /* Stronger shadow */
+  background-color: #a3570fd2;               /* Darker background */
+}
+
+/* ====================== FOOTER =================== */
+.footer {
+background-color: #330505;  /* Dark maroon */
+color: #ffffff;
+padding: 20px;
+font-family: Arial, sans-serif;
+text-align: center;
+}
+
+/* Flex container for footer content */
 .footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
 }
 
 /* Footer logo */
 .footer-logo-container img {
-  max-width: 120px;
-  height: auto;
-  margin: 0 auto 15px auto;
-  display: block;
+max-width: 120px;
+height: auto;
+margin: 0 auto 15px auto;
+display: block;
 }
 
-/* Footer sections layout */
+/* Footer sections */
 .footer-sections {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
 }
 
-/* Each section */
+/* Footer section titles */
 .footer-section h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+font-size: 14px;
+text-transform: uppercase;
+margin-bottom: 8px;
 }
-
 .footer-section h4 {
-  font-size: 13px;
-  margin-bottom: 5px;
+font-size: 13px;
+margin-bottom: 5px;
 }
-
 .footer-section p {
-  font-size: 13px;
-  margin: 3px 0;
-  color: #cccccc;
+font-size: 13px;
+margin: 3px 0;
+color: #cccccc;
 }
 
-/* Links inside footer sections */
+/* Footer links */
 .footer-section a {
-  color: #0e5ab1;
-  text-decoration: underline;
-  font-weight: bold;
+color: #0e5ab1;
+text-decoration: underline;
+font-weight: bold;
 }
-
 .footer-section a:hover {
-  color: #ffffff;
-  text-decoration: none;
+color: #ffffff;
+text-decoration: none;
 }
 
-/* Social Media Icons */
+/* Social and payment icons */
 .social-icons, .payment-methods-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
+display: flex;
+gap: 10px;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
-  border-radius: 50%;
-  padding: 5px;
-  background-color: #9B2325;
-  transition: transform 0.3s, background-color 0.3s;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+padding: 5px;
+background-color: #5f1315;
+transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
-  transform: scale(1.1);
-  background-color: #727070;
+transform: scale(1.1);
+background-color: #727070;
 }
 
-/* Footer bottom */
+/* Footer bottom bar */
 .footer-bottom {
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid #444;
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+margin-top: 15px;
+padding-top: 10px;
+border-top: 1px solid #444;
+font-size: 13px;
+display: flex;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;
 }
-
 .footer-bottom a {
-  color: #cccccc;
-  text-decoration: none;
+color: #cccccc;
+text-decoration: none;
 }
-
 .footer-bottom a:hover {
-  color: #ffffff;
+color: #ffffff;
 }
 
-/* Responsive adjustments */
+/* Responsive footer adjustments */
 @media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
+.footer-content {
+  flex-direction: column;
+  align-items: center;
 }
-
-
+.footer-sections {
+  flex-direction: column;
+  gap: 20px;
+}
+}
+@media (max-width: 480px) {
+.footer-sections {
+  gap: 15px;
+  text-align: center;
+}
+.footer-section h3, .footer-section h4, .footer-section p {
+  font-size: 12px;
+}
+}
 
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
-  justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
-  cursor: pointer;
-  z-index: 1100;
+display: none;                /* Hidden on desktop */
+flex-direction: column;
+justify-content: space-between;
+width: 30px;
+height: 20px;
+cursor: pointer;
+z-index: 1100;                /* Above nav */
 }
-
 .hamburger span {
-  display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
-  border-radius: 3px;
-  transition: all 0.3s ease;
+display: block;
+height: 4px;
+background-color: #eee5e5;
+border-radius: 3px;
+transition: all 0.3s ease;
 }
 
-/* Hamburger active state (cross) */
+/* Transform into X on click */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+transform: rotate(45deg) translate(5px, 5px);
 }
 .hamburger.active span:nth-child(2) {
-  opacity: 0;
+opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE NAVIGATION =================== */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
+.hamburger { display: flex; }              /* Show hamburger */
 
-  /* Menu styling */
-  .menu_list ul {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
-    left: 0;
-    width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
-    padding: 10px 0;
-    z-index: 1099;
-  }
-  .menu_list ul.active { display: flex; }
-  .menu_list ul li a {
-    color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
-    font-size: 16px;
-    text-align: left;
-    border-right: none;
-  }
+.menu_list ul {
+  display: none;                           /* Hidden until toggled */
+  flex-direction: column;                  /* Stack vertically */
+  position: fixed;                         /* Overlay menu */
+  top: 80px;                               /* Push below nav */
+  left: 0;
+  width: 100vw;                            /* Full width */
+  background-color: rgba(50, 0, 0, 0.95);  /* Dark bg */
+  padding: 10px 0;
+  z-index: 1099;
+}
+.menu_list ul.active { display: flex; }    /* Show when toggled */
 
-  /* Dropdown menu */
-  .dropdown-content {
-    position: static;
-    display: none;
-    background-color: #692727;
-    margin: 5px 0;
-    border-radius: 4px;
-    padding: 5px 0;
-  }
-  .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+.menu_list ul li a {
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-align: left;
+  border-right: none;
+}
+
+/* Mobile dropdown styling */
+.dropdown-content {
+  position: static;                        /* Relative inside parent */
+  display: none;
+  background-color: #692727;
+  margin: 5px 0;
+  border-radius: 4px;
+  padding: 5px 0;
+}
+.menu_list ul li.active .dropdown-content { display: block; }
+.dropdown-content a {
+  color: white;
+  padding-left: 30px;                      /* Indent submenu */
+  display: block;
+}
 }

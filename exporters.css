@@ -1,6 +1,6 @@
 /* =================== RESET STYLES =================== */
 
-/* Reset margin and padding on all elements, use border-box sizing */
+/* Reset margin and padding on all elements, use border-box sizing for easier sizing calculations */
 * {
   margin: 0;
   padding: 0;
@@ -9,78 +9,82 @@
 
 /* Base html styles */
 html {
-  font-size: 80%;
-  scroll-padding-top: 120px;
-  overflow-x: hidden;
+  font-size: 80%; /* Sets default font size relative to browser */
+  scroll-padding-top: 120px; /* Ensures scroll-anchor works below fixed navbar */
+  overflow-x: hidden; /* Prevent horizontal scrollbar on small screens */
 }
 
 /* ================== BODY ================== */
 body {
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.7;
-  color: #2b0d0d;
+  font-family: "Times New Roman", Times, serif; /* Main font */
+  line-height: 1.7; /* Better readability */
+  color: #2b0d0d; /* Text color */
   margin-top: 0;
   text-align: center;
-  background-color: #ffe6e6;
-  background-image: url('herad_images/exportersbackground.jpeg');
+  background-color: #ffe6e6; /* Fallback background color */
+  background-image: url('herad_images/exportersbackground.jpeg'); /* Main background image */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; /* Cover full viewport */
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Keep background fixed while scrolling */
   position: relative;
-  min-height: 100vh; /* Make body at least viewport height */
+  min-height: 100vh; /* Ensure body is at least viewport height */
 }
 
-/* Add an overlay tint to background for softening */
+
+/* Overlay tint for background image to improve readability */
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(126, 69, 69, 0.5);
-  z-index: -1;
+  background-color: rgba(126, 69, 69, 0.5); /* semi-transparent overlay */
+  z-index: -1; /* Behind all content */
 }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-  background-image: url("herad_images/Herad-vegetables.jpeg");
+  background-image: url("herad_images/Herad-vegetables.jpeg"); /* Navbar background */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-blend-mode: darken;
-  background-color: rgba(7,7,7,0.4);
-  height: 130px;
+  background-blend-mode: darken; /* Darken background to show text clearly */
+  background-color: rgba(7,7,7,0.4); /* Fallback overlay */
+  height: 130px; /* Navbar height */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px black;
+  box-shadow: 0 2px 5px black; /* subtle shadow */
   color: white;
   padding: 0 20px;
-  position: fixed;
+  position: fixed; /* Fixed navbar on top */
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 1000;
+  z-index: 1000; /* Always on top */
 }
 
+/* Logo in navbar */
 .logo img {
   width: 220px;
-  max-width: 100%;
+  max-width: 100%; /* Responsive */
   object-fit: contain;
   display: block;
 }
 
-/* Nav menu */
+/* Nav menu list */
 .menu_list ul {
   font-size: 15px;
   list-style: none;
-  display: flex;
+  display: flex; /* Horizontal layout */
   gap: 0px;
   margin: 0;
   padding: 0;
 }
 
+/* Nav links styling */
 .menu_list ul li a {
   color: black;
   background-color: #c77d83;
@@ -90,24 +94,26 @@ nav {
   padding: 15px 10px;
   display: block;
   transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
+/* Hover effect for links */
 .menu_list ul li a:hover {
   background-color: #692727;
   color: white;
   border-radius: 4px;
 }
 
-/* Dropdown */
+/* Dropdown menu parent */
 .menu_list ul li.dropdown {
-  position: relative;
+  position: relative; /* Needed for absolute positioning of dropdown content */
 }
 
+/* Dropdown content container */
 .dropdown-content {
-  display: none;
+  display: none; /* Hidden by default */
   position: absolute;
-  top: 100%;
+  top: 100%; /* Below parent */
   left: 0;
   background-color: #660911;
   min-width: 220px;
@@ -117,10 +123,12 @@ nav {
   padding: 8px 0;
 }
 
+/* Show dropdown on hover */
 .menu_list ul li.dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* Dropdown links */
 .dropdown-content a {
   display: block;
   padding: 10px 16px;
@@ -129,19 +137,21 @@ nav {
   font-weight: 600;
 }
 
+/* Hover effect for dropdown links */
 .dropdown-content a:hover {
   background-color: #e09393;
   color: white;
 }
+
 /* =================== HERO SECTION =================== */
 
-/* Container row: flexbox for side-by-side layout */
+/* Row container: flexbox for side-by-side layout */
 .row {
   font-family: 'Times New Roman', Times, serif;
   display: flex;
   align-items: center;
   max-width: 1100px;
-  margin: 150px auto 40px auto;
+  margin: 150px auto 40px auto; /* Top margin accounts for navbar */
   padding-left: 0;
   background-color: #da9a9a;
   border-radius: 20px;
@@ -150,13 +160,15 @@ nav {
   cursor: pointer;
 }
 
-/* Hover effect for the row */
+/* Hover effect for the hero row */
 .row:hover {
   box-shadow: 0 20px 40px rgba(43, 3, 3, 0.4);
   transform: translateY(-5px) scale(1.02);
 }
 
-/* Left column (content) styling */
+
+
+/* Left column (text content) */
 .col-7 {
   flex: 2;
   padding-left: 40px;
@@ -166,7 +178,7 @@ nav {
   text-align: left;
 }
 
-/* Right column (image) styling */
+/* Right column (image content) */
 .col-5 {
   flex: 1;
   display: flex;
@@ -175,7 +187,7 @@ nav {
   padding-left: 20px;
 }
 
-/* Image styling */
+/* Hero image styling */
 .col-5 img {
   padding-right: 20px;
   margin: 20px;
@@ -187,8 +199,9 @@ nav {
   box-shadow: 0 6px 15px rgba(63, 7, 7, 0.1);
 }
 
-/* Heading styling */
-.col-7 h1 {
+/* Heading inside hero */
+.col-7 h2 {
+  padding-top: 20px;
   font-weight: 900;
   font-size: 22px;
   color: #3A0000;
@@ -196,58 +209,26 @@ nav {
   overflow-wrap: break-word;
 }
 
-/* Paragraph styling */
+/* Paragraph inside hero */
 .col-7 p {
-  font-size: 14px;
+  font-size: 16px;
   color: #240404;
   line-height: 1.6;
   margin-bottom: 20px;
   overflow-wrap: break-word;
 }
 
-/* Horizontal rule - full width of content */
+/* Horizontal rule in hero */
 .col-7 hr {
   border: none;
   border-top: 2px solid #f27c7c;
   opacity: 0.7;
-  margin: 30px 0;
+  margin: 20px 0;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Responsive layout for smaller screens */
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-    padding: 30px 15px;
-  }
-
-  .col-7,
-  .col-5 {
-    padding: 0;
-    flex: none;
-    max-width: 100%;
-  }
-
-  .col-5 img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-  .col-7 h1 {
-    font-size: 2rem;
-  }
-
-  .col-7 p {
-    font-size: 1rem;
-  }
-
-  .col-7 hr {
-    margin: 20px 0;
-  }
-}
-
-  /* ====================== FOOTER =================== */
+/* =================== FOOTER =================== */
 .footer {
   background-color: #330505;
   color: #ffffff;
@@ -256,7 +237,7 @@ nav {
   text-align: center;
 }
 
-/* Container for all footer sections */
+/* Footer content flex container */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -272,7 +253,7 @@ nav {
   display: block;
 }
 
-/* Footer sections layout */
+/* Footer sections container */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -280,37 +261,34 @@ nav {
   gap: 30px;
 }
 
-/* Each section */
+/* Section titles */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-
 .footer-section h4 {
   font-size: 13px;
   margin-bottom: 5px;
 }
-
 .footer-section p {
   font-size: 13px;
   margin: 3px 0;
   color: #cccccc;
 }
 
-/* Links inside footer sections */
+/* Footer links */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
 .footer-section a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* Social Media Icons */
+/* Social & payment icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -319,22 +297,20 @@ nav {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
 }
 
-/* Footer bottom */
+/* Footer bottom bar */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -345,50 +321,32 @@ nav {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
-
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-
-
-/* =================== HAMBURGER =================== */
+/* =================== HAMBURGER MENU =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
-/* Hamburger active state (cross) */
+/* Hamburger active state → X */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -399,32 +357,35 @@ nav {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE STYLES =================== */
+
+/* Tablets & medium screens */
 @media (max-width: 768px) {
+  /* Navbar adjustments */
   .hamburger { display: flex; }
 
-  /* Menu styling */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
+    top: 80px; /* Below navbar */
     left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
+
   .menu_list ul li a {
     color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
+    padding: 12px 20px;
     font-size: 16px;
     text-align: left;
     border-right: none;
   }
 
-  /* Dropdown menu */
+  /* Mobile dropdown adjustments */
   .dropdown-content {
     position: static;
     display: none;
@@ -434,5 +395,51 @@ nav {
     padding: 5px 0;
   }
   .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .dropdown-content a {
+    color: white;
+    padding-left: 30px; /* Indent nested links */
+    display: block;
+  }
+
+  /* Hero row layout changes */
+  .row {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+  .col-7,
+  .col-5 {
+    padding: 0;
+    flex: none;
+    max-width: 100%;
+  }
+  .col-5 img { max-width: 100%; border-radius: 10px; }
+  .col-7 h1 { font-size: 2rem; }
+  .col-7 p { font-size: 1rem; }
+  .col-7 hr { margin: 20px 0; }
+
+  /* Footer adjustments */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-sections { flex-direction: column; gap: 20px; }
+}
+
+/* Small devices / phones */
+@media (max-width: 480px) {
+  /* Hero row tweaks for very small screens */
+  .row {
+    margin: 100px 10px 20px 10px;
+    padding: 20px;
+  }
+  .col-7 h1 { font-size: 1.6rem; }
+  .col-7 p { font-size: 0.9rem; }
+
+  /* Footer text & spacing */
+  .footer-sections { gap: 15px; text-align: center; }
+  .footer-section h3, .footer-section h4, .footer-section p { font-size: 12px; }
+  .social-icons img, .payment-methods-icons img { width: 25px; height: 25px; }
+
+  /* Optional: lighten background overlay slightly */
+  body::before { background-color: rgba(126, 69, 69, 0.3); }
 }

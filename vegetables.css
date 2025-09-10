@@ -1,34 +1,33 @@
 /* =================== RESET STYLES =================== */
-
-/* Reset margin and padding for all elements */
+/* Remove default spacing and normalize box-sizing */
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0; 
+  padding: 0; 
   box-sizing: border-box;
 }
 
-/* Set base font size, scrolling offset for fixed nav */
+/* Set base font and control scroll offset for sticky nav */
 html {
-  font-size: 80%;
-  scroll-padding-top: 150px;  /* accounts for fixed nav */
-  overflow-x: hidden;
-  height: 100%; /* ensure full height for flex layout */
+  font-size: 80%; 
+  scroll-padding-top: 150px; /* prevents nav overlap with anchors */
+  overflow-x: hidden;        /* stop horizontal scrollbars */
+  height: 100%;              /* enable flex-based layout */
 }
 
 /* ============ BODY BACKGROUND & BASE ============ */
 body {
   font-family: "Times New Roman", Times, serif;
-  line-height: 1.;
+  line-height: 1.2;
   color: #2b0d0d;
-  margin-top: 120px; /* push down content so nav doesn’t overlap */
+  margin-top: 120px; /* keeps content clear of nav bar */
   text-align: center;
 
-  /* Flex layout for sticky footer */
+  /* flex column ensures footer sticks at bottom */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
-  /* Background image + tint overlay */
+  /* background image + tint overlay */
   background-color: #ffe6e6;
   background-image: url('herad_images/naturalsugarsbackground.jpeg');
   background-repeat: no-repeat;
@@ -38,12 +37,13 @@ body {
   position: relative;
 }
 
+/* Overlay tint */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(126, 69, 69, 0.6); /* tint */
+  background-color: rgba(126, 69, 69, 0.6);
   z-index: -1;
 }
 
@@ -63,29 +63,28 @@ nav {
   color: white;
   padding: 0 20px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100vw;
   z-index: 1000;
 }
 
 .logo img {
-  width: 220px;
-  max-width: 100%;
+  width: 220px;             /* large on desktop */
+  max-width: 100%;          /* scale on small screens */
   object-fit: contain;
   display: block;
 }
 
-/* Nav menu */
+/* Nav menu container */
 .menu_list ul {
   font-size: 15px;
   list-style: none;
   display: flex;
-  gap: 0px;
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;           /* allow wrap on small screens */
+  margin: 0; padding: 0;
 }
 
+/* Nav links */
 .menu_list ul li a {
   color: black;
   background-color: #c77d83;
@@ -95,7 +94,7 @@ nav {
   padding: 15px 10px;
   display: block;
   transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap;
+  white-space: nowrap;       /* prevent breaking words */
 }
 
 .menu_list ul li a:hover {
@@ -104,16 +103,14 @@ nav {
   border-radius: 4px;
 }
 
-/* Dropdown */
-.menu_list ul li.dropdown {
-  position: relative;
-}
+/* Dropdown wrapper */
+.menu_list ul li.dropdown { position: relative; }
 
+/* Dropdown menu */
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%; left: 0;
   background-color: #660911;
   min-width: 220px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -130,111 +127,92 @@ nav {
   display: block;
   padding: 10px 16px;
   color: black;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .dropdown-content a:hover {
   background-color: #e09393;
   color: white;
 }
-/* ===================== MAIN CONTENT ===================== */
 
-/* Allow main to expand and push footer down */
+/* ===================== MAIN ===================== */
 main {
-  flex: 1;
+  flex: 1;       /* grows to fill space */
   width: 100%;
   display: block;
 }
 
-    /* ===================== HERO SECTION ===================== */
-/* Container for hero banner image and title */
+/* ===================== HERO SECTION ===================== */
 .hero-section {
-  position: relative; /* Allows absolute positioning for the heading */
-  width: 100%;        /* Full width */
-  height: 450px;      /* Adjust as needed for large banner */
-  overflow: hidden;   /* Hide anything that overflows */
+  position: relative;
+  width: 100%;
+  height: 450px; /* tall on desktop */
+  overflow: hidden;
 }
-
-/* Hero image styling */
 .hero-section img {
-  width: 100%;       /* Full width */
-  height: 100%;      /* Fill container height */
-  object-fit: cover; /* Crop or scale image to cover */
-  filter: brightness(70%); /* Darken image for text readability */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
 }
-
-/* Hero heading text */
 .hero-section h3 {
-  position: absolute;          /* Overlay text on image */
-  top: 50%;                    /* Center vertically */
-  left: 50%;                   /* Center horizontally */
-  transform: translate(-50%, -50%); /* Perfect centering */
-  font-family: 'Georgia', 'Times New Roman', serif;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Georgia', serif;
   font-size: 60px;
   font-weight: bold;
   color: #ffd700;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 4px;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-  z-index: 2; /* Ensure text is above image */
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+  z-index: 2;
 }
 
-/* Responsive adjustments for hero section */
+/* Responsive hero adjustments */
 @media (max-width: 768px) {
-  .hero-section {
-    height: 300px;
-  }
-  .hero-section h3 {
-    font-size: 40px;
-  }
+  .hero-section { height: 300px; }
+  .hero-section h3 { font-size: 40px; letter-spacing: 2px; }
 }
 @media (max-width: 480px) {
-  .hero-section {
-    height: 200px;
-  }
-  .hero-section h3 {
-    font-size: 28px;
-  }
+  .hero-section { height: 200px; }
+  .hero-section h3 { font-size: 28px; }
 }
 
 /* ===================== VEGETABLES SECTION ===================== */
 .veg-section {
-  max-width: 1200px;        /* Contain section */
-  padding: 20px 10px;       /* Space around */
-  margin: 0 auto;           /* Center it */
+  max-width: 1200px;
+  padding: 20px 10px;
+  margin: 0 auto;
 }
-
-/* Section Headings (Onions, Tomatoes, etc.) */
 .veg-section h3 {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: 'Georgia', serif;
   font-size: 60px;
   font-weight: bolder;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin: 0px 0 30px 0;
-  background: linear-gradient(45deg, black, #08e96dc7, black); /* Green shades */
+  margin: 0 0 30px 0;
+  background: linear-gradient(45deg, black, #08e96dc7, black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
 }
 
-/* Grid for each vegetable category */
+/* Grid for vegetables */
 .veg-section .category-grid {
   display: flex;
-  flex-wrap: wrap;          /* Wrap items */
-  gap: 25px;                /* Space between boxes */
-  justify-content: center;  /* Center content */
-  margin-bottom: 60px;      /* Space below each category */
+  flex-wrap: wrap; 
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 60px;
 }
-
-/* Individual vegetable item box */
 .veg-section .veg-item {
-  flex: 1 1 220px;          /* Flexible with min size */
-  max-width: 400px;         /* Limit max width */
-  background-color: #3a4e3a; /* Deep earthy green */
+  flex: 1 1 220px; 
+  max-width: 400px;
+  background-color: #3a4e3a;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -245,53 +223,38 @@ main {
               box-shadow 0.3s ease, 
               background-color 0.3s ease;
 }
-
-/* Images inside vegetable cards */
 .veg-section .veg-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;        /* Keep image ratio */
+  width: 100%; height: 300px;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
-
-/* Vegetable names */
 .veg-section .veg-item p {
   font-size: 20px;
   font-weight: bold;
-  color: #fff;              /* White for contrast */
+  color: #fff;
   text-align: center;
 }
-
-/* Hover Effects */
 .veg-section .veg-item:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-  background-color: #356f36; /* Slightly lighter green on hover */
+  background-color: #356f36;
 }
-.veg-section .veg-item:hover img {
-  transform: scale(1.05);
-}
+.veg-section .veg-item:hover img { transform: scale(1.05); }
 
-/* ===================== RESPONSIVE ===================== */
+/* Responsive vegetable grid */
 @media (max-width: 992px) {
   .veg-section .veg-item { flex: 1 1 45%; }
 }
-
 @media (max-width: 768px) {
   .veg-section h3 { font-size: 36px; }
   .veg-section .veg-item { flex: 1 1 100%; }
 }
-
 @media (max-width: 480px) {
   .veg-section .category-grid { flex-direction: column; gap: 20px; }
   .veg-section .veg-item { flex: 1 1 100%; }
 }
-
-
-
-
 
 /* ====================== FOOTER =================== */
 .footer {
@@ -302,7 +265,7 @@ main {
   text-align: center;
 }
 
-/* Container for all footer sections */
+/* Flex container for footer */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -310,7 +273,7 @@ main {
   gap: 20px;
 }
 
-/* Footer logo */
+/* Logo in footer */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -318,7 +281,7 @@ main {
   display: block;
 }
 
-/* Footer sections layout */
+/* Footer section containers */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -326,37 +289,34 @@ main {
   gap: 30px;
 }
 
-/* Each section */
+/* Section titles */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-
 .footer-section h4 {
   font-size: 13px;
   margin-bottom: 5px;
 }
-
 .footer-section p {
   font-size: 13px;
   margin: 3px 0;
   color: #cccccc;
 }
 
-/* Links inside footer sections */
+/* Footer links */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
 .footer-section a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* Social Media Icons */
+/* Social & payment icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -365,22 +325,20 @@ main {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
 }
 
-/* Footer bottom */
+/* Footer bottom bar */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -391,17 +349,15 @@ main {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
-
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
+/* Responsive footer */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -412,29 +368,34 @@ main {
     gap: 20px;
   }
 }
-
-
+@media (max-width: 480px) {
+  .footer-sections {
+    gap: 15px;
+    text-align: center;
+  }
+  .footer-section h3, .footer-section h4, .footer-section p {
+    font-size: 12px;
+  }
+}
 
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none;                /* Visible only on mobile */
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
-/* Hamburger active state (cross) */
+/* Transform hamburger → X */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -445,32 +406,32 @@ main {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE NAV =================== */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 
-  /* Menu styling */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
+    top: 80px; /* Below navbar */
     left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
+
   .menu_list ul li a {
     color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
+    padding: 12px 20px;
     font-size: 16px;
     text-align: left;
     border-right: none;
   }
 
-  /* Dropdown menu */
+  /* Mobile dropdown */
   .dropdown-content {
     position: static;
     display: none;
@@ -480,5 +441,9 @@ main {
     padding: 5px 0;
   }
   .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .dropdown-content a {
+    color: white;
+    padding-left: 30px; /* indent nested links */
+    display: block;
+  }
 }

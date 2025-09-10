@@ -1,119 +1,137 @@
-/* =================== RESET STYLES =================== */
-
-/* Reset margin and padding for all elements, and include padding and border in element's total width and height */
+/* =======================================================
+   RESET STYLES
+   Reset default browser margin/padding and set box-sizing
+======================================================= */
 * {
-  margin: 0;                 /* Remove all default margins */
-  padding: 0;                /* Remove all default paddings */
-  box-sizing: border-box;    /* Ensure padding + border don’t increase width/height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-/* Root HTML element */
 html {
-  font-size: 80%;               /* Base font size (relative units scale better on small screens) */
-  scroll-padding-top: 120px;    /* Offset for anchor links to avoid overlapping fixed nav */
-  overflow-x: hidden;           /* Prevent unwanted horizontal scrollbars */
+  font-size: 80%;
+  scroll-padding-top: 100px;
+  overflow-x: hidden;
 }
-
-/* =================== BODY STYLING =================== */
+/* =======================================================
+   BODY STYLING
+   Background image, typography, overlay
+======================================================= */
 body {
-  font-family: "Times New Roman", Times, serif; /* Elegant serif font */
-  line-height: 1;                               /* Compact line height */
-  color: #2b0d0d;                               /* Dark brown text */
-  margin-top: 120px;                            /* Push content below navbar */
-  text-align: center;                           /* Center align text by default */
-
-  /* Background styles */
-  background-color: #ffe6e6;                    /* Fallback soft pink background */
-  background-image: url('herad_images/fruitsbackground.jpeg'); /* Decorative bg image */
-  background-repeat: no-repeat;                 /* No tiling */
-  background-size: cover;                       /* Scale to cover full screen */
-  background-position: center;                  /* Keep image centered */
-  background-attachment: fixed;                 /* Parallax effect (stays in place) */
-
-  position: relative;                           /* For overlay positioning */
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.7;
+  color: #2b0d0d;
+  margin-top: 0;
+  text-align: center;
+  background-color: #ffe6e6;
+  background-image: url('herad_images/naturalsugarsbackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
 }
-
-/* Overlay tint to darken/soften background image */
 body::before {
-  content: "";                                  /* Empty pseudo-element */
-  position: fixed;                              /* Sticks to viewport */
+  content: "";
+  position: fixed;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(126, 69, 69, 0.8);     /* Transparent maroon overlay */
-  z-index: -1;                                  /* Stay behind content */
+  width: 100%; height: 100%;
+  background-color: rgba(126, 69, 69, 0.55);
+  z-index: -1;
 }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-background: linear-gradient(90deg, #5c1a1a, #8b2e2e); /* Gradient background */
-box-shadow: 0 2px 8px rgba(0,0,0,0.3);                /* Shadow for depth */
-position: sticky;                                    /* Sticks to top on scroll */
-top: 0;                                              /* Stick point */
-z-index: 1100;                                       /* Stay above all content */
+  background-image: url("herad_images/Herad-vegetables.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(7,7,7,0.4);
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
 }
 
-/* Menu links inside navigation */
+.logo img {
+  width: 220px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Nav menu */
+.menu_list ul {
+  font-size: 15px;
+  list-style: none;
+  display: flex;
+  gap: 0px;
+  margin: 0;
+  padding: 0;
+}
+
 .menu_list ul li a {
-color: #fff;                                /* White text */
-padding: 15px 20px;                         /* Spacing for clickability */
-text-decoration: none;                      /* Remove underlines */
-font-weight: 600;                           /* Semi-bold */
-position: relative;                         /* Needed for underline effect */
-transition: color 0.3s ease;                /* Smooth color transition */
+  color: black;
+  background-color: #c77d83;
+  border-right: 1px solid #692727;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 15px 10px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
-/* Decorative hover underline animation */
-.menu_list ul li a::after {
-content: "";                                /* Pseudo element */
-position: absolute;
-width: 0%;                                  /* Initially hidden */
-height: 2px;                                /* Thin underline */
-bottom: 5px;                                /* Place near text */
-left: 0;
-background: #ffd700;                        /* Golden underline */
-transition: width 0.3s ease;                /* Animate growth */
-}
-.menu_list ul li a:hover::after {
-width: 100%;                                /* Expand fully on hover */
-}
 .menu_list ul li a:hover {
-color: #ffd700;                             /* Change text color to gold */
+  background-color: #692727;
+  color: white;
+  border-radius: 4px;
 }
 
-/* Dropdown menu styling */
+/* Dropdown */
+.menu_list ul li.dropdown {
+  position: relative;
+}
+
 .dropdown-content {
-background: rgba(50, 0, 0, 0.95);           /* Dark red semi-transparent */
-box-shadow: 0 4px 10px rgba(0,0,0,0.4);     /* Depth shadow */
-border-radius: 4px;                         /* Rounded corners */
-animation: fadeIn 0.3s ease;                /* Smooth fade animation */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #660911;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1001;
+  padding: 8px 0;
 }
+
+.menu_list ul li.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .dropdown-content a:hover {
-background: #8b2e2e;                        /* Highlight item */
-color: #ffd700;                             /* Gold text */
+  background-color: #e09393;
+  color: white;
 }
 
-/* Hamburger icon styling (3 bars) */
-.hamburger span {
-background-color: white;                    /* White bars */
-transition: all 0.3s ease;                  /* Smooth transform */
-}
-/* Animate bars into "X" when active */
-.hamburger.active span:nth-child(1) {
-transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-opacity: 0;                                 /* Middle bar disappears */
-}
-.hamburger.active span:nth-child(3) {
-transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Fade-in animation for dropdown menus */
-@keyframes fadeIn {
-from {opacity: 0; transform: translateY(-10px);}  /* Start faded above */
-to   {opacity: 1; transform: translateY(0);}      /* End visible in place */
-}
 
 /* ===================== HERO / FRUIT SECTION ===================== */
 

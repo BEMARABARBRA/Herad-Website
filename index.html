@@ -152,7 +152,7 @@
         <h3>Payment Methods</h3>
         <div class="payment-methods-icons">
           <a href="https://wa.me/256753044293" target="_blank">
-            <img src="herad_images/__Airtel_Wallpapers_on_WallpaperSafari-removebg-preview.png" alt="Airtel" />
+            <img src="herad_images/airtel_logonew.png" alt="Airtel" />
           </a>
           <a href="https://wa.me/256772593424" target="_blank">
             <img src="herad_images/Herad-MTN_logo.png" alt="MTN" />
@@ -161,7 +161,7 @@
             <img src="herad_images/MasterCard_Black_Logo-removebg-preview.png" alt="MasterCard" />
           </a>
           <a href="YOUR_EQUITY_BANK_PAYMENT_LINK" target="_blank">
-            <img src="herad_images/Herad-_Visa_Card.png" alt="Pay with Equity Bank" />
+            <img src="herad_images/Black_Visa_Card-removebg-preview.png" alt="Pay with Equity Bank" />
           </a>
           
           <a href="https://wa.me/256778943330" target="_blank">
@@ -208,33 +208,22 @@
 
 
 
-  <script>
-  // Select hamburger button and nav menu
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector("nav ul");
+<script>
+  // Toggle mobile menu
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu_list ul');
 
-  // Toggle menu visibility and hamburger animation
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");       // show/hide menu
-    hamburger.classList.toggle("active");     // animate hamburger to X
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('active');
   });
 
-  // Close mobile menu when a link is clicked
-  document.querySelectorAll("nav ul li a").forEach(link => {
-    link.addEventListener("click", () => {
+  // Handle dropdown clicks on mobile
+  document.querySelectorAll('.menu_list ul li.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
-        navMenu.classList.remove("active");   // close menu
-        hamburger.classList.remove("active"); // reset hamburger
-      }
-    });
-  });
-
-  // Mobile dropdown toggle
-  document.querySelectorAll("nav ul li.dropdown > a").forEach(link => {
-    link.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();                   // prevent page navigation
-        link.parentElement.classList.toggle("active"); // toggle dropdown
+        e.preventDefault(); // prevent navigation
+        link.parentElement.classList.toggle('active');
       }
     });
   });

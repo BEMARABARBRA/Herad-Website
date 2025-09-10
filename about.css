@@ -135,40 +135,45 @@ nav {
 
 /* =================== HERO SECTION =================== */
 .hero-section {
+  /* Background image setup */
   background: url('herad_images/hero-background.jpeg') no-repeat center/cover;
-  min-height: 70vh;
+  min-height: 70vh;                  /* Make hero at least 70% of viewport height */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
+  justify-content: center;           /* Center content horizontally */
+  align-items: center;               /* Center content vertically */
+  padding: 0 20px;                   /* Horizontal padding */
   text-align: center;
   color: #fff;
   position: relative;
-  box-shadow: inset 0 0 0 1000px rgba(43, 13, 13, 0.45);
+  box-shadow: inset 0 0 0 1000px rgba(43, 13, 13, 0.45); /* Dark overlay */
   border-radius: 20px;
   margin: 30px auto;
-  max-width: 1200px;
+  max-width: 1200px;                 /* Limit max width */
+  width: 95%;                        /* Ensure responsiveness */
 }
+
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Subtle shadow for readability */
 }
+
 .hero-content p {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  max-width: 700px;
+  max-width: 700px;                 /* Limit paragraph width */
   margin-left: auto;
   margin-right: auto;
 }
+
 .btn-primary {
   background-color: #c77d83;
   color: white;
   padding: 12px 30px;
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: 700;
   border: none;
   border-radius: 5px;
@@ -177,52 +182,34 @@ nav {
   box-shadow: 0 4px 8px rgba(79, 18, 18, 0.4);
   transition: background-color 0.3s ease;
 }
+
 .btn-primary:hover {
   background-color: #692727;
 }
 
-/* =================== SECTIONS =================== */
 
-.about-section {
-  width: 80%;                       /* Wider section for better readability */
-  max-width: 1000px;
-  margin-top: 150px;                /* Center horizontally with top/bottom spacing */
-  padding: 30px 40px;               /* Comfortable padding */
-  border-radius: 20px;              /* Rounded corners */
-  background-color: rgba(253, 240, 240, 0.95); /* Soft light background */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);     /* Subtle shadow for depth */
-  border-left: 6px solid rgb(226, 11, 11);     /* Accent borders */
-  border-right: 6px solid rgb(226, 11, 11);
-  color: #690909;                   /* Text color */
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.7;
-  text-align: justify;
-  transition: transform 0.3s, box-shadow 0.3s;
-} 
-
-/* =================== ABOUT SECTION =================== */
+/* =================== ABOUT & SLOGAN SECTIONS =================== */
 .about-section,
 .slogan-section {
-  font-size: 1.6rem;  /* larger font size for both */
-  width: 80%;          /* same width for both */
-  max-width: 1000px;   /* same max width */
-  margin-top: 150px ;   /* center with consistent spacing */
+  font-size: 1.6rem;
+  width: 80%;                       /* Consistent width */
+  max-width: 1000px;
+  margin-top: 150px;
   padding: 30px 40px;
   border-radius: 25px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   border-left: 6px solid rgb(226, 11, 11);
   border-right: 6px solid rgb(226, 11, 11);
   background-color: rgba(253, 240, 240, 0.95);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-/* Hover effect for subtle lift */
 .about-section:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* Section heading */
+/* Section headings */
 .about-section h3 {
   font-size: 2.8rem;
   text-align: center;
@@ -230,7 +217,7 @@ nav {
   color: rgb(133, 32, 32);
 }
 
-/* Paragraph styling */
+/* Paragraphs */
 .about-section p {
   font-size: 1.6rem;
   line-height: 1.8;
@@ -244,10 +231,9 @@ nav {
   font-weight: 700;
 }
 
-
-
+/* Generic section container */
 section {
-  padding: 40px 15%;
+  padding: 40px 10%;                 /* Reduced for mobile responsiveness */
   margin: 20px auto;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -255,28 +241,28 @@ section {
   position: relative;
   overflow: hidden;
   border-left: 6px solid transparent;
-  /* Remove shared background */
 }
+
 
 /* =================== CARDS ROW =================== */
 .cards-row {
   display: flex;
-  flex-wrap: wrap;           /* allow wrapping on smaller screens */
+  flex-wrap: wrap;                   /* Wrap on smaller screens */
   justify-content: center;
   align-items: stretch;
-  gap: 30px;                 /* more spacing between cards */
+  gap: 30px;
   margin: 40px 0;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Each card with larger size */
+/* Individual card styling */
 .card-section {
-  font-size: 1.0rem;
-  flex: 0 1 calc(40% - 20px); /* bigger width for larger cards */
-  min-width: 300px;            /* ensure cards don’t shrink too small */
-  aspect-ratio: 1 / 1;         /* keep square shape */
+  font-size: 1rem;
+  flex: 0 1 calc(40% - 20px);       /* Two cards per row on desktop */
+  min-width: 300px;
+  aspect-ratio: 1 / 1;               /* Maintain square shape */
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 4px 4px rgba(0,0,0,0.05);
@@ -294,36 +280,35 @@ section {
   text-align: left;
 }
 
-/* Unique backgrounds for each card */
-.card-section:nth-child(1) { background-color: rgba(248, 184, 186, 0.8); }
-.card-section:nth-child(2) { background-color: rgba(248, 184, 186, 0.8); }
-.card-section:nth-child(3) { background-color: rgba(248, 184, 186, 0.8); }
+.card-section:nth-child(1),
+.card-section:nth-child(2),
+.card-section:nth-child(3) {
+  background-color: rgba(248, 184, 186, 0.8);
+}
 
-/* Remove list style inside cards completely */
 .card-section ul {
-  list-style: none;
+  list-style: none;                  /* Remove bullet points */
   padding: 0;
   margin: 0;
 }
 
 .card-section p {
   font-size: 1.2rem;
-  text-align: justify;      /* lines fill the width */
-  text-align-last: center;  /* last line is centered */
+  text-align: justify;
+  text-align-last: center;
   margin: 10px 0;
   line-height: 1.6;
   color: #080000;
 }
 
-
-/* Hover effect */
+/* Card hover effect */
 .card-section:hover {
-  transform: translateY(-5px) scale(1.05); /* slightly bigger scale on hover */
+  transform: translateY(-5px) scale(1.05);
   box-shadow: 0 16px 28px rgba(0,0,0,0.15), 0 8px 8px rgba(0,0,0,0.06);
 }
 
 
-/* SLOGAN SECTION */
+/* =================== SLOGAN SECTION =================== */
 .slogan-section {
   padding: 50px 30px;
   margin: 40px auto;
@@ -336,19 +321,84 @@ section {
   border-left: 6px solid rgb(226, 11, 11);
   border-right: 6px solid rgb(226, 11, 11);
 }
-.slogan-section p{
+
+.slogan-section p {
   font-size: 16px;
   font-weight: 600;
   color: #af0f0f;
   line-height: 1.5;
 }
+
 .slogan-section h5 {
-  font-size: 2.0rem;
+  font-size: 2rem;
   margin-top: 15px;
   color: #700a0d;
   font-weight: 700;
 }
 
+
+/* =================== RESPONSIVE MEDIA QUERIES =================== */
+
+/* Medium screens (tablet) */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 15px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  .btn-primary {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+
+  /* Stack cards vertically */
+  .cards-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card-section {
+    flex: 1 1 100%;
+    min-width: auto;
+    aspect-ratio: auto;             /* Let height adjust naturally */
+  }
+
+  /* About & Slogan */
+  .about-section,
+  .slogan-section {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0 10px;
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .btn-primary {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+
+  .cards-row { gap: 15px; }
+  .card-section { padding: 15px; }
+
+  .about-section,
+  .slogan-section {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+}
 
 /* ====================== FOOTER =================== */
 .footer {

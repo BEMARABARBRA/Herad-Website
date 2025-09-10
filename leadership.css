@@ -116,163 +116,158 @@ nav {
   color: white;
 }
 
-/* ==================== HERO SECTION CONTAINER ===================== */
+/*==================== HERO CONTENT ====================*/
 .hero-content {
-  max-width: 1200px;          /* Limit the width for better readability */
-  margin: 0 auto;              /* Center the section horizontally */
-  padding: 40px 20px;          /* Add spacing around the content */
+  max-width: 1200px;             /* Limit container width */
+  margin: 0 auto;                /* Center horizontally */
+  padding: 40px 20px;            /* Inner spacing */
+  text-align: center;            /* Default text alignment */
 }
 
-/* ==================== HERO TEXT (Title and Subtitle) =================== */
+/*==================== HERO TEXT ====================*/
 .hero-text h1 {
-  background: linear-gradient(135deg, rgba(175, 60, 60, 0.7) 0%, rgba(121,65,65,0.7) 100%);
-  color: white; /* Make text white to stand out */
-  padding: 20px 20px;
-  font-size: 50px;           /* Large main heading */
-  color: #701f1f;              /* Dark blue-gray color */
-  text-align: center;           /* Centered text */
-  margin-bottom: 10px;          /* Space below the heading */
+  background: linear-gradient(135deg, rgba(175,60,60,0.7), rgba(121,65,65,0.7));
+  color: #701f1f;
+  padding: 20px;
+  font-size: clamp(2rem, 5vw, 50px); /* Responsive font size */
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.hero-text p {
-  font-size: 25px;           /* Slightly larger paragraph text */
-  color: #794141;                 /* Medium gray for subtitle */
-  text-align: center;           /* Centered text */
-  margin-bottom: 50px;          /* Space below the subtitle */
+/*==================== LEADERS TREE ====================*/
+.leaders-tree {
+  display: flex;
+  flex-direction: column;        /* Stack rows vertically */
+  align-items: center;
+  gap: 60px;                     /* Space between rows */
 }
 
-/* =================== CENTERED LEADER (Henry Ndinaiwe) ===================== */
-.centered-leader {
-  display: flex;               /* Use flexbox for horizontal alignment */
-  justify-content: center;      /* Center the card horizontally */
-  margin-bottom: 50px;          /* Space below Henry’s card */
+/*==================== ROWS ====================*/
+/*==================== ROWS ====================*/
+/* First row: CEO centered */
+.first-row {
+  display: flex;
+  justify-content: center; /* CEO stays centered */
+  flex-wrap: wrap;
+  gap: 60px;
 }
 
-/* Individual leader card styling */
-.centered-leader .leader-card {
-  margin-top: 20px;
-  border-right: 10px solid #701c10; /* Border at right for card */
-  display: flex;               /* Flex for image + text side by side */
-  align-items: center;          /* Align vertically */
-  gap: 40px;                    /* Space between image and text */
-  background: #c99595;          /* Light gray background */
-  padding: 20px;                /* Inner spacing */
-  border-radius: 12px;          /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(22, 1, 1, 0.0); /* Subtle shadow */
+/* Second row: 2 leaders per row, stretch on large screens */
+.second-row,
+.third-row {
+  display: flex;
+  justify-content: space-between; /* Cards spread out to use full width */
+  flex-wrap: wrap;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px; /* Limit total row width */
 }
 
-/* Image styling */
-.centered-leader .leader-card img {
-  background-color: #b17c7c;
-  width: 200px;                 /* Fixed width for uniformity */
-  height: 240px;                /* Fixed height for uniformity */
-  border-radius: 12px;          /* Rounded corners on image */
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1); /* Subtle image shadow */
-  object-fit: cover;            /* Cover image inside box */
+/*==================== CEO CARD ====================*/
+.ceo-card {
+  display: flex;                 /* Image left, text right */
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;                     
+  background: #c99595;
+  padding: 40px;                 
+  border-radius: 12px;
+  border-right: 8px solid #701c10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 500px;              /* Centered alone */
 }
 
-/* Leader info text */
-.leader-info h2 {
-  font-size: 30px;
-  margin: 0 0 5px;              /* Small spacing below name */
-  color: #3a0b03;               /* Theme green for emphasis */
-}
-
-.leader-info h4 {
-  font-size: 15px;
-  margin: 0 0 10px;             /* Spacing below title */
-  /* font-style: italic; */       /* Italic style for position */
-  color: #3a3535;                  /* Medium gray */
-}
-
-.leader-info p {
-  margin: 0;
-  color: #333;                  /* Dark gray for description */
-  line-height: 1.5;             /* Comfortable line spacing */
-}
-
-/* ====================== REMAINING LEADERS GRID (Two per row) ==================== */
-.leaders-grid {
-  display: grid;                       /* Use CSS grid */
-  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-  gap: 30px;                            /* Space between cards */
-}
-
-/* Individual leader card in grid */
-.leaders-grid .leader-card {
-  border-right: 10px solid #701c10; /* Border at right for card */
-  display: flex;                        /* Flex for image + text */
-  align-items: center;                  /* Vertically center content */
-  gap: 20px;                             /* Space between image and text */
-  background: #C99595;                  /* Light gray card */
-  padding: 20px;                         /* Inner spacing */
-  border-radius: 12px;                   /* Rounded corners */
-  box-shadow: 0px 4px 10px rgba(22, 1, 1, 0.1); /* Subtle shadow */
-}
-
-/* Grid leader images */
-.leaders-grid .leader-card img {
-  background-color: #b17c7c;
-  width: 150px;                         /* Fixed width for all images */
-  height: 250px;                        /* Fixed height for all images */
-  border-radius: 12px;                  /* Rounded corners */
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1); /* Subtle shadow */
-  object-fit: cover;                    /* Cover image inside box */
-}
-
-/* ========================= LEADER CARD HOVER EFFECT ========================= */
+/*==================== LEADER CARDS ====================*/
 .leader-card {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 20px;
-  background: #1d1414;
-  padding: 20px;
+  gap: 30px;
+  background: #c99595;
+  padding: 40px;
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+  border-right: 8px solid #701c10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(50% - 30px); /* Two cards per row with gap accounted for */
+  max-width: 550px;
 }
-
-/* Hover state for entire card */
-.leader-card:hover {
-  transform: scale(1.03);               /* Slight zoom of the entire card */
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.2); /* Deeper shadow for lift effect */
-}
-
-/* Maintain image styling inside card */
+/*==================== IMAGE STYLING ====================*/
+.ceo-card img,
 .leader-card img {
-  width: 120px;
-  height: 120px;
+  width: auto;                   
+  height: 220px;                 
+  object-fit: contain;           /* Do not crop images */
   border-radius: 12px;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease; /* Optional: subtle image zoom too */
 }
 
-/* Optional: also slightly zoom image on hover for extra pop */
-.leader-card:hover img {
+/*==================== INFO CONTAINER ====================*/
+.leader-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 15px;                     /* Space between h2, h4, p */
+  flex: 1;                        /* Use remaining space for text */
+  padding: 10px 0;                /* Add vertical padding */
+}
+
+/*==================== HOVER EFFECT ====================*/
+.leader-card:hover,
+.ceo-card:hover {
+  transform: scale(1.03);        
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.leader-card:hover img,
+.ceo-card:hover img {
   transform: scale(1.05);
 }
 
-/* ===================== RESPONSIVE DESIGN (Mobile) ================ */
-@media (max-width: 768px) {
-  /* Stack the grid cards vertically on small screens */
-  .leaders-grid {
-    grid-template-columns: 1fr;         /* One card per row */
-  }
-
-  /* Stack image and text vertically */
+/*==================== RESPONSIVE DESIGN ====================*/
+@media (max-width: 992px) {
+  .ceo-card,
   .leader-card {
-    flex-direction: column;             /* Column layout */
-    align-items: center;                /* Center items */
-    text-align: center;                 /* Center text */
+    flex-direction: column;      /* Stack image above text on tablets */
+    align-items: center;
+    text-align: center;
   }
 
-  /* Reduce image width and add spacing on mobile */
+  .leader-info {
+    justify-content: center;
+    gap: 10px;
+    padding: 0;                  
+  }
+
+  .ceo-card img,
   .leader-card img {
-    margin-bottom: 15px;                /* Space below image */
-    width: 60%;                        /* Slightly smaller on mobile */
-    height: auto;                     /* Maintain aspect */
+    width: 70%;
+    height: auto;               
+  }
+
+  .leader-card {
+    width: 70%;                  
+    max-width: 500px;
   }
 }
+
+@media (max-width: 576px) {
+  .leader-card,
+  .ceo-card {
+    width: 90%;                  
+  }
+
+  .ceo-card img,
+  .leader-card img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+
 
 /* ====================== FOOTER =================== */
 .footer {
@@ -283,7 +278,7 @@ nav {
   text-align: center;
 }
 
-/* Container for all footer sections */
+/* Flex container for footer */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -291,7 +286,7 @@ nav {
   gap: 20px;
 }
 
-/* Footer logo */
+/* Logo in footer */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -299,7 +294,7 @@ nav {
   display: block;
 }
 
-/* Footer sections layout */
+/* Footer section containers */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -307,37 +302,34 @@ nav {
   gap: 30px;
 }
 
-/* Each section */
+/* Section titles */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-
 .footer-section h4 {
   font-size: 13px;
   margin-bottom: 5px;
 }
-
 .footer-section p {
   font-size: 13px;
   margin: 3px 0;
   color: #cccccc;
 }
 
-/* Links inside footer sections */
+/* Footer links */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
 .footer-section a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* Social Media Icons */
+/* Social & payment icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -346,22 +338,20 @@ nav {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
 }
 
-/* Footer bottom */
+/* Footer bottom bar */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -372,17 +362,15 @@ nav {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
-
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
+/* Responsive footer */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -393,29 +381,34 @@ nav {
     gap: 20px;
   }
 }
-
-
+@media (max-width: 480px) {
+  .footer-sections {
+    gap: 15px;
+    text-align: center;
+  }
+  .footer-section h3, .footer-section h4, .footer-section p {
+    font-size: 12px;
+  }
+}
 
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none;                /* Visible only on mobile */
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
-/* Hamburger active state (cross) */
+/* Transform hamburger → X */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -426,32 +419,32 @@ nav {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE NAV =================== */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 
-  /* Menu styling */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
+    top: 80px; /* Below navbar */
     left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
+
   .menu_list ul li a {
     color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
+    padding: 12px 20px;
     font-size: 16px;
     text-align: left;
     border-right: none;
   }
 
-  /* Dropdown menu */
+  /* Mobile dropdown */
   .dropdown-content {
     position: static;
     display: none;
@@ -461,5 +454,9 @@ nav {
     padding: 5px 0;
   }
   .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .dropdown-content a {
+    color: white;
+    padding-left: 30px; /* indent nested links */
+    display: block;
+  }
 }

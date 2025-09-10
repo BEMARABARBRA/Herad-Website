@@ -10,108 +10,105 @@
 
 <body>
 
-<!-- HEADER -->
+<!--===================== HEADER / NAVIGATION =======================-->
 <!-- HEADER -->
 <header>
-  <nav>
-    
-    <!-- Logo Section on the left -->
-    <div class="logo">
+    <nav>
+      <!-- Logo Section on the left -->
+  <div class="logo">
       <!-- Company logo image wrapped in a link to index page -->
       <a href="index.html">
         <!-- Responsive logo image: max-width 100% and height auto -->
         <img src="herad_images/herad_logo.jpg" alt="Herad Logo" style="max-width: 100%; height: auto;" />
 
       </a>
-    </div>
-
-
-    <!-- Navigation Menu -->
-    <div class="menu_list">
-      <ul>
-        <!-- ABOUT US Dropdown -->
-        <li class="dropdown">
-          <a href="about.html">ABOUT US</a>
-          <div class="dropdown-content">
-            <a href="about.html">Herad Company</a>
-            <a href="leadership.html">Leadership</a>
+  </div>
+  <!-- Hamburger Menu for Mobile -->
+          <!-- Hamburger button in your nav -->
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-        </li>
 
-        <!-- WHAT WE DO Dropdown -->
-        <li class="dropdown">
-          <a href="what_we_do.html">WHAT WE DO</a>
-          <div class="dropdown-content">
-            <a href="growers.html">We Are Growers</a>
-            <a href="producers.html">We Are Processors</a>
-            <a href="exporters.html">We Are Exporters</a>
-            <a href="consultants.html">We Are Consultants</a>
-          </div>
-        </li>
+      <!-- Menu list -->
+      <div class="menu_list">
+<ul id="nav-links">
+        
+          <li class="dropdown">
+            <a href="about.html">ABOUT US</a>
+            <div class="dropdown-content">
+              <a href="about.html">Herad Company</a>
+              <a href="leadership.html">Leadership</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="what_we_do.html">WHAT WE DO</a>
+            <div class="dropdown-content">
+              <a href="growers.html">We Are Growers</a>
+              <a href="producers.html">We Are Processors</a>
+              <a href="exporters.html">We Are Exporters</a>
+              <a href="consultants.html">We Are Consultants</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="products.html">PRODUCTS FOR EXPORT</a>
+            <div class="dropdown-content">
+              <a href="fruits.html">Fruits</a>
+              <a href="vegetables.html">Vegetables</a>
+              <a href="spices.html">Spices</a> 
+              <a href="cereals.html">Cereals</a>
+              <a href="natural-sugars.html">Natural Sugars</a>
+              <a href="fats-oils.html">Fats and Oils</a>
+              <a href="meats.html">Meats | Fish | Poultry</a>
+              <a href="https://peshtech.github.io/HERAD-WEBSITE/">Tubers (Cassava)</a>
+              <a href="breverages.html">Beverages</a>
+              <a href="kombucha.html">Kombucha Products</a>
+              
+            </div>
+          </li>
 
-        <!-- PRODUCTS Dropdown -->
-        <li class="dropdown">
-          <a href="products.html">PRODUCTS FOR EXPORT</a>
-          <div class="dropdown-content">
-            <a href="fruits.html">Fruits</a>
-            <a href="vegetables.html">Vegetables</a>
-            <a href="spices.html">Spices</a> 
-            <a href="cereals.html">Cereals</a>
-            <a href="natural-sugars.html">Natural Sugars</a>
-            <a href="fats-oils.html">Fats and Oils</a>
-            <a href="meats.html">Meats | Fish | Poultry</a>
-            <a href="breverages.html">Beverages</a> <!-- typo: should be beverages.html -->
-            <a href="kombucha.html">Kombucha Products</a>
-          </div>
-        </li>
+          <li class="dropdown"><a href="tour.html">TOUR & TRAVEL</a></li>
+          <li class="dropdown"><a href="consultancy.html">CONSULTANCY</a></li>
+          <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
+          <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-        <!-- Other Menu Items -->
-        <li class="dropdown"><a href="tour.html">TOUR & TRAVEL</a></li>
-        <li class="dropdown"><a href="consultancy.html">CONSULTANCY</a></li>
-        <li class="dropdown"><a href="our_impact.html">OUR IMPACT</a></li>
-        <li class="dropdown"><a href="contacts.html">CONTACT US</a></li>
-      </ul>
-    </div>
-  </nav>
-</header>
-
-
-<!-- About Us Section -->
+<!--===================== ABOUT =======================-->
 <section class="about-section">
     <h3>About Us</h3>
     <p><strong>HERAD Intercontinental Services Ltd</strong> is a proudly Ugandan company transforming lives and uplifting communities through sustainable, diverse business solutions. We are committed to strengthening local industries, empowering entrepreneurs, and connecting Uganda to global markets.<br>
     Our business spans <strong>Fresh Fruit & Vegetable Exports, Beverages, SME Development, Hospitality, and Tour & Travel.</strong> Everything we do is guided by a commitment to impact, sustainability, and shared prosperity.</p>
 </section>
 
-<!-- Row Container for Vision, Mission, Why We Exist -->
+<!--===================== CARDS =======================-->
 <section class="cards-row">
-    <!-- Vision Card -->
     <div class="card-section vision-section">
         <h3>Our Vision</h3>
         <p>To build a prosperous and globally competitive Uganda by empowering local businesses, enhancing livelihoods, and promoting sustainable growth across multiple sectors.</p>
     </div>
 
-    <!-- Mission Card -->
     <div class="card-section mission-section">
         <h3>Our Mission</h3>
         <p>To deliver high-quality products and services that elevate Uganda’s position in regional and international markets, while improving lives, creating jobs, and supporting sustainable business growth.</p>
     </div>
 
-    <!-- Why We Exist Card -->
     <div class="card-section why-section">
         <h3>Why We Exist</h3>
-        <p>HERAD’s focus is <strong>beyond profit.</strong> We are committed to:</p>
-        <ul>
-            <li>Creating Jobs</li>
+        <p>HERAD's mission is to help Ugandan communities thrive by:</strong> We are committed to:</p>
+        <ol>
+            <li>Creating jobs.</li>
             <li>Raising Household Incomes</li>
-            <li>Uplifting Ugandan Communities</li>
-            <li>Promoting Uganda on the Global Stage</li>
-        </ul>
-        <p>We believe in <strong>sustainable growth</strong> that benefits <strong>everyone along the value chain,</strong> from the farmer to the final consumer.</p>
+            <li>Promoting Uganda on the world stage.</li>
+        </ol><br>
+        <p>HERAD focuses on<strong> inclusive, sustainable growth </strong>that benefits everyone in the value chain, from farmers to consumers.</p>
     </div>
 </section>
 
-<!-- Company Slogan Section -->
+<!--===================== SLOGAN =======================-->
 <section class="slogan-section">
     <h5>HERAD Intercontinental Services Ltd</h5>
     <p><i>From Farm to Global Markets. From Vision to Impact.</i></p>
@@ -169,7 +166,7 @@
         <h3>Payment Methods</h3>
         <div class="payment-methods-icons">
           <a href="https://wa.me/256753044293" target="_blank">
-            <img src="herad_images/__Airtel_Wallpapers_on_WallpaperSafari-removebg-preview.png" alt="Airtel" />
+            <img src="herad_images/airtel_logonew.png" alt="Airtel" />
           </a>
           <a href="https://wa.me/256772593424" target="_blank">
             <img src="herad_images/Herad-MTN_logo.png" alt="MTN" />
@@ -178,7 +175,7 @@
             <img src="herad_images/MasterCard_Black_Logo-removebg-preview.png" alt="MasterCard" />
           </a>
           <a href="YOUR_EQUITY_BANK_PAYMENT_LINK" target="_blank">
-            <img src="herad_images/Herad-_Visa_Card.png" alt="Pay with Equity Bank" />
+            <img src="herad_images/Black_Visa_Card-removebg-preview.png" alt="Pay with Equity Bank" />
           </a>
           
           <a href="https://wa.me/256778943330" target="_blank">
@@ -223,5 +220,30 @@
 </footer>
 
 
-</body>
+
+
+<!-- ============= js for hamburger on small screens ================================== -->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu_list ul');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active'); // Animate hamburger
+    menu.classList.toggle('active');      // Show/hide menu
+  });
+  
+  // Optional: Close dropdowns on mobile when clicking outside
+  document.addEventListener('click', function(e){
+    if(!menu.contains(e.target) && !hamburger.contains(e.target)) {
+      menu.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
+  });
+  </script>
+  
+  
+  
+  
+
+  </body>
 </html>

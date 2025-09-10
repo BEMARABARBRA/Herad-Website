@@ -1,45 +1,65 @@
 /* =======================================================
-   RESET & GLOBAL STYLES
+   RESET STYLES
+   Reset default browser margin/padding and set box-sizing
 ======================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  font-family: "Times New Roman", serif;
-  background-color: #fff5f5;
-  color: #4d0b0b;
-  line-height: 1.7;
+html {
+  font-size: 80%;
+  scroll-padding-top: 100px;
   overflow-x: hidden;
+}
+/* =======================================================
+   BODY STYLING
+   Background image, typography, overlay
+======================================================= */
+body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.7;
+  color: #2b0d0d;
+  margin-top: 0;
+  text-align: center;
+  background-color: #ffe6e6;
+  background-image: url('herad_images/coffeebackground.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative;
-  background-color: #f3d2d2;
-
+  min-height: 100vh;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(126, 69, 69, 0.55);
+  z-index: -1;
 }
 
-/* =======================================================
-   NAVIGATION BAR
-======================================================= */
+/* =================== NAVIGATION BAR =================== */
 nav {
   background-image: url("herad_images/Herad-vegetables.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-blend-mode: darken;
-  background-color: rgba(7, 7, 7, 0.4);
+  background-color: rgba(7,7,7,0.4);
   height: 130px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 2px 5px black;
+  color: white;
   padding: 0 20px;
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  width: 100vw;
   z-index: 1000;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 5px black;
-  color: white;
 }
 
 .logo img {
@@ -49,12 +69,14 @@ nav {
   display: block;
 }
 
-/* Menu list styles */
+/* Nav menu */
 .menu_list ul {
+  font-size: 15px;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  gap: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .menu_list ul li a {
@@ -75,7 +97,7 @@ nav {
   border-radius: 4px;
 }
 
-/* Dropdown menu */
+/* Dropdown */
 .menu_list ul li.dropdown {
   position: relative;
 }
@@ -85,8 +107,8 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #c77d83;
-  min-width: 200px;
+  background-color: #660911;
+  min-width: 220px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   z-index: 1001;
@@ -110,14 +132,15 @@ nav {
   color: white;
 }
 
-/* Hamburger Menu */
+/* ================== HAMBURGER MENU ================== */
 .hamburger {
-  display: none;
+  display: none; /* Only visible on mobile */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
   height: 22px;
   cursor: pointer;
+  z-index: 1100;
 }
 
 .hamburger span {
@@ -128,43 +151,45 @@ nav {
   transition: all 0.3s ease;
 }
 
+/* Transform hamburger to X when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* =======================================================
    MAIN CONTENT
 ======================================================= */
 main {
   max-width: 1200px;
-  margin: 150px auto 60px auto;
+  margin: 150px auto 60px auto; /* Add top margin for fixed navbar */
   padding: 60px 20px;
 }
 
-/* Sections */
+/* ================== SECTIONS ================== */
 section {
   margin-bottom: 60px;
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 12px 25px rgba(0,0,0,0.12);
   transition: transform 0.3s, box-shadow 0.3s;
-  opacity: 0;
-  transform: translateY(30px);
   background: linear-gradient(135deg, rgba(182, 27, 32, 0.85), rgba(241,237,234,0.85), rgba(182, 27, 32, 0.85));
-  position: relative;
-  overflow: hidden;
   border-left: 8px solid rgba(82, 5, 11, 0.7);
   border-right: 8px solid rgba(82, 5, 11, 0.7);
 }
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.8s ease-out;
-}
-
+/* Hover effect for sections */
 section:hover {
   transform: translateY(-5px);
   box-shadow: 0 18px 35px rgba(0,0,0,0.18);
 }
 
-/* Headings and text */
+/* Headings */
 h3, h4 {
   color: rgb(133, 32, 32);
   text-align: center;
@@ -172,6 +197,7 @@ h3, h4 {
   font-size: 30px;
 }
 
+/* Paragraphs */
 p {
   font-size: 1.05rem;
   color: #4d0b0b;
@@ -181,18 +207,17 @@ p {
   text-align-last: center;
 }
 
+/* Lists */
 ul {
   list-style: disc inside;
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
 ul li {
   margin: 10px 0;
   line-height: 1.6;
   transition: transform 0.3s, color 0.3s;
 }
-
 ul li:hover {
   transform: translateX(5px);
   color: #e21b1b;

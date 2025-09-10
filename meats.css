@@ -1,34 +1,26 @@
 /* =================== RESET STYLES =================== */
-
-/* Reset margin and padding for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Set base font size, scrolling offset for fixed nav */
 html {
   font-size: 80%;
-  scroll-padding-top: 150px;  /* accounts for fixed nav */
+  scroll-padding-top: 150px;
   overflow-x: hidden;
-  height: 100%; /* ensure full height for flex layout */
+  height: 100%;
 }
 
-/* ============ BODY BACKGROUND & BASE ============ */
 body {
   font-family: "Times New Roman", Times, serif;
   line-height: 1.4;
   color: #2b0d0d;
-  margin-top: 120px; /* push down content so nav doesn’t overlap */
+  margin-top: 120px;
   text-align: center;
-
-  /* Flex layout for sticky footer */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  /* Background image + tint overlay */
   background-color: #ffe6e6;
   background-image: url('herad_images/naturalsugarsbackground.jpeg');
   background-repeat: no-repeat;
@@ -43,7 +35,7 @@ body::before {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(126, 69, 69, 0.6); /* tint */
+  background-color: rgba(126, 69, 69, 0.6);
   z-index: -1;
 }
 
@@ -81,9 +73,10 @@ nav {
   font-size: 15px;
   list-style: none;
   display: flex;
-  gap: 0px;
+  gap: 0;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap; /* allow wrapping on small screens */
 }
 
 .menu_list ul li a {
@@ -104,7 +97,6 @@ nav {
   border-radius: 4px;
 }
 
-/* Dropdown */
 .menu_list ul li.dropdown {
   position: relative;
 }
@@ -140,37 +132,32 @@ nav {
 }
 
 /* ===================== MAIN CONTENT ===================== */
-
-/* Allow main to expand and push footer down */
 main {
   flex: 1;
   width: 100%;
   display: block;
 }
 
-    /* ===================== HERO SECTION ===================== */
-/* Container for hero banner image and title */
+/* ===================== HERO SECTION ===================== */
 .hero-section {
-  position: relative; /* Allows absolute positioning for the heading */
-  width: 100%;        /* Full width */
-  height: 400px;      /* Adjust as needed for large banner */
-  overflow: hidden;   /* Hide anything that overflows */
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
 }
 
-/* Hero image styling */
 .hero-section img {
-  width: 100%;       /* Full width */
-  height: 100%;      /* Fill container height */
-  object-fit: cover; /* Crop or scale image to cover */
-  filter: brightness(70%); /* Darken image for text readability */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
 }
 
-/* Hero heading text */
 .hero-section h3 {
-  position: absolute;          /* Overlay text on image */
-  top: 50%;                    /* Center vertically */
-  left: 50%;                   /* Center horizontally */
-  transform: translate(-50%, -50%); /* Perfect centering */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 60px;
   font-weight: bold;
@@ -179,35 +166,16 @@ main {
   text-align: center;
   letter-spacing: 4px;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-  z-index: 2; /* Ensure text is above image */
-}
-
-/* Responsive adjustments for hero section */
-@media (max-width: 768px) {
-  .hero-section {
-    height: 300px;
-  }
-  .hero-section h3 {
-    font-size: 40px;
-  }
-}
-@media (max-width: 480px) {
-  .hero-section {
-    height: 200px;
-  }
-  .hero-section h3 {
-    font-size: 28px;
-  }
+  z-index: 2;
 }
 
 /* ===================== MEATS / POULTRY / FISH SECTION ===================== */
 .meats-section {
-  max-width: 1200px;   /* Limit content width */
-  padding: 20px 10px;  /* Add spacing around */
-  margin: 0 auto;      /* Center horizontally */
+  max-width: 1200px;
+  padding: 20px 10px;
+  margin: 0 auto;
 }
 
-/* Section headings (MEATS, POULTRY, FISH) */
 .meats-section h3 {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 60px;
@@ -216,26 +184,24 @@ main {
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 0px 0 30px 0;
-  background: linear-gradient(45deg, black, #7e1616, black); /* Deep red > bright red > brown */
+  background: linear-gradient(45deg, black, #7e1616, black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Grid for each category */
 .meats-section .fruit-grid {
-  display: flex;            /* Use flexbox */
-  flex-wrap: wrap;          /* Allow wrapping */
-  gap: 25px;                /* Space between boxes */
-  justify-content: center;  /* Center content */
-  margin-bottom: 60px;      /* Space between sections */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 60px;
 }
 
-/* Individual item box (meat/poultry/fish) */
 .meats-section .fruit-box {
-  flex: 1 1 220px;         /* Flexible width, min 220px */
-  max-width: 550px;        /* Limit max size */
-  background-color: #5c1a1a; /* Deep maroon background */
+  flex: 1 1 220px;
+  max-width: 550px;
+  background-color: #5c1a1a;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -247,53 +213,32 @@ main {
               background-color 0.3s ease;
 }
 
-/* Images inside boxes */
 .meats-section .fruit-box img {
-  width: 100%;             /* Fill box */
-  height: 280px;           /* Fixed height */
-  object-fit: cover;       /* Crop neatly */
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
 
-/* Text below images */
 .meats-section .fruit-box p {
   font-size: 22px;
   font-weight: bold;
-  color: #fff;             /* White text for contrast */
+  color: #fff;
   text-align: center;
 }
 
-/* Hover effects */
 .meats-section .fruit-box:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-  background-color: #751f1f; /* Darker red on hover */
+  background-color: #751f1f;
 }
 .meats-section .fruit-box:hover img {
-  transform: scale(1.05); /* Subtle zoom on image */
+  transform: scale(1.05);
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 992px) { 
-  .meats-section .fruit-box { flex: 1 1 45%; } 
-}
-
-@media (max-width: 768px) { 
-  .meats-section h3 { font-size: 36px; }
-  .meats-section .fruit-box { flex: 1 1 100%; }
-}
-
-@media (max-width: 480px) {
-  .meats-section .fruit-grid { flex-direction: column; gap: 20px; }
-  .meats-section .fruit-box { flex: 1 1 100%; }
-}
-
-
-
-
-/* ====================== FOOTER =================== */
+/* ===================== FOOTER ===================== */
 .footer {
   background-color: #330505;
   color: #ffffff;
@@ -302,7 +247,6 @@ main {
   text-align: center;
 }
 
-/* Container for all footer sections */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -310,7 +254,6 @@ main {
   gap: 20px;
 }
 
-/* Footer logo */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
@@ -318,7 +261,6 @@ main {
   display: block;
 }
 
-/* Footer sections layout */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -326,37 +268,31 @@ main {
   gap: 30px;
 }
 
-/* Each section */
 .footer-section h3 {
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-
 .footer-section h4 {
   font-size: 13px;
   margin-bottom: 5px;
 }
-
 .footer-section p {
   font-size: 13px;
   margin: 3px 0;
   color: #cccccc;
 }
 
-/* Links inside footer sections */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
 .footer-section a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* Social Media Icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -365,22 +301,19 @@ main {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
 }
 
-/* Footer bottom */
 .footer-bottom {
   margin-top: 15px;
   padding-top: 10px;
@@ -391,50 +324,31 @@ main {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
-
 .footer-bottom a:hover {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-
-
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none;
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
-
-/* Hamburger active state (cross) */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -445,40 +359,39 @@ main {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE =================== */
+@media (max-width: 992px) {
+  .meats-section .fruit-box, .sugars-section .fruit-box {
+    flex: 1 1 45%;
+  }
+}
+
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
+  .hero-section { height: 300px; }
+  .hero-section h3 { font-size: 40px; }
 
-  /* Menu styling */
-  .menu_list ul {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
-    left: 0;
-    width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
-    padding: 10px 0;
-    z-index: 1099;
-  }
+  .meats-section h3, .sugars-section h3 { font-size: 36px; }
+  .meats-section .fruit-box, .sugars-section .fruit-box { flex: 1 1 100%; }
+
+  .footer-content { flex-direction: column; align-items: center; }
+  .footer-sections { flex-direction: column; gap: 20px; }
+
+  .menu_list ul { display: none; flex-direction: column; position: fixed; top: 80px; left: 0; width: 100vw; background-color: rgba(50, 0, 0, 0.95); padding: 10px 0; z-index: 1099; }
   .menu_list ul.active { display: flex; }
-  .menu_list ul li a {
-    color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
-    font-size: 16px;
-    text-align: left;
-    border-right: none;
-  }
-
-  /* Dropdown menu */
-  .dropdown-content {
-    position: static;
-    display: none;
-    background-color: #692727;
-    margin: 5px 0;
-    border-radius: 4px;
-    padding: 5px 0;
-  }
+  .menu_list ul li a { color: white; padding: 12px 20px; font-size: 16px; text-align: left; border-right: none; }
+  .dropdown-content { position: static; display: none; background-color: #692727; margin: 5px 0; border-radius: 4px; padding: 5px 0; }
   .menu_list ul li.active .dropdown-content { display: block; }
   .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .hero-section { height: 200px; }
+  .hero-section h3 { font-size: 28px; }
+
+  .footer-sections { gap: 15px; text-align: center; }
+  .footer-section h3, .footer-section h4, .footer-section p { font-size: 12px; }
+
+  .meats-section .fruit-grid, .sugars-section .fruit-grid { flex-direction: column; gap: 20px; }
+  .meats-section .fruit-box, .sugars-section .fruit-box { flex: 1 1 100%; }
 }

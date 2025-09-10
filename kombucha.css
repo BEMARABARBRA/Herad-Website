@@ -1,34 +1,31 @@
 /* =================== RESET STYLES =================== */
-
-/* Reset margin and padding for all elements */
+/* Reset margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding/border do not affect width */
 }
 
-/* Set base font size, scrolling offset for fixed nav */
+/* =================== HTML BASE =================== */
 html {
-  font-size: 80%;
-  scroll-padding-top: 150px;  /* accounts for fixed nav */
-  overflow-x: hidden;
-  height: 100%; /* ensure full height for flex layout */
+  font-size: 80%;           /* Base font size for responsive scaling */
+  scroll-padding-top: 150px; /* Avoid overlap with fixed nav when using anchors */
+  overflow-x: hidden;       /* Prevent horizontal scroll */
+  height: 100%;             /* Full height for flex layout */
 }
 
-/* ============ BODY BACKGROUND & BASE ============ */
+/* =================== BODY =================== */
 body {
   font-family: "Times New Roman", Times, serif;
-  line-height: 1.;
+  line-height: 1.2;           /* Adjusted for readability */
   color: #2b0d0d;
-  margin-top: 90px; /* push down content so nav doesn’t overlap */
+  margin-top: 90px;           /* Push content below fixed navbar */
   text-align: center;
 
-  /* Flex layout for sticky footer */
-  display: flex;
+  display: flex;              /* Flex for sticky footer */
   flex-direction: column;
   min-height: 100vh;
 
-  /* Background image + tint overlay */
   background-color: #ffe6e6;
   background-image: url('herad_images/kombuchabackground3.jpeg');
   background-repeat: no-repeat;
@@ -38,13 +35,14 @@ body {
   position: relative;
 }
 
+/* Overlay tint for better readability */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(126, 69, 69, 0.7); /* tint */
-  z-index: -1;
+  background-color: rgba(126, 69, 69, 0.7);
+  z-index: -1; /* Push behind content */
 }
 
 /* =================== NAVIGATION BAR =================== */
@@ -60,7 +58,6 @@ nav {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 5px black;
-  color: white;
   padding: 0 20px;
   position: fixed;
   top: 0;
@@ -69,6 +66,7 @@ nav {
   z-index: 1000;
 }
 
+/* Logo styling */
 .logo img {
   width: 220px;
   max-width: 100%;
@@ -84,6 +82,7 @@ nav {
   gap: 0px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap; /* Wrap on smaller screens */
 }
 
 .menu_list ul li a {
@@ -104,13 +103,11 @@ nav {
   border-radius: 4px;
 }
 
-/* Dropdown */
-.menu_list ul li.dropdown {
-  position: relative;
-}
+/* Dropdown menu */
+.menu_list ul li.dropdown { position: relative; }
 
 .dropdown-content {
-  display: none;
+  display: none;             /* Hide dropdown initially */
   position: absolute;
   top: 100%;
   left: 0;
@@ -118,13 +115,11 @@ nav {
   min-width: 220px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 4px;
-  z-index: 1001;
   padding: 8px 0;
+  z-index: 1001;
 }
 
-.menu_list ul li.dropdown:hover .dropdown-content {
-  display: block;
-}
+.menu_list ul li.dropdown:hover .dropdown-content { display: block; }
 
 .dropdown-content a {
   display: block;
@@ -139,53 +134,44 @@ nav {
   color: white;
 }
 
-
-
-/* ===================== KOMBUCHAH SECTION ===================== */
-
-
-/* Wrapper section styling */
+/* =================== KOMBUCHAH SECTION =================== */
 .kombuchah-section {
-  max-width: 1200px;           /* Limit section width */
-  margin: 50px auto;           /* Center with top/bottom spacing */
+  max-width: 1200px;         /* Limit width */
+  margin: 50px auto;
   padding: 20px;
-  text-align: center;          /* Center align headings & text */
-  background: none;            /* Section itself has no background */
-  box-shadow: none;            /* Remove shadow */
-  border-radius: 0;            /* No rounding on section */
+  text-align: center;
 }
 
-/* Heading style with 3-color gradient */
 .kombuchah-section h3 {
   font-size: 60px;           /* Large heading */
   font-weight: bold;
-  margin-bottom: 40px;         /* Space before grid */
+  margin-bottom: 40px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  text-shadow: px 4px 12px rgb(116, 14, 14);
+  text-shadow: 1px 4px 12px rgb(116, 14, 14);
 
-  /* Gradient text with 3 colors */
+  /* Gradient text */
   background: linear-gradient(90deg, #da5954, #f5dfcf, #e45050);
-  -webkit-background-clip: text; /* Clip gradient to text */
-  -webkit-text-fill-color: transparent; /* Make text fill transparent */
-  background-clip: text;           /* Fallback for some browsers */
-  text-fill-color: transparent;    /* Fallback for some browsers */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
-/* Fruit grid container */
+/* Fruit grid using flex */
 .fruit-grid {
-  display: flex;               /* Line items side by side */
-  justify-content: center;     /* Center horizontally */
-  gap: 40px;                   /* Space between boxes */
-  flex-wrap: wrap;             /* Allow wrapping on small screens */
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Wrap on smaller screens */
 }
 
-/* Each fruit box with individual background */
+/* Fruit box card */
 .fruit-box {
-  background: linear-gradient(135deg, #f5deb6, #880d08); /* Gradient card background */
+  background: linear-gradient(135deg, #f5deb6, #880d08);
   border-radius: 12px;
   padding: 10px;
-  width: 300px;                /* Box width */
+  width: 300px;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
   display: flex;
@@ -193,27 +179,25 @@ nav {
   align-items: center;
 }
 
-/* Image styling */
+/* Image inside card */
 .fruit-box img {
-  width: 100%;                 /* Fill container width */
-  height: 280px;               /* Uniform height */
-  object-fit: cover;           /* Maintain aspect ratio */
-  border-radius: 12px;         /* Rounded edges */
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
-  background: rgba(255,255,255,0.2); /* Subtle background behind image */
-  padding: 5px;                /* Adds small space around image */
+  background: rgba(255,255,255,0.2);
+  padding: 5px;
 }
 
-/* Hover effect for fruit box */
+/* Hover effects */
 .fruit-box:hover {
-  transform: translateY(-8px);           /* Lift effect */
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2); /* Shadow on hover */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
-
-/* Hover effect on image */
 .fruit-box:hover img {
-  transform: scale(1.05);               /* Zoom effect */
+  transform: scale(1.05);
 }
 
 /* Text inside fruit box */
@@ -221,30 +205,10 @@ nav {
   font-size: 28px;
   font-weight: 700;
   color: white;
-  margin-top: 0px;
   text-align: center;
 }
 
-/* =================== Responsive Design =================== */
-@media (max-width: 768px) {
-  .fruit-grid {
-    gap: 20px;                 /* Reduce spacing on small screens */
-  }
-
-  .fruit-box {
-    width: 100%;               /* Full width on mobile */
-    max-width: 350px;          /* Limit width for readability */
-    margin: 0 auto;
-  }
-
-  .fruit-box img {
-    height: 220px;             /* Adjust image height for mobile */
-  }
-}
-
-
-
-/* ====================== FOOTER =================== */
+/* =================== FOOTER =================== */
 .footer {
   background-color: #330505;
   color: #ffffff;
@@ -253,7 +217,6 @@ nav {
   text-align: center;
 }
 
-/* Container for all footer sections */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -261,15 +224,13 @@ nav {
   gap: 20px;
 }
 
-/* Footer logo */
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 15px;
   display: block;
 }
 
-/* Footer sections layout */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -277,37 +238,18 @@ nav {
   gap: 30px;
 }
 
-/* Each section */
-.footer-section h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
+.footer-section h3 { font-size: 14px; margin-bottom: 8px; text-transform: uppercase; }
+.footer-section h4 { font-size: 13px; margin-bottom: 5px; }
+.footer-section p { font-size: 13px; margin: 3px 0; color: #cccccc; }
 
-.footer-section h4 {
-  font-size: 13px;
-  margin-bottom: 5px;
-}
-
-.footer-section p {
-  font-size: 13px;
-  margin: 3px 0;
-  color: #cccccc;
-}
-
-/* Links inside footer sections */
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
+.footer-section a:hover { color: #ffffff; text-decoration: none; }
 
-.footer-section a:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-/* Social Media Icons */
+/* Social & payment icons */
 .social-icons, .payment-methods-icons {
   display: flex;
   gap: 10px;
@@ -316,16 +258,14 @@ nav {
   flex-wrap: wrap;
   margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   padding: 5px;
-  background-color: #9B2325;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
 .social-icons img:hover, .payment-methods-icons img:hover {
   transform: scale(1.1);
   background-color: #727070;
@@ -342,94 +282,73 @@ nav {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .footer-bottom a {
   color: #cccccc;
   text-decoration: none;
 }
+.footer-bottom a:hover { color: #ffffff; }
 
-.footer-bottom a:hover {
-  color: #ffffff;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-
-
-/* =================== HAMBURGER =================== */
+/* =================== HAMBURGER MENU =================== */
 .hamburger {
-  display: none;                /* Hidden on desktop */
-  flex-direction: column;       /* Stack bars vertically */
+  display: none; /* Only show on mobile */
+  flex-direction: column;
   justify-content: space-between;
-  width: 30px;                  /* Adjusted width */
-  height: 20px;                 /* Adjusted height for shorter look */
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
-  height: 4px;                  /* Slightly thicker bars */
-  background-color: #eee5e5;    /* Dark maroon background color */
+  height: 4px;
+  background-color: #eee5e5;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Hamburger active state (cross) */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* =================== MEDIA QUERIES =================== */
+/* =================== RESPONSIVE NAV & GRID =================== */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
 
-  /* Menu styling */
+  /* Mobile nav menu */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;                  /* Adjusted top for smaller height */
+    top: 80px;
     left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);  /* Dark maroon background */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
   .menu_list ul li a {
     color: white;
-    padding: 12px 20px;         /* Adjusted spacing */
+    padding: 12px 20px;
     font-size: 16px;
     text-align: left;
     border-right: none;
   }
 
-  /* Dropdown menu */
-  .dropdown-content {
-    position: static;
-    display: none;
-    background-color: #692727;
-    margin: 5px 0;
-    border-radius: 4px;
-    padding: 5px 0;
-  }
+  /* Mobile dropdown */
+  .dropdown-content { position: static; display: none; margin: 5px 0; padding: 5px 0; }
   .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a { color: white; padding-left: 30px; display: block; }
+  .dropdown-content a { color: white; padding-left: 30px; }
+
+  /* Fruit grid */
+  .fruit-grid { gap: 20px; justify-content: center; }
+  .fruit-box { width: 100%; max-width: 350px; margin: 0 auto; }
+  .fruit-box img { height: 220px; }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .fruit-box img { height: 180px; }
+  .fruit-box p { font-size: 22px; }
+  .kombuchah-section h3 { font-size: 36px; }
+  .footer-section h3, .footer-section h4, .footer-section p { font-size: 12px; }
 }

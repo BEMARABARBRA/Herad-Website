@@ -1,23 +1,27 @@
 /* =================== RESET STYLES =================== */
-/* Resetting default margin, padding, and box-sizing for all elements */
+/* Reset default margin, padding, and box-sizing for all elements */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensure padding/border do not affect element width */
 }
 
+/* =================== HTML BASE =================== */
 html {
-  font-size: 80%; /* Base font size for scaling */
-  scroll-padding-top: 120px; /* For anchor link offset */
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-size: 80%;                /* Base font size for scaling */
+  scroll-padding-top: 120px;     /* Offset for anchor links to account for fixed nav */
+  overflow-x: hidden;            /* Prevent horizontal scrolling */
 }
 
 /* =================== BODY =================== */
 body {
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.7;
-  color: #2b0d0d;
+  font-family: "Times New Roman", Times, serif; /* Elegant serif font */
+  line-height: 1.7;             /* Readable line spacing */
+  color: #2b0d0d;               /* Base text color */
   text-align: center;
+  min-height: 100vh;            /* Full viewport height for sticky footer */
+
+  /* Background image and overlay */
   background-color: #ffe6e6;
   background-image: url('herad_images/exportersbackground.jpeg');
   background-repeat: no-repeat;
@@ -25,18 +29,17 @@ body {
   background-position: center;
   background-attachment: fixed;
   position: relative;
-  min-height: 100vh;
 }
 
-/* Background overlay for semi-transparent effect */
+/* Semi-transparent overlay for readability */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(218, 154, 154, 0.5);
-  z-index: -1;
+  background-color: rgba(218, 154, 154, 0.5); /* Light pink tint */
+  z-index: -1; /* Push behind all content */
 }
 
 /* =================== NAVIGATION BAR =================== */
@@ -45,31 +48,30 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-blend-mode: darken;
-  background-color: rgba(7,7,7,0.4);
+  background-blend-mode: darken; /* Darken effect for text contrast */
+  background-color: rgba(7,7,7,0.4); /* Fallback overlay */
   height: 130px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px black;
-  color: white;
+  box-shadow: 0 2px 5px black; /* Subtle shadow */
   padding: 0 20px;
-  position: fixed;
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 1000;
 }
 
-/* Logo sizing and responsiveness */
+/* Logo styling */
 .logo img {
-  width: 220px;
-  max-width: 100%;
+  width: 220px;      /* Fixed width for desktop */
+  max-width: 100%;   /* Ensure responsive scaling */
   object-fit: contain;
   display: block;
 }
 
-/* Nav menu styling */
+/* Nav menu */
 .menu_list ul {
   font-size: 15px;
   list-style: none;
@@ -77,6 +79,7 @@ nav {
   gap: 0px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;  /* Wrap menu items on small screens */
 }
 
 .menu_list ul li a {
@@ -98,12 +101,10 @@ nav {
 }
 
 /* Dropdown menu */
-.menu_list ul li.dropdown {
-  position: relative;
-}
+.menu_list ul li.dropdown { position: relative; }
 
 .dropdown-content {
-  display: none;
+  display: none;  /* Hide initially */
   position: absolute;
   top: 100%;
   left: 0;
@@ -111,13 +112,11 @@ nav {
   min-width: 220px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 4px;
-  z-index: 1001;
   padding: 8px 0;
+  z-index: 1001;
 }
 
-.menu_list ul li.dropdown:hover .dropdown-content {
-  display: block;
-}
+.menu_list ul li.dropdown:hover .dropdown-content { display: block; }
 
 .dropdown-content a {
   display: block;
@@ -132,109 +131,85 @@ nav {
   color: white;
 }
 
-/* ==================================== HERO SECTION =================== */
-
-/* ======================= PARTNERS SECTION HEADING ======================= */
+/* =================== HERO / PARTNERS SECTION =================== */
 .partners-title {
-  background-color: rgb(255, 255, 255, 0.3); /* white background box */
-  padding: 20px 0px;            /* more padding for emphasis */
-  margin: 150px 150px 20px 150px;/* top, left/right, bottom */
+  background-color: rgba(255, 255, 255, 0.3); /* semi-transparent box */
+  padding: 20px 0;
+  margin: 150px 150px 20px 150px;
   text-align: center;
-  font-size: 3.0rem;             /* large heading */
-  font-weight: 900;              /* extra bold */
-  color: #750404;                /* dark text */
-  text-shadow: 2px 2px 5px rgb(5, 5, 5); /* subtle shadow for depth */
-  text-transform: uppercase;     /* make it prominent */
-  letter-spacing: 2px;           /* elegant spacing */
-  border-radius: 15px;           /* rounded corners for style */
-  
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effects */
+  font-size: 3rem;
+  font-weight: 900;
+  color: #750404;
+  text-shadow: 2px 2px 5px rgb(5,5,5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s;
 }
-
-/* Hover effect for interactive feel */
 .partners-title:hover {
-  transform: scale(1.05);       /* slight zoom on hover */
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25); /* stronger shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  color: #c50505;
 }
 
-
-/* Hover effect for heading */
-.partners-title:hover {
-  transform: scale(1.05); /* slight zoom on hover */
-  color: #c50505; /* soft highlight on hover */
-  text-shadow: 2px 2px 5px rgb(5, 5, 5); /* subtle shadow for depth */
-}
-
-/* ======================= PARTNERS GRID ======================= */
+/* Partners grid */
 .partners-section {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 logos per row on desktop */
-  gap: 2rem; /* spacing between logos */
+  grid-template-columns: repeat(5, 1fr); /* 5 columns desktop */
+  gap: 2rem;
   padding: 2rem;
-  justify-items: center; /* center logos horizontally */
-  align-items: center;   /* center logos vertically */
-  background-color: rgb(255, 255, 255); /* white background box */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* light shadow for depth */
+  justify-items: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease;
 }
+.partners-section:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
 
-/* Hover effect for grid container */
-.partners-section:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-/* ======================= PARTNER LOGOS ======================= */
+/* Individual partner logos */
 .partner img {
   width: 150px;
   height: 150px;
-  object-fit: contain; /* maintain aspect ratio */
-  background: #fff; /* white background for uniformity */
-  border-radius: 12px; /* smooth corners */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
   cursor: pointer;
-  display: block;
-  padding: 10px; /* small padding for spacing inside box */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
-
-/* Hover effect for partner logos */
 .partner img:hover {
-  transform: scale(1.1); /* bigger zoom on hover */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* stronger shadow on hover */
-  border: 2px solid #c77d83; /* subtle border highlight */
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  border: 2px solid #c77d83;
 }
 
-/* ======================= RESPONSIVE GRID ======================= */
-/* Tablets - 3 logos per row */
+/* =================== RESPONSIVE GRID =================== */
+/* Medium screens (tablets) */
 @media (max-width: 1024px) {
-  .partners-section {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .partners-section { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Phones - 2 logos per row */
+/* Small screens (phones) */
 @media (max-width: 600px) {
-  .partners-section {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1rem;
+  .partners-section { 
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 1rem; 
   }
-
-  .partner img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .partners-title {
-    font-size: 2rem; /* smaller heading for small screens */
-    letter-spacing: 1px;
-  }
+  .partner img { width: 120px; height: 120px; }
+  .partners-title { font-size: 2rem; letter-spacing: 1px; margin: 120px 20px 20px 20px; }
 }
 
-/* ======================= FOOTER =================== */
+/* Extra small screens */
+@media (max-width: 480px) {
+  .partner img { width: 100px; height: 100px; }
+  .partners-title { font-size: 1.5rem; }
+}
+
+/* =================== FOOTER =================== */
 .footer {
   background-color: #330505;
-  color: #ffffff;
+  color: #fff;
   padding: 20px;
-  font-family: Arial, sans-serif;
   text-align: center;
 }
 
@@ -244,12 +219,11 @@ nav {
   justify-content: center;
   gap: 20px;
 }
-
 .footer-logo-container img {
   max-width: 120px;
   height: auto;
-  margin: 0 auto 15px auto;
   display: block;
+  margin: 0 auto 15px auto;
 }
 
 .footer-sections {
@@ -258,81 +232,47 @@ nav {
   justify-content: center;
   gap: 30px;
 }
-
-.footer-section h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.footer-section h4 {
-  font-size: 13px;
-  margin-bottom: 5px;
-}
-
-.footer-section p {
-  font-size: 13px;
-  margin: 3px 0;
-  color: #cccccc;
-}
+.footer-section h3 { font-size: 14px; text-transform: uppercase; margin-bottom: 8px; }
+.footer-section h4 { font-size: 13px; margin-bottom: 5px; }
+.footer-section p { font-size: 13px; margin: 3px 0; color: #cccccc; }
 
 .footer-section a {
   color: #0e5ab1;
   text-decoration: underline;
   font-weight: bold;
 }
-
-.footer-section a:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
+.footer-section a:hover { color: #fff; text-decoration: none; }
 
 .social-icons, .payment-methods-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
+  display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 5px;
 }
-
 .social-icons img, .payment-methods-icons img {
-  width: 40px;
-  height: 35px;
-  border-radius: 50%;
-  padding: 5px;
-  background-color: #9B2325;
+  width: 30px; height: 30px; border-radius: 50%; padding: 5px;
+  background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-
-.social-icons img:hover, .payment-methods-icons img:hover {
-  transform: scale(1.1);
-  background-color: #727070;
-}
+.social-icons img:hover, .payment-methods-icons img:hover { transform: scale(1.1); background-color: #727070; }
 
 .footer-bottom {
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid #444;
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  margin-top: 15px; padding-top: 10px; border-top: 1px solid #444;
+  font-size: 13px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+}
+.footer-bottom a { color: #cccccc; text-decoration: none; }
+.footer-bottom a:hover { color: #fff; }
+
+/* Responsive footer for tablets */
+@media (max-width: 768px) {
+  .footer-content { flex-direction: column; align-items: center; }
+  .footer-sections { flex-direction: column; gap: 20px; }
+}
+@media (max-width: 480px) {
+  .footer-sections { gap: 15px; text-align: center; }
+  .footer-section h3, .footer-section h4, .footer-section p { font-size: 12px; }
 }
 
-.footer-bottom a {
-  color: #cccccc;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  color: #ffffff;
-}
-
-/* =================== HAMBURGER =================== */
+/* =================== HAMBURGER MENU =================== */
 .hamburger {
-  display: none;
+  display: none;  /* Hidden on desktop */
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -340,7 +280,6 @@ nav {
   cursor: pointer;
   z-index: 1100;
 }
-
 .hamburger span {
   display: block;
   height: 4px;
@@ -348,44 +287,26 @@ nav {
   border-radius: 3px;
   transition: all 0.3s ease;
 }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Hamburger active state (cross) */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* =================== MEDIA QUERIES =================== */
-
-/* ===== NAVBAR & MENU RESPONSIVENESS ===== */
-@media (max-width: 1024px) {
-  .partners-section {
-    grid-template-columns: repeat(3, 1fr); /* 3 logos per row on tablets */
-  }
-}
-
+/* Mobile responsive navigation */
 @media (max-width: 768px) {
-  /* Navbar Hamburger */
   .hamburger { display: flex; }
 
-  /* Menu */
   .menu_list ul {
     display: none;
     flex-direction: column;
     position: fixed;
-    top: 80px;
-    left: 0;
+    top: 80px; left: 0;
     width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);
+    background-color: rgba(50,0,0,0.95);
     padding: 10px 0;
     z-index: 1099;
   }
   .menu_list ul.active { display: flex; }
+
   .menu_list ul li a {
     color: white;
     padding: 12px 20px;
@@ -394,46 +315,8 @@ nav {
     border-right: none;
   }
 
-  /* Dropdown */
-  .dropdown-content {
-    position: static;
-    display: none;
-    background-color: #692727;
-    margin: 5px 0;
-    border-radius: 4px;
-    padding: 5px 0;
-  }
+  /* Mobile dropdown adjustments */
+  .dropdown-content { position: static; display: none; background-color: #692727; margin: 5px 0; border-radius: 4px; padding: 5px 0; }
   .menu_list ul li.active .dropdown-content { display: block; }
   .dropdown-content a { color: white; padding-left: 30px; display: block; }
-
-  /* Footer adjustments */
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* Partners section on phones */
-  .partners-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .partner img {
-    width: 120px;
-    height: 120px;
-  }
 }
-
-@media (max-width: 480px) {
-  .partners-section {
-    grid-template-columns: repeat(1, 1fr); /* 1 logo per row on small phones */
-  }
-  .partner img {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-/* ===== END OF RESPONSIVE CSS ===== */

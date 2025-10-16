@@ -105,18 +105,20 @@ nav {
   position: relative;
 }
 
-/* Dropdown content */
+/* ======= MULTI-COLUMN DROPDOWN (DESKTOP) ======= */
 .dropdown-content {
   display: none;                      /* Hidden until hover/click */
   position: absolute;
-  top: 100%;                          /* Appear below parent */
+  top: 100%;
   left: 0;
   background-color: #660911;
-  min-width: 220px;
+  min-width: 400px;                   /* wider area for two columns */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   z-index: 1001;
-  padding: 8px 0;
+  padding: 10px 15px;
+  column-count: 2;                    /* two columns */
+  column-gap: 20px;
 }
 
 /* Show dropdown on hover (desktop only) */
@@ -127,16 +129,40 @@ nav {
 /* Dropdown links */
 .dropdown-content a {
   display: block;
-  padding: 10px 16px;
+  padding: 10px 0;
   color: black;
   text-decoration: none;
   font-weight: 600;
+  break-inside: avoid;                /* keep links intact in columns */
 }
 
 .dropdown-content a:hover {
   background-color: #e09393;
   color: white;
 }
+
+/* ======= MOBILE FRIENDLY DROPDOWN ======= */
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;
+    display: none;
+    background-color: #692727;
+    margin: 5px 0;
+    border-radius: 4px;
+    padding: 5px 0;
+    column-count: 1;                  /* single column on mobile */
+    column-gap: 0;
+  }
+  .menu_list ul li.active .dropdown-content { 
+    display: block; 
+  }
+  .dropdown-content a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+  }
+}
+
 
 /* =================== HERO SLIDER =================== */
 .hero-slider {

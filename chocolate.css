@@ -1,0 +1,438 @@
+/* =================== RESET STYLES =================== */
+
+/* Reset margin and padding for all elements, 
+   and include padding and border in element's total width and height */
+   * {
+    margin: 0;                
+    padding: 0;               
+    box-sizing: border-box;   
+  }
+  
+  /* Set base font size, 
+     define scrolling offset for fixed nav (so sections align correctly when clicked),
+     and prevent horizontal scrolling */
+  html {
+    font-size: 80%;               
+    scroll-padding-top: 120px;    
+    overflow-x: hidden;           
+  }
+  
+  /* ============ BODY BACKGROUND & TEXT ============ */
+  body {
+    font-family: "Times New Roman", Times, serif; /* Elegant font */
+    line-height: 1;              /* Tight line spacing */
+    color: #2b0d0d;              /* Deep brown text */
+    margin-top: 150px;           /* Push content below fixed navbar */
+    text-align: center;          /* Center align all body text */
+  
+    /* Background image properties */
+    background-color: #ffe6e6;   /* Soft pink fallback background */
+    background-image: url('herad_images/chocolatebackground2.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+  
+    /* Needed to apply overlay pseudo-element */
+    position: relative;
+  }
+  
+  /* Overlay tint to soften/darken background image */
+  body::before {
+    content: "";
+    position: fixed;       
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(92, 48, 48, 0.85); /* Semi-transparent burgundy tint */
+    z-index: -1; /* Places overlay behind all content */
+  }
+  
+  /* =================== NAVIGATION BAR =================== */
+  nav {
+    background-image: url("herad_images/Herad-vegetables.jpeg"); /* Decorative background */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken; /* Blend with background-color */
+    background-color: rgba(7,7,7,0.4); /* Dark tint */
+    height: 130px;                 /* Tall navbar */
+    display: flex;                 /* Flexbox for logo + menu */
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px black;   /* Subtle shadow under navbar */
+    color: white;
+    padding: 0 20px;
+    position: fixed;               /* Sticks navbar at top */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;                 /* Always above other elements */
+  }
+  
+  /* Logo image */
+  .logo img {
+    width: 220px;                 /* Large logo size */
+    max-width: 100%;              /* Prevent overflow */
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* Menu list styling */
+  .menu_list ul {
+    font-size: 15px;
+    list-style: none;
+    display: flex;                 /* Horizontal layout */
+    gap: 0px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Menu links */
+  .menu_list ul li a {
+    color: black;
+    background-color: #c77d83;
+    border-right: 1px solid #692727; /* Separators */
+    text-decoration: none;
+    font-weight: 900;
+    padding: 15px 10px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;           /* Prevent wrapping */
+  }
+  
+  /* Hover effects for links */
+  .menu_list ul li a:hover {
+    background-color: #692727;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  /* Dropdown parent */
+  .menu_list ul li.dropdown {
+    position: relative; /* Needed for absolute dropdown placement */
+  }
+  
+  /* Dropdown menu */
+  .dropdown-content {
+    display: none;  /* Hidden by default */
+    position: absolute;
+    top: 100%;      /* Directly below parent */
+    left: 0;
+    background-color: #660911;
+    min-width: 220px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1001;
+    padding: 8px 0;
+  }
+  
+  /* Show dropdown on hover (desktop only) */
+  .menu_list ul li.dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Dropdown links */
+  .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  /* Dropdown hover */
+  .dropdown-content a:hover {
+    background-color: #e09393;
+    color: white;
+  }
+  
+  /* ===================== SPICES SECTION ===================== */
+  
+  /* Container */
+  .spices-section {
+    max-width: 1200px;                     
+    padding: 40px 25px;                    
+    border-radius: 12px;                   
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 0 auto;                        
+  }
+  
+  /* Spice section headings */
+  .spices-section h3 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+  
+    /* Gradient text effect */
+    background: linear-gradient(45deg, #b15b0b, #a79794, #834104);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  
+    display: inline-block;
+    position: relative;
+  }
+  
+  /* ❌ Removed underline (::after) — cleaner headings */
+  
+  /* Grid for spice items */
+  .spices-section .category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+  
+  /* Each spice card */
+  .spices-section .veg-item {
+    flex: 1 1 220px;
+    max-width: 400px;
+    background-color: #683512;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease, 
+                box-shadow 0.3s ease, 
+                background-color 0.3s ease;
+  }
+  
+  /* Spice images */
+  .spices-section .veg-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Spice name */
+  .spices-section .veg-item p {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff8dc;
+    text-align: center;
+  }
+  
+  /* Hover effects */
+  .spices-section .veg-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    background-color: #7c4826;
+  }
+  
+  /* ===================== RESPONSIVE ADJUSTMENTS ===================== */
+  
+  /* Medium screens (tablets) */
+  @media (max-width: 992px) {
+    .spices-section .veg-item {
+      flex: 1 1 45%;   /* Two per row */
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 768px) {
+    .spices-section .veg-item {
+      flex: 1 1 100%;  /* One per row */
+    }
+    .spices-section h3 {
+      font-size: 48px;
+    }
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 480px) {
+    .spices-section h3 {
+      font-size: 32px; /* Smaller headings */
+    }
+    .spices-section .veg-item p {
+      font-size: 20px;
+    }
+  }
+  
+  /* ====================== FOOTER =================== */
+  .footer {
+    background-color: #330505;
+    color: #ffffff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Flex container */
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Logo */
+  .footer-logo-container img {
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto 15px auto;
+    display: block;
+  }
+  
+  /* Sections */
+  .footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  /* Titles & text */
+  .footer-section h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .footer-section h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .footer-section p {
+    font-size: 13px;
+    margin: 3px 0;
+    color: #cccccc;
+  }
+  
+  /* Links */
+  .footer-section a {
+    color: #0e5ab1;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  .footer-section a:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* Icons */
+  .social-icons, .payment-methods-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  .social-icons img, .payment-methods-icons img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #5f1315;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  .social-icons img:hover, .payment-methods-icons img:hover {
+    transform: scale(1.1);
+    background-color: #727070;
+  }
+  
+  /* Bottom bar */
+  .footer-bottom {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .footer-bottom a {
+    color: #cccccc;
+    text-decoration: none;
+  }
+  .footer-bottom a:hover {
+    color: #ffffff;
+  }
+  
+  /* Responsive footer */
+  @media (max-width: 768px) {
+    .footer-content { flex-direction: column; align-items: center; }
+    .footer-sections { flex-direction: column; gap: 20px; }
+  }
+  @media (max-width: 480px) {
+    .footer-sections { gap: 15px; text-align: center; }
+    .footer-section h3, .footer-section h4, .footer-section p {
+      font-size: 12px;
+    }
+  }
+  
+  /* =================== HAMBURGER =================== */
+  .hamburger {
+    display: none;                
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  .hamburger span {
+    display: block;
+    height: 4px;
+    background-color: #eee5e5;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  /* Transform → X */
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  
+  /* =================== RESPONSIVE NAV =================== */
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+  
+    .menu_list ul {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 80px; /* Push below nav */
+      left: 0;
+      width: 100vw;
+      background-color: rgba(50, 0, 0, 0.95);
+      padding: 10px 0;
+      z-index: 1099;
+    }
+    .menu_list ul.active { display: flex; }
+  
+    .menu_list ul li a {
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      text-align: left;
+      border-right: none;
+    }
+  
+    /* Dropdown (mobile) */
+    .dropdown-content {
+      position: static;
+      display: none;
+      background-color: #692727;
+      margin: 5px 0;
+      border-radius: 4px;
+      padding: 5px 0;
+    }
+    .menu_list ul li.active .dropdown-content { display: block; }
+    .dropdown-content a {
+      color: white;
+      padding-left: 30px;
+      display: block;
+    }
+  }
+  

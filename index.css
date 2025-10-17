@@ -82,9 +82,9 @@ nav {
 
 /* Menu links */
 .menu_list ul li a {
-  color: black;
-  background-color: #c77d83;          /* Soft pink background */
-  border-right: 1px solid #692727;    /* Divider between links */
+  color: white;
+  background-color: #692727;          /* Soft pink background */
+  border-right: 1px solid #0c0b0b;    /* Divider between links */
   text-decoration: none;
   font-weight: 900;
   padding: 15px 10px;
@@ -95,8 +95,8 @@ nav {
 
 /* Hover effect for menu links */
 .menu_list ul li a:hover {
-  background-color: #692727;          /* Darker maroon */
-  color: white;
+  background-color: #f3e9e9;          /* Darker maroon */
+  color: black;
   border-radius: 4px;
 }
 

@@ -1,399 +1,457 @@
 /* =================== RESET STYLES =================== */
 /* Reset all default browser styles and ensure box sizing includes padding and borders */
 * {
-  margin: 0;                
-  padding: 0;               
-  box-sizing: border-box;   
+  margin: 0;                /* Remove default margin */
+  padding: 0;               /* Remove default padding */
+  box-sizing: border-box;   /* Include padding and border in element's total width/height */
 }
 
 html {
-  font-size: 80%;               /* Base font size */
-  scroll-padding-top: 120px;    /* Offset for fixed navbar */
-  overflow-x: hidden;           /* Prevent horizontal scrollbar */
+  font-size: 80%;               /* Base font size for easier scaling */
+  scroll-padding-top: 120px;    /* Offset for fixed navbar when scrolling to anchors */
+  overflow-x: hidden;           /* Prevent horizontal scrolling on small devices */
 }
 
 /* =================== BODY BACKGROUND =================== */
 body {
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.7;
-  color: #ebd5d5;
-  margin-top: 0;
-  text-align: center;
+  font-family: "Times New Roman", Times, serif; /* Main font */
+  line-height: 1.7;             /* Space between lines for readability */
+  color: #ebd5d5;               /* Default text color */
+  margin-top: 0;                 /* Remove top margin */
+  text-align: center;            /* Center all inline content */
 
   /* Background image settings */
-  background-color: #ffe6e6;
-  background-image: url('herad_images/coffeewomenafrican.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: #ffe6e6;    /* Fallback color if image fails */
+  background-image: url('herad_images/coffeewomenafrican.jpeg'); /* Background image */
+  background-repeat: no-repeat;  /* Do not repeat image */
+  background-size: cover;        /* Cover entire screen */
+  background-position: center;   /* Center image */
+  background-attachment: fixed;  /* Fixed for parallax effect */
 
-  position: relative; /* Required for overlay */
+  position: relative; /* Required for overlay pseudo-element */
 }
 
 /* Overlay to darken the background */
 body::before {
-  content: "";
-  position: fixed;       
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  content: "";                     /* Empty content for pseudo-element */
+  position: fixed;                 /* Fixed so it stays behind content */
+  top: 0; left: 0;                 /* Cover entire screen */
+  width: 100%;                      /* Full width */
+  height: 100%;                     /* Full height */
   background-color: rgba(126, 69, 69, 0.5); /* Soft tint overlay */
-  z-index: -1;           
+  z-index: -1;                      /* Send behind content */
 }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-  background-image: url("herad_images/Herad-vegetables.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: darken;
-  background-color: rgba(7,7,7,0.4);
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px black;
-  color: white;
-  padding: 0 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 1000;
+  background-image: url("herad_images/Herad-vegetables.jpeg"); /* Navbar background image */
+  background-repeat: no-repeat;       /* Do not repeat image */
+  background-size: cover;             /* Cover navbar area */
+  background-position: center;        /* Center image */
+  background-blend-mode: darken;      /* Blend with overlay */
+  background-color: rgba(7,7,7,0.4); /* Semi-transparent overlay */
+  height: 130px;                      /* Fixed navbar height */
+  display: flex;                      /* Flex container for nav items */
+  align-items: center;                /* Vertically center items */
+  justify-content: space-between;     /* Space between logo and menu */
+  box-shadow: 0 2px 5px black;        /* Shadow under navbar */
+  color: white;                       /* Default text color */
+  padding: 0 20px;                    /* Horizontal padding */
+  position: fixed;                    /* Fixed to top */
+  top: 0; left: 0;                    /* Top left corner */
+  width: 100vw;                       /* Full viewport width */
+  z-index: 1000;                      /* Ensure above content */
 }
 
 /* Logo */
 .logo img {
-  width: 220px;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
+  width: 220px;              /* Default width */
+  max-width: 100%;           /* Scale down on smaller screens */
+  object-fit: contain;       /* Maintain aspect ratio */
+  display: block;            /* Block-level for proper spacing */
 }
 
-/* Navigation menu */
+/* =================== NAV MENU =================== */
 .menu_list ul {
-  font-size: 15px;
-  list-style: none;
-  display: flex;
-  gap: 0;
-  margin: 0;
-  padding: 0;
+  font-size: 15px;           /* Default menu font size */
+  list-style: none;          /* Remove bullets */
+  display: flex;             /* Horizontal layout */
+  gap: 0px;                  /* Remove gaps */
+  margin: 0;                 /* Remove margin */
+  padding: 0;                /* Remove padding */
 }
 
+/* Menu links */
 .menu_list ul li a {
-  color: black;
-  background-color: #c77d83;
-  border-right: 1px solid #692727;
-  text-decoration: none;
-  font-weight: 900;
-  padding: 15px 10px;
-  display: block;
-  transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap;
+  color: white;                       /* Link color */
+  background-color: #692727;          /* Background color */
+  border-right: 1px solid #0c0b0b;   /* Divider between links */
+  text-decoration: none;              /* Remove underline */
+  font-weight: 900;                   /* Bold links */
+  padding: 15px 10px;                 /* Vertical and horizontal padding */
+  display: block;                     /* Block-level for hover effect */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
+  white-space: nowrap;                /* Prevent text wrapping */
 }
 
+/* Hover effect for menu links */
 .menu_list ul li a:hover {
-  background-color: #692727;
-  color: white;
-  border-radius: 4px;
+  background-color: #f3e9e9;          /* Lighter background on hover */
+  color: black;                        /* Change text color on hover */
+  border-radius: 4px;                  /* Rounded corners */
 }
 
-/* Dropdown */
+/* Dropdown container */
 .menu_list ul li.dropdown {
-  position: relative;
+  position: relative;                 /* Required for absolute dropdown positioning */
 }
 
+/* ================================
+   DESKTOP DROPDOWN MENU STYLING
+   ================================ */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #660911;
-  min-width: 220px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border-radius: 4px;
-  z-index: 1001;
-  padding: 8px 0;
+  display: none;                       /* Hide dropdown initially */
+  position: absolute;                  /* Absolute positioning under parent */
+  top: 100%;                           /* Start below parent */
+  left: 0;                             /* Align left with parent */
+  background-color: #660911;           /* Dropdown background color */
+  min-width: 400px;                    /* Minimum width for two-column layout */
+  max-height: 80vh;                    /* Prevent vertical overflow */
+  overflow-y: auto;                    /* Scroll if too tall */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+  border-radius: 4px;                  /* Rounded corners */
+  z-index: 1001;                       /* Above other content */
+  padding: 10px 15px;                  /* Inner spacing */
+  column-count: 2;                     /* Two columns for links */
+  column-gap: 20px;                    /* Gap between columns */
 }
 
+/* Show dropdown on hover */
 .menu_list ul li.dropdown:hover .dropdown-content {
-  display: block;
+  display: block;                     /* Display dropdown when hovered */
 }
 
+/* Dropdown links */
 .dropdown-content a {
-  display: block;
-  padding: 10px 16px;
-  color: black;
-  text-decoration: none;
-  font-weight: 600;
+  display: block;                      /* Each link on own line */
+  padding: 5px 10px;                   /* Spacing inside link */
+  line-height: 1.1;                    /* Line height */
+  color: black;                        /* Link color */
+  text-decoration: none;               /* Remove underline */
+  font-weight: 600;                    /* Slight bold */
+  break-inside: avoid;                 /* Prevent column breaks inside link */
 }
 
+/* Hover effect for dropdown links */
 .dropdown-content a:hover {
-  background-color: #e09393;
-  color: white;
+  background-color: #e09393;           /* Highlight background */
+  color: white;                        /* Change text color */
+}
+
+/* ================================
+   TABLET RESPONSIVE ADJUSTMENTS
+   ================================ */
+@media (max-width: 1024px) {
+  .dropdown-content {
+    position: relative;                /* Flow naturally under parent */
+    min-width: 100%;                   /* Full width for tablet */
+    column-count: 1;                   /* Single column */
+    max-height: none;                  /* Remove height limit */
+    overflow-y: visible;               /* Show all content */
+  }
+}
+
+/* ================================
+   MOBILE RESPONSIVE ADJUSTMENTS
+   ================================ */
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;                  /* Stack naturally */
+    display: none;                     /* Hidden until clicked */
+    background-color: #692727;         /* Background color for mobile */
+    margin: 5px 0;                     /* Top/bottom spacing */
+    border-radius: 4px;                /* Rounded corners */
+    padding: 5px 0;                    /* Vertical padding */
+    column-count: 1;                   /* Single column */
+  }
+
+  .menu_list ul li.active .dropdown-content {
+    display: block;                     /* Show dropdown when parent active */
+  }
+
+  .dropdown-content a {
+    color: white;                      /* White text on dark bg */
+    padding: 10px 20px;                /* Comfortable tap area */
+    display: block;                     /* Block-level */
+    line-height: 1.2;                  /* Improve readability */
+  }
+
+  .hamburger {
+    display: flex;                      /* Show hamburger on mobile */
+  }
+
+  .menu_list ul {
+    display: none;                      /* Hide menu initially */
+    flex-direction: column;             /* Stack menu vertically */
+    position: fixed;                    /* Fixed position */
+    top: 80px;                          /* Offset for navbar */
+    left: 0;                            /* Align left */
+    width: 100vw;                       /* Full width */
+    background-color: rgba(50, 0, 0, 0.95); /* Dark overlay */
+    padding: 10px 0;                    /* Vertical padding */
+    z-index: 1099;                      /* Above content */
+  }
+
+  .menu_list ul.active { display: flex; } /* Show menu when active */
 }
 
 /* =================== MAIN BODY STYLING =================== */
 /* Growers container - grid layout for responsive stacking */
 .growers {
-  display: grid;
-  grid-template-columns: 1fr; /* Stacked sections */
-  gap: 30px;
-  padding: 40px 20px;
-  width: 90vw;               
-  max-width: 1000px;         
-  margin: 120px auto 60px auto; /* Space for navbar */
+  display: grid;                        /* Grid layout */
+  grid-template-columns: 1fr;           /* Single column initially */
+  gap: 30px;                             /* Space between cards */
+  padding: 40px 20px;                    /* Padding inside container */
+  width: 90vw;                           /* 90% of viewport width */
+  max-width: 1000px;                     /* Maximum container width */
+  margin: 120px auto 60px auto;          /* Margin top/bottom with navbar offset */
 }
 
-/* Individual section card styling */
+/* Individual section card */
 .growers section {
-  background-color: rgb(216, 182, 182, 0.7);
-  border-radius: 15px;
-  padding: 30px 25px;
-  box-shadow: 0 8px 20px rgba(58, 21, 21, 0.1);
-  color: #361818;
-  font-family: 'Times New Roman', serif;
-  font-size: 18px;
-  line-height: 1.7;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-  width: 100%;
-  max-width: 900px;  
-  margin: 0 auto;   
+  background-color: rgba(216, 182, 182, 0.7); /* Card background */
+  border-radius: 15px;                 /* Rounded corners */
+  padding: 30px 25px;                  /* Inner padding */
+  box-shadow: 0 8px 20px rgba(58, 21, 21, 0.1); /* Card shadow */
+  color: #361818;                      /* Text color */
+  font-family: 'Times New Roman', serif; /* Font family */
+  font-size: 18px;                     /* Text size */
+  line-height: 1.7;                    /* Line spacing */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+  width: 100%;                          /* Full width of container */
+  max-width: 900px;                     /* Max width */
+  margin: 0 auto;                       /* Center horizontally */
 }
 
 /* Hover effect */
 .growers section:hover {
-  background-color: #692727;
-  color: white;
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07);
+  background-color: #692727;           /* Dark background on hover */
+  color: white;                         /* Text color change */
+  transform: translateY(-8px) scale(1.03); /* Slight lift and scale */
+  box-shadow: 0 20px 30px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.07); /* Hover shadow */
 }
 
-/* Ensure text inside sections changes color on hover */
 .growers section:hover h1,
 .growers section:hover h4,
 .growers section:hover p,
 .growers section:hover p i {
-  color: white;
+  color: white;                         /* Text color changes on hover */
 }
 
 /* Headings inside sections */
 .growers h1, 
 .growers h4 {
-  color: #3A0000;
-  font-weight: 900;
-  margin-bottom: 15px;
+  color: #3A0000;                       /* Heading color */
+  font-weight: 900;                      /* Bold headings */
+  margin-bottom: 15px;                   /* Spacing below headings */
 }
 
 /* Paragraph tweaks */
 .growers p {
-  margin-bottom: 20px;
-  text-align: justify;
-  color: #631919;
+  margin-bottom: 20px;                  /* Space after paragraphs */
+  text-align: justify;                  /* Justify text */
+  color: #631919;                        /* Paragraph color */
 }
 
 /* Italic text */
 .growers p i {
-  font-style: italic;
-  color: #2c0303;
+  font-style: italic;                   /* Italic style */
+  color: #2c0303;                        /* Color for italics */
 }
 
 /* =================== RESPONSIVE ADJUSTMENTS =================== */
 @media (max-width: 992px) {
   .growers {
-      width: 95vw;
-      padding: 30px 15px;
+      width: 95vw;                       /* Slightly wider on medium screens */
+      padding: 30px 15px;                 /* Reduce padding */
   }
 }
 
 @media (max-width: 768px) {
   .growers {
-      width: 100%;
-      padding: 20px 15px;
+      width: 100%;                        /* Full width for mobile */
+      padding: 20px 15px;                 /* Less padding */
   }
 
   .growers section {
-      padding: 25px 20px;
-      max-width: 100%;
+      padding: 25px 20px;                 /* Card padding adjustments */
+      max-width: 100%;                     /* Max width full */
   }
 
   .growers h1 {
-      font-size: 1.8rem;
-  }
-
-  .menu_list ul {
-      flex-direction: column; /* Stack nav items on smaller screens */
-      display: none; 
-      position: fixed;
-      top: 80px; 
-      left: 0;
-      width: 100vw;
-      background-color: rgba(50, 0, 0, 0.95);
-      padding: 10px 0;
-      z-index: 1099;
+      font-size: 1.8rem;                  /* Smaller heading on mobile */
   }
 }
 
 /* =================== FOOTER =================== */
+/* Footer base styling */
 .footer {
-  background-color: #330505;
-  color: #ffffff;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  text-align: center;
+  background-color: #330505;            /* Dark background */
+  color: #ffffff;                       /* Text color */
+  padding: 20px;                         /* Inner padding */
+  font-family: Arial, sans-serif;       /* Font */
+  text-align: center;                    /* Center text */
 }
 
 .footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: flex;                         /* Flex container */
+  flex-wrap: wrap;                       /* Wrap on smaller screens */
+  justify-content: center;               /* Center content */
+  gap: 20px;                             /* Gap between items */
 }
 
 .footer-logo-container img {
-  max-width: 120px;
-  height: auto;
-  margin: 0 auto 15px auto;
-  display: block;
+  max-width: 120px;                      /* Logo max width */
+  height: auto;                           /* Maintain aspect ratio */
+  margin: 0 auto 15px auto;              /* Center with bottom spacing */
+  display: block;                         /* Block-level */
 }
 
 .footer-sections {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: flex;                          /* Flex container for sections */
+  flex-wrap: wrap;                        /* Wrap sections on small screens */
+  justify-content: center;                /* Center horizontally */
+  gap: 30px;                              /* Gap between sections */
 }
 
 .footer-section h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+  font-size: 14px;                        /* Section title size */
+  text-transform: uppercase;              /* Uppercase text */
+  margin-bottom: 8px;                     /* Space below */
 }
 .footer-section h4 {
-  font-size: 13px;
-  margin-bottom: 5px;
+  font-size: 13px;                        /* Subtitle size */
+  margin-bottom: 5px;                     /* Space below */
 }
 .footer-section p {
-  font-size: 13px;
-  margin: 3px 0;
-  color: #cccccc;
+  font-size: 13px;                        /* Paragraph size */
+  margin: 3px 0;                          /* Vertical margin */
+  color: #cccccc;                          /* Light grey text */
 }
 
 .footer-section a {
-  color: #0e5ab1;
-  text-decoration: underline;
-  font-weight: bold;
+  color: #0e5ab1;                         /* Link color */
+  text-decoration: underline;             /* Underline */
+  font-weight: bold;                       /* Bold text */
 }
 .footer-section a:hover {
-  color: #ffffff;
-  text-decoration: none;
+  color: #ffffff;                          /* White on hover */
+  text-decoration: none;                   /* Remove underline */
 }
 
 .social-icons, .payment-methods-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
+  display: flex;                           /* Flex container */
+  gap: 10px;                               /* Space between icons */
+  justify-content: center;                 /* Center icons */
+  align-items: center;                      /* Vertical alignment */
+  flex-wrap: wrap;                         /* Wrap on small screens */
+  margin-top: 5px;                         /* Space above icons */
 }
 .social-icons img, .payment-methods-icons img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  padding: 5px;
-  background-color: #5f1315;
-  transition: transform 0.3s, background-color 0.3s;
+  width: 30px;                             /* Icon width */
+  height: 30px;                            /* Icon height */
+  border-radius: 50%;                      /* Circular icons */
+  padding: 5px;                             /* Padding inside icon bg */
+  background-color: #5f1315;               /* Background color */
+  transition: transform 0.3s, background-color 0.3s; /* Hover effects */
 }
 .social-icons img:hover, .payment-methods-icons img:hover {
-  transform: scale(1.1);
-  background-color: #727070;
+  transform: scale(1.1);                   /* Slightly enlarge on hover */
+  background-color: #727070;               /* Change bg color on hover */
 }
 
 .footer-bottom {
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid #444;
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  margin-top: 15px;                        /* Space above bottom bar */
+  padding-top: 10px;                       /* Padding inside */
+  border-top: 1px solid #444;              /* Top border */
+  font-size: 13px;                         /* Text size */
+  display: flex;                            /* Flex container */
+  justify-content: center;                  /* Center links */
+  gap: 10px;                                /* Gap between links */
+  flex-wrap: wrap;                          /* Wrap on small screens */
 }
 .footer-bottom a {
-  color: #cccccc;
-  text-decoration: none;
+  color: #cccccc;                           /* Link color */
+  text-decoration: none;                    /* Remove underline */
 }
 .footer-bottom a:hover {
-  color: #ffffff;
+  color: #ffffff;                           /* White on hover */
 }
 
 /* Footer responsive adjustments */
 @media (max-width: 768px) {
   .footer-content {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: column;               /* Stack vertically */
+      align-items: center;                  /* Center all items */
   }
   .footer-sections {
-      flex-direction: column;
-      gap: 20px;
+      flex-direction: column;               /* Stack vertically */
+      gap: 20px;                            /* Gap between stacked sections */
   }
 }
 @media (max-width: 480px) {
   .footer-sections {
-      gap: 15px;
-      text-align: center;
+      gap: 15px;                            /* Smaller gap for very small screens */
+      text-align: center;                   /* Center text */
   }
   .footer-section h3, .footer-section h4, .footer-section p {
-      font-size: 12px;
+      font-size: 12px;                      /* Reduce font size */
   }
 }
 
 /* =================== HAMBURGER =================== */
 .hamburger {
-  display: none; 
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 1100;
+  display: none;                              /* Hidden by default */
+  flex-direction: column;                     /* Stack bars vertically */
+  justify-content: space-between;             /* Even spacing */
+  width: 30px;                                /* Width of hamburger */
+  height: 20px;                               /* Height of hamburger */
+  cursor: pointer;                            /* Pointer cursor on hover */
+  z-index: 1100;                              /* Above menu */
 }
 .hamburger span {
-  display: block;
-  height: 4px;
-  background-color: #eee5e5;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  display: block;                             /* Block-level bars */
+  height: 4px;                                /* Bar height */
+  background-color: #eee5e5;                  /* Bar color */
+  border-radius: 3px;                         /* Rounded edges */
+  transition: all 0.3s ease;                  /* Smooth animation */
 }
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px); /* Transform first bar to X */
 }
 .hamburger.active span:nth-child(2) {
-  opacity: 0;
+  opacity: 0;                                 /* Hide middle bar */
 }
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -5px); /* Transform last bar to X */
 }
 
 /* Mobile dropdown */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
-  .menu_list ul.active { display: flex; }
+  .hamburger { display: flex; }               /* Show hamburger */
+  .menu_list ul.active { display: flex; }     /* Show menu when active */
   .dropdown-content {
-      position: static;
-      display: none;
-      background-color: #692727;
-      margin: 5px 0;
-      border-radius: 4px;
-      padding: 5px 0;
+      position: static;                        /* Flow naturally */
+      display: none;                           /* Hidden initially */
+      background-color: #692727;               /* Dark background */
+      margin: 5px 0;                           /* Vertical spacing */
+      border-radius: 4px;                      /* Rounded corners */
+      padding: 5px 0;                          /* Padding top/bottom */
   }
-  .menu_list ul li.active .dropdown-content { display: block; }
+  .menu_list ul li.active .dropdown-content { display: block; } /* Show active dropdown */
   .dropdown-content a {
-      color: white;
-      padding-left: 30px; 
-      display: block;
+      color: white;                            /* White text */
+      padding-left: 30px;                       /* Indent for mobile */
+      display: block;                           /* Block level */
   }
 }

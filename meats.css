@@ -68,68 +68,125 @@ nav {
   display: block;
 }
 
-/* Nav menu */
+/* =================== NAV MENU =================== */
 .menu_list ul {
   font-size: 15px;
   list-style: none;
   display: flex;
-  gap: 0;
+  gap: 0px;          /* Keep links tight */
   margin: 0;
   padding: 0;
-  flex-wrap: wrap; /* allow wrapping on small screens */
 }
 
+/* Menu links */
 .menu_list ul li a {
-  color: black;
-  background-color: #c77d83;
-  border-right: 1px solid #692727;
+  color: white;
+  background-color: #692727;          /* Soft pink background */
+  border-right: 1px solid #0c0b0b;    /* Divider between links */
   text-decoration: none;
   font-weight: 900;
   padding: 15px 10px;
   display: block;
   transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap;
+  white-space: nowrap;                /* Prevents line breaks */
 }
 
+/* Hover effect for menu links */
 .menu_list ul li a:hover {
-  background-color: #692727;
-  color: white;
+  background-color: #f3e9e9;          /* Darker maroon */
+  color: black;
   border-radius: 4px;
 }
 
+/* Dropdown container */
 .menu_list ul li.dropdown {
   position: relative;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #660911;
-  min-width: 220px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border-radius: 4px;
-  z-index: 1001;
-  padding: 8px 0;
-}
-
-.menu_list ul li.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 16px;
-  color: black;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.dropdown-content a:hover {
-  background-color: #e09393;
-  color: white;
-}
+/* ================================
+   DESKTOP DROPDOWN MENU STYLING
+   ================================ */
+   .dropdown-content {
+    display: none;                   /* Hidden by default until hover */
+    position: absolute;              /* Positions the dropdown under the parent */
+    top: 100%;                       /* Start just below the menu link */
+    left: 0;                         /* Align with the parent’s left edge */
+    background-color: #660911;       /* Deep maroon background */
+    min-width: 400px;                /* Minimum width for two-column layout */
+    max-height: 80vh;                /* Prevent overflow on small screens */
+    overflow-y: auto;                /* Enables scrolling if content is too tall */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    border-radius: 4px;              /* Smooth rounded corners */
+    z-index: 1001;                   /* Keeps dropdown above other content */
+    padding: 10px 15px;              /* Inner spacing for better readability */
+    column-count: 2;                 /* Split links into two columns */
+    column-gap: 20px;                /* Space between columns */
+  }
+  
+  /* Display dropdown on hover (desktop only) */
+  .menu_list ul li.dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* ================================
+     DROPDOWN LINK STYLING
+     ================================ */
+  .dropdown-content a {
+    display: block;                  /* Each link on its own line */
+    padding: 5px 10px;               /* Compact spacing between links */
+    line-height: 1.1;                /* Slightly tight line spacing */
+    color: black;                    /* Default link color */
+    text-decoration: none;           /* Remove underlines */
+    font-weight: 600;                /* Bold for visibility */
+    break-inside: avoid;             /* Prevents column break inside a link */
+  }
+  
+  /* Hover state for dropdown links */
+  .dropdown-content a:hover {
+    background-color: #e09393;       /* Highlight color on hover */
+    color: white;                    /* White text for contrast */
+  }
+  
+  /* ================================
+     TABLET RESPONSIVE ADJUSTMENTS
+     ================================ */
+  @media (max-width: 1024px) {
+    .dropdown-content {
+      position: relative;            /* Position naturally below parent */
+      min-width: 100%;               /* Take full width of screen */
+      column-count: 1;               /* Use single column layout */
+      max-height: none;              /* Allow full dropdown height */
+      overflow-y: visible;           /* No scroll needed for tablets */
+    }
+  }
+  
+  /* ================================
+     MOBILE RESPONSIVE ADJUSTMENTS
+     ================================ */
+  @media (max-width: 768px) {
+    .dropdown-content {
+      position: static;              /* Flow naturally within mobile layout */
+      display: none;                 /* Hidden until parent is clicked */
+      background-color: #692727;     /* Darker background for contrast */
+      margin: 5px 0;                 /* Small space above and below */
+      border-radius: 4px;            /* Rounded corners for aesthetics */
+      padding: 5px 0;                /* Minimal vertical padding */
+      column-count: 1;               /* Single column only */
+    }
+  
+    /* Show dropdown when the parent list item is active (clicked) */
+    .menu_list ul li.active .dropdown-content { 
+      display: block; 
+    }
+  
+    /* Mobile dropdown link styling */
+    .dropdown-content a {
+      color: white;                  /* White text on dark background */
+      padding: 10px 20px;            /* Comfortable tap area */
+      display: block;
+      line-height: 1.2;              /* Improve readability on small screens */
+    }
+  }
 
 /* ===================== MAIN CONTENT ===================== */
 main {
@@ -183,7 +240,7 @@ main {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin: 0px 0 30px 0;
+  margin: 0px 0 15px 0;
   background: linear-gradient(45deg, black, #7e1616, black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

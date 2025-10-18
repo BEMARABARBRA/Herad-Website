@@ -262,6 +262,7 @@ nav {
 
 /* Slide images */
 .fade-slide img {
+  margin-left: 15px;
   /*Fullheight*/object-fit: cover;
   /*Coverarea*/display: block;
   /*Removespacing*/max-width: 100%;

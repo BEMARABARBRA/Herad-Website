@@ -1,189 +1,189 @@
 /* =================== RESET STYLES =================== */
+/* Reset all default browser styles and ensure box-sizing includes padding and border */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0;                /* Remove default margin */
+  padding: 0;               /* Remove default padding */
+  box-sizing: border-box;   /* Include padding and border in element's total width/height */
 }
 
+/* Base HTML styling */
 html {
-  font-size: 80%;
-  scroll-padding-top: 120px;
-  overflow-x: hidden;
+  font-size: 80%;           /* Base font size relative to browser default */
+  scroll-padding-top: 120px; /* Offset for fixed navbar when scrolling to anchors */
+  overflow-x: hidden;       /* Prevent horizontal scroll */
 }
 
 /* =================== BODY =================== */
 body {
-  font-family: "Times New Roman", Times, serif;
-  color: #2b0d0d;
-  text-align: center;
-  background: #ffe6e6 url('herad_images/consultancybackground.jpeg') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
+  font-family: "Times New Roman", Times, serif; /* Set body font */
+  color: #2b0d0d;          /* Default text color */
+  text-align: center;       /* Center-align text globally */
+  background: #ffe6e6 url('herad_images/consultancybackground.jpeg') no-repeat center center fixed; /* Background image with fallback color */
+  background-size: cover;   /* Cover entire body */
+  position: relative;       /* Needed for pseudo-element overlay */
 }
 
+/* Overlay for semi-transparent effect */
 body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(126, 69, 69, 0.5);
-  z-index: -1;
+  content: "";                            /* Empty content */
+  position: fixed;                        /* Fix over entire page */
+  top: 0; left: 0;                        /* Start at top-left */
+  width: 100%; height: 100%;              /* Full width and height */
+  background-color: rgba(126, 69, 69, 0.5); /* Semi-transparent overlay */
+  z-index: -1;                             /* Behind main content */
 }
 
 /* =================== NAVIGATION BAR =================== */
 nav {
-  background-image: url("herad_images/Herad-vegetables.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: darken;
-  background-color: rgba(7, 7, 7, 0.4);
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px black;
-  color: white;
-  padding: 0 20px;
-  position: fixed;
+  background-image: url("herad_images/Herad-vegetables.jpeg"); /* Navbar background */
+  background-repeat: no-repeat;                                 /* No repeating image */
+  background-size: cover;                                       /* Cover entire navbar */
+  background-position: center;                                  /* Center image */
+  background-blend-mode: darken;                                /* Blend effect */
+  background-color: rgba(7, 7, 7, 0.4);                        /* Fallback color */
+  height: 130px;                                                /* Navbar height */
+  display: flex;                                                /* Flex layout for alignment */
+  align-items: center;                                          /* Vertically center items */
+  justify-content: space-between;                                /* Space between logo and menu */
+  box-shadow: 0 2px 5px black;                                  /* Subtle shadow */
+  color: white;                                                 /* Text color */
+  padding: 0 20px;                                              /* Horizontal padding */
+  position: fixed;                                              /* Fixed navbar */
   top: 0;
   left: 0;
-  width: 100vw;
-  z-index: 1000;
+  width: 100vw;                                                 /* Full width */
+  z-index: 1000;                                                /* Above content */
 }
 
+/* Logo styling */
 .logo img {
-  width: 220px;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
+  width: 220px;         /* Set width */
+  max-width: 100%;      /* Ensure it scales on smaller screens */
+  object-fit: contain;  /* Maintain aspect ratio */
+  display: block;       /* Remove inline spacing */
 }
 
 /* =================== NAV MENU =================== */
 .menu_list ul {
-  font-size: 15px;
-  list-style: none;
-  display: flex;
-  gap: 0px;          /* Keep links tight */
+  font-size: 15px;     /* Base menu font size */
+  list-style: none;    /* Remove bullets */
+  display: flex;       /* Horizontal layout */
+  gap: 0px;            /* No gap between items */
   margin: 0;
   padding: 0;
 }
 
 /* Menu links */
 .menu_list ul li a {
-  color: white;
-  background-color: #692727;          /* Soft pink background */
-  border-right: 1px solid #0c0b0b;    /* Divider between links */
-  text-decoration: none;
-  font-weight: 900;
-  padding: 15px 10px;
-  display: block;
-  transition: background-color 0.3s, color 0.3s;
-  white-space: nowrap;                /* Prevents line breaks */
+  color: white;                  /* Link text color */
+  background-color: #692727;     /* Soft maroon background */
+  border-right: 1px solid #0c0b0b; /* Divider */
+  text-decoration: none;         /* Remove underline */
+  font-weight: 900;              /* Bold */
+  padding: 15px 10px;            /* Spacing */
+  display: block;                /* Make link block-level */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover */
+  white-space: nowrap;           /* Prevent line breaks */
 }
 
-/* Hover effect for menu links */
+/* Hover effect for links */
 .menu_list ul li a:hover {
-  background-color: #f3e9e9;          /* Darker maroon */
-  color: black;
-  border-radius: 4px;
+  background-color: #f3e9e9;    /* Lighter background on hover */
+  color: black;                  /* Text turns black */
+  border-radius: 4px;            /* Rounded corners */
 }
 
 /* Dropdown container */
 .menu_list ul li.dropdown {
-  position: relative;
+  position: relative; /* Needed for dropdown positioning */
 }
 
 /* ================================
    DESKTOP DROPDOWN MENU STYLING
    ================================ */
-   .dropdown-content {
-    display: none;                   /* Hidden by default until hover */
-    position: absolute;              /* Positions the dropdown under the parent */
-    top: 100%;                       /* Start just below the menu link */
-    left: 0;                         /* Align with the parent’s left edge */
-    background-color: #660911;       /* Deep maroon background */
-    min-width: 400px;                /* Minimum width for two-column layout */
-    max-height: 80vh;                /* Prevent overflow on small screens */
-    overflow-y: auto;                /* Enables scrolling if content is too tall */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-    border-radius: 4px;              /* Smooth rounded corners */
-    z-index: 1001;                   /* Keeps dropdown above other content */
-    padding: 10px 15px;              /* Inner spacing for better readability */
-    column-count: 2;                 /* Split links into two columns */
-    column-gap: 20px;                /* Space between columns */
+.dropdown-content {
+  display: none;                    /* Hidden by default */
+  position: absolute;               /* Positioned below parent */
+  top: 100%;                        /* Start just below menu link */
+  left: 0;                           /* Align left edge */
+  background-color: #660911;        /* Deep maroon background */
+  min-width: 400px;                 /* Minimum width for layout */
+  max-height: 80vh;                 /* Prevent overflow */
+  overflow-y: auto;                 /* Scroll if content too tall */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+  border-radius: 4px;               /* Rounded corners */
+  z-index: 1001;                    /* Above other content */
+  padding: 10px 15px;               /* Inner spacing */
+  column-count: 2;                  /* Two columns */
+  column-gap: 20px;                 /* Space between columns */
+}
+
+/* Show dropdown on hover (desktop) */
+.menu_list ul li.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;            /* Each link on new line */
+  padding: 5px 10px;         /* Spacing */
+  line-height: 1.1;          /* Tight line spacing */
+  color: black;               /* Text color */
+  text-decoration: none;      /* Remove underline */
+  font-weight: 600;           /* Bold for readability */
+  break-inside: avoid;        /* Prevent column break */
+}
+
+/* Hover for dropdown links */
+.dropdown-content a:hover {
+  background-color: #e09393;  /* Highlight background */
+  color: white;               /* Text turns white */
+}
+
+/* ================================
+   TABLET RESPONSIVE ADJUSTMENTS
+   ================================ */
+@media (max-width: 1024px) {
+  .dropdown-content {
+    position: relative;      /* Flow naturally */
+    min-width: 100%;         /* Full width of parent */
+    column-count: 1;         /* Single column */
+    max-height: none;        /* Remove max height */
+    overflow-y: visible;     /* No scroll needed */
   }
-  
-  /* Display dropdown on hover (desktop only) */
-  .menu_list ul li.dropdown:hover .dropdown-content {
-    display: block;
+}
+
+/* ================================
+   MOBILE RESPONSIVE ADJUSTMENTS
+   ================================ */
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: static;        /* Flow with layout */
+    display: none;           /* Hidden until clicked */
+    background-color: #692727; /* Mobile background */
+    margin: 5px 0;           /* Spacing above/below */
+    border-radius: 4px;      /* Rounded corners */
+    padding: 5px 0;          /* Inner spacing */
+    column-count: 1;         /* Single column */
   }
-  
-  /* ================================
-     DROPDOWN LINK STYLING
-     ================================ */
+
+  /* Show dropdown when parent is active */
+  .menu_list ul li.active .dropdown-content { 
+    display: block; 
+  }
+
   .dropdown-content a {
-    display: block;                  /* Each link on its own line */
-    padding: 5px 10px;               /* Compact spacing between links */
-    line-height: 1.1;                /* Slightly tight line spacing */
-    color: black;                    /* Default link color */
-    text-decoration: none;           /* Remove underlines */
-    font-weight: 600;                /* Bold for visibility */
-    break-inside: avoid;             /* Prevents column break inside a link */
+    color: white;            /* White text */
+    padding: 10px 20px;      /* Tap-friendly spacing */
+    display: block;
+    line-height: 1.2;        /* Readability */
   }
-  
-  /* Hover state for dropdown links */
-  .dropdown-content a:hover {
-    background-color: #e09393;       /* Highlight color on hover */
-    color: white;                    /* White text for contrast */
-  }
-  
-  /* ================================
-     TABLET RESPONSIVE ADJUSTMENTS
-     ================================ */
-  @media (max-width: 1024px) {
-    .dropdown-content {
-      position: relative;            /* Position naturally below parent */
-      min-width: 100%;               /* Take full width of screen */
-      column-count: 1;               /* Use single column layout */
-      max-height: none;              /* Allow full dropdown height */
-      overflow-y: visible;           /* No scroll needed for tablets */
-    }
-  }
-  
-  /* ================================
-     MOBILE RESPONSIVE ADJUSTMENTS
-     ================================ */
-  @media (max-width: 768px) {
-    .dropdown-content {
-      position: static;              /* Flow naturally within mobile layout */
-      display: none;                 /* Hidden until parent is clicked */
-      background-color: #692727;     /* Darker background for contrast */
-      margin: 5px 0;                 /* Small space above and below */
-      border-radius: 4px;            /* Rounded corners for aesthetics */
-      padding: 5px 0;                /* Minimal vertical padding */
-      column-count: 1;               /* Single column only */
-    }
-  
-    /* Show dropdown when the parent list item is active (clicked) */
-    .menu_list ul li.active .dropdown-content { 
-      display: block; 
-    }
-  
-    /* Mobile dropdown link styling */
-    .dropdown-content a {
-      color: white;                  /* White text on dark background */
-      padding: 10px 20px;            /* Comfortable tap area */
-      display: block;
-      line-height: 1.2;              /* Improve readability on small screens */
-    }
-  }
-  
+}
 
 /* =================== HAMBURGER TOGGLE =================== */
 .hamburger {
-  display: none;
-  flex-direction: column;
+  display: none;            /* Hidden on desktop */
+  flex-direction: column;   /* Vertical bars */
   justify-content: space-between;
   width: 28px;
   height: 22px;
@@ -199,36 +199,32 @@ nav {
   transition: all 0.3s ease;
 }
 
+/* Transform hamburger to X when active */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
+.hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* Mobile menu styling */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+  .hamburger { display: flex; }
 
   .menu_list ul {
-    display: none;
-    flex-direction: column;
+    display: none;                 /* Hide by default */
+    flex-direction: column;        /* Stack links vertically */
     position: fixed;
-    top: 130px;
+    top: 130px;                     /* Below navbar */
     left: 0;
-    width: 100vw;
-    background-color: rgba(7,7,7,0.95);
+    width: 100vw;                   /* Full width */
+    background-color: rgba(50, 0, 0, 0.95);
     padding: 10px 0;
     z-index: 1099;
   }
 
-  .menu_list ul.active {
-    display: flex;
-  }
+  .menu_list ul.active { display: flex; } /* Show when hamburger clicked */
 
   .menu_list ul li a {
     font-size: 16px;
@@ -242,6 +238,7 @@ nav {
     background-color: #692727;
   }
 
+  /* Mobile dropdown adjustments */
   .dropdown-content {
     position: static;
     display: none;
@@ -251,26 +248,21 @@ nav {
     padding: 5px 0;
   }
 
-  .menu_list ul li.active .dropdown-content {
-    display: block;
-  }
+  .menu_list ul li.active .dropdown-content { display: block; }
 
-  .dropdown-content a {
-    color: white;
-    padding-left: 30px;
-  }
+  .dropdown-content a { padding-left: 30px; }
 }
 
 /* =================== CONTACT FORM =================== */
 .contact-container {
-  max-width: 600px;
-  margin: 160px auto 50px auto;
-  background: linear-gradient(145deg, #ffffff, #f5d7d9);
-  padding: 40px 35px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
-  border: 2px solid #7d1f1f;
-  text-align: left;
+  max-width: 600px;                           /* Limit form width */
+  margin: 160px auto 50px auto;               /* Center form */
+  background: linear-gradient(145deg, #ffffff, #f5d7d9); /* Gradient background */
+  padding: 40px 35px;                         /* Inner spacing */
+  border-radius: 15px;                        /* Rounded corners */
+  box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3); /* Shadow */
+  border: 2px solid #7d1f1f;                 /* Border */
+  text-align: left;                           /* Left align text */
 }
 
 .contact-container h1 {
@@ -290,9 +282,7 @@ nav {
 }
 
 /* Form Styles */
-.contact-form .form-group {
-  margin-bottom: 20px;
-}
+.contact-form .form-group { margin-bottom: 20px; }
 
 .contact-form label {
   display: block;
@@ -304,7 +294,7 @@ nav {
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
+  width: 100%;                     /* Full width */
   padding: 14px 18px;
   border: 1px solid #c77d83;
   border-radius: 8px;
@@ -321,63 +311,79 @@ nav {
   box-shadow: 0 0 8px rgba(139, 0, 0, 0.3);
 }
 
-.contact-form textarea {
-  height: 140px;
-  resize: vertical;
+.contact-form textarea { height: 140px; resize: vertical; }
+
+/* =================== BUTTONS =================== */
+.buttons-container {
+  width: 100%;                       /* Full width container */
+  margin-top: 50px;                  /* Top spacing */
+  display: flex;                     /* Flex layout */
+  justify-content: center;           /* Center horizontally */
 }
 
-/* Buttons */
 .dropdown {
   position: relative;
-  display: inline-block;
-  align-items: center;
-  
+  width: 100%;                        /* Full width */
+  max-width: 600px;                   /* Optional max width */
 }
 
 .action-btn {
-  padding: 10px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  width: 100%;                        /* Button full width */
+  padding: 15px 20px;
   cursor: pointer;
-
+  font-size: 18px;
+  text-align: center;
   background-color: #692727;
   color: white;
-  font-weight: bolder;
-  align-items: center;
+  border: none;
+  border-radius: 5px;
 }
 
+.action-btn:hover {
+  background-color: rgba(80, 59, 27, 0.836);
+  color: white;
+}
+
+/* Dropdown aligned with button */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
+  width: 100%;
+  background-color: #8d3434e7;
   border: 1px solid #ccc;
   z-index: 1000;
+  font-weight: 900;
 }
 
+/* Buttons inside dropdown */
 .dropdown-menu button {
   display: block;
   width: 100%;
   padding: 10px;
   border: none;
-  background: none;
-  cursor: pointer;
+  background-color: #8d3434e7;
+  color: white;
   text-align: left;
+  cursor: pointer;
+  font-weight: 900;
 }
 
 .dropdown-menu button:hover {
-  background-color: #740e0e;
-  color: white;
+  background-color: #f7ebeb;
+  color: black;
 }
 
-
-
-/* Responsive */
+/* Responsive adjustments for buttons and contact form */
 @media (max-width: 768px) {
   .contact-container {
     margin: 140px 20px 40px;
     padding: 30px 25px;
   }
-  .buttons {
+  .buttons-container {
     flex-direction: column;
     gap: 15px;
   }
@@ -408,7 +414,7 @@ nav {
   display: block;
 }
 
-/* Footer section containers */
+/* Footer sections */
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -417,160 +423,60 @@ nav {
 }
 
 /* Section titles */
-.footer-section h3 {
-  font-size: 14px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.footer-section h4 {
-  font-size: 13px;
-  margin-bottom: 5px;
-}
-.footer-section p {
-  font-size: 13px;
-  margin: 3px 0;
-  color: #cccccc;
-}
+.footer-section h3 { font-size: 14px; text-transform: uppercase; margin-bottom: 8px; }
+.footer-section h4 { font-size: 13px; margin-bottom: 5px; }
+.footer-section p { font-size: 13px; margin: 3px 0; color: #cccccc; }
 
 /* Footer links */
-.footer-section a {
-  color: #0e5ab1;
-  text-decoration: underline;
-  font-weight: bold;
-}
-.footer-section a:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
+.footer-section a { color: #0e5ab1; text-decoration: underline; font-weight: bold; }
+.footer-section a:hover { color: #ffffff; text-decoration: none; }
 
 /* Social & payment icons */
 .social-icons, .payment-methods-icons {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 5px;
+  display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 5px;
 }
 .social-icons img, .payment-methods-icons img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  padding: 5px;
-  background-color: #5f1315;
+  width: 30px; height: 30px; border-radius: 50%; padding: 5px; background-color: #5f1315;
   transition: transform 0.3s, background-color 0.3s;
 }
-.social-icons img:hover, .payment-methods-icons img:hover {
-  transform: scale(1.1);
-  background-color: #727070;
-}
+.social-icons img:hover, .payment-methods-icons img:hover { transform: scale(1.1); background-color: #727070; }
 
 /* Footer bottom bar */
-.footer-bottom {
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid #444;
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.footer-bottom a {
-  color: #cccccc;
-  text-decoration: none;
-}
-.footer-bottom a:hover {
-  color: #ffffff;
-}
+.footer-bottom { margin-top: 15px; padding-top: 10px; border-top: 1px solid #444; font-size: 13px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.footer-bottom a { color: #cccccc; text-decoration: none; }
+.footer-bottom a:hover { color: #ffffff; }
 
-/* Responsive footer */
+/* =================== RESPONSIVE FOOTER =================== */
 @media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-sections {
-    flex-direction: column;
-    gap: 20px;
-  }
+  .footer-content { flex-direction: column; align-items: center; }
+  .footer-sections { flex-direction: column; gap: 20px; }
 }
 @media (max-width: 480px) {
-  .footer-sections {
-    gap: 15px;
-    text-align: center;
-  }
-  .footer-section h3, .footer-section h4, .footer-section p {
-    font-size: 12px;
-  }
+  .footer-sections { gap: 15px; text-align: center; }
+  .footer-section h3, .footer-section h4, .footer-section p { font-size: 12px; }
 }
 
-/* =================== HAMBURGER =================== */
-.hamburger {
-  display: none;                /* Visible only on mobile */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 1100;
+/* =================== FULL RESPONSIVE GLOBAL =================== */
+@media (max-width: 1200px) { html { font-size: 75%; } }  /* Slightly smaller for large screens */
+@media (max-width: 1024px) {
+  html { font-size: 72%; } /* Tablets */
+  .contact-container { margin: 140px 30px 40px 30px; }
+  .action-btn { font-size: 16px; padding: 12px 18px; }
+  .dropdown { max-width: 90%; }
+  .dropdown-content { column-count: 1; } /* Stack dropdown links */
 }
-.hamburger span {
-  display: block;
-  height: 4px;
-  background-color: #eee5e5;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-/* Transform hamburger → X */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* =================== RESPONSIVE NAV =================== */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
-
-  .menu_list ul {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 80px; /* Below navbar */
-    left: 0;
-    width: 100vw;
-    background-color: rgba(50, 0, 0, 0.95);
-    padding: 10px 0;
-    z-index: 1099;
-  }
-  .menu_list ul.active { display: flex; }
-
-  .menu_list ul li a {
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    text-align: left;
-    border-right: none;
-  }
-
-  /* Mobile dropdown */
-  .dropdown-content {
-    position: static;
-    display: none;
-    background-color: #692727;
-    margin: 5px 0;
-    border-radius: 4px;
-    padding: 5px 0;
-  }
-  .menu_list ul li.active .dropdown-content { display: block; }
-  .dropdown-content a {
-    color: white;
-    padding-left: 30px; /* indent nested links */
-    display: block;
-  }
+  html { font-size: 70%; }
+  .contact-container { margin: 120px 20px 30px 20px; padding: 25px 20px; }
+  .action-btn { font-size: 15px; padding: 12px 15px; }
+  .dropdown { max-width: 100%; }
+  .dropdown-menu button { font-size: 15px; padding: 10px 15px; }
+}
+@media (max-width: 480px) {
+  html { font-size: 65%; }
+  .contact-container { margin: 100px 15px 20px 15px; padding: 20px 15px; }
+  .action-btn { font-size: 14px; padding: 10px 12px; }
+  .dropdown-menu button { font-size: 14px; padding: 8px 12px; }
+  nav { flex-direction: column; height: auto; padding: 10px; }
+  .menu_list ul { top: 100px; }
 }

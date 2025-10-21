@@ -95,9 +95,9 @@
         <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
       </div>
 
-      <!-- onr button two options whatsapp and email -->
-      <div class="buttons">
-        <!-- Dropdown Button -->
+      <!-- one button two options whatsapp and email -->
+      <div class="buttons-container">
+        <!-- Full-width Dropdown Button -->
         <div class="dropdown">
           <button type="button" class="action-btn" onclick="toggleDropdown()">
             Send
@@ -288,7 +288,7 @@
     window.location.href = "mailto:info@heradics.com";
   }
 
-  // Close the dropdown if clicked outside
+  // Close dropdown if clicked outside
   window.onclick = function(event) {
     if (!event.target.matches('.action-btn')) {
       const dropdowns = document.getElementsByClassName("dropdown-menu");

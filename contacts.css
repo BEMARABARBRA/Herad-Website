@@ -327,42 +327,46 @@ nav {
 }
 
 /* Buttons */
-.buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 25px;
+.dropdown {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  
 }
 
-.submit-btn,
-.whatsapp-btn {
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: background 0.3s ease, transform 0.2s ease;
+.action-btn {
+  padding: 10px 20px;
   cursor: pointer;
+
+  background-color: #692727;
+  color: white;
+  font-weight: bolder;
+  align-items: center;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
   border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
 }
 
-.submit-btn {
-  background-color: #7d1f1f;
+.dropdown-menu button:hover {
+  background-color: #740e0e;
   color: white;
-}
-
-.submit-btn:hover {
-  background-color: #500f0f;
-  transform: scale(1.05);
-}
-
-.whatsapp-btn {
-  background-color: #087c32;
-  color: white;
-}
-
-.whatsapp-btn:hover {
-  background-color: #1da851;
-  transform: scale(1.05);
 }
 
 

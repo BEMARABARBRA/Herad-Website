@@ -95,12 +95,20 @@
         <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
       </div>
 
+      <!-- onr button two options whatsapp and email -->
       <div class="buttons">
-        <!-- WhatsApp Button -->
-        <button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">
-          Send via WhatsApp
-        </button>
+        <!-- Dropdown Button -->
+        <div class="dropdown">
+          <button type="button" class="action-btn" onclick="toggleDropdown()">
+            Send
+          </button>
+          <div id="dropdown-menu" class="dropdown-menu">
+            <button onclick="sendWhatsApp()">WhatsApp: +256772593424</button>
+            <button onclick="sendEmail()">Email: info@heradics.com</button>
+          </div>
+        </div>
       </div>
+
     </form>
   </section>
 
@@ -263,6 +271,33 @@
       window.open(url, "_blank");
     }
   </script>
+
+
+<!-- for the send button 2options whatsapp and email -->
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdown-menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  function sendWhatsApp() {
+    window.open("https://wa.me/256772593424", "_blank");
+  }
+
+  function sendEmail() {
+    window.location.href = "mailto:info@heradics.com";
+  }
+
+  // Close the dropdown if clicked outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.action-btn')) {
+      const dropdowns = document.getElementsByClassName("dropdown-menu");
+      for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].style.display = "none";
+      }
+    }
+  }
+</script>
 
 </body>
 </html>

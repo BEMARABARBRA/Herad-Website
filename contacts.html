@@ -103,8 +103,8 @@
             Send
           </button>
           <div id="dropdown-menu" class="dropdown-menu">
-            <button onclick="sendWhatsApp()">WhatsApp: +256772593424</button>
-            <button onclick="sendEmail()">Email: info@heradics.com</button>
+            <button onclick="sendWhatsApp()">WhatsApp</button>
+            <button onclick="sendEmail()">Email</button>
           </div>
         </div>
       </div>
@@ -254,22 +254,7 @@
       }
     });
 
-    // WhatsApp button functionality
-    function sendWhatsApp() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !message) {
-        alert("Please fill in all fields before sending.");
-        return;
-      }
-
-      const phoneNumber = "256753044293"; // Replace with your preferred number
-      const text = `Hello, my name is ${name} (%0AEmail: ${email})%0A%0A${message}`;
-      const url = `https://wa.me/${phoneNumber}?text=${text}`;
-      window.open(url, "_blank");
-    }
+    
   </script>
 
 
@@ -297,6 +282,81 @@
       }
     }
   }
+</script>
+
+
+
+<!-- EmailJS library -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS with your public key
+  (function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your real public key
+  })();
+
+  // Toggle dropdown visibility
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdown-menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // WhatsApp message sender
+  function sendWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill in all fields before sending.");
+      return;
+    }
+
+    const phoneNumber = "256772593424";
+    const text = `Hello, my name is ${name} (Email: ${email})%0A%0A${message}`;
+    const url = `https://wa.me/${phoneNumber}?text=${text}`;
+    window.open(url, "_blank");
+  }
+
+  // Email message sender (no mailto popup)
+  function sendEmail() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill in all fields before sending.");
+      return;
+    }
+
+    // EmailJS parameters
+    const params = {
+      from_name: name,
+      from_email: email,
+      message: message
+    };
+
+    // Replace with your actual service and template IDs
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+      .then(function(response) {
+        alert("✅ Message sent successfully!");
+        document.getElementById("contactForm").reset();
+        document.getElementById("dropdown-menu").style.display = "none";
+      }, function(error) {
+        alert("❌ Failed to send message. Please try again.");
+        console.error("EmailJS error:", error);
+      });
+  }
+
+  // Close dropdown when clicking outside
+  window.onclick = function(event) {
+    if (!event.target.matches('.action-btn')) {
+      const dropdowns = document.getElementsByClassName("dropdown-menu");
+      for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns[i].style.display = "none";
+      }
+    }
+  };
 </script>
 
 </body>

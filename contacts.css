@@ -328,8 +328,9 @@ nav {
 }
 
 .action-btn {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
+  font-size: larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 1000;
   width: 100%;                        /* Button full width */
   padding: 15px 20px;
   cursor: pointer;
@@ -365,11 +366,11 @@ nav {
   width: 100%;
   padding: 10px;
   border: none;
-  background-color: #8d3434e7;
+  background-color: #b15353e7;
   color: white;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
-  font-weight: 900;
+  font-weight: 1000;
 }
 
 .dropdown-menu button:hover {

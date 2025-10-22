@@ -80,52 +80,43 @@
     <p>Fill out the form and choose how to send your message:</p>
 
     <!-- ================= FormSubmit Form ================= -->
-    <form id="contactForm" class="contact-form" 
-          action="https://formsubmit.co/barbarabemara" 
-          method="POST">
-      <!-- Comment: Using FormSubmit service for direct email delivery
-           Pros: No registration, unlimited submissions, direct to email, simple integration
-           Cons: Limited customization, temporary storage -->
+    <form id="contactForm" class="contact-form"
+      action="https://formsubmit.co/info@heradics.com"
+      method="POST">
 
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required />
+  <!-- User Inputs -->
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="yourname@example.com" required />
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+  </div>
+
+  <!-- Hidden Configurations -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://heradics.com/thank-you.html">
+  <input type="hidden" name="_subject" value="New message from Herad Website Contact Form">
+
+  <!-- Dropdown send options -->
+  <div class="buttons-container">
+    <div class="dropdown">
+      <button type="button" class="action-btn" onclick="toggleDropdown()">Send</button>
+      <div id="dropdown-menu" class="dropdown-menu">
+        <button type="button" onclick="sendWhatsApp()">WhatsApp</button>
+        <button type="submit">Email</button>
       </div>
+    </div>
+  </div>
+</form>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="yourname@example.com" required />
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-      </div>
-
-      <!-- one button with dropdown options: WhatsApp and Email -->
-      <div class="buttons-container">
-        <div class="dropdown">
-          <button type="button" class="action-btn" onclick="toggleDropdown()">
-            Send
-          </button>
-          <div id="dropdown-menu" class="dropdown-menu">
-            <!-- WhatsApp Button -->
-            <button type="button" onclick="sendWhatsApp()">WhatsApp</button>
-
-            <!-- FormSubmit Email Submission Button -->
-            <button type="submit">
-              Email
-            </button>
-            <!-- Comment: The submit button will send the form directly to FormSubmit without popups -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Optional hidden fields for FormSubmit -->
-      <input type="hidden" name="_captcha" value="false"> <!-- disables their captcha -->
-      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> <!-- redirect after submission -->
-
-    </form>
   </section>
 
   <!--========================= FOOTER =========================-->
@@ -275,67 +266,39 @@
       menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
 
-    // WhatsApp API Function (remains same)
-    async function sendWhatsApp() {
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
+    function sendWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-      if (!name || !email || !message) {
-        alert("Please fill in all fields before sending.");
-        return;
-      }
+  // Validate fields
+  if (!name || !email || !message) {
+    alert("Please fill in all fields before sending.");
+    return;
+  }
 
-      const phoneNumberId = "YOUR_PHONE_NUMBER_ID"; 
-      const token = "YOUR_ACCESS_TOKEN"; 
-      const to = "256772593424"; 
+  // Your WhatsApp number (use international format without +)
+  const phoneNumber = "256772593424";
 
-      const data = {
-        messaging_product: "whatsapp",
-        to: to,
-        type: "text",
-        text: {
-          body: `New message from HERAD Website:
+  // Message content
+  const text = `New message from HERAD Website:
+  
 Name: ${name}
 Email: ${email}
-Message: ${message}`
-        }
-      };
+Message: ${message}`;
 
-      try {
-        const response = await fetch(`https://graph.facebook.com/v17.0/${phoneNumberId}/messages`, {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer ${token}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
+  // Create WhatsApp link
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 
-        if (response.ok) {
-          alert("✅ Message sent successfully via WhatsApp!");
-          document.getElementById("contactForm").reset();
-          document.getElementById("dropdown-menu").style.display = "none";
-        } else {
-          const errorData = await response.json();
-          console.error("WhatsApp API error:", errorData);
-          alert("❌ WhatsApp message failed. Check console for details.");
-        }
-      } catch (error) {
-        console.error("Network error:", error);
-        alert("❌ Failed to send WhatsApp message.");
-      }
-    }
+  // Open WhatsApp in a new tab/window
+  window.open(url, "_blank");
 
-    // Close dropdown when clicking outside
-    window.onclick = function(event) {
-      if (!event.target.matches('.action-btn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-menu");
-        for (let i = 0; i < dropdowns.length; i++) {
-          dropdowns[i].style.display = "none";
-        }
-      }
-    };
+  // Reset form and close dropdown
+  document.getElementById("contactForm").reset();
+  document.getElementById("dropdown-menu").style.display = "none";
+}
+
+
   </script>
 </body>
 </html>
